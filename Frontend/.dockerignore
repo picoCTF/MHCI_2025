@@ -32,3 +32,14 @@
 **/dist
 LICENSE
 README.md
+
+.git
+.vscode
+.dockerignore
+.gitignore
+.env
+config
+build
+node_modules
+docker-compose.yaml
+frontend.Dockerfile

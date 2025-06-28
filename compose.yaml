@@ -9,14 +9,15 @@
 # https://github.com/docker/awesome-compose
 services:
   frontend:
+    container_name: frontend
     build:
-      dockerfile: Frontend.Dockerfile
-      context: ./Frontend
+      dockerfile: frontend.Dockerfile
+      context: ./frontend
     environment:
       NODE_ENV: production
     ports:
       - 8080:8080
-      - 6006:6006
+      - 5173:5173
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
