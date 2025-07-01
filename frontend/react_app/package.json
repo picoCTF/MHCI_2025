@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -22,21 +22,22 @@
     "@storybook/addon-docs": "^9.0.13",
     "@storybook/addon-vitest": "^9.0.13",
     "@storybook/react-vite": "^9.0.13",
+    "@types/node": "^24.0.8",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-storybook": "^9.0.13",
     "globals": "^16.2.0",
+    "playwright": "^1.53.1",
     "storybook": "^9.0.13",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0",
-    "vitest": "^3.2.4",
-    "@vitest/browser": "^3.2.4",
-    "playwright": "^1.53.1",
-    "@vitest/coverage-v8": "^3.2.4"
+    "vitest": "^3.2.4"
   }
 }
