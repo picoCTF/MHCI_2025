@@ -10,12 +10,20 @@
 services:
   frontend:
     container_name: frontend
+    environment:
+      - NODE_ENV=development
     build:
       dockerfile: frontend.Dockerfile
       context: ./frontend/react_app
     ports:
       - 6006:6006
       - 5173:5173
+    # volumes:
+    #   - ./frontend/react_app:/app
+    #   - exclude:app:/node_modules/
+
+volumes:
+  exclude:
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to

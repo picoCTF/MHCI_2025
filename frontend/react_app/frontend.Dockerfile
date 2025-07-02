@@ -10,23 +10,23 @@
 
 FROM node:lts-alpine
 
-WORKDIR /src
+WORKDIR /app
 
-COPY /package*.json /src
+COPY /package*.json /app
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.npm to speed up subsequent builds.
 # Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
 # into this layer.
-RUN npm install
+RUN npm install --include=dev
 
 # Copy the rest of the source files into the image.
-COPY . /src
+COPY . /app
 
 # Expose the port that the application listens on.
 EXPOSE 6006
 EXPOSE 5173
 
 # Run the application.
-# CMD ["npm", "run", "storybook", "--ci"]
-CMD npm run dev & npm run storybook
+# CMD ["npm", "run", "dev"]
+CMD npm run dev -- --host & npm run storybook
