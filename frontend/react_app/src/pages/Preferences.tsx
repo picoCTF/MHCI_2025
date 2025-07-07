@@ -1,16 +1,16 @@
 import "./Page.css";
 import Header from "../components/Header";
 
-function Home() {
+function Preferences() {
 
     return (
         <div className="Page">
             <Header/>
             <h1 className="text-3xl font-bold">
-                Home Page Here
+                Preferences Page Here
             </h1>
         </div>
     );
 }
 
-export default Home;
+export default Preferences;
