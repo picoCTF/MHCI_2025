@@ -20,13 +20,6 @@ COPY /package*.json /app
 # into this layer.
 RUN npm install --include=dev
 
-# Copy the rest of the source files into the image.
-COPY . /app
-
-# Expose the port that the application listens on.
-EXPOSE 6006
-EXPOSE 5173
-
 # Run the application.
 # CMD ["npm", "run", "dev"]
 CMD npm run dev -- --host & npm run storybook

@@ -1,0 +1,41 @@
+localhost:80 {
+    encode
+
+    handle /api/* {
+        header {
+            access-control-allow-origin      "http://localhost"
+            access-control-allow-credentials true
+            access-control-allow-headers     {http.request.header.access-control-request-headers}
+            access-control-allow-methods     "get, post, put, options"
+        }
+        reverse_proxy https://play.picoctf.org {
+            header_up host            play.picoctf.org
+            header_up origin          https://play.picoctf.org
+            header_up referer         https://play.picoctf.org
+        }
+    }
+
+    handle /static/* {
+        header {
+            access-control-allow-origin      "http://localhost"
+            access-control-allow-credentials true
+            access-control-allow-headers     {http.request.header.access-control-request-headers}
+            access-control-allow-methods     "get, options"
+        }
+        reverse_proxy https://play.picoctf.org {
+            header_up host            play.picoctf.org
+            header_up origin          https://play.picoctf.org
+            header_up referer         https://play.picoctf.org
+        }
+    }
+
+    reverse_proxy http://frontend:5173
+
+    @preflight {
+        method OPTIONS
+        path /api/*
+    }
+    handle @preflight {
+        respond "OK" 204
+    }
+}
