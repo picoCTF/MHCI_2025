@@ -1,6 +1,8 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import './App.css'
 
+// import { GeistSans } from "geist/font/sans";
+
 import Classroom from "./pages/Classroom";
 import Compete from "./pages/Compete";
 import Home from "./pages/Home";

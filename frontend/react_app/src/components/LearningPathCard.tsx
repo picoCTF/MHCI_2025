@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardBody, CardFooter } from "@heroui/react";
 
-import DifficultyTag from "./DifficultyTag";
+import DifficultyChip from "./DifficultyChip";
 import NumChallenges from "./NumChallenges";
 import NumSolves from "./NumSolves";
 
@@ -10,7 +10,7 @@ function LearningPathCard() {
         <Card className="w-fit h-fit">
             <CardHeader className="justify-between">
                 <h2>Path Title</h2>
-                <DifficultyTag/>
+                <DifficultyChip/>
             </CardHeader>
             <CardBody>
                 Path Description
