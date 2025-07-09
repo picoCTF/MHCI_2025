@@ -45,4 +45,4 @@ jobs:
 
       - name: Deploy via rsync
         run: |
-          rsync -az --delete frontend/react_app/dist/ ${{ secrets.KEPLER_SSH_USER }}@kepler.picoctf.org:/var/www
+          rsync -rz --delete frontend/react_app/dist/ ${{ secrets.KEPLER_SSH_USER }}@kepler.picoctf.org:/var/www/
