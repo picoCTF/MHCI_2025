@@ -12,6 +12,7 @@ services:
     container_name: frontend
     environment:
       - NODE_ENV=development
+    image: repository/frontend/react_app
     build:
       dockerfile: frontend.Dockerfile
       context: ./frontend/react_app
