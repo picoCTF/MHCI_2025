@@ -1,18 +1,16 @@
 import "../Page.css";
 import Header from "../../components/Header";
-import LearningPathCard from "../../components/LearningPathCard";
 
-function LearningPaths() {
+function Games() {
 
     return (
         <div className="Page">
             <Header/>
             <h1 className="text-3xl font-bold">
-                Learning Paths Page Here
+                Games Page Here
             </h1>
-            <LearningPathCard/>
         </div>
     );
 }
 
-export default LearningPaths;
+export default Games;

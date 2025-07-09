@@ -11,10 +11,13 @@ function PracticeDropdown() {
                     <DropdownItem key="learning paths" href='/practice/learning-paths'>
                         Learning Paths
                     </DropdownItem>
-                </DropdownSection>
-                <DropdownSection>
                     <DropdownItem key="gym" href='/practice/gym'>
                         Gym
+                    </DropdownItem>
+                </DropdownSection>
+                <DropdownSection>
+                    <DropdownItem key="games" href='/practice/games'>
+                        Games
                     </DropdownItem>
                 </DropdownSection>
             </DropdownMenu>

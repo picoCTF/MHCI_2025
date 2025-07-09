@@ -4,6 +4,7 @@ import './App.css'
 import Classroom from "./pages/Classroom";
 import Compete from "./pages/Compete";
 import Home from "./pages/Home";
+import Games from "./pages/Practice/Games";
 import Gym from "./pages/Practice/Gym";
 import LearningPaths from "./pages/Practice/LearningPaths";
 import Preferences from "./pages/Preferences";
@@ -38,6 +39,10 @@ function App() {
           path: "practice",
           element: <Outlet/>,
           children: [
+            {
+              path: "games",
+              element: <Games/>
+            },
             {
               path: "gym",
               element: <Gym/>
