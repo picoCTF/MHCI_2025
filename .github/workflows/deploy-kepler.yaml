@@ -1,0 +1,48 @@
+name: Build and Deploy
+
+on:
+#  push:
+#    branches: [main]
+
+  workflow_dispatch:  # Manual for now
+
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Cache npm cache (not node_modules because npm ci)
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('frontend/react_app/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Install deps
+        working-directory: frontend/react_app
+        run: npm ci
+
+      - name: Build app
+        working-directory: frontend/react_app
+        run: npm run build
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.KEPLER_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan kepler.picoctf.org >> ~/.ssh/known_hosts
+
+      - name: Deploy via rsync
+        run: |
+          rsync -az --delete frontend/react_app/dist/ ${{ secrets.KEPLER_SSH_USER }}@kepler.picoctf.org:/var/www
