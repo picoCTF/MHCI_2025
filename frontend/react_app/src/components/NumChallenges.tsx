@@ -7,8 +7,10 @@ function NumChallenges() {
     return (
         <div className="flex row gap-2 text-xs">
             <p>ICON</p>
-            <p>{getNumChallenges()}</p>
-            <p>challenges</p>
+            <div className="flex row gap-1">
+                <p>{getNumChallenges()}</p>
+                <p>challenges</p>
+            </div>
         </div>
     );
 }

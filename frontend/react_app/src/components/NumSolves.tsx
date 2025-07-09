@@ -7,8 +7,10 @@ function NumSolves() {
     return (
         <div className="flex row gap-2 text-xs">
             <p>ICON</p>
-            <p>{getNumSolves()}</p>
-            <p>solves</p>
+            <div className="flex row gap-1">
+                <p>{getNumSolves()}</p>
+                <p>solves</p>
+            </div>
         </div>
     );
 }
