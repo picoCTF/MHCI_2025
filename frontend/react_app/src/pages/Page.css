@@ -3,4 +3,5 @@
     height: 100%;
 
     background-color: var(--heroui-background);
+    font-family: var(--geist-sans);
 }

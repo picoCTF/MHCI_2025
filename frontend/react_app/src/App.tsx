@@ -1,5 +1,7 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import './App.css'
+
+import { Outlet, useNavigate, useHref, type NavigateOptions, Routes, Route } from "react-router-dom";
+import { HeroUIProvider } from "@heroui/react";
 
 // import { GeistSans } from "geist/font/sans";
 
@@ -9,7 +11,6 @@ import Home from "./pages/Home";
 import Games from "./pages/Practice/Games";
 import Gym from "./pages/Practice/Gym";
 import LearningPaths from "./pages/Practice/LearningPaths";
-import Preferences from "./pages/Preferences";
 import Profile from "./pages/Profile";
 import Videos from "./pages/Resources/Videos";
 import Primer from "./pages/Resources/Primer";
@@ -17,84 +18,39 @@ import Community from "./pages/Resources/Community";
 import ExternalResources from "./pages/Resources/ExternalResources";
 import LearningGuides from "./pages/Resources/LearningGuides";
 
+declare module "@react-types/shared" {
+  interface RouterConfig {
+    routerOptions: NavigateOptions;
+  }
+}
+
 function App() {
 
-  // initialize a browser router
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Outlet/>,
-      children: [
-        {
-          index: true,
-          element: <Home/>
-        },
-        {
-          path: "classroom",
-          element: <Classroom/>
-        },
-        {
-          path: "compete",
-          element: <Compete/>
-        },
-        {
-          path: "practice",
-          element: <Outlet/>,
-          children: [
-            {
-              path: "games",
-              element: <Games/>
-            },
-            {
-              path: "gym",
-              element: <Gym/>
-            },
-            {
-              path: "learning-paths",
-              element: <LearningPaths/>
-            }
-          ]
-        },
-        {
-          path: "preferences",
-          element: <Preferences/>
-        },
-        {
-          path: "profile",
-          element: <Profile/>
-        },
-        {
-          path: "resources",
-          element: <Outlet/>,
-          children: [
-            {
-              path: "community",
-              element: <Community/>
-            },
-            {
-              path: "external-resources",
-              element: <ExternalResources/>
-            },
-            {
-              path: "learning-guides",
-              element: <LearningGuides/>
-            },
-            {
-              path: "primer",
-              element: <Primer/>
-            },
-            {
-              path: "videos",
-              element: <Videos/>
-            }
-          ]
-        }
-      ]
-    },
-  ])
+  const navigate = useNavigate();
 
   return (
-      <RouterProvider router={router}/>
+    <HeroUIProvider navigate={navigate} useHref={useHref}>
+      <Routes>
+        <Route path='/' element={<Outlet/>}>
+          <Route index={true} element={<Home/>}/>
+          <Route path='classroom' element={<Classroom/>}/>
+          <Route path='compete' element={<Compete/>}/>
+          <Route path='practice' element={<Outlet/>}>
+            <Route path='games' element={<Games/>}/>
+            <Route path='gym' element={<Gym/>}/>
+            <Route path='learning-paths' element={<LearningPaths/>}/>
+          </Route>
+          <Route path='profile' element={<Profile/>}/>
+          <Route path='resources' element={<Outlet/>}>
+            <Route path='community' element={<Community/>}/>
+            <Route path='external-resources' element={<ExternalResources/>}/>
+            <Route path='learning-guides' element={<LearningGuides/>}/>
+            <Route path='primer' element={<Primer/>}/>
+            <Route path='videos' element={<Videos/>}/>
+          </Route>
+        </Route>
+      </Routes>
+    </HeroUIProvider>
   )
 }
 

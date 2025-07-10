@@ -1,14 +1,13 @@
-function NumChallenges() {
+interface NumChallengesProps {
+    numChallenges: number;
+}
 
-    const getNumChallenges = (() => {
-        return "######";
-    })
-
+const NumChallenges: React.FC<NumChallengesProps> = ({ numChallenges }) => {
     return (
         <div className="flex row gap-2 text-xs">
             <p>ICON</p>
             <div className="flex row gap-1">
-                <p>{getNumChallenges()}</p>
+                <p>{numChallenges}</p>
                 <p>challenges</p>
             </div>
         </div>
