@@ -33,6 +33,7 @@ function getQuickLink(resource: string) {
     }
 }
 
+//Should make this a script or something that's consistent across all card components that can be pressed
 const onQuickLinkCardPress = ((link: string) => {
     // navigate(link);
 })

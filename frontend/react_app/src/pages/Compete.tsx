@@ -1,5 +1,5 @@
 import "./Page.css";
-import Header from "../components/Header";
+import Header from "../components/General/PageNavbar";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 
 function Compete() {

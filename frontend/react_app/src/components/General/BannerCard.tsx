@@ -1,6 +1,6 @@
 import { Button, Card, CardBody, Image } from "@heroui/react";
 
-interface BannerProps {
+interface BannerCardProps {
     buttonText: string;
     title: string;
 
@@ -8,7 +8,7 @@ interface BannerProps {
     image?: boolean;
 }
 
-const Banner: React.FC<BannerProps> = ({ buttonText, title, eventTime, image }) => {
+const BannerCard: React.FC<BannerCardProps> = ({ buttonText, title, eventTime, image }) => {
 
     return (
         <Card className="w-max">
@@ -24,4 +24,4 @@ const Banner: React.FC<BannerProps> = ({ buttonText, title, eventTime, image }) 
     );
 }
 
-export default Banner;
+export default BannerCard;

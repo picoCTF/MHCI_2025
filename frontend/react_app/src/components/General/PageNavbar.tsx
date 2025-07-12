@@ -2,11 +2,11 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Avatar, I
 
 // import { MaterialSymbol } from "react-material-symbols";
 
-import NotificationModal from './Header/NotificationModal';
-import ResourcesDropdown from './Header/ResourcesDropdown';
-import PracticeDropdown from './Header/PracticeDropdown';
+import NotificationModal from '../NotificationModal';
+import ResourcesDropdown from './PageNavbarComponents/ResourcesDropdown';
+import PracticeDropdown from './PageNavbarComponents/PracticeDropdown';
 
-function Header() {
+function PageNavbar() {
     return (
         <div className="Header" style={{width: "100%", height: "fit-content"}}>
             <Navbar>
@@ -52,4 +52,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default PageNavbar;
