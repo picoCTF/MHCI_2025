@@ -2,7 +2,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Avatar, I
 
 // import { MaterialSymbol } from "react-material-symbols";
 
-import NotificationModal from '../NotificationModal';
+import NotificationModal from './PageNavbarComponents/NotificationModal';
 import ResourcesDropdown from './PageNavbarComponents/ResourcesDropdown';
 import PracticeDropdown from './PageNavbarComponents/PracticeDropdown';
 

@@ -1,4 +1,7 @@
 import type { Preview } from '@storybook/react-vite'
+// import '../src/tailwind.css';
+
+import { withThemeByDataAttribute } from "@storybook/addon-themes";
 
 const preview: Preview = {
   parameters: {
@@ -16,6 +19,16 @@ const preview: Preview = {
       test: 'todo'
     }
   },
+
+  decorators: [withThemeByDataAttribute({
+      themes: {
+          // nameOfTheme: 'dataAttributeForTheme',
+          light: '',
+          dark: 'dark',
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-mode',
+  })]
 };
 
 export default preview;

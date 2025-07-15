@@ -7,10 +7,10 @@ interface FlagSubmissionCardProps {
 const FlagSubmissionCard: React.FC<FlagSubmissionCardProps> = ({ flag }) => {
 
     return (
-        <Card className="w-min">
-            <CardBody>
+        <Card className="flex flex-row w-fill">
+            <CardBody className="flex flex-row items-center w-fill">
                 <Input label="Flag" placeholder="picoCTF{FLAG}" inputMode="text"/>
-                <Button>Submit</Button>
+                <Button color="primary">Submit</Button>
             </CardBody>
         </Card>
     );

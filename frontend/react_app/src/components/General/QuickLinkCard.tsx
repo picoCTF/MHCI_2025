@@ -1,5 +1,5 @@
 import { Card, CardBody, CardHeader } from "@heroui/react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 interface QuickLinkCardProps {
     title: "Community" | "External Resources" | "Learning Guides" | "Primer" | "Videos";
@@ -40,7 +40,7 @@ const onQuickLinkCardPress = ((link: string) => {
 
 const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ title, description, icon, link }) => {
     return (
-        <Card isPressable isHoverable onPress={() => onQuickLinkCardPress(link ? link : getQuickLink(title))}>
+        <Card className="w-[340px] min-w-[340px] h-[106px] min-h-[106px]" isPressable isHoverable onPress={() => onQuickLinkCardPress(link ? link : getQuickLink(title))}>
             <CardHeader>
                 <p>{icon}</p>
             </CardHeader>
