@@ -1,4 +1,4 @@
-import { Card, CardBody, Input } from "@heroui/react";
+import { Card, CardBody, } from "@heroui/react";
 
 interface IconProps {
     background: string | undefined;

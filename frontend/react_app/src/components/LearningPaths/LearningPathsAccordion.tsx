@@ -26,8 +26,8 @@ const LearningPathsAccordionContent: React.FC<LearningPathsAccordionContentProps
     }
 
     return (
-        <Card isHoverable isPressable>
-            <CardBody>
+        <Card isHoverable isPressable className="w-fill min-w-fill">
+            <CardBody className="flex flex-row">
                 <IconCard background={backgroundColor} icon={icon}/>
                 <div className="flex flex-col">
                     <h2>{name}</h2>
@@ -48,14 +48,14 @@ interface LearningPathsAccordionProps {
 
 const LearningPathsAccordionCard: React.FC<LearningPathsAccordionProps> = ({ challengeIDs }) => {
     return (
-        <Card>
-            <CardHeader>
+        <Card className="w-[430px] min-w-[430px] h-fit min-h-fit">
+            <CardHeader className="flex flex-col">
                 <h2>Learning Path Name</h2>
                 <ProgressWithTextDiv color={"primary"} ariaLabel={"Learning Path Progress"} value={0} endingText="0/20 challenges"/>
-                <Divider/>
             </CardHeader>
             <CardBody>
-                <Accordion className="w-[463px] min-w-[463px] h-fit min-h-fit">
+                <Divider/>
+                <Accordion className="w-fill min-w-fill h-fit min-h-fit">
                     <AccordionItem key="1" aria-label="Lesson 1" title="Lesson 1">
                         <LearningPathsAccordionContent contentType={"Learning Resource"} name={"Resource 1"} status={"Incomplete"}/>
                         <LearningPathsAccordionContent contentType={"Learning Resource"} name={"Resource 2"} status={"Complete"}/>

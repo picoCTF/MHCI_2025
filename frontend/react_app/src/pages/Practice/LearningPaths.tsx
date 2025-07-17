@@ -10,6 +10,7 @@ import ApproachComparisonCard from "../../components/General/ApproachComparisonC
 import ReflectionCTACard from "../../components/General/ReflectionCTACard";
 import ReflectionEntryCard from "../../components/LearningPaths/ReflectionEntryCard";
 import LearningPathOverviewCard from "../../components/LearningPaths/LearningPathOverviewCard";
+import LearningPathsAccordionCard from "../../components/LearningPaths/LearningPathsAccordion";
 
 function LearningPaths() {
 
@@ -40,6 +41,7 @@ function LearningPaths() {
             <ReflectionCTACard/>
             <ReflectionEntryCard/>
             <LearningPathOverviewCard/>
+            <LearningPathsAccordionCard challengeIDs={["1", "2", "3"]}/>
         </div>
     );
 }

@@ -20,6 +20,12 @@ COPY /package*.json /app
 # into this layer.
 RUN npm install --include=dev
 
+# COPY /.storybook /app/.storybook
+# COPY /src/ /app/src/
+# COPY /vite.config.js /app/
+
+COPY / /app/
+
 # Run the application.
 # CMD ["npm", "run", "dev"]
 CMD npm run dev -- --host & npm run storybook
