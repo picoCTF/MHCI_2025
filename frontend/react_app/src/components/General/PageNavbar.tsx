@@ -8,7 +8,7 @@ import PracticeDropdown from './PageNavbarComponents/PracticeDropdown';
 
 function PageNavbar() {
     return (
-        <div className="Header" style={{width: "100%", height: "fit-content"}}>
+        <div className="PageNavbar" style={{width: "100%", height: "fit-content"}}>
             <Navbar>
                 <NavbarBrand>
                     <Image></Image>

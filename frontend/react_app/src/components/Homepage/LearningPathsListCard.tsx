@@ -1,22 +1,25 @@
-import { Card, CardBody, CardHeader,  } from "@heroui/react";
-import LearningPathCard from "../LearningPaths/LearningPathCard";
+// import { Pagination, PaginationItem } from "@heroui/react";
+import { Link } from "@heroui/react";
+import LearningPathCard, { type LearningPathCardProps } from "../LearningPaths/LearningPathCard";
 
 interface LearningPathsListCardProps {
-    paths: string[];
+    list: LearningPathCardProps[];
 }
 
-const LearningPathsListCard: React.FC<LearningPathsListCardProps> = ({ paths }) => {
+const LearningPathsListCard: React.FC<LearningPathsListCardProps> = ({ list }) => {
     return (
-        <Card className="w-[811px] h-fit]">
-            <CardHeader className="flex flex-col items-start">
-                <h2>Try a new learning path</h2>
-            </CardHeader>
-            <CardBody className="flex flex-row w-fill h-fit overflow-scroll">
-                <LearningPathCard id={paths[0]}/>
-                <LearningPathCard id={paths[1]}/>
-                <LearningPathCard id={paths[2]}/>
-            </CardBody>
-        </Card>
+        <div className="w-[811px] h-fit">
+            <div className="flex flex-col w-full min-w-full items-start gap-4">
+                <div className="flex flex-row w-full min-w-full items-start justify-between">
+                    <h2 className="flex">Try a new learning path</h2>
+                    <Link className="flex flex-row" href="/practice/learning-paths">Open All Paths</Link>
+                </div>
+                <div className="flex flex-row w-full overflow-scroll gap-6">
+                    <LearningPathCard description={""} difficulty={undefined} hasProgress={false} link={""} name={""} numCompletedChallenges={0} numSolves={0} numTotalChallenges={0}/>
+                    {list.map((item) => (<LearningPathCard description={item["description"]} difficulty={undefined} hasProgress={false} link={""} name={""} numCompletedChallenges={0} numSolves={0} numTotalChallenges={0}/>))}
+                </div>
+            </div>
+        </div>
     );
 }
 

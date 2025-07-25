@@ -1,17 +1,21 @@
 import { Button, Card, CardBody } from "@heroui/react";
 
-interface PendingMemberRequestCardProps {
+export interface PendingMemberRequestCardProps {
     username: string;
 }
 
 const PendingMemberRequestCard: React.FC<PendingMemberRequestCardProps> = ({ username }) => {
     return (
-        <Card className="w-fill h-fit]">
-            <CardBody className="flex flex-row justify-between">
-                <p className="w-fill">{username}</p>
-                <div>
-                    <Button isIconOnly size="sm" radius="full">XIcon</Button>
-                    <Button isIconOnly size="sm" radius="full">CheckIcon</Button>
+        <Card className="flex w-full h-fit bg-default-100" radius="sm" shadow="none">
+            <CardBody className="flex flex-row justify-between items-center p-4 m-0">
+                <p className="flex w-full">{username}</p>
+                <div className="flex flex-row gap-4">
+                    <Button isIconOnly size="sm" radius="full" variant="ghost" color="danger">
+                        <span className="font-icon text-[24px]">close</span>
+                    </Button>
+                    <Button isIconOnly size="sm" radius="full" variant="ghost" color="success">
+                        <span className="font-icon text-[24px]">check</span>
+                    </Button>
                 </div>
             </CardBody>
         </Card>

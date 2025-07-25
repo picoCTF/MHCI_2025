@@ -16,9 +16,9 @@ const onResourceLinkCardPress = ((link: string) => {
 
 const ResourceLinkCard: React.FC<ResourceLinkCardProps> = ({ name, link, icon }) => {
     return (
-        <Card className="w-fill min-w-fill h-fit min-h-fit" isPressable isHoverable onPress={() => onResourceLinkCardPress(link)}>
+        <Card className="w-full min-w-full h-fit min-h-fit bg-default-100" radius="sm" shadow="none" isPressable isHoverable onPress={() => onResourceLinkCardPress(link)}>
             <CardBody className="flex flex-row justify-between">
-                <div className="flex flex-row min-w-fit min-h-fit">
+                <div className="flex flex-row min-w-fit min-h-fit gap-3">
                     <p>{icon}</p>
                     <p>{name}</p>
                 </div>

@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from "@heroui/react";
+import { Card, CardBody } from "@heroui/react";
 
 interface VideoResourceCardProps extends React.PropsWithChildren {
     description: string;
@@ -7,18 +7,17 @@ interface VideoResourceCardProps extends React.PropsWithChildren {
 
 const VideoResourceCard: React.FC<VideoResourceCardProps> = ({ description, youtubeID }) => {
     return (
-        <Card className="w-[706px] min-w-[706px] h-fit min-h-fit">
-            <CardHeader>
-                <p>ICON</p>
-                <p>Video Tutorial</p>
-            </CardHeader>
-            <CardBody className="h-fit min-h-fit">
+        <Card className="w-[706px] min-w-[706px] h-fit min-h-fit border-small m-0 p-6" radius="md" shadow="none">
+            <CardBody className="flex flex-col h-fit min-h-fit p-0 gap-6">
+                <div className="flex flex-row gap-3">
+                    <p>ICON</p>
+                    <p>Video Tutorial</p>
+                </div>
                 <p>{description}</p>
-                <iframe className='video h-fit min-h-fit'
+                <iframe className='flex video w-full h-fit min-h-fit rounded-small'
                     title='Youtube Player'
                     sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
-                    src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}>
-                </iframe>
+                    src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}/>
             </CardBody>
         </Card>
     );

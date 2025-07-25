@@ -1,4 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article,award_star,book,calendar,check,close,code,extension,flag,home,import_contacts,info,mode_heat,notifications,person,smart_display&display=block');
+
 /*The tailwind lines need to be here for Tailwind (and the HeroUI library) to work in the app*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font: 1em "Geist";
+}
+
+h1 {
+  font-family: "Geist Mono";
+  font-size: var(--text-4xl);
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Geist Mono";
+}
+
+h3 {
+  font-family: "Geist Mono";
+}
+
+p {
+  font-family: "Geist";
+  font-weight: 500;
+  font-size: "light";
+}

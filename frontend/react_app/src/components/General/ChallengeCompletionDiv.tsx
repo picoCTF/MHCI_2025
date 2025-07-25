@@ -33,15 +33,15 @@ const ChallengeCompletionDiv: React.FC<ChallengeCompletionProfileCardProps> = ({
     function getInfoWidthAndHeight() {
         if(showAdditionalInfo)
         {
-            return "w-fill h-fit";
+            return "w-full h-fit";
         }
         return "w-[0px] h-[0px]"
     }
 
     return (
-        <div className="flex flex-row w-fill min-w-fill">
+        <div className="flex flex-row w-full min-w-full">
             <div className={"flex flex-col justify-start items-start w-[" + (numEasyChallenges / totalNumChallenges * 100) + "%] h-fit"}>
-                <div className="w-fill min-w-fill" color={semanticColors.light.success[500]}/>
+                <div className="w-full min-w-full" color={semanticColors.light.success[500]}/>
                 <div className={getInfoWidthAndHeight()}>
                     <p>{numEasyChallenges}</p>
                     <div className={"w-[" + getUnderlineWidth(numEasyChallenges) + "] h-[5px] radius-full"} color={semanticColors.light.success[500]}/>
@@ -49,7 +49,7 @@ const ChallengeCompletionDiv: React.FC<ChallengeCompletionProfileCardProps> = ({
                 </div>
             </div>
             <div className={"flex flex-col justify-start items-start w-[" + (numEasyChallenges / totalNumChallenges * 100) + "%] h-fit"}>
-                <div className="w-fill min-w-fill" color={semanticColors.light.warning[500]}/>
+                <div className="w-full min-w-full" color={semanticColors.light.warning[500]}/>
                 <div className={getInfoWidthAndHeight()}>
                     <p>{numMediumChallenges}</p>
                     <div className={"w-[" + getUnderlineWidth(numMediumChallenges) + "] h-[5px] radius-full"} color={semanticColors.light.success[500]}/>
@@ -57,7 +57,7 @@ const ChallengeCompletionDiv: React.FC<ChallengeCompletionProfileCardProps> = ({
                 </div>
             </div>
             <div className={"flex flex-col justify-start items-start w-[" + (numEasyChallenges / totalNumChallenges * 100) + "%] h-fit"}>
-                <div className="w-fill min-w-fill" color={semanticColors.light.danger[500]}/>
+                <div className="w-full min-w-full" color={semanticColors.light.danger[500]}/>
                 <div className={getInfoWidthAndHeight()}>
                     <p>{numEasyChallenges}</p>
                     <div className={"w-[" + getUnderlineWidth(numHardChallenges) + "] h-[5px] radius-full"} color={semanticColors.light.success[500]}/>

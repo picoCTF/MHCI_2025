@@ -1,24 +1,29 @@
-import { Card, CardBody, CardHeader } from "@heroui/react";
+import { Card, CardBody } from "@heroui/react";
 import RecentAssignmentsCard from "./RecentAssignmentsCard";
 import PendingMemberRequestsCard from "../Homepage/PendingMemberRequestsCard";
+import { type AssignmentStatusCardProps } from "./AssignmentStatusCard";
+import type { PendingMemberRequestCardProps } from "./PendingMemberRequestCard";
 
-interface ClassroomCardProps {
-    classroomID: string;
+export interface ClassroomCardProps {
+    name: string;
+    numMembers: number;
+    recentAssignments: AssignmentStatusCardProps[];
+    pendingMemberUsernames: PendingMemberRequestCardProps[];
 }
 
-const ClassroomCard: React.FC<ClassroomCardProps> = ({ classroomID }) => {
+const ClassroomCard: React.FC<ClassroomCardProps> = ({ name, numMembers, recentAssignments, pendingMemberUsernames }) => {
     return (
-        <Card className="w-fill h-fit]">
-            <CardHeader className="flex flex-col items-start">
-                {/* API_NEEDED - Get the classroom name and number of members */}
-                <h2>Classroom Name</h2>
-                <p>24 Members</p>
-            </CardHeader>
-            <CardBody>
+        <Card className="flex w-full h-fit border-small p-6" radius="md" shadow="none">
+            <CardBody className="flex p-0 m-0 gap-4">
+                <div className="flex flex-col items-start gap-3">
+                    {/* API_NEEDED - Get the classroom name and number of members */}
+                    <h2>{name}</h2>
+                    <p>{numMembers + " Members"}</p>
+                </div>
                 {/* API_NEEDED - Get the usernames of the people that want to join this classroom */}
-                <PendingMemberRequestsCard usernames={["Username 1", "Username 2", "Username 3"]}/>
+                <PendingMemberRequestsCard pendingRequests={pendingMemberUsernames}/>
                 {/* API_NEEDED - Get the IDs of assignments the user recently viewed in this classroom */}
-                <RecentAssignmentsCard assignmentIDs={["1", "2"]}/>
+                <RecentAssignmentsCard list={recentAssignments}/>
             </CardBody>
         </Card>
     );

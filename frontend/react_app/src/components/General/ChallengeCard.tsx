@@ -1,44 +1,51 @@
 import { Card, CardBody, CardHeader, CardFooter, Modal, ModalHeader, ModalBody } from "@heroui/react";
 // import { useNavigate } from "react-router-dom";
-import DifficultyChip from "./DifficultyChip";
-import NumberDisplayChip from "./NumberDisplayChip";
-import HintAccordion from "./HintAccordian";
+import DifficultyChip, { type DifficultyChipProps } from "./DifficultyChip";
+import HintAccordion, { type HintAccordionProps } from "./HintAccordian";
 import FlagSubmissionCard from "./FlagSubmissionCard";
+import Icon from "./Icon";
 
 interface ChallengeCardProps {
-    id: string;
-    name: string;
-    difficulty: 1 | 2 | 3;
-    category: string;
-    points: number;
-    numSolves: number;
-
-    tags: string[];
-    description: string;
     author: string;
-    hints: string[];
+    category: ;
+    description: string;
+    difficulty: DifficultyChipProps;
     flag: string;
+    hints: HintAccordionProps;
+    name: string;
+    numSolves: number;
+    tags: string[];
 }
 
-const ChallengeCard: React.FC<ChallengeCardProps> = ({ id, name, author, difficulty, category, points, numSolves /*title, description, difficulty, author, numSolves, hints, flag */}) => {
+const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, flag, hints, name, numSolves, tags}) => {
+    
     return (
         <Card className="w-[400px] h-[288px]">
-            <CardHeader className="flex flex-col w-fill h-fit justify-left">
+            <CardHeader className="flex flex-col w-full h-fit justify-left">
                 <h2>{name}</h2>
                 <div className="flex flex-row">
-                    <DifficultyChip Enum={difficulty}/>
+                    <DifficultyChip Enum={difficulty["Enum"]}/>
                 </div>
             </CardHeader>
             <CardBody>
-                <p>Challenge description here</p>
+                <p>{description}</p>
                 <div className="flex-row">
-                    <p>Author: {author}</p>
-                    <NumberDisplayChip number={numSolves} label={"solves"}/>
+                    <p>{"Author: " + author}</p>
+                    <div className="flex row gap-2">
+                        <Icon name={"person"} size={"20"} weight={"normal"} color={"default"}/>
+                        <p className="text-xs">{"Author: " + author}</p>
+                    </div>
+                    <div className="flex row gap-2">
+                        <Icon name={"flag"} size={"20"} weight={"normal"} color={"default"}/>
+                        <div className="flex row gap-1 text-xs">
+                            <p>{numSolves + " solves"}</p>
+                        </div>
+                    </div>
                 </div>
-                <HintAccordion/>
+                <HintAccordion list={hints["list"]}/>
             </CardBody>
             <CardFooter>
-                <FlagSubmissionCard flag={"ReplaceMe"}/>
+                <FlagSubmissionCard flag={flag}/>
             </CardFooter>
         </Card>
     );

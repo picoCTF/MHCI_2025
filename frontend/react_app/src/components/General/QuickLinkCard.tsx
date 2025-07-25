@@ -1,36 +1,13 @@
-import { Card, CardBody, CardHeader } from "@heroui/react";
+import { Card, CardBody } from "@heroui/react";
+import IconCard from "./IconCard";
+import type { IconProps } from "./Icon";
 // import { useNavigate } from "react-router-dom";
 
-interface QuickLinkCardProps {
-    title: "Community" | "External Resources" | "Learning Guides" | "Primer" | "Videos";
+export interface QuickLinkCardProps {
+    name: string;
     description: string;
-    icon: string;
-    link?: string;
-}
-
-function getQuickLink(resource: string) {
-    switch(resource) {
-        case "Community":
-        {
-            return "/resources/community";
-        }
-        case "External Resources":
-        {
-            return "/resources/community";
-        }
-        case "Learning Guides":
-        {
-            return "/resources/learning-guides";
-        }
-        case "Videos":
-        {
-            return "/resources/videos";
-        }
-        default:
-        {
-            return "/resources/primer";
-        }
-    }
+    icon: IconProps["name"];
+    link: string;
 }
 
 //Should make this a script or something that's consistent across all card components that can be pressed
@@ -38,15 +15,47 @@ const onQuickLinkCardPress = ((link: string) => {
     // navigate(link);
 })
 
-const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ title, description, icon, link }) => {
+const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ name, description, icon, link }) => {
+
+    // switch (id) {
+    //     case "community": {
+    //         link = "/resources/community";
+    //         // icon = "";
+    //         break;
+    //     }
+    //     case "external-resources": {
+    //         link = "/resources/community";
+    //         break;
+    //     }
+    //     case "learning-guides": {
+    //         link = "/resources/learning-guides";
+    //         // icon = "";
+    //         break;
+    //     }
+    //     case "primer": {
+    //         link = "/resources/primer";
+    //         // icon = "";
+    //         break;
+    //     }
+    //     case "videos": {
+    //         link = "/resources/videos";
+    //         // icon = "";
+    //         break;
+    //     }
+    //     default: {
+    //         link = "#";
+    //         break;
+    //     }
+    // }
+
     return (
-        <Card className="w-[340px] min-w-[340px] h-[106px] min-h-[106px]" isPressable isHoverable onPress={() => onQuickLinkCardPress(link ? link : getQuickLink(title))}>
-            <CardHeader>
-                <p>{icon}</p>
-            </CardHeader>
-            <CardBody>
-                <h2>{title}</h2>
-                <p>{description}</p>
+        <Card className="w-[340px] min-w-[340px] h-fit border-medium m-0 p-6" isPressable isHoverable shadow="none" onPress={() => onQuickLinkCardPress(link)}>
+            <CardBody className="flex flex-row w-full h-fit p-0 gap-6">
+                <IconCard background={"secondary"} icon={icon}/>
+                <div className="flex flex-col gap-1">
+                    <h2>{name}</h2>
+                    <p>{description}</p>
+                </div>
             </CardBody>
         </Card>
     );

@@ -27,7 +27,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    id: "1"
+    id: "1",
+    doesShowProgress: false
     // title: "Path Title",
     // description: "Path description here.",
     // numChallenges: 3,

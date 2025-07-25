@@ -8,8 +8,9 @@ function PracticeDropdown() {
             </DropdownTrigger>
             <DropdownMenu aria-label="Practice Page List">
                 <DropdownSection showDivider>
-                    <DropdownItem key="learning paths" href='/practice/learning-paths'>
-                        Learning Paths
+                    <DropdownItem key="learning paths" href='/practice/learning-paths' className="flex flex-row gap-3">
+                        <span className="font-icon"></span>
+                        <p>Learning Paths</p>
                     </DropdownItem>
                     <DropdownItem key="gym" href='/practice/gym'>
                         Gym

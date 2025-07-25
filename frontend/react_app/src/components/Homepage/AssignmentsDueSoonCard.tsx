@@ -1,22 +1,19 @@
-import { Card, CardBody, CardHeader } from "@heroui/react";
-import AssignmentCard from "../General/AssignmentCard";
+import AssignmentCard, { type AssignmentCardProps } from "../General/AssignmentCard";
 
 interface AssignmentsDueSoonCardProps {
-    assignmentIDs: string[];
+    list: AssignmentCardProps[];
 }
 
-const AssignmentsDueSoonCard: React.FC<AssignmentsDueSoonCardProps> = ({ assignmentIDs }) => {
+const AssignmentsDueSoonCard: React.FC<AssignmentsDueSoonCardProps> = ({ list }) => {
     return (
-        <Card className="w-[811px] h-fit]">
-            <CardHeader className="flex flex-col items-start">
+        <div className="flex flex-col w-[811px] h-fit gap-6">
+            <div className="flex flex-col items-start">
                 <h2>You have assignments due soon!</h2>
-            </CardHeader>
-            <CardBody className="flex flex-row overflow-scroll">
-                <AssignmentCard assignmentID={assignmentIDs[0]}/>
-                <AssignmentCard assignmentID={assignmentIDs[1]}/>
-                <AssignmentCard assignmentID={assignmentIDs[2]}/>
-            </CardBody>
-        </Card>
+            </div>
+            <div className="flex flex-row overflow-scroll gap-6">
+                {list.map((item) => (<AssignmentCard name={item.name} classroomName={item.classroomName} completedChallenges={item.completedChallenges} totalChallenges={item.totalChallenges} time={item.time}/>))}
+            </div>
+        </div>
     );
 }
 

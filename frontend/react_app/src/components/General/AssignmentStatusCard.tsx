@@ -1,25 +1,58 @@
-import { Card, CardBody, CardHeader, CardFooter, Progress, Button, Chip } from "@heroui/react";
-// import { useNavigate } from "react-router-dom";
+import { Card, CardBody, Chip } from "@heroui/react";
+import type { DateProps, TimeStringProps } from "../../Interfaces";
+import { getTimeString, getDateString } from "../../Functions";
 
-interface AssignmentCardProps {
-    assignmentID: string;
+interface StatusProp {
+    isActive: boolean;
 }
 
-const AssignmentStatusCard: React.FC<AssignmentCardProps> = ({ assignmentID }) => {
+const StatusChip: React.FC<StatusProp> = ({ isActive }) => {
+    
+    let backgroundColor = "danger-50";
+    let textColor = "danger-foreground";
+    let text = "Expired";
+
+    if(isActive) {
+        backgroundColor = "success-50";
+        textColor = "success-foreground";
+        text = "Active";
+    }
+    
     return (
-        <Card className="w-fill h-fit">
-            <CardBody className="flex flex-row justify-between">
-                <div className="flex flex-col w-fill">
-                    <div className="flex flex-row">
-                        {/* API_NEEDED - Get the name of the assignment and the name of the classroom associated with this assignment */}
-                        <p>Assignment Name</p>
-                        <Chip>Status</Chip>
+        <Chip>{text}</Chip>
+    );
+}
+
+export interface AssignmentStatusCardProps {
+    name: string;
+    completedChallenges: number;
+    totalChallenges: number;
+    isActive: boolean;
+    time: TimeStringProps;
+    dueDate: DateProps;
+}
+
+// export type AssignmentStatusCardProps<T> = T extends { active: TimeStringProps, expired: string} ? Active : Expired;
+
+const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, dueDate, totalChallenges, isActive, time }) => {
+    
+    let timeText = "Due in " + getTimeString(time["days"], time["hours"], time["minutes"], time["seconds"]);
+    let dateText = "Due date: " + getDateString(dueDate["day"], dueDate["month"], dueDate["year"]);
+    
+    return (
+        <Card className="w-full h-fit bg-default-100 p-0 m-0" radius="sm" shadow="none">
+            <CardBody className="flex flex-row justify-between p-4">
+                <div className="flex flex-col w-full h-full gap-2">
+                    <div className="flex flex-row gap-4">
+                        <p>{name}</p>
+                        <StatusChip isActive={isActive}/>
                     </div>
-                    {/* API_NEEDED - Get the amount of time left before the assignment is due */}
-                    <p>ICON Due in 7 days and 3 hours</p>
+                    <p>{isActive ? timeText : dateText}</p>
                 </div>
-                {/* API_NEEDED - Get the user's completion amount of the assignment */}
-                <p className="w-min text-right">3/4 completed</p>
+                <div className="flex flex-col items-end">
+                    <p className="w-min text-right">{completedChallenges + "/" + totalChallenges}</p>
+                    <p className="w-min text-right">submitted</p>
+                </div>
             </CardBody>
         </Card>
     );

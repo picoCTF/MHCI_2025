@@ -13,14 +13,14 @@ const ChallengeCompletionProfileCard: React.FC<ChallengeCompletionProfileCardPro
 
     return (
         <Card className="flex w-[825px] min-w-[825px] max-w-[825px] h-fit min-h-fit max-h-fit">
-            <CardHeader className="flex flex-row w-fill h-fit items-start justify-between">
+            <CardHeader className="flex flex-row w-full h-fit items-start justify-between">
                 <h2>Challenge Completion</h2>
                 <div className="flex flex-col w-fit text-end">
                     <p>Total</p>
                     <p>{totalNumChallenges}</p>
                 </div>
             </CardHeader>
-            <CardBody className="flex flex-row w-fill h-fit">
+            <CardBody className="flex flex-row w-full h-fit">
                 <ChallengeCompletionDiv numEasyChallenges={numEasyChallenges} numMediumChallenges={numMediumChallenges} numHardChallenges={numHardChallenges} totalNumChallenges={totalNumChallenges} showAdditionalInfo={true}/>
             </CardBody>
         </Card>

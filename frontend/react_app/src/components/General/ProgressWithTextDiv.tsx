@@ -4,17 +4,16 @@ interface ProgressWithTextDivProps {
     color: "default" | "primary" | "secondary" | "success" | "warning" | "danger";
     ariaLabel: string;
     value: number;
-    startingText?: string;
-    endingText?: string;
+    endingText: string;
 }
 
-const ProgressWithTextDiv: React.FC<ProgressWithTextDivProps> = ({ color, ariaLabel, value, startingText, endingText }) => {
+// TODO - make sure progress and text are aligned
+const ProgressWithTextDiv: React.FC<ProgressWithTextDivProps> = ({ color, ariaLabel, value, endingText }) => {
 
     return (
-        <div className="flex flex-row w-fill min-w-fill h-fit">
-            <p className="w-fit min-w-fit h-[1rem]">{startingText}</p>
-            <Progress className="w-fill min-w-fill" size="md" color={color} aria-label={ariaLabel} value={value}/>
-            <p className="w-fit min-w-fit h-[1rem]">{endingText}</p>
+        <div className="flex flex-row w-full h-fit place-center gap-3">
+            <Progress className="flex w-full" size="md" color={color} aria-label={ariaLabel} value={value}/>
+            <p className="flex flex-row w-max h-fit">{endingText}</p>
         </div>
     );
 }

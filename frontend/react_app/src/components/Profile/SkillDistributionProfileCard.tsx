@@ -34,10 +34,10 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
     
     return (
         <Card className="flex w-[825px] min-w-[825px] max-w-[825px] h-fit min-h-fit max-h-fit">
-            <CardHeader className="flex flex-row w-fill h-fit items-start justify-between">
+            <CardHeader className="flex flex-row w-full h-fit items-start justify-between">
                 <h2>Skill Distribution</h2>
             </CardHeader>
-            <CardBody className="flex flex-col w-fill min-w-fit h-fit">
+            <CardBody className="flex flex-col w-full min-w-fit h-fit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="404" height="404" viewBox="0 0 404 404" fill="none">
                     <circle x="-50" y="-50" stroke="#C0C0C0" strokeWidth="1"/>
                     <path opacity="0.7" d="M202.206 402.992C313.329 402.992 403.412 312.909 403.412 201.786C403.412 90.6631 313.329 0.580078 202.206 0.580078C91.0831 0.580078 1 90.6631 1 201.786C1 312.909 91.0831 402.992 202.206 402.992Z" stroke="#C0C0C0" stroke-width="1.11781"/>
