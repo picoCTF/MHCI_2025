@@ -2,12 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import LearningPathCard from '../components/LearningPaths/LearningPathCard.tsx';
-
+import BadgeSVG from '../components/General/BadgeSVG';
 
 const meta = {
-  title: 'General/LearningPathCard',
-  component: LearningPathCard,
+  title: 'General/BadgeSVG',
+  component: BadgeSVG,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
@@ -20,23 +19,16 @@ const meta = {
     // numChallenges: 3,
     // numSolves: 100
   },
-} satisfies Meta<typeof LearningPathCard>;
+} satisfies Meta<typeof BadgeSVG>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    description: "Test",
-    difficulty: {
-      Enum: 1
-    },
-    hasProgress: false,
-    id: 1,
-    link: "#",
-    name: "Learning Path Name",
-    numCompletedChallenges: 0,
-    numSolves: 679,
-    numTotalChallenges: 15
+    color: 1,
+    icon: "mode_heat",
+    shape: 1,
+    title: "Badge Title"
   },
 };

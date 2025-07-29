@@ -1,4 +1,5 @@
 import { Card, CardBody, CardHeader } from "@heroui/react";
+import Icon from "../General/Icon";
 
 interface SkillDistributionProfileCardProps {
     
@@ -26,37 +27,90 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
     totalBinaryExploitChallenges, totalCryptographyChallenges, totalForensicsChallenges, totalGeneralSkillsChallenges,
     totalReverseEngChallenges, totalWebExploitChallenges }) => {
 
-    const armLength = 100;
+    const svgSize = 372;
+    const armLength = svgSize/2
+    const svgCenter = svgSize/2;
 
-    function getBinaryExploitPos(){
-        return (numBinaryExploitationChallenges / totalBinaryExploitChallenges * 100) * armLength;
-    }
+    const svgTopPointX = svgCenter + armLength*Math.cos(Math.PI/2);
+    const svgTopPointY = svgCenter + armLength*-Math.sin(Math.PI/2);
+    const svgTopRightPointX = svgCenter + armLength*Math.cos(Math.PI/6);
+    const svgTopRightPointY = svgCenter + armLength*-Math.sin(Math.PI/6);
+    const svgTopLeftPointX = svgCenter + armLength*Math.cos(5*Math.PI/6);
+    const svgTopLeftPointY = svgCenter + armLength*-Math.sin(5*Math.PI/6);
+    const svgBottomPointX = svgCenter + armLength*Math.cos(-Math.PI/2);
+    const svgBottomPointY = svgCenter + armLength*-Math.sin(-Math.PI/2);
+    const svgBottomRightPointX = svgCenter + armLength*Math.cos(-Math.PI/6);
+    const svgBottomRightPointY = svgCenter + armLength*-Math.sin(-Math.PI/6);
+    const svgBottomLeftPointX = svgCenter + armLength*Math.cos(-5*Math.PI/6);
+    const svgBottomLeftPointY = svgCenter + armLength*-Math.sin(-5*Math.PI/6);
+
+    let binaryExploitArmLength = numBinaryExploitationChallenges / totalBinaryExploitChallenges * armLength;
+    let binaryExploitXPos = svgCenter + binaryExploitArmLength*Math.cos(-Math.PI/6);
+    let binaryExploitYPos = svgCenter + binaryExploitArmLength*-Math.sin(-Math.PI/6);
+
+    let cryptographyArmLength = numCryptographyChallenges / totalCryptographyChallenges * armLength;
+    let cryptographyXPos = svgCenter + cryptographyArmLength*Math.cos(Math.PI/6);
+    let cryptographyYPos = svgCenter + cryptographyArmLength*-Math.sin(Math.PI/6);
+
+    let forensicsArmLength = numForensicsChallenges / totalForensicsChallenges * armLength;
+    let forensicsXPos = svgCenter + forensicsArmLength*Math.cos(-Math.PI/2);
+    let forensicsYPos = svgCenter + forensicsArmLength*-Math.sin(-Math.PI/2);
+
+    let generalSkillsArmLength = numGeneralSkillsChallenges / totalGeneralSkillsChallenges * armLength;
+    let generalSkillsXPos = svgCenter + generalSkillsArmLength*Math.cos(-5*Math.PI/6);
+    let generalSkillsYPos = svgCenter + generalSkillsArmLength*-Math.sin(-5*Math.PI/6);
+
+    let reverseEngineeringArmLength = numReverseEngChallenges / totalReverseEngChallenges * armLength;
+    let reverseEngineeringXPos = svgCenter + reverseEngineeringArmLength*Math.cos(5*Math.PI/6);
+    let reverseEngineeringYPos = svgCenter + reverseEngineeringArmLength*-Math.sin(5*Math.PI/6);
+
+    let webExploitArmLength = numWebExploitChallenges / totalWebExploitChallenges * armLength;
+    let webExploitXPos = svgCenter + webExploitArmLength*Math.cos(Math.PI/2);
+    let webExploitYPos = svgCenter + webExploitArmLength*-Math.sin(Math.PI/2);
     
     return (
-        <Card className="flex w-[825px] min-w-[825px] max-w-[825px] h-fit min-h-fit max-h-fit">
-            <CardHeader className="flex flex-row w-full h-fit items-start justify-between">
+        <Card className="flex w-[825px] h-fit border-small p-10" radius="md" shadow="none">
+            <CardBody className="flex flex-col w-full min-w-fit h-fit p-0 m-0 gap-8">
                 <h2>Skill Distribution</h2>
-            </CardHeader>
-            <CardBody className="flex flex-col w-full min-w-fit h-fit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="404" height="404" viewBox="0 0 404 404" fill="none">
-                    <circle x="-50" y="-50" stroke="#C0C0C0" strokeWidth="1"/>
-                    <path opacity="0.7" d="M202.206 402.992C313.329 402.992 403.412 312.909 403.412 201.786C403.412 90.6631 313.329 0.580078 202.206 0.580078C91.0831 0.580078 1 90.6631 1 201.786C1 312.909 91.0831 402.992 202.206 402.992Z" stroke="#C0C0C0" stroke-width="1.11781"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="315" height="315" viewBox="0 0 315 315" fill="none">
-                    <path opacity="0.7" d="M157.207 314.28C243.636 314.28 313.7 244.215 313.7 157.786C313.7 71.3571 243.636 1.29248 157.207 1.29248C70.7775 1.29248 0.712891 71.3571 0.712891 157.786C0.712891 244.215 70.7775 314.28 157.207 314.28Z" stroke="#D0D0D0" stroke-width="1.11781"/>
-                </svg>
-                        <path d="M1.20703 201.786V0.57959" stroke="#E0E0E0" stroke-width="1.11781"/>
-                        <path d="M1.20703 101.786L175.586 1.18262" stroke="#E0E0E0" stroke-width="1.11781"/>
-                    
-                <svg xmlns="http://www.w3.org/2000/svg" width="226" height="226" viewBox="0 0 226 226" fill="none">
-                    <path opacity="0.7" d="M113.207 224.568C174.942 224.568 224.988 174.522 224.988 112.787C224.988 51.0515 174.942 1.00537 113.207 1.00537C51.4719 1.00537 1.42578 51.0515 1.42578 112.787C1.42578 174.522 51.4719 224.568 113.207 224.568Z" stroke="#E0E0E0" stroke-width="1.11781"/>
-                </svg>
-
-                <p>Cryptography</p>
-                <p>Forensics</p>
-                <p>General Skills</p>
-                <p>Reverse Engineering</p>
-                <p>Web Exploitation</p>
+                <div className="relative w-full h-[400px]">
+                    <svg className="absolute inset-0" xmlns="http://www.w3.org/2000/svg" width={svgSize} height={svgSize} viewBox={"0 0 " + (svgSize+2) + " " + (svgSize+2)} fill="none">
+                        <polygon className="stroke-default-200" points={svgTopPointX + " " + svgTopPointY + "," + svgTopRightPointX + " " + svgTopRightPointY + "," + svgBottomRightPointX + " " + svgBottomRightPointY + "," + svgBottomPointX + " " + svgBottomPointY + "," + svgBottomLeftPointX + " " + svgBottomLeftPointY + "," + svgTopLeftPointX + " " + svgTopLeftPointY}/>
+                        <path className="stroke-default-200" d={"M" + svgTopPointX + " " + svgTopPointY + " L " + svgBottomPointX + " " + svgBottomPointY}/>
+                        <path className="stroke-default-200" d={"M" + svgTopLeftPointX + " " + svgTopLeftPointY + " L " + svgBottomRightPointX + " " + svgBottomRightPointY}/>
+                        <path className="stroke-default-200" d={"M" + svgBottomLeftPointX + " " + svgBottomLeftPointY + " L " + svgTopRightPointX + " " + svgTopRightPointY}/>
+                        <polygon className="stroke-success-500 fill-success-50/10"  points={webExploitXPos + " " + webExploitYPos + "," + cryptographyXPos + " " + cryptographyYPos + "," + binaryExploitXPos + " " + binaryExploitYPos + "," + forensicsXPos + " " + forensicsYPos + "," + generalSkillsXPos + " " + generalSkillsYPos + "," + reverseEngineeringXPos + " " + reverseEngineeringYPos}/>
+                        <circle className="fill-success-500" cx={webExploitXPos} cy={webExploitYPos} r={6}/>
+                        <circle className="fill-success-500" cx={cryptographyXPos} cy={cryptographyYPos} r={6} fill="green"/>
+                        <circle className="fill-success-500" cx={binaryExploitXPos} cy={binaryExploitYPos} r={6} fill="green"/>
+                        <circle className="fill-success-500" cx={forensicsXPos} cy={forensicsYPos} r={6} fill="green"/>
+                        <circle className="fill-success-500" cx={generalSkillsXPos} cy={generalSkillsYPos} r={6} fill="green"/>
+                        <circle className="fill-success-500" cx={reverseEngineeringXPos} cy={reverseEngineeringYPos} r={6} fill="green"/>
+                    </svg>
+                    <div className="absolute flex flex-row w-fit h-fit gap-1">
+                        <p>Web Exploitation</p>
+                        <Icon name={"language"} size={"40"} weight={"normal"} color={"primary"}/>
+                    </div>
+                    <div className="absolute flex flex-row w-fit h-fit gap-1">
+                        <p>Cryptography</p>
+                        <Icon name={"key"} size={"40"} weight={"normal"} color={"primary"}/>
+                    </div>
+                    <div className="absolute flex flex-row w-fit h-fit gap-1">
+                        <p>Forensics</p>
+                        <Icon name={"search"} size={"40"} weight={"normal"} color={"primary"}/>
+                    </div>
+                    <div className="absolute flex flex-row w-fit h-fit gap-1">
+                        <p>General Skills</p>
+                        <Icon name={"code"} size={"40"} weight={"normal"} color={"primary"}/>
+                    </div>
+                    <div className="absolute flex flex-row w-fit h-fit gap-1">
+                        <p>Reverse Engineering</p>
+                        <Icon name={"build"} size={"40"} weight={"normal"} color={"primary"}/>
+                    </div>
+                    <div className="absolute flex flex-row w-fit h-fit gap-1">
+                        <p>Binary Exploitation</p>
+                        <Icon name={"memory"} size={"40"} weight={"normal"} color={"primary"}/>
+                    </div>
+                </div>
             </CardBody>
         </Card>
     );

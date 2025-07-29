@@ -3,20 +3,22 @@ import './App.css'
 import { Outlet, useNavigate, useHref, type NavigateOptions, Routes, Route } from "react-router-dom";
 import { HeroUIProvider } from "@heroui/react";
 
-// import { GeistSans } from "geist/font/sans";
+//Import mock data
+import { mockHomepage } from "./mock-data/HomeData";
 
 import Classroom from "./pages/Classroom";
 import Compete from "./pages/Compete";
 import Home from "./pages/Home";
-import Games from "./pages/Practice/Games";
-import Gym from "./pages/Practice/Gym";
-import LearningPaths from "./pages/Practice/LearningPaths";
+import Games from "./pages/practice/Games";
+import Gym from "./pages/practice/Gym";
 import Profile from "./pages/Profile";
-import Videos from "./pages/Resources/Videos";
-import Primer from "./pages/Resources/Primer";
-import Community from "./pages/Resources/Community";
-import ExternalResources from "./pages/Resources/ExternalResources";
-import LearningGuides from "./pages/Resources/LearningGuides";
+import Videos from "./pages/resources/Videos";
+import Primer from "./pages/resources/Primer";
+import Community from "./pages/resources/Community";
+import ExternalResources from "./pages/resources/ExternalResources";
+import LearningGuides from "./pages/resources/LearningGuides";
+import LearningPathsHome from './pages/practice/learning-paths/LearningPathHome';
+import { mockLearningPathsHome } from './mock-data/LearningPathsData';
 
 declare module "@react-types/shared" {
   interface RouterConfig {
@@ -32,13 +34,17 @@ function App() {
     <HeroUIProvider navigate={navigate} useHref={useHref}>
       <Routes>
         <Route path='/' element={<Outlet/>}>
-          <Route index={true} element={<Home/>}/>
+          <Route index={true} element={<Home assignmentsList={mockHomepage.assignmentsList} 
+            classroomsList={mockHomepage.classroomsList} 
+            learningPathsList={mockHomepage.learningPathsList} 
+            profileSummary={mockHomepage.profileSummary} 
+            quickLinksList={mockHomepage.quickLinksList}/>}/>
           <Route path='classroom' element={<Classroom/>}/>
           <Route path='compete' element={<Compete/>}/>
           <Route path='practice' element={<Outlet/>}>
             <Route path='games' element={<Games/>}/>
             <Route path='gym' element={<Gym/>}/>
-            <Route path='learning-paths' element={<LearningPaths/>}/>
+            <Route path='learning-paths' element={<LearningPathsHome paths={mockLearningPathsHome.paths}/>}/>
           </Route>
           <Route path='profile' element={<Profile/>}/>
           <Route path='resources' element={<Outlet/>}>

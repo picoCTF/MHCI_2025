@@ -11,8 +11,8 @@ interface BannerCardProps {
 const BannerCard: React.FC<BannerCardProps> = ({ buttonText, title, eventTime, image }) => {
 
     return (
-        <Card className="w-max">
-            <CardBody>
+        <Card className="w-max" radius="md" shadow="none">
+            <CardBody className="flex flex-row">
                 <Image>{image}</Image>
                 <div className="flex">
                     <h2>{title}</h2>

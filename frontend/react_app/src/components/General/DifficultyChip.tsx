@@ -1,6 +1,6 @@
 import { Chip } from "@heroui/react";
 
-export interface DifficultyChipProps {
+export interface DifficultyProp {
     Enum: 1 | 2 | 3;
 }
 
@@ -37,7 +37,7 @@ function getDifficultyChipName(difficulty: number) {
     }
 }
 
-const DifficultyChip: React.FC<DifficultyChipProps> = ({ Enum }) => {
+const DifficultyChip: React.FC<DifficultyProp> = ({ Enum }) => {
 
     return (
         <Chip className={"flex bg-" + getDifficultyChipColor(Enum) + " text-" + getDifficultyTextColor(Enum)} size="sm">

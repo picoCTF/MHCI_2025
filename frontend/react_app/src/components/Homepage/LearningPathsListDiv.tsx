@@ -2,11 +2,11 @@
 import { Link } from "@heroui/react";
 import LearningPathCard, { type LearningPathCardProps } from "../LearningPaths/LearningPathCard";
 
-interface LearningPathsListCardProps {
+export interface LearningPathsListDivProps {
     list: LearningPathCardProps[];
 }
 
-const LearningPathsListCard: React.FC<LearningPathsListCardProps> = ({ list }) => {
+const LearningPathsListDiv: React.FC<LearningPathsListDivProps> = ({ list }) => {
     return (
         <div className="w-[811px] h-fit">
             <div className="flex flex-col w-full min-w-full items-start gap-4">
@@ -15,12 +15,11 @@ const LearningPathsListCard: React.FC<LearningPathsListCardProps> = ({ list }) =
                     <Link className="flex flex-row" href="/practice/learning-paths">Open All Paths</Link>
                 </div>
                 <div className="flex flex-row w-full overflow-scroll gap-6">
-                    <LearningPathCard description={""} difficulty={undefined} hasProgress={false} link={""} name={""} numCompletedChallenges={0} numSolves={0} numTotalChallenges={0}/>
-                    {list.map((item) => (<LearningPathCard description={item["description"]} difficulty={undefined} hasProgress={false} link={""} name={""} numCompletedChallenges={0} numSolves={0} numTotalChallenges={0}/>))}
+                    {list.map((item) => (<LearningPathCard description={item.description} difficulty={item.difficulty} hasProgress={item.hasProgress} id={item.id} link={item.link} name={item.link} numCompletedChallenges={item.numCompletedChallenges} numSolves={item.numSolves} numTotalChallenges={item.numTotalChallenges}/>))}
                 </div>
             </div>
         </div>
     );
 }
 
-export default LearningPathsListCard;
+export default LearningPathsListDiv;

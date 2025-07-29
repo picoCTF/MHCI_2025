@@ -1,6 +1,6 @@
 import { Progress } from "@heroui/react";
 
-interface ProgressWithTextDivProps {
+export interface ProgressWithTextDivProps {
     color: "default" | "primary" | "secondary" | "success" | "warning" | "danger";
     ariaLabel: string;
     value: number;

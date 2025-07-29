@@ -1,10 +1,10 @@
 import AssignmentCard, { type AssignmentCardProps } from "../General/AssignmentCard";
 
-interface AssignmentsDueSoonCardProps {
+export interface AssignmentsDueListDivProps {
     list: AssignmentCardProps[];
 }
 
-const AssignmentsDueSoonCard: React.FC<AssignmentsDueSoonCardProps> = ({ list }) => {
+const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ list }) => {
     return (
         <div className="flex flex-col w-[811px] h-fit gap-6">
             <div className="flex flex-col items-start">
@@ -17,4 +17,4 @@ const AssignmentsDueSoonCard: React.FC<AssignmentsDueSoonCardProps> = ({ list })
     );
 }
 
-export default AssignmentsDueSoonCard;
+export default AssignmentsDueListDiv;

@@ -1,11 +1,11 @@
 import { Link } from "@heroui/react";
 import ClassroomCard, { type ClassroomCardProps } from "../General/ClassroomCard";
 
-interface ClassroomManagementDivProps {
-    classrooms: ClassroomCardProps[];
+export interface ClassroomListDivProps {
+    list: ClassroomCardProps[];
 }
 
-const ClassroomManagementDiv: React.FC<ClassroomManagementDivProps> = ({ classrooms }) => {
+const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ list }) => {
     return (
         <div className="flex flex-col w-[811px] min-w-[811px] h-fit items-start gap-4">
             <div className="flex flex-row w-full min-w-full justify-between">
@@ -14,10 +14,10 @@ const ClassroomManagementDiv: React.FC<ClassroomManagementDivProps> = ({ classro
                 <Link href="/classroom">Open Classrooms</Link>
             </div>
             <div className="flex flex-col w-full min-w-full">
-                {classrooms.map((item) => <ClassroomCard name={item.name} numMembers={item.numMembers} recentAssignments={item.recentAssignments} pendingMemberUsernames={item.pendingMemberUsernames}/>)}
+                {list.map((item) => <ClassroomCard name={item.name} numMembers={item.numMembers} recentAssignments={item.recentAssignments} pendingMemberUsernames={item.pendingMemberUsernames}/>)}
             </div>
         </div>
     );
 }
 
-export default ClassroomManagementDiv;
+export default ClassroomListDiv;

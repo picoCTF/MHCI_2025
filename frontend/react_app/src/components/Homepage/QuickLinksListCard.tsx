@@ -1,10 +1,10 @@
 import QuickLinkCard, { type QuickLinkCardProps } from "../General/QuickLinkCard";
 
-interface QuickLinksListCardProps {
+export interface QuickLinksListDivProps {
     list: QuickLinkCardProps[];
 }
 
-const QuickLinksListCard: React.FC<QuickLinksListCardProps> = ({ list }) => {
+const QuickLinksListDiv: React.FC<QuickLinksListDivProps> = ({ list }) => {
     return (
         <div className="flex flex-col w-[811px] min-w-[811px] max-w-[811px] h-fit bg-transparent gap-4 items-start">
             <div className="flex flex-row w-full h-fit">
@@ -26,4 +26,4 @@ const QuickLinksListCard: React.FC<QuickLinksListCardProps> = ({ list }) => {
     );
 }
 
-export default QuickLinksListCard;
+export default QuickLinksListDiv;

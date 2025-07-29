@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardBody, Button } from "@heroui/react";
-import BadgeDiv from "../General/BadgeDiv";
+import BadgeDiv from "../General/BadgeSVG";
 
 interface BadgesProfileCardProps {
     selectedBadges: number[];
