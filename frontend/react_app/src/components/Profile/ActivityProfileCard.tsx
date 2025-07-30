@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, CardFooter, Tab, Tabs } from "@heroui/react";
+import { Card, CardBody, Tab, Tabs } from "@heroui/react";
 import ActivitySummaryCard from "./Activity/ActivitySummaryCard";
 import Icon from "../General/Icon";
 

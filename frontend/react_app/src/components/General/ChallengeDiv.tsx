@@ -1,15 +1,15 @@
-import { Card, CardBody, CardHeader, CardFooter, Modal, ModalHeader, ModalBody } from "@heroui/react";
+import { Card, CardBody, CardHeader, CardFooter } from "@heroui/react";
 // import { useNavigate } from "react-router-dom";
-import DifficultyChip, { type DifficultyChipProps } from "./DifficultyChip";
-import HintAccordion, { type HintAccordionProps } from "./HintAccordian";
+import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
+import HintAccordion, { type HintAccordionProps } from "./HintAccordion";
 import FlagSubmissionCard from "./FlagSubmissionCard";
 import Icon from "./Icon";
 
-interface ChallengeCardProps {
+interface ChallengeDivProps {
     author: string;
-    category: ;
+    category: "Binary_Exploit" | "Cryptography" | "Forensics" | "General_Skills" | "Reverse_Engineering" | "Web_Exploit";
     description: string;
-    difficulty: DifficultyChipProps;
+    difficulty: DifficultyProp;
     flag: string;
     hints: HintAccordionProps;
     name: string;
@@ -17,7 +17,7 @@ interface ChallengeCardProps {
     tags: string[];
 }
 
-const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, flag, hints, name, numSolves, tags}) => {
+const ChallengeDiv: React.FC<ChallengeDivProps> = ({ author, description, difficulty, flag, hints, name, numSolves, tags}) => {
     
     return (
         <Card className="w-[400px] h-[288px]">
@@ -51,4 +51,4 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, diff
     );
 }
 
-export default ChallengeCard;
+export default ChallengeDiv;
