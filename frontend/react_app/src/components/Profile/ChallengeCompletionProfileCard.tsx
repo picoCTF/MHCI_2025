@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardBody } from "@heroui/react";
 
-import ChallengeCompletionDiv from "../General/ChallengeCompletionDiv";
+import ChallengeCompletionDiv from "../general/ChallengeCompletionDiv";
 
 interface ChallengeCompletionProfileCardProps {
     numEasyChallenges: number;

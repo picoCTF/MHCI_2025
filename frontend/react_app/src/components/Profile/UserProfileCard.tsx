@@ -1,5 +1,5 @@
 import { Card, CardBody, type ImageProps, Image, Button } from "@heroui/react";
-import Icon from "../General/Icon";
+import Icon from "../general/Icon";
 
 interface UserProfileCardProps {
     avatar: ImageProps;
@@ -21,13 +21,13 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, mont
                     <div className="flex flex-col justify-between">
                         <h1>{username}</h1>
                         <div className="flex flex-row">
-                            <Icon name={"article"} size={"24"} weight={"bold"} color={"default"}/>
+                            <Icon name={"article"} size={"md"} weight={"bold"} color={"default"}/>
                             <p>{country}</p>
                         </div>
                         <p>{"Joined " + monthJoined + ", " + yearJoined}</p>
                     </div>
                     <Button isIconOnly size="sm" radius="full">
-                        <Icon name={"info"} size={"40"} weight={"bold"} color={"default"}/>
+                        <Icon name={"info"} size={"lg"} weight={"bold"} color={"default"}/>
                     </Button>
                 </div>
             </CardBody>

@@ -19,7 +19,9 @@ const StatusChip: React.FC<StatusProp> = ({ isActive }) => {
     }
     
     return (
-        <Chip>{text}</Chip>
+        <Chip className={"bg-" + backgroundColor}>
+            <p className={"font-medium text-" + textColor}>{text}</p>
+        </Chip>
     );
 }
 
@@ -27,12 +29,11 @@ export interface AssignmentStatusCardProps {
     name: string;
     completedChallenges: number;
     totalChallenges: number;
+    id: number;
     isActive: boolean;
     time: TimeStringProps;
     dueDate: DateProps;
 }
-
-// export type AssignmentStatusCardProps<T> = T extends { active: TimeStringProps, expired: string} ? Active : Expired;
 
 const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, dueDate, totalChallenges, isActive, time }) => {
     
@@ -41,17 +42,17 @@ const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, compl
     
     return (
         <Card className="w-full h-fit bg-default-100 p-0 m-0" radius="sm" shadow="none">
-            <CardBody className="flex flex-row justify-between p-4">
+            <CardBody className="flex flex-row justify-between items-center p-4">
                 <div className="flex flex-col w-full h-full gap-2">
                     <div className="flex flex-row gap-4">
-                        <p>{name}</p>
+                        <h4>{name}</h4>
                         <StatusChip isActive={isActive}/>
                     </div>
-                    <p>{isActive ? timeText : dateText}</p>
+                    <p className="text-xs text-default-700">{isActive ? timeText : dateText}</p>
                 </div>
-                <div className="flex flex-col items-end">
-                    <p className="w-min text-right">{completedChallenges + "/" + totalChallenges}</p>
-                    <p className="w-min text-right">submitted</p>
+                <div className="flex flex-col items-end gap-1">
+                    <h4 className="w-min text-right">{completedChallenges + "/" + totalChallenges}</h4>
+                    <p className="w-min text-xs text-default-700 text-right">submitted</p>
                 </div>
             </CardBody>
         </Card>

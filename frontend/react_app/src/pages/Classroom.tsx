@@ -10,7 +10,7 @@ function Classroom() {
             <Breadcrumbs>
                 <BreadcrumbItem href="/classroom">Classroom</BreadcrumbItem>
             </Breadcrumbs>
-            <h1 className="text-3xl font-bold">
+            <h1>
                 Classroom Page Here
             </h1>
         </div>

@@ -1,5 +1,5 @@
 import { Button } from "@heroui/react";
-import AIFeatureCard from "./AIFeatureCard";
+import AIFeatureCard from "../learning-paths/AIFeatureCard";
 
 interface ReflectionCTACardProps {
 }

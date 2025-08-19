@@ -32,11 +32,11 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ author, description, diffic
                 <div className="flex-row">
                     <p>{"Author: " + author}</p>
                     <div className="flex row gap-2">
-                        <Icon name={"person"} size={"20"} weight={"normal"} color={"default"}/>
+                        <Icon name={"person"} size={"xs"} weight={"normal"} color={"default"}/>
                         <p className="text-xs">{"Author: " + author}</p>
                     </div>
                     <div className="flex row gap-2">
-                        <Icon name={"flag"} size={"20"} weight={"normal"} color={"default"}/>
+                        <Icon name={"flag"} size={"xs"} weight={"normal"} color={"default"}/>
                         <div className="flex row gap-1 text-xs">
                             <p>{numSolves + " solves"}</p>
                         </div>

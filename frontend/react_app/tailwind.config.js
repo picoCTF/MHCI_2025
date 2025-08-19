@@ -39,10 +39,28 @@ export default {
         'icon': ['Material Symbols Outlined']
       },
       fontSize: {
-        'icon-xs': "20px",
-        'icon-sm': "24px",
-        'icon-md': "40px",
-        'icon-lg': "48px"
+        tiny: "0.75rem", // text-tiny
+        small: "0.875rem", // text-small
+        medium: "1rem", // text-medium
+        large: "1.125rem", // text-large
+
+        base: "1rem", // text-base
+
+        xs: "0.75rem", // text-xs
+        sm: "0.875rem", // text-sm
+        md: "1rem", // text-md
+        lg: "1.125rem", // text-lg
+        xl: "1.25rem", // text-xl
+        '2xl': "1.5rem", // text-2xl
+        '3xl': "1.875rem", // text-3xl
+        '4xl': "2.25rem", // text-4xl
+        '5xl': "2.875rem", // text-5xl
+
+        'icon-xs': "16px",
+        'icon-sm': "20px",
+        'icon-md': "24px",
+        'icon-lg': "40px",
+        'icon-xl': "48px"
       },
       theme: {
         extends: {
@@ -165,8 +183,6 @@ export default {
         medium: "1rem", // text-medium
         large: "1.125rem", // text-large
 
-        // NOTE - The 2xl - 5xl convention in the Figma file was changed to x2l - x5l here 
-        //    since these vars can't start with a number
         base: "1rem", // text-base
 
         xs: "0.75rem", // text-xs
@@ -174,10 +190,10 @@ export default {
         md: "1rem", // text-md
         lg: "1.125rem", // text-lg
         xl: "1.25rem", // text-xl
-        '2xl': "1.5rem", // text-x2l
-        '3xl': "1.875rem", // text-x3l
-        '4xl': "2.25rem", // text-x4l
-        '5xl': "2.875rem" // text-x5l
+        '2xl': "1.5rem", // text-2xl
+        '3xl': "1.875rem", // text-3xl
+        '4xl': "2.25rem", // text-4xl
+        '5xl': "2.875rem" // text-5xl
       },
       lineHeight: {
         tiny: "1rem", // text-tiny
@@ -283,7 +299,7 @@ export default {
           },
           success: {
             base: "#41BE64",
-            foreground: "#000000",
+            foreground: "#27723C",
             50: "#E0F5E7",
             100: "#C4EBCF",
             200: "#A8E1B8",
@@ -403,7 +419,7 @@ export default {
           },
           success: {
             base: "#41BE64",
-            foreground: "#FFFFFF",
+            foreground: "#A8E1B8",
             50: "#0D2614",
             100: "#174424",
             200: "#27723C",

@@ -1,12 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article,award_star,book,build,calendar,check,close,code,extension,flag,home,import_contacts,info,key,language,memory,mode_heat,notifications,person,search,smart_display,star&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article,award_star,book,build,calendar,cancel,check,check_circle,close,code,extension,flag,home,import_contacts,info,key,language,memory,mode_heat,notifications,person,search,smart_display,star&display=block');
 
-/*The tailwind lines need to be here for Tailwind (and the HeroUI library) to work in the app*/
+/*The @tailwind lines need to be here for Tailwind (and the HeroUI library) to work in the app*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* The @base sets rules globally for the text. The @apply rule sets the font sizes and colors */
+@layer base {
+  h1 {
+    @apply text-4xl;
+    font-family: "Geist Mono";
+    font-weight: 600;
+    text-align: start;
+  }
+  h2 { 
+    @apply text-2xl;
+    font-family: "Geist Mono";
+    font-weight: 600;
+    text-align: start; 
+  }
+  h3 {
+    @apply text-xl;
+    font-family: "Geist Mono";
+    font-weight: 600;
+    text-align: start;
+  }
+  h4 {
+    @apply text-lg;
+    font-family: "Geist";
+    font-weight: 700;
+    text-align: start;
+  }
+  h5 {
+    @apply text-base;
+    font-family: "Geist Mono";
+    font-weight: normal;
+    text-align: start;
+    @apply text-default-500;
+  }
+  p {
+    @apply text-sm;
+    font-family: "Geist";
+    font-weight: normal;
+    text-align: start;
+  }
+  body {
+    @apply text-base;
+    font-family: "Geist";
+    text-align: start;
+  }
+}
+
+/* body {
   font: 1em "Geist";
 }
 
@@ -14,10 +60,13 @@ h1 {
   font-family: "Geist Mono";
   font-size: var(--text-4xl);
   font-weight: 600;
+  text-align: start;
 }
 
 h2 {
   font-family: "Geist Mono";
+  font-size: var(--text-xl);
+  font-weight: 600;
 }
 
 h3 {
@@ -28,4 +77,4 @@ p {
   font-family: "Geist";
   font-weight: 500;
   font-size: "light";
-}
+} */

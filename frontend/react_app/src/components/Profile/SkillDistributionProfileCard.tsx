@@ -1,5 +1,5 @@
-import { Card, CardBody, CardHeader } from "@heroui/react";
-import Icon from "../General/Icon";
+import { Card, CardBody } from "@heroui/react";
+import Icon from "../general/Icon";
 
 interface SkillDistributionProfileCardProps {
     

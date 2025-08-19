@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from "@heroui/react";
+import { Card, CardBody } from "@heroui/react";
 import ResourceLinkCard from "./ResourceLinkCard";
 
 interface WalkthroughSummaryCardProps extends React.PropsWithChildren {

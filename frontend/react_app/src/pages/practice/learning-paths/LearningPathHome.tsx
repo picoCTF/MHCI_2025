@@ -1,14 +1,7 @@
 import "../../Page.css";
 import Header from "../../../components/General/PageNavbar";
-import LearningPathCard, { type LearningPathCardProps } from "../../../components/LearningPaths/LearningPathCard";
+import LearningPathCard, { type LearningPathCardProps } from "../../../components/learning-paths/LearningPathCard";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
-import PrimerResourceCard from "../../../components/General/PrimerResourceCard";
-// import ResourceLinkCard from "../../components/General/ResourceLinkCard";
-import VideoResourceCard from "../../../components/General/VideoResourceCard";
-import WalkthroughSummaryCard from "../../../components/General/WalkthroughSummaryCard";
-import ApproachComparisonCard from "../../../components/General/ApproachComparisonCard";
-import ReflectionCTACard from "../../../components/General/ReflectionCTACard";
-import ReflectionEntryCard from "../../../components/LearningPaths/ReflectionEntryCard";
 
 export interface LearningPathsHomeProps {
     paths: LearningPathCardProps[];
@@ -35,7 +28,7 @@ const LearningPathsHome: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                     </Breadcrumbs>
 
                     <div className="flex flex-col w-full gap-3 text-left">
-                        <h2 className="font-mono-600 text-xl">
+                        <h2>
                             Learning paths
                         </h2>
                         <p>Improve your cybersecurity skills with step-by-step learning</p>

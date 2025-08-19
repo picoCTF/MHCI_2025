@@ -41,7 +41,7 @@ const DifficultyChip: React.FC<DifficultyProp> = ({ Enum }) => {
 
     return (
         <Chip className={"flex bg-" + getDifficultyChipColor(Enum) + " text-" + getDifficultyTextColor(Enum)} size="sm">
-            <p className="text-xs">{getDifficultyChipName(Enum)}</p>
+            <p className="font-medium">{getDifficultyChipName(Enum)}</p>
         </Chip>
     );
 }

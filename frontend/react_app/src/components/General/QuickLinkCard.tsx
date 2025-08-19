@@ -7,6 +7,7 @@ export interface QuickLinkCardProps {
     name: string;
     description: string;
     icon: IconProps["name"];
+    id: number;
     link: string;
 }
 
@@ -53,7 +54,7 @@ const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ name, description, icon, 
             <CardBody className="flex flex-row w-full h-fit p-0 gap-6">
                 <IconCard background={"secondary"} icon={icon}/>
                 <div className="flex flex-col gap-1">
-                    <h2>{name}</h2>
+                    <h3>{name}</h3>
                     <p>{description}</p>
                 </div>
             </CardBody>

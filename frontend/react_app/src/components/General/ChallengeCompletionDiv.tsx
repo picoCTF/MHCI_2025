@@ -48,7 +48,7 @@ const ChallengeCompletionDiv: React.FC<ChallengeCompletionDivProps> = ({ numEasy
                     <p>Easy</p>
                 </div>
             </div>
-            <div className={"flex flex-col justify-start items-start w-[" + (numEasyChallenges / totalNumChallenges * 100) + "%] h-fit"}>
+            <div className={"flex flex-col justify-start items-start w-[" + (numMediumChallenges / totalNumChallenges * 100) + "%] h-fit"}>
                 <div className="w-full min-w-full bg-warning-500" color={semanticColors.light.warning[500]}/>
                 <div className={getInfoWidthAndHeight()}>
                     <p>{numMediumChallenges}</p>
@@ -56,10 +56,10 @@ const ChallengeCompletionDiv: React.FC<ChallengeCompletionDivProps> = ({ numEasy
                     <p>Medium</p>
                 </div>
             </div>
-            <div className={"flex flex-col justify-start items-start w-[" + (numEasyChallenges / totalNumChallenges * 100) + "%] h-fit"}>
+            <div className={"flex flex-col justify-start items-start w-[" + (numHardChallenges / totalNumChallenges * 100) + "%] h-fit"}>
                 <div className="w-full min-w-full bg-danger-500" color={semanticColors.light.danger[500]}/>
                 <div className={getInfoWidthAndHeight()}>
-                    <p>{numEasyChallenges}</p>
+                    <p>{numHardChallenges}</p>
                     <div className={"w-[" + getUnderlineWidth(numHardChallenges) + "] h-[5px] radius-full"} color={semanticColors.light.success[500]}/>
                     <p>Hard</p>
                 </div>

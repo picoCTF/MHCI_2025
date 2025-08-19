@@ -1,6 +1,6 @@
 import { Card, CardBody, Tab, Tabs } from "@heroui/react";
 import ActivitySummaryCard from "./Activity/ActivitySummaryCard";
-import Icon from "../General/Icon";
+import Icon from "../general/Icon";
 
 interface ActivityProfileCardProps {
     numSolves: number;
@@ -30,7 +30,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                             <p>{solveText}</p>
                         </div>
                         <div className="flex flex-row w-fit h-fit">
-                            <Icon name={"mode_heat"} size={"48"} weight={"normal"} color={"primary"}/>
+                            <Icon name={"mode_heat"} size={"lg"} weight={"normal"} color={"primary"}/>
                             <div>
                                 <h2>{streakLength}</h2>
                                 <p>{streakText}</p>

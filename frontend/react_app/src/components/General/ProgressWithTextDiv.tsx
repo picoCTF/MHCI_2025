@@ -12,8 +12,8 @@ const ProgressWithTextDiv: React.FC<ProgressWithTextDivProps> = ({ color, ariaLa
 
     return (
         <div className="flex flex-row w-full h-fit place-center gap-3">
-            <Progress className="flex w-full" size="md" color={color} aria-label={ariaLabel} value={value}/>
-            <p className="flex flex-row w-max h-fit">{endingText}</p>
+            <Progress className="flex w-full self-center" size="md" color={color} aria-label={ariaLabel} value={value}/>
+            <p className="font-mono text-inline whitespace-nowrap text-default-500">{endingText}</p>
         </div>
     );
 }
