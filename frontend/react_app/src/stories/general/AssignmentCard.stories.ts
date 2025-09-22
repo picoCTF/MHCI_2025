@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import AssignmentCard from '../../components/General/AssignmentCard';
+import AssignmentCard from '../../components/general/AssignmentCard';
 
 const meta = {
   title: 'General/AssignmentCard',

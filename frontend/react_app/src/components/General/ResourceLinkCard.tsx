@@ -22,6 +22,7 @@ const ResourceLinkCard: React.FC<ResourceLinkCardProps> = ({ name, link, icon })
                     <p>{icon}</p>
                     <p>{name}</p>
                 </div>
+                {/* NEED_ICON */}
                 <p>ARROWICON</p>
             </CardBody>
         </Card>

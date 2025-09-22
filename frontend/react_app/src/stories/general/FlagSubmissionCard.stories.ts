@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import FlagSubmissionCard from '../../components/General/FlagSubmissionCard';
+import FlagSubmissionCard from '../../components/general/FlagSubmissionCard';
 
 // import { fn } from 'storybook/test';
 

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 // import { fn } from 'storybook/test';
 
 import { mockHomepage } from '../../mock-data/HomeData';
-import LearningPathsListDiv from '../../components/Homepage/LearningPathsListDiv';
+import LearningPathsListDiv from '../../components/homepage/LearningPathsListDiv';
 
 const meta = {
   title: 'Homepage/LearningPathsListDiv',

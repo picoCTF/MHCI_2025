@@ -10,6 +10,7 @@ const VideoResourceCard: React.FC<VideoResourceCardProps> = ({ description, yout
         <Card className="w-[706px] min-w-[706px] h-fit min-h-fit border-small m-0 p-6" radius="md" shadow="none">
             <CardBody className="flex flex-col h-fit min-h-fit p-0 gap-6">
                 <div className="flex flex-row gap-3">
+                    {/* NEED_ICON */}
                     <p>ICON</p>
                     <p>Video Tutorial</p>
                 </div>

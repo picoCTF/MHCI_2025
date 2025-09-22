@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import HintAccordion from '../../components/General/HintAccordion';
+import HintAccordion from '../../components/general/HintAccordion';
 
 // import { fn } from 'storybook/test';
 

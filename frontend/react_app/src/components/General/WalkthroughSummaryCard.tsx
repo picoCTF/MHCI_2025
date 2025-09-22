@@ -11,6 +11,7 @@ const WalkthroughSummaryCard: React.FC<WalkthroughSummaryCardProps> = ({ summary
         <Card className="w-[706px] min-w-[706px] h-fit min-h-fit p-6 m-0 border-small" radius="md" shadow="none">
             <CardBody className="flex flex-col h-fit min-h-fit p-0 gap-6">
                 <div className="flex flex-row gap-3">
+                    {/* NEED_ICON */}
                     <p>ICON</p>
                     <p>Official Walkthrough Summary</p>
                 </div>

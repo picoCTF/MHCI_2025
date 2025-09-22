@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import ActivityProfileCard from '../../components/Profile/ActivityProfileCard';
+import ActivityProfileCard from '../../components/profile/ActivityProfileCard';
 
 const meta = {
   title: 'Profile/ActivityProfileCard',

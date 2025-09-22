@@ -1,11 +1,11 @@
 import "./Page.css";
 
-import Header from "../components/General/PageNavbar";
-import LearningPathsListDiv, { type LearningPathsListDivProps } from "../components/Homepage/LearningPathsListDiv";
-import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/Homepage/QuickLinksListCard";
-import ClassroomListDiv, { type ClassroomListDivProps } from "../components/Homepage/ClassroomListDiv";
-import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/Homepage/ProfileSummaryDiv";
+import Header from "../components/general/PageNavbar";
 import AssignmentsDueListDiv, { type AssignmentsDueListDivProps } from "../components/Homepage/AssignmentsDueListDiv";
+import ClassroomListDiv, { type ClassroomListDivProps } from "../components/Homepage/ClassroomListDiv";
+import LearningPathsListDiv, { type LearningPathsListDivProps } from "../components/Homepage/LearningPathsListDiv";
+import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/Homepage/ProfileSummaryDiv";
+import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/Homepage/QuickLinksListCard";
 
 export interface HomepageProps {
     assignmentsList: AssignmentsDueListDivProps;
@@ -28,7 +28,7 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, classroomsList, le
                     numStreakWeeks={profileSummary.numStreakWeeks}/>
                 <div className="flex flex-col gap-14">
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
-                    <AssignmentsDueListDiv list={assignmentsList.list}/>
+                    <AssignmentsDueListDiv isFocused={assignmentsList.isFocused} list={assignmentsList.list}/>
                     {/* API_NEEDED - Get the classrooms managed by the user */}
                     <ClassroomListDiv list={classroomsList.list}/>
                     {/* API_NEEDED - Get the user's suggested learning paths */}

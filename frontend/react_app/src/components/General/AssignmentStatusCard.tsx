@@ -6,6 +6,7 @@ interface StatusProp {
     isActive: boolean;
 }
 
+//Shows the status of an assignment (Active or Expired)
 const StatusChip: React.FC<StatusProp> = ({ isActive }) => {
     
     let backgroundColor = "danger-50";
@@ -35,8 +36,10 @@ export interface AssignmentStatusCardProps {
     dueDate: DateProps;
 }
 
+//Need_Icon
 const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, dueDate, totalChallenges, isActive, time }) => {
     
+    //Get the time left for and due date of the assignment 
     let timeText = "Due in " + getTimeString(time["days"], time["hours"], time["minutes"], time["seconds"]);
     let dateText = "Due date: " + getDateString(dueDate["day"], dueDate["month"], dueDate["year"]);
     

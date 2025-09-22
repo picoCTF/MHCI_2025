@@ -9,6 +9,7 @@ const ReflectionCTACard: React.FC<ReflectionCTACardProps> = ({}) => {
         <AIFeatureCard>
             <div className="flex flex-col gap-4">
                 <div className="flex flex-row gap-3 p-0 m-0">
+                    {/* NEED_ICON */}
                     <p>ICON</p>
                     <p>Want to get better? Reflect and compare your strategy!</p>
                 </div>

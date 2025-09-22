@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import WalkthroughSummaryCard from '../../components/General/WalkthroughSummaryCard';
+import WalkthroughSummaryCard from '../../components/general/WalkthroughSummaryCard';
 
 // import { fn } from 'storybook/test';
 

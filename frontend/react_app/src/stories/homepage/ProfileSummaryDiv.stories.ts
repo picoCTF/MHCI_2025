@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { mockHomepage } from '../../mock-data/HomeData';
-import ProfileSummaryDiv from '../../components/Homepage/ProfileSummaryDiv';
+import ProfileSummaryDiv from '../../components/homepage/ProfileSummaryDiv';
 
 // import { fn } from 'storybook/test';
 

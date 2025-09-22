@@ -2,6 +2,7 @@ import type { HomepageProps } from "../pages/Home";
 
 export const mockHomepage: HomepageProps = {
     assignmentsList: {
+        isFocused: true,
         list: [
             {
                 name: "Assignment 1",

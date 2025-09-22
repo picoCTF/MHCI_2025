@@ -1,6 +1,6 @@
 import "./Page.css";
 import Header from "../components/General/PageNavbar";
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
+// import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 import ChallengeCompletionProfileCard from "../components/Profile/ChallengeCompletionProfileCard";
 import SkillDistributionProfileCard from "../components/Profile/SkillDistributionProfileCard";
 import BadgesProfileCard from "../components/Profile/BadgesProfileCard";

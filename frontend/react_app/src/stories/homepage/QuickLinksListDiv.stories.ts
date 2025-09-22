@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { mockHomepage } from '../../mock-data/HomeData';
-import QuickLinksListDiv from '../../components/Homepage/QuickLinksListCard';
+import QuickLinksListDiv from '../../components/homepage/QuickLinksListCard';
 
 // import { fn } from 'storybook/test';
 

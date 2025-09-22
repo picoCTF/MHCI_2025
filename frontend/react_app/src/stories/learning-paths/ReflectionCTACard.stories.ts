@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import ReflectionCTACard from '../../components/General/ReflectionCTACard';
+import ReflectionCTACard from '../../components/general/ReflectionCTACard';
 
 // import { fn } from 'storybook/test';
 

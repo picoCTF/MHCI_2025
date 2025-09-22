@@ -1,6 +1,6 @@
 import { Card, CardBody } from "@heroui/react";
 import RecentAssignmentsCard from "./RecentAssignmentsCard";
-import PendingMemberRequestsCard from "../homepage/PendingMemberRequestsCard";
+import PendingMemberRequestsCard from "../Homepage/PendingMemberRequestsCard";
 import { type AssignmentStatusCardProps } from "./AssignmentStatusCard";
 import type { PendingMemberRequestCardProps } from "./PendingMemberRequestCard";
 

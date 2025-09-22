@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import PendingMemberRequestsCard from '../../components/Homepage/PendingMemberRequestsCard';
+import PendingMemberRequestsCard from '../../components/homepage/PendingMemberRequestsCard';
 import { mockHomepage } from '../../mock-data/HomeData';
 
 // import { fn } from 'storybook/test';
