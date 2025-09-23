@@ -1,12 +1,15 @@
-interface BadgeSVGProps {
+export interface BadgeSVGProps {
     shape: 1 | 2 | 3 | 4 | 5;
     color: 1 | 2 | 3 | 4 | 5;
     icon: string;
+    id: string;
     title: string;
 }
 
+//The Badge SVGs that can be obtained by the user
 const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, color, icon, title }) => {
 
+    //Get the shape of the badge
     let backgroundFilledPathShape = "";
     let backgroundStrokePathShape = "";
 
@@ -29,6 +32,7 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, color, icon, title }) => {
         }
     }
 
+    // Get the color of the background and stroke
     let fillColor = "";
     let strokeColor = "";
 
@@ -57,6 +61,7 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, color, icon, title }) => {
         }
     }
 
+    //Layer the different parts of the badge image as an SVG
     return (
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="170" height="183" viewBox="0 0 170 183" fill="none">

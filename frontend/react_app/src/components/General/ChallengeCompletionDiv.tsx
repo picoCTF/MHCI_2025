@@ -8,8 +8,10 @@ export interface ChallengeCompletionDivProps {
     showAdditionalInfo: boolean;
 }
 
+// Shows the amount of challenges a user has completed
 const ChallengeCompletionDiv: React.FC<ChallengeCompletionDivProps> = ({ numEasyChallenges, numMediumChallenges, numHardChallenges, totalNumChallenges, showAdditionalInfo }) => {
 
+    // Gets the width of the underline underneath the labels for each set of challenges
     function getUnderlineWidth(numChallenges: number) {
 
         if(numChallenges >= 1000)
@@ -30,6 +32,7 @@ const ChallengeCompletionDiv: React.FC<ChallengeCompletionDivProps> = ({ numEasy
         }
     }
 
+    // Only show the info if it is requested
     function getInfoWidthAndHeight() {
         if(showAdditionalInfo)
         {

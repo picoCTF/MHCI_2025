@@ -2,6 +2,7 @@ import { Pagination, PaginationItem } from "@heroui/react";
 
 interface ActivityPaginationProps {}
 
+// FIX_ME
 const ActivityPagination: React.FC<ActivityPaginationProps> = ({ }) => {
 
     return (

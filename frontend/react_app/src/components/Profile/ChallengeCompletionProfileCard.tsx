@@ -2,13 +2,14 @@ import { Card, CardHeader, CardBody } from "@heroui/react";
 
 import ChallengeCompletionDiv from "../general/ChallengeCompletionDiv";
 
-interface ChallengeCompletionProfileCardProps {
+export interface ChallengeCompletionProfileCardProps {
     numEasyChallenges: number;
     numMediumChallenges: number;
     numHardChallenges: number;
     totalNumChallenges: number;
 }
 
+// Shows the number of challenges the user has completed
 const ChallengeCompletionProfileCard: React.FC<ChallengeCompletionProfileCardProps> = ({ numEasyChallenges, numMediumChallenges, numHardChallenges, totalNumChallenges }) => {
 
     return (

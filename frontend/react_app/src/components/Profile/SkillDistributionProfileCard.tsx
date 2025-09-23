@@ -1,7 +1,7 @@
 import { Card, CardBody } from "@heroui/react";
 import Icon from "../general/Icon";
 
-interface SkillDistributionProfileCardProps {
+export interface SkillDistributionProfileCardProps {
     
     numBinaryExploitationChallenges: number;
     totalBinaryExploitChallenges: number;
@@ -22,11 +22,13 @@ interface SkillDistributionProfileCardProps {
     totalWebExploitChallenges: number;
 }
 
+// A hexagonal visualization of the user's progress
 const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> = ({ numBinaryExploitationChallenges, 
     numCryptographyChallenges, numForensicsChallenges, numGeneralSkillsChallenges, numReverseEngChallenges, numWebExploitChallenges,
     totalBinaryExploitChallenges, totalCryptographyChallenges, totalForensicsChallenges, totalGeneralSkillsChallenges,
     totalReverseEngChallenges, totalWebExploitChallenges }) => {
 
+    // Calculate the positions needed to draw the user's progress
     const svgSize = 372;
     const armLength = svgSize/2
     const svgCenter = svgSize/2;
@@ -68,6 +70,7 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
     let webExploitXPos = svgCenter + webExploitArmLength*Math.cos(Math.PI/2);
     let webExploitYPos = svgCenter + webExploitArmLength*-Math.sin(Math.PI/2);
     
+    // Draw the hexagon and place the text
     return (
         <Card className="flex w-[825px] h-fit border-small p-10" radius="md" shadow="none">
             <CardBody className="flex flex-col w-full min-w-fit h-fit p-0 m-0 gap-8">
@@ -88,27 +91,27 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
                     </svg>
                     <div className="absolute flex flex-row w-fit h-fit gap-1">
                         <p>Web Exploitation</p>
-                        <Icon name={"language"} size={"40"} weight={"normal"} color={"primary"}/>
+                        <Icon name={"language"} size={"lg"} weight={"normal"} color={"primary"}/>
                     </div>
                     <div className="absolute flex flex-row w-fit h-fit gap-1">
                         <p>Cryptography</p>
-                        <Icon name={"key"} size={"40"} weight={"normal"} color={"primary"}/>
+                        <Icon name={"key"} size={"lg"} weight={"normal"} color={"primary"}/>
                     </div>
                     <div className="absolute flex flex-row w-fit h-fit gap-1">
                         <p>Forensics</p>
-                        <Icon name={"search"} size={"40"} weight={"normal"} color={"primary"}/>
+                        <Icon name={"search"} size={"lg"} weight={"normal"} color={"primary"}/>
                     </div>
                     <div className="absolute flex flex-row w-fit h-fit gap-1">
                         <p>General Skills</p>
-                        <Icon name={"code"} size={"40"} weight={"normal"} color={"primary"}/>
+                        <Icon name={"code"} size={"lg"} weight={"normal"} color={"primary"}/>
                     </div>
                     <div className="absolute flex flex-row w-fit h-fit gap-1">
                         <p>Reverse Engineering</p>
-                        <Icon name={"build"} size={"40"} weight={"normal"} color={"primary"}/>
+                        <Icon name={"build"} size={"lg"} weight={"normal"} color={"primary"}/>
                     </div>
                     <div className="absolute flex flex-row w-fit h-fit gap-1">
                         <p>Binary Exploitation</p>
-                        <Icon name={"memory"} size={"40"} weight={"normal"} color={"primary"}/>
+                        <Icon name={"memory"} size={"lg"} weight={"normal"} color={"primary"}/>
                     </div>
                 </div>
             </CardBody>

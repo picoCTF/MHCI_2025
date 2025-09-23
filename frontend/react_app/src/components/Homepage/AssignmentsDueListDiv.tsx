@@ -6,6 +6,9 @@ export interface AssignmentsDueListDivProps {
     list: AssignmentCardProps[];
 }
 
+// Shows the assignments that are due soon.
+// These should be in the order that they are due, with the most urgent assignments closest to the front
+// This needs a pagination components when it is being used on desktop
 const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused, list }) => {
     return (
         <div className="flex flex-col w-[811px] h-fit gap-6">

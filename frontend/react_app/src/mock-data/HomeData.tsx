@@ -46,6 +46,7 @@ export const mockHomepage: HomepageProps = {
         ]
     },
     classroomsList: {
+        isFocused: false,
         list: [
             {
                 name: "Classroom 1",
@@ -107,11 +108,12 @@ export const mockHomepage: HomepageProps = {
         ]
     },
     learningPathsList: {
+        isFocused: false,
         list: [
             {
                 description: "This is the description of the learning path.",
                 difficulty: {
-                    Enum: 1
+                    difficultyLvl: "Easy"
                 },
                 hasProgress: false,
                 link: "/practice/learning-paths",
@@ -137,6 +139,7 @@ export const mockHomepage: HomepageProps = {
         username: "Username123"
     },
     quickLinksList: {
+        isFocused: true,
         list: [
             {
                 name: "Community",
@@ -165,7 +168,7 @@ export const mockHomepage: HomepageProps = {
                 icon: "book",
                 link: "/resources/primer",
                 id: 3
-            }, 
+            },
             {
                 name: "Videos",
                 description: "This is the Videos description.",

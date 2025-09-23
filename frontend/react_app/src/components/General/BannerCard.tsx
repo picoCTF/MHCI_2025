@@ -8,6 +8,7 @@ interface BannerCardProps {
     image?: boolean;
 }
 
+// A banner appears at the top of the home page or in other locations on the platform
 const BannerCard: React.FC<BannerCardProps> = ({ buttonText, title, eventTime, image }) => {
 
     return (

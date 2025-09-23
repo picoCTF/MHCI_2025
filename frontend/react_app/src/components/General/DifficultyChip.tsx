@@ -1,47 +1,48 @@
 import { Chip } from "@heroui/react";
 
 export interface DifficultyProp {
-    Enum: 1 | 2 | 3;
+    difficultyLvl: "Easy" | "Medium" | "Hard";
 }
 
-function getDifficultyChipColor(difficulty: number) {
+function getDifficultyChipColor(difficulty: string) {
     switch(difficulty){
-        case 1:
+        case "Easy":
             return "success-50";
-        case 2:
+        case "Medium":
             return "warning-50";
         default:
             return "danger-50";
     }
 }
 
-function getDifficultyTextColor(difficulty: number) {
+function getDifficultyTextColor(difficulty: string) {
     switch(difficulty){
-        case 1:
+        case "Easy":
             return "success-700";
-        case 2:
+        case "Medium":
             return "warning-700";
         default:
             return "danger-700";
     }
 }
 
-function getDifficultyChipName(difficulty: number) {
-    switch(difficulty){
-        case 1:
-            return "Easy";
-        case 2:
-            return "Medium";
-        default:
-            return "Hard";
-    }
-}
+// function getDifficultyChipName(difficulty: string) {
+//     switch(difficulty){
+//         case 1:
+//             return "Easy";
+//         case 2:
+//             return "Medium";
+//         default:
+//             return "Hard";
+//     }
+// }
 
-const DifficultyChip: React.FC<DifficultyProp> = ({ Enum }) => {
+// A chip the shows the given difficulty using correct colors 
+const DifficultyChip: React.FC<DifficultyProp> = ({ difficultyLvl }) => {
 
     return (
-        <Chip className={"flex bg-" + getDifficultyChipColor(Enum) + " text-" + getDifficultyTextColor(Enum)} size="sm">
-            <p className="font-medium">{getDifficultyChipName(Enum)}</p>
+        <Chip className={"flex bg-" + getDifficultyChipColor(difficultyLvl) + " text-" + getDifficultyTextColor(difficultyLvl)} size="sm">
+            <p className="font-medium">{difficultyLvl}</p>
         </Chip>
     );
 }

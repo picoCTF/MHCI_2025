@@ -1,8 +1,10 @@
 import { Button, Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure, Table, TableHeader, TableBody, TableColumn, TableRow, TableCell, getKeyValue } from "@heroui/react";
 
+// This should be changed to a const with an interface so it's consistent with the rest of the codebase
 function NotificationModal() {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
+    //API_NEEDED - currently have mock data for notifs
     const rows = [
     {
         key: "1",
@@ -53,6 +55,11 @@ function NotificationModal() {
     //     forEachChild
     // }
 
+    // A modal for notifications
+    // Needs data from the API and we need to decide what actions the user can take
+    // Read the notification and dismiss them
+    // Sort them with the most recent at the top
+    // GRAPHICS_ISSUE - The modal does not look correct at all.
     return (
         <>
             <Button color="default" variant="flat" radius="full" isIconOnly onPress={onOpen}>

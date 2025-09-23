@@ -1,7 +1,9 @@
 import { Switch } from "@heroui/react";
 // import { MaterialSymbol } from "react-material-symbols";
 
-
+// This is untested
+// It is supposed to switch the entire interface from light mode to dark mode when clicked
+// It might be nice to have the light/dark mode match the user's platform settings, so if their desktop is set to dark mode, then the website will be in dark mode
 function LightDarkModeSwitch() {
     return (
         <Switch 

@@ -1,7 +1,7 @@
 import { Card, CardBody, type ImageProps, Image, Button } from "@heroui/react";
 import Icon from "../general/Icon";
 
-interface UserProfileCardProps {
+export interface UserProfileCardProps {
     avatar: ImageProps;
     country: string;
     monthJoined: string;
@@ -9,6 +9,7 @@ interface UserProfileCardProps {
     yearJoined: string;
 }
 
+// Show the user's profile information
 const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, monthJoined, username, yearJoined }) => {
 
     return (

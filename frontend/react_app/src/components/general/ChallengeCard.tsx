@@ -5,7 +5,7 @@ import HintAccordion, { type HintAccordionProps } from "./HintAccordion";
 import FlagSubmissionCard from "./FlagSubmissionCard";
 import Icon from "./Icon";
 
-interface ChallengeDivProps {
+interface ChallengeCardProps {
     author: string;
     category: "Binary_Exploit" | "Cryptography" | "Forensics" | "General_Skills" | "Reverse_Engineering" | "Web_Exploit";
     description: string;
@@ -17,14 +17,14 @@ interface ChallengeDivProps {
     tags: string[];
 }
 
-const ChallengeDiv: React.FC<ChallengeDivProps> = ({ author, description, difficulty, flag, hints, name, numSolves, tags}) => {
+const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, flag, hints, name, numSolves, tags}) => {
     
     return (
         <Card className="w-[400px] h-[288px]">
             <CardHeader className="flex flex-col w-full h-fit justify-left">
                 <h2>{name}</h2>
                 <div className="flex flex-row">
-                    <DifficultyChip Enum={difficulty["Enum"]}/>
+                    <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
                 </div>
             </CardHeader>
             <CardBody>
@@ -51,4 +51,4 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ author, description, diffic
     );
 }
 
-export default ChallengeDiv;
+export default ChallengeCard;

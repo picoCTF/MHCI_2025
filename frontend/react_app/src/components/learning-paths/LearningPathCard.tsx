@@ -44,11 +44,6 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
     );
 }
 
-//Should make this a script or something that's consistent across all card components that can be pressed
-// const onLearningPathCardPress = ((link: string) => {
-    
-// })
-
 const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, link, name, numCompletedChallenges, numSolves, numTotalChallenges }) => {
 
     return (
@@ -58,7 +53,7 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
                 <div className="flex flex-col w-full h-fit gap-6">
                     <div className="flex flex-row w-full justify-between">
                         <IconCard background={"primary"} icon={"book"}/>
-                        <DifficultyChip Enum={difficulty["Enum"]}/>
+                        <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
                     </div>
                     <div className="flex flex-col w-full h-fit items-start gap-2">
                         <h3>{name}</h3>

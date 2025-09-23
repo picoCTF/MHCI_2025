@@ -30,11 +30,11 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, classroomsList, le
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
                     <AssignmentsDueListDiv isFocused={assignmentsList.isFocused} list={assignmentsList.list}/>
                     {/* API_NEEDED - Get the classrooms managed by the user */}
-                    <ClassroomListDiv list={classroomsList.list}/>
+                    <ClassroomListDiv isFocused={classroomsList.isFocused} list={classroomsList.list}/>
                     {/* API_NEEDED - Get the user's suggested learning paths */}
-                    <LearningPathsListDiv list={learningPathsList.list} />
+                    <LearningPathsListDiv isFocused={learningPathsList.isFocused} list={learningPathsList.list} />
                     {/* API_NEEDED - Get the quick links that are relevant to the user */}
-                    <QuickLinksListCard list={quickLinksList.list}/>
+                    <QuickLinksListCard isFocused={quickLinksList.isFocused} list={quickLinksList.list}/>
                 </div>
             </div>
         </div>

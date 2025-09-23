@@ -36,7 +36,7 @@ export interface AssignmentStatusCardProps {
     dueDate: DateProps;
 }
 
-//Need_Icon
+//NEED_ICON
 const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, dueDate, totalChallenges, isActive, time }) => {
     
     //Get the time left for and due date of the assignment 

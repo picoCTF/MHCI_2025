@@ -10,7 +10,7 @@ import type { DifficultyProp } from "../general/DifficultyChip";
 function renderCell(item: LearningPathsTableElement) {
     let icon: IconProps["name"] = "book";
 
-    let difficulty = "Easy";
+    let difficulty = item.difficulty.difficultyLvl;
 
     let backgroundColor: SemanticColorProps["color"] = "secondary";
 
@@ -25,21 +25,6 @@ function renderCell(item: LearningPathsTableElement) {
         isDisabled = true;
         icon = "check";
         backgroundColor = "success";
-    }
-
-    switch(item.difficulty.Enum) {
-        case 1: {
-            difficulty = "Easy";
-            break;
-        }
-        case 2: {
-            difficulty = "Medium";
-            break;
-        }
-        default: {
-            difficulty = "Hard";
-            break;
-        }
     }
 
     // API_NEEDED - Navigate to the correct page for the given challenge/learning resource
@@ -63,7 +48,7 @@ function renderCell(item: LearningPathsTableElement) {
             </div>
         </Button>
     );
-  };
+};
 
 interface LearningPathsTableElement {
     contentType: "Challenge" | "Learning Resource";

@@ -6,6 +6,7 @@ interface ActivityAmountDivProps {
     highestRecordedDailyActivity?: number;
 }
 
+// FIX_ME - refer to Figma to see what is needed here
 const ActivityTable: React.FC<ActivityAmountDivProps> = ({ type, highestRecordedDailyActivity }) => {
 
     switch (type) {

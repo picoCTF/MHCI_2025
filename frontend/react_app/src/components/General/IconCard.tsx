@@ -7,6 +7,8 @@ export interface IconCardProps {
     icon: IconProps["name"];
 }
 
+// A card containing an icon
+// Generally used in challenge cards or learning path cards to show the category of the challenges
 const IconCard: React.FC<IconCardProps> = ({ background, icon }) => {
 
     return (

@@ -12,18 +12,16 @@ export interface ClassroomCardProps {
     pendingMemberUsernames: PendingMemberRequestCardProps[];
 }
 
+// This card shows a classroom along with its assignments, members, and member requests
 const ClassroomCard: React.FC<ClassroomCardProps> = ({ name, numMembers, recentAssignments, pendingMemberUsernames }) => {
     return (
         <Card className="flex w-full h-fit border-small p-6" radius="md" shadow="none">
             <CardBody className="flex p-0 m-0 gap-4">
                 <div className="flex flex-col items-start gap-3">
-                    {/* API_NEEDED - Get the classroom name and number of members */}
                     <h3>{name}</h3>
                     <p>{numMembers + " Members"}</p>
                 </div>
-                {/* API_NEEDED - Get the usernames of the people that want to join this classroom */}
                 <PendingMemberRequestsCard pendingRequests={pendingMemberUsernames}/>
-                {/* API_NEEDED - Get the IDs of assignments the user recently viewed in this classroom */}
                 <RecentAssignmentsCard list={recentAssignments}/>
             </CardBody>
         </Card>
