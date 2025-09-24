@@ -11,7 +11,7 @@ export interface ClassroomListDivProps {
 // This needs a pagination components when it is being used on desktop
 const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused, list }) => {
     return (
-        <div className="flex flex-col w-[811px] min-w-[811px] h-fit items-start gap-4">
+        <div className="flex flex-col w-[811px] min-w-[811px] h-fit items-start gap-4 bg-transparent">
             <div className="flex flex-row w-full min-w-full justify-between">
                 {/* API_NEEDED - Get the classroom name and number of members */}
                 <h3>Manage your classrooms</h3>

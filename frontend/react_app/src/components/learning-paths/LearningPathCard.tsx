@@ -48,7 +48,7 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
 
     return (
         /* API_NEEDED - Get the link to the learning path and navigate there on press */
-        <Card className="flex w-full min-w-[384px] max-w-[400px] h-[288px] border-small p-6" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
+        <Card className="flex w-full min-w-[384px] max-w-[400px] h-[288px] border-small p-6 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
             <CardBody className="flex flex-col w-full h-full justify-between p-0 m-0">
                 <div className="flex flex-col w-full h-fit gap-6">
                     <div className="flex flex-row w-full justify-between">

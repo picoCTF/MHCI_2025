@@ -6,16 +6,22 @@ import ClassroomListDiv, { type ClassroomListDivProps } from "../components/Home
 import LearningPathsListDiv, { type LearningPathsListDivProps } from "../components/Homepage/LearningPathsListDiv";
 import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/Homepage/ProfileSummaryDiv";
 import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/Homepage/QuickLinksListCard";
+import type { BannerCardProps } from "../components/general/BannerCard";
+import BannerCard from "../components/general/BannerCard";
 
 export interface HomepageProps {
+    // moduleList: (AssignmentsDueListDivProps | ClassroomListDivProps | LearningPathsListDivProps | QuickLinksListDivProps)[];
     assignmentsList: AssignmentsDueListDivProps;
+    banners: BannerCardProps[];
     classroomsList: ClassroomListDivProps;
     learningPathsList: LearningPathsListDivProps;
     profileSummary: ProfileSummaryDivProps;
     quickLinksList: QuickLinksListDivProps;
 }
 
-const Homepage: React.FC<HomepageProps> = ({ assignmentsList, classroomsList, learningPathsList, profileSummary, quickLinksList }) => {
+const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroomsList, learningPathsList, profileSummary, quickLinksList }) => {
+
+    // Figure out the state of the user and determine which elements to show them based on that state
 
     return (
         <div className="Page">
@@ -29,6 +35,7 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, classroomsList, le
                     numBadges={profileSummary.numBadges} 
                     numStreakWeeks={profileSummary.numStreakWeeks}/>
                 <div className="flex flex-col gap-14">
+                    {banners.map((banner) => (<BannerCard key={banner.id} id={banner.id} buttonText={banner.buttonText} eventTime={banner.eventTime} image={banner.image} title={banner.title}/>))}
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
                     <AssignmentsDueListDiv isFocused={assignmentsList.isFocused} list={assignmentsList.list}/>
                     {/* API_NEEDED - Get the classrooms managed by the user */}

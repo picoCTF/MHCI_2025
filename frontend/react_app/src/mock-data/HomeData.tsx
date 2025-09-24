@@ -45,6 +45,12 @@ export const mockHomepage: HomepageProps = {
             }
         ]
     },
+    banners: [{
+        buttonText: "Test",
+        id: "123",
+        title: "This is a test",
+        eventTime: "May 20th, 2026"
+    }],
     classroomsList: {
         isFocused: false,
         list: [

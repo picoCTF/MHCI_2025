@@ -8,7 +8,7 @@ export interface PendingMemberRequestCardProps {
 
 const PendingMemberRequestCard: React.FC<PendingMemberRequestCardProps> = ({ username }) => {
     return (
-        <Card className="flex w-full h-fit bg-default-100" radius="sm" shadow="none">
+        <Card className="flex w-full h-fit bg-content2-base" radius="sm" shadow="none">
             <CardBody className="flex flex-row justify-between items-center p-4 m-0">
                 <p className="flex w-full font-base">{username}</p>
                 <div className="flex flex-row gap-4">

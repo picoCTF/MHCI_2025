@@ -20,7 +20,7 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
             <div className="flex flex-col h-fit gap-6">
                 <h3>Your Progress</h3>
                 <div className="flex flex-col h-fit gap-4">
-                    <Card className="flex flex-col h-fit border-small gap-4 p-5" radius="sm" shadow="none">
+                    <Card className="flex flex-col h-fit border-small gap-4 p-5 bg-content1-base" radius="sm" shadow="none">
                         <CardBody className="flex flex-col h-fit gap-2 p-0 m-0">
                             <div className="flex flex-row w-full place-start gap-2">
                                 <Icon name={"mode_heat"} size={"md"} color={"primary"}/>
@@ -36,7 +36,7 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
                             </Card>
                         </CardBody>
                     </Card>
-                    <Card className="flex h-fit border-small p-5" radius="sm" shadow="none">
+                    <Card className="flex h-fit border-small p-5 bg-content1-base" radius="sm" shadow="none">
                         <CardBody className="flex flex-col h-fit gap-2 p-0 m-0">
                             <div className="flex flex-row w-full place-start gap-2">
                                 <Icon name={"award_star"} size={"md"} color={"primary"}/>
@@ -46,7 +46,7 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
                             <h5>Badges Earned</h5>
                         </CardBody>
                     </Card>
-                    <Card className="flex h-fit border-small p-5" radius="sm" shadow="none">
+                    <Card className="flex h-fit border-small p-5 bg-content1-base" radius="sm" shadow="none">
                         <CardBody className="flex flex-col h-fit gap-2 p-0 m-0">
                             <div className="flex flex-row w-full place-start gap-2">
                                 <Icon name={"extension"} size={"md"} color={"primary"}/>

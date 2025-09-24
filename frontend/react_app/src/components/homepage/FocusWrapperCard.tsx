@@ -20,9 +20,14 @@ const FocusWrapperCard: React.FC<FocusWrapperCardProps> = ({ children, isFocused
     }
 
     return (
-        <Card className={"flex flex-col m-0 " + bgColor + " w-" + (width ? "[" + width + "px]" : "full")+ " h-fit p-" + padding}>
-            <CardBody>
-                {children}
+        <Card className={"flex flex-col m-0 overflow-clip " + bgColor + " w-" + (width ? "[" + width + "px]" : "full")+ " h-fit p-" + padding}>
+            <CardBody className="flex w-full h-full scroll-smooth overflow-visible">
+                <div className={"scroll-m-" + padding}>
+                    {children}
+                </div>
+                {/* <div className="w-full h-full overflow-visible">
+                    
+                </div> */}
             </CardBody>
         </Card>
     );

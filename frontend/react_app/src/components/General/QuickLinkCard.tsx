@@ -18,39 +18,8 @@ const onQuickLinkCardPress = ((link: string) => {
 
 const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ name, description, icon, link }) => {
 
-    // switch (id) {
-    //     case "community": {
-    //         link = "/resources/community";
-    //         // icon = "";
-    //         break;
-    //     }
-    //     case "external-resources": {
-    //         link = "/resources/community";
-    //         break;
-    //     }
-    //     case "learning-guides": {
-    //         link = "/resources/learning-guides";
-    //         // icon = "";
-    //         break;
-    //     }
-    //     case "primer": {
-    //         link = "/resources/primer";
-    //         // icon = "";
-    //         break;
-    //     }
-    //     case "videos": {
-    //         link = "/resources/videos";
-    //         // icon = "";
-    //         break;
-    //     }
-    //     default: {
-    //         link = "#";
-    //         break;
-    //     }
-    // }
-
     return (
-        <Card className="w-[340px] min-w-[340px] h-fit border-medium m-0 p-6" isPressable isHoverable shadow="none" onPress={() => onQuickLinkCardPress(link)}>
+        <Card className="w-[340px] min-w-[340px] h-fit border-medium m-0 p-6 bg-content1-base" isPressable isHoverable shadow="none" onPress={() => onQuickLinkCardPress(link)}>
             <CardBody className="flex flex-row w-full h-fit p-0 gap-6">
                 <IconCard background={"secondary"} icon={icon}/>
                 <div className="flex flex-col gap-1">

@@ -35,11 +35,12 @@ function App() {
     	<HeroUIProvider navigate={navigate} useHref={useHref}>
       		<Routes>
         		<Route path='/' element={<Outlet/>}>
-          			<Route index={true} element={<Home assignmentsList={mockHomepage.assignmentsList} 
-            			classroomsList={mockHomepage.classroomsList} 
-            			learningPathsList={mockHomepage.learningPathsList} 
-            			profileSummary={mockHomepage.profileSummary} 
-            			quickLinksList={mockHomepage.quickLinksList}/>}/>
+          			<Route index={true} element={<Home assignmentsList={mockHomepage.assignmentsList}
+						banners={mockHomepage.banners}
+						classroomsList={mockHomepage.classroomsList}
+						learningPathsList={mockHomepage.learningPathsList}
+						profileSummary={mockHomepage.profileSummary}
+						quickLinksList={mockHomepage.quickLinksList}/>}/>
           			<Route path='classroom' element={<Classroom/>}/>
           			<Route path='compete' element={<Compete/>}/>
           			<Route path='practice' element={<Outlet/>}>
