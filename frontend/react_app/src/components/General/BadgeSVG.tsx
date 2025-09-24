@@ -1,7 +1,9 @@
+import type { IconProps } from "./Icon";
+
 export interface BadgeSVGProps {
     shape: 1 | 2 | 3 | 4 | 5;
     color: 1 | 2 | 3 | 4 | 5;
-    icon: string;
+    icon: IconProps["name"];
     id: string;
     title: string;
 }

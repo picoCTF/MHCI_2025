@@ -21,6 +21,8 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, classroomsList, le
         <div className="Page">
             <Header/>
             <div className="flex flex-row justify-around gap-24 py-20">
+                {/* API_NEEDED - Get the user's username, challenges completed, number of active days, number of badges earned, 
+                    and number of weeeks in their streak */}
                 <ProfileSummaryDiv username={profileSummary.username} 
                     challengesCompleted={profileSummary.challengesCompleted} 
                     numActiveDays={profileSummary.numActiveDays} 

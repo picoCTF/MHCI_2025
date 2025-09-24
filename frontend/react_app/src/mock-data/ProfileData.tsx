@@ -1,35 +1,41 @@
 import type { ProfileProps } from "../pages/Profile";
 
-// Update Profile Mock Data
+//All mock data for the profile page
 export const mockProfile: ProfileProps = {
-    activityCard: {
-        numSolves: 0,
-        streakLength: 0
+    activity: {
+        numSolves: 39,
+        streakLength: 3
     },
-    skillDistributionCard: {
-        numBinaryExploitationChallenges: 0,
-        totalBinaryExploitChallenges: 0,
-        numCryptographyChallenges: 0,
-        totalCryptographyChallenges: 0,
-        numForensicsChallenges: 0,
-        totalForensicsChallenges: 0,
-        numGeneralSkillsChallenges: 0,
-        totalGeneralSkillsChallenges: 0,
-        numReverseEngChallenges: 0,
-        totalReverseEngChallenges: 0,
-        numWebExploitChallenges: 0,
-        totalWebExploitChallenges: 0
+    skillDistribution: {
+        numBinaryExploitationChallenges: 10,
+        totalBinaryExploitChallenges: 100,
+        numCryptographyChallenges: 5,
+        totalCryptographyChallenges: 70,
+        numForensicsChallenges: 10,
+        totalForensicsChallenges: 153,
+        numGeneralSkillsChallenges: 15,
+        totalGeneralSkillsChallenges: 89,
+        numReverseEngChallenges: 15,
+        totalReverseEngChallenges: 40,
+        numWebExploitChallenges: 5,
+        totalWebExploitChallenges: 75
     },
-    challengeCompletionCard: {
-        numEasyChallenges: 0,
-        numMediumChallenges: 0,
-        numHardChallenges: 0,
-        totalNumChallenges: 0
+    challengeCompletion: {
+        numEasyChallenges: 20,
+        numMediumChallenges: 30,
+        numHardChallenges: 10,
+        totalNumChallenges: 60
     },
-    badgesCard: {
-        selectedBadges: []
+    badges: {
+        selectedBadges: [{
+            shape: 3,
+            color: 3,
+            icon: "flag",
+            id: "1",
+            title: "BadgeTitle"
+        }]
     },
-    userCard: {
+    userInfo: {
         avatar: {},
         country: "United States",
         monthJoined: "August",

@@ -8,27 +8,49 @@ import ActivityProfileCard, { type ActivityProfileCardProps } from "../component
 import UserProfileCard, { type UserProfileCardProps } from "../components/Profile/UserProfileCard";
 
 export interface ProfileProps {
-    activityCard: ActivityProfileCardProps;
-    skillDistributionCard: SkillDistributionProfileCardProps;
-    challengeCompletionCard: ChallengeCompletionProfileCardProps;
-    badgesCard: BadgesProfileCardProps;
-    userCard: UserProfileCardProps;
+    activity: ActivityProfileCardProps;
+    skillDistribution: SkillDistributionProfileCardProps;
+    challengeCompletion: ChallengeCompletionProfileCardProps;
+    badges: BadgesProfileCardProps;
+    userInfo: UserProfileCardProps;
 }
 
-const Profile: React.FC<ProfileProps> = ({ activityCard, badgesCard, challengeCompletionCard, skillDistributionCard, userCard }) => {
+const Profile: React.FC<ProfileProps> = ({ activity, badges, challengeCompletion, skillDistribution, userInfo }) => {
 
     return (
         <div className="Page">
             <Header/>
             <div className="flex flex-row w-[1200px] gap-24 py-20">
                 <div className="flex flex-col w-fit gap-10">
-                    <UserProfileCard avatar={{}} country={"United States"} monthJoined={"May"} username={"mgibney"} yearJoined={"2025"}/>
+                    {/* API_NEEDED - Get the info for the user's profile card: avatar, country, month joined, username, and year joined */}
+                    <UserProfileCard avatar={userInfo.avatar} country={userInfo.country} monthJoined={userInfo.monthJoined} 
+                        username={userInfo.username} yearJoined={userInfo.yearJoined}/>
                 </div>
                 <div className="flex flex-col w-fit gap-10">
-                    <ActivityProfileCard numSolves={10} streakLength={5}/>
-                    <ChallengeCompletionProfileCard numEasyChallenges={5} numMediumChallenges={10} numHardChallenges={3} totalNumChallenges={18}/>
-                    <SkillDistributionProfileCard numBinaryExploitationChallenges={1} totalBinaryExploitChallenges={10} numCryptographyChallenges={2} totalCryptographyChallenges={10} numForensicsChallenges={3} totalForensicsChallenges={10} numGeneralSkillsChallenges={0} totalGeneralSkillsChallenges={10} numReverseEngChallenges={5} totalReverseEngChallenges={10} numWebExploitChallenges={5} totalWebExploitChallenges={10}/>
-                    <BadgesProfileCard selectedBadges={badgesCard.selectedBadges}/>
+                    {/* API_NEEDED - Get the number of challenges the user has solved and the length of their current streak */}
+                    <ActivityProfileCard numSolves={activity.numSolves} streakLength={activity.streakLength}/>
+                    {/* API_NEEDED - Get the number of easy, medium, and hard challenges the user has completed and 
+                        the total number of problems they've completed*/}
+                    <ChallengeCompletionProfileCard numEasyChallenges={challengeCompletion.numEasyChallenges} 
+                        numMediumChallenges={challengeCompletion.numMediumChallenges} 
+                        numHardChallenges={challengeCompletion.numHardChallenges} 
+                        totalNumChallenges={challengeCompletion.totalNumChallenges}/>
+                    {/* API_NEEDED - Get the amount of challenges the user has completed in each category, 
+                        along with the total amount of challenges in each category */}
+                    <SkillDistributionProfileCard numBinaryExploitationChallenges={skillDistribution.numBinaryExploitationChallenges} 
+                        totalBinaryExploitChallenges={skillDistribution.totalBinaryExploitChallenges} 
+                        numCryptographyChallenges={skillDistribution.numCryptographyChallenges} 
+                        totalCryptographyChallenges={skillDistribution.totalCryptographyChallenges} 
+                        numForensicsChallenges={skillDistribution.numForensicsChallenges} 
+                        totalForensicsChallenges={skillDistribution.totalForensicsChallenges} 
+                        numGeneralSkillsChallenges={skillDistribution.numGeneralSkillsChallenges} 
+                        totalGeneralSkillsChallenges={skillDistribution.totalGeneralSkillsChallenges} 
+                        numReverseEngChallenges={skillDistribution.numReverseEngChallenges} 
+                        totalReverseEngChallenges={skillDistribution.totalReverseEngChallenges} 
+                        numWebExploitChallenges={skillDistribution.numWebExploitChallenges} 
+                        totalWebExploitChallenges={skillDistribution.totalWebExploitChallenges}/>
+                    {/* API_NEEDED - Get the badges the user has chosen to display on their profile */}
+                    <BadgesProfileCard selectedBadges={badges.selectedBadges}/>
                 </div>
             </div>
         </div>
