@@ -13,7 +13,7 @@ export interface BannerCardProps {
 const BannerCard: React.FC<BannerCardProps> = ({ buttonText, title, eventTime, image }) => {
 
     return (
-        <Card className="w-full bg-primary-50 p-6 rounded-medium border-small border-default-200" radius="md" shadow="none">
+        <Card className="w-full bg-primary-50 p-6 rounded-medium border-small border-default-300" radius="md" shadow="none">
             <CardBody className="flex flex-row justify-between">
                 <div className="flex">
                     <Image>{image}</Image>

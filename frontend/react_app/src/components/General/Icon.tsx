@@ -13,7 +13,7 @@ export interface IconProps {
 // When adding new icons, import them into the index.css file and then add their name as an option in the interface
 const Icon: React.FC<IconProps> = ({name, size, weight, color, colorValue}) =>  {
     return (
-        <span className={"font-icon text-icon-" + size + (weight ? (" font-" + weight) : "" ) + " text-" + color + (colorValue ? ("-" + colorValue) : "")}>{name}</span>
+        <p className={"flex font-icon text-icon-" + size + (weight ? (" font-" + weight) : "" ) + " text-" + color + (colorValue ? ("-" + colorValue) : "")}>{name}</p>
     );
 }
 
