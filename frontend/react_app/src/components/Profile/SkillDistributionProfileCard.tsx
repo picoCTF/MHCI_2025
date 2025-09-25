@@ -72,10 +72,10 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
     
     // Draw the hexagon and place the text
     return (
-        <Card className="flex w-[825px] h-fit border-small p-10" radius="md" shadow="none">
+        <Card className="flex w-full h-[400px] bg-content1-base border-small p-10" radius="md" shadow="none">
             <CardBody className="flex flex-col w-full min-w-fit h-fit p-0 m-0 gap-8">
                 <h2>Skill Distribution</h2>
-                <div className="relative w-full h-[400px]">
+                <div className="relative w-full h-fit">
                     <svg className="absolute inset-0" xmlns="http://www.w3.org/2000/svg" width={svgSize} height={svgSize} viewBox={"0 0 " + (svgSize+2) + " " + (svgSize+2)} fill="none">
                         <polygon className="stroke-default-200" points={svgTopPointX + " " + svgTopPointY + "," + svgTopRightPointX + " " + svgTopRightPointY + "," + svgBottomRightPointX + " " + svgBottomRightPointY + "," + svgBottomPointX + " " + svgBottomPointY + "," + svgBottomLeftPointX + " " + svgBottomLeftPointY + "," + svgTopLeftPointX + " " + svgTopLeftPointY}/>
                         <path className="stroke-default-200" d={"M" + svgTopPointX + " " + svgTopPointY + " L " + svgBottomPointX + " " + svgBottomPointY}/>

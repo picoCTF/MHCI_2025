@@ -1,7 +1,7 @@
 import { Link } from "@heroui/react";
 import ClassroomCard, { type ClassroomCardProps } from "../general/ClassroomCard";
-import type { FocusWrapperCardProps } from "./FocusWrapperCard";
-import FocusWrapperCard from "./FocusWrapperCard";
+import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
+import FocusWrapperCard from "../general/FocusWrapperCard";
 
 export interface ClassroomListDivProps {
     isFocused: FocusWrapperCardProps['isFocused'];
@@ -18,9 +18,7 @@ const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused, list }) 
                 <Link href="/classroom">Open Classrooms</Link>
             </div>
             <FocusWrapperCard isFocused={isFocused}>
-                <div className="flex flex-col w-full min-w-full">
-                    {list.map((item) => <ClassroomCard key={item.id} id={item.id} name={item.name} numMembers={item.numMembers} recentAssignments={item.recentAssignments} pendingMemberUsernames={item.pendingMemberUsernames}/>)}
-                </div>
+                {list.map((item) => <ClassroomCard key={item.id} id={item.id} name={item.name} numMembers={item.numMembers} recentAssignments={item.recentAssignments} pendingMemberUsernames={item.pendingMemberUsernames}/>)}
             </FocusWrapperCard>
         </div>
     );

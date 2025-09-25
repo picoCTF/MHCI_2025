@@ -28,7 +28,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ name, classroomName, co
     }
 
     return (
-        <Card className="flex w-fit min-w-fit h-fit border-small bg-default-50 p-6" radius="md" shadow="none">
+        <Card className="flex w-full min-w-fit h-fit border-small bg-default-50 p-6" radius="md" shadow="none" aria-label={name + " assignment card"}>
             <CardBody className="flex flex-col w-fit h-fit gap-6 p-0">
                 <div className={"flex flex-row w-full text-" + timeColor + " gap-1 items-center"}>
                     {isLastDay ? <Icon name={"info"} size={"xs"} color={"danger"}/> : undefined}

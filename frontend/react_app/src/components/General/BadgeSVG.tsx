@@ -70,7 +70,7 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, color, icon, title }) => {
                 <g>
                     {/* Badge Background */}
                     <path d={backgroundFilledPathShape} fill={fillColor}/>
-                    <path d={backgroundStrokePathShape} stroke={strokeColor} stroke-width="2" stroke-miterlimit="10"/>
+                    <path d={backgroundStrokePathShape} stroke={strokeColor} strokeWidth="2" strokeMiterlimit="10"/>
                 </g>
                 <g>
                     {/* Badge Decoration */}

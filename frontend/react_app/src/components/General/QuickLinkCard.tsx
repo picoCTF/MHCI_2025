@@ -16,7 +16,7 @@ const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ name, description, icon, 
     const navigate = useNavigate();
 
     return (
-        <Card className="w-[340px] min-w-[340px] h-fit border-medium m-0 p-6 bg-content1-base" isPressable isHoverable shadow="none" onPress={() => navigate(link)}>
+        <Card className="w-[340px] min-w-[340px] h-full min-h-fit border-medium m-0 p-6 bg-content1-base" isPressable isHoverable shadow="none" onPress={() => navigate(link)}>
             <CardBody className="flex flex-row w-full h-fit p-0 gap-6">
                 <IconCard background={"secondary"} icon={icon}/>
                 <div className="flex flex-col gap-1">

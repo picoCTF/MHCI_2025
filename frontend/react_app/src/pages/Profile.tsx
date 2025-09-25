@@ -20,8 +20,8 @@ const Profile: React.FC<ProfileProps> = ({ activity, badges, challengeCompletion
     return (
         <div className="Page">
             <Header/>
-            <div className="flex flex-row w-[1200px] gap-24 py-20">
-                <div className="flex flex-col w-fit gap-10">
+            <div className="flex flex-row w-full gap-10 py-16 px-32">
+                <div className="flex flex-col w-[50%] gap-10">
                     {/* API_NEEDED - Get the info for the user's profile card: avatar, country, month joined, username, and year joined */}
                     <UserProfileCard avatar={userInfo.avatar} country={userInfo.country} monthJoined={userInfo.monthJoined} 
                         username={userInfo.username} yearJoined={userInfo.yearJoined}/>

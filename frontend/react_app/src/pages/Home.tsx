@@ -11,12 +11,12 @@ import BannerCard from "../components/general/BannerCard";
 
 export interface HomepageProps {
     // moduleList: (AssignmentsDueListDivProps | ClassroomListDivProps | LearningPathsListDivProps | QuickLinksListDivProps)[];
-    assignmentsList: AssignmentsDueListDivProps;
+    assignmentsList: AssignmentsDueListDivProps["list"];
     banners: BannerCardProps[];
-    classroomsList: ClassroomListDivProps;
-    learningPathsList: LearningPathsListDivProps;
+    classroomsList: ClassroomListDivProps["list"];
+    learningPathsList: LearningPathsListDivProps["list"];
     profileSummary: ProfileSummaryDivProps;
-    quickLinksList: QuickLinksListDivProps;
+    quickLinksList: QuickLinksListDivProps["list"];
 }
 
 const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroomsList, learningPathsList, profileSummary, quickLinksList }) => {
@@ -29,21 +29,24 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroom
             <div className="flex flex-row justify-around gap-24 py-20">
                 {/* API_NEEDED - Get the user's username, challenges completed, number of active days, number of badges earned, 
                     and number of weeeks in their streak */}
-                <ProfileSummaryDiv username={profileSummary.username} 
-                    challengesCompleted={profileSummary.challengesCompleted} 
-                    numActiveDays={profileSummary.numActiveDays} 
-                    numBadges={profileSummary.numBadges} 
-                    numStreakWeeks={profileSummary.numStreakWeeks}/>
-                <div className="flex flex-col gap-14">
+                <div className="flex flex-col w-[286px]">
+                    <ProfileSummaryDiv username={profileSummary.username} 
+                        challengesCompleted={profileSummary.challengesCompleted} 
+                        numActiveDays={profileSummary.numActiveDays} 
+                        numBadges={profileSummary.numBadges} 
+                        numStreakWeeks={profileSummary.numStreakWeeks}/>
+                </div>
+                <div className="flex flex-col gap-14 w-[811px]">
+                    {/* API_NEEDED - Get any announcements */}
                     {banners.map((banner) => (<BannerCard key={banner.id} id={banner.id} buttonText={banner.buttonText} eventTime={banner.eventTime} image={banner.image} title={banner.title}/>))}
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
-                    <AssignmentsDueListDiv isFocused={assignmentsList.isFocused} list={assignmentsList.list}/>
+                    <AssignmentsDueListDiv isFocused={true} list={assignmentsList}/>
                     {/* API_NEEDED - Get the classrooms managed by the user */}
-                    <ClassroomListDiv isFocused={classroomsList.isFocused} list={classroomsList.list}/>
+                    <ClassroomListDiv isFocused={false} list={classroomsList}/>
                     {/* API_NEEDED - Get the user's suggested learning paths */}
-                    <LearningPathsListDiv isFocused={learningPathsList.isFocused} list={learningPathsList.list} />
+                    <LearningPathsListDiv isFocused={false} list={learningPathsList} />
                     {/* API_NEEDED - Get the quick links that are relevant to the user */}
-                    <QuickLinksListCard isFocused={quickLinksList.isFocused} list={quickLinksList.list}/>
+                    <QuickLinksListCard isFocused={false} list={quickLinksList}/>
                 </div>
             </div>
         </div>

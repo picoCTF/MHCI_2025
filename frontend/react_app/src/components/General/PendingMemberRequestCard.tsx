@@ -16,7 +16,7 @@ const PendingMemberRequestCard: React.FC<PendingMemberRequestCardProps> = ({ use
                         <Icon name={"cancel"} size={"md"} color={"danger"} colorValue="500"/>
                     </Button>
                     {/* <Icon name={"check_circle"} size={"md"} color={"success"}/> */}
-                    <Button className="border-none w-[12px] h-[24px] p-0 m-0 overflow-show" isIconOnly size="sm" radius="full" variant="ghost" color="success">
+                    <Button className="border-none w-fit h-full p-0 m-0 overflow-show" isIconOnly size="sm" radius="full" variant="ghost" color="success">
                         <Icon name={"check_circle"} size={"md"} color={"success"}/>
                     </Button>
                 </div>
