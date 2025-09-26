@@ -1,31 +1,91 @@
+import { commonColors } from "@heroui/react";
 import type { IconProps } from "./Icon";
 
 export interface BadgeSVGProps {
-    shape: 1 | 2 | 3 | 4 | 5;
-    color: 1 | 2 | 3 | 4 | 5;
+    shape: 1 | 2;
+    bgColor: 1 | 2 | 3;
+    strokeColor: 1 | 2 | 3;
+    textColor: 1 | 2 | 3;
     icon: IconProps["name"];
     id: string;
     title: string;
+
+    width?: number;
+    height?: number;
 }
 
 //The Badge SVGs that can be obtained by the user
-const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, color, icon, title }) => {
+const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textColor, icon, title, width, height }) => {
 
     //Get the shape of the badge
     let backgroundFilledPathShape = "";
     let backgroundStrokePathShape = "";
 
+    let svgWidth = 170;
+    let svgHeight = 180;
+
+    if(width)
+    {
+        svgWidth = width;
+    }
+
+    if(height)
+    {
+        svgHeight = height;
+    }
+    
+
     switch (shape){
         case 1:
         {
-            backgroundFilledPathShape = "M153.16 0H16.84C7.49381 0 0 7.71896 0 17.346V141.456C0 148.915 4.63101 155.507 11.4512 157.848L81.9267 182.48C83.9475 183.173 86.0525 183.173 88.0733 182.48L158.549 157.848C165.369 155.507 170 148.915 170 141.456V17.346C169.916 7.71896 162.422 0 153.16 0Z";
-            backgroundStrokePathShape = "M84.9577 178.75C83.5263 178.75 82.0949 178.49 80.6635 178.056L12.8825 154.379C7.49365 152.471 3.87305 147.267 3.87305 141.369V18.2131C3.87305 10.6676 9.85125 4.50977 17.1767 4.50977H152.907C160.233 4.50977 166.211 10.6676 166.211 18.2131V141.369C166.211 147.267 162.59 152.471 157.201 154.379L89.252 178.056C87.8205 178.577 86.3891 178.75 84.9577 178.75Z";
+            backgroundFilledPathShape = (
+                "M 20 0" + 
+                " H " + (svgWidth - 20) + 
+                " Q " + svgWidth + " " + 0 + " " + svgWidth + " " + 20 +
+                " V " + (svgHeight - 35) +
+                " Q " + svgWidth + " " + (svgHeight - 25) + " " + (svgWidth - 15) + " " + (svgHeight - 20) +
+                " L " + (svgWidth / 2 + 5) + " " + (svgHeight - 1) +
+                " Q " + (svgWidth / 2) + " " + svgHeight + " " + (svgWidth / 2 - 5) + " " + (svgHeight - 1) +
+                " L 15 " + (svgHeight - 20) +
+                " Q 0 " + (svgHeight - 25) + " 0 " + (svgHeight - 35) +
+                " V 20" +
+                " Q 0 0 20 0 " +
+                "Z")
+            backgroundStrokePathShape = (
+                "M 20 5" + 
+                " H " + (svgWidth - 20) + 
+                " Q " + (svgWidth - 5) + " " + 5 + " " + (svgWidth - 5) + " " + 20 +
+                " V " + (svgHeight - 40) +
+                " Q " + (svgWidth - 5) + " " + (svgHeight - 30) + " " + (svgWidth - 20) + " " + (svgHeight - 25) +
+                " L " + (svgWidth / 2 + 5) + " " + (svgHeight - 6) +
+                " Q " + (svgWidth / 2) + " " + (svgHeight - 5) + " " + (svgWidth / 2 - 5) + " " + (svgHeight - 6) +
+                " L 20 " + (svgHeight - 25) +
+                " Q 5 " + (svgHeight - 30) + " 5 " + (svgHeight - 40) +
+                " V 20" +
+                " Q 5 5 20 5 " +
+                "Z");
             break;
         }
         case 2:
         {
-            backgroundFilledPathShape = "M138.245 0C147.473 0 155 7.92688 155 17.6437V101.345C155 146.349 120.196 183 77.4595 183C34.8042 183 0 146.434 0 101.345V17.6437C0 7.92688 7.52742 0 16.7546 0H138.245Z";
-            backgroundStrokePathShape = "M15.5631 1.75024H135.516C143.205 1.75024 149.438 8.31336 149.438 16.4107V99.4298C149.438 142.388 116.333 177.25 75.5396 177.25C34.7458 177.25 1.6414 142.388 1.6414 99.4298V16.4959C1.56046 8.31336 7.79284 1.75024 15.5631 1.75024Z";
+            backgroundFilledPathShape = (
+                "M 20 0" + 
+                " H " + (svgWidth - 20) + 
+                " Q " + svgWidth + " " + 0 + " " + svgWidth + " " + 20 +
+                " V " + (svgHeight - svgWidth/2) +
+                " A " + (svgWidth/2) + " " + (svgWidth/2) + " 0 0 1 0 " + (svgHeight - svgWidth/2) +
+                " V 20" +
+                " Q 0 0 20 0 " +
+                "Z")
+            backgroundStrokePathShape = (
+                "M 20 5" + 
+                " H " + (svgWidth - 20) + 
+                " Q " + (svgWidth - 5) + " " + 5 + " " + (svgWidth - 5) + " " + 20 +
+                " V " + (svgHeight - svgWidth/2) +
+                " A " + ((svgWidth-10)/2) + " " + ((svgWidth-10)/2) + " 0 0 1 5 " + (svgHeight - svgWidth/2) +
+                " V 20" +
+                " Q 5 5 20 5 " +
+                "Z")
             break;
         }
         default: 
@@ -36,41 +96,86 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, color, icon, title }) => {
 
     // Get the color of the background and stroke
     let fillColor = "";
-    let strokeColor = "";
+    let lineColor = "";
+    let titleColor = "";
 
-    switch (color) {
+    switch (bgColor) {
         case 1:
         {
             fillColor = "#A8E1B8";
-            strokeColor = "#27723C";
             break;
         }
         case 2:
         {
             fillColor = "#F7B750";
-            strokeColor = "#A5090B";
             break;
         }
         case 3:
         {
             fillColor = "#C9A9E9";
-            strokeColor = "#481878";
             break;
         }
         default: 
         {
+            fillColor = commonColors.zinc[100];
+            break;
+        }
+    }
+
+    switch(strokeColor) {
+        case 1:
+        {
+            lineColor = "#27723C";
+            break;
+        }
+        case 2:
+        {
+            lineColor = "#A5090B";
+            break;
+        }
+        case 3:
+        {
+            lineColor = "#481878";
+            break;
+        }
+        default:
+        {
+            lineColor = commonColors.zinc[400];
+            break;
+        }
+    }
+
+    switch(textColor) {
+        case 1:
+        {
+            titleColor = "#27723C";
+            break;
+        }
+        case 2:
+        {
+            titleColor = "#A5090B";
+            break;
+        }
+        case 3:
+        {
+            titleColor = "#481878";
+            break;
+        }
+        default:
+        {
+            titleColor = commonColors.zinc[700];
             break;
         }
     }
 
     //Layer the different parts of the badge image as an SVG
     return (
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="170" height="183" viewBox="0 0 170 183" fill="none">
+        <div className="justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width={svgWidth} height={svgHeight} viewBox={"0 0 " + svgWidth + " " + svgHeight} fill="none">
                 <g>
                     {/* Badge Background */}
                     <path d={backgroundFilledPathShape} fill={fillColor}/>
-                    <path d={backgroundStrokePathShape} stroke={strokeColor} strokeWidth="2" strokeMiterlimit="10"/>
+                    <path d={backgroundStrokePathShape} stroke={lineColor} strokeWidth="2" strokeMiterlimit="10"/>
                 </g>
                 <g>
                     {/* Badge Decoration */}
@@ -80,7 +185,7 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, color, icon, title }) => {
                 </g>
                 {/* Etc */}
             </svg>
-            <h2>{title}</h2>
+            <h3 style={{color: titleColor, textAlign: "center"}}>{title}</h3>
         </div>
     );
 }
