@@ -15,8 +15,6 @@ const BadgesProfileCard: React.FC<BadgesProfileCardProps> = ({ selectedBadges })
             </CardHeader>
             <CardBody className="flex flex-row w-full h-fit m-0 p-0 justify-between">
                 {selectedBadges.map((item) => <BadgeSVG key={item.id} id={item.id} shape={item.shape} bgColor={item.bgColor} strokeColor={item.strokeColor} textColor={item.textColor} icon={item.icon} title={item.title}/>)}
-                {/* <BadgeSVG shape={1} color={1} icon={"ICON"} title={"Title 1"}/>
-                <BadgeSVG shape={2} color={2} icon={"ICON"} title={"Title 2"}/> */}
             </CardBody>
         </Card>
     );

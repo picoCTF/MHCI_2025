@@ -1,5 +1,6 @@
 import { commonColors } from "@heroui/react";
 import type { IconProps } from "./Icon";
+import Icon from "./Icon";
 
 export interface BadgeSVGProps {
     shape: 1 | 2;
@@ -66,7 +67,7 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
                 "Z");
             break;
         }
-        case 2:
+        default:
         {
             backgroundFilledPathShape = (
                 "M 20 0" + 
@@ -86,10 +87,6 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
                 " V 20" +
                 " Q 5 5 20 5 " +
                 "Z")
-            break;
-        }
-        default: 
-        {
             break;
         }
     }
@@ -173,15 +170,18 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
         <div className="justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width={svgWidth} height={svgHeight} viewBox={"0 0 " + svgWidth + " " + svgHeight} fill="none">
                 <g>
+                    {/* Badge Symbol */}
+                    <text x={svgWidth / 2} y={svgHeight / 2}>
+                        <Icon name={icon} size={"md"} color={"default"}/>
+                    </text>
+                </g>
+                <g>
                     {/* Badge Background */}
                     <path d={backgroundFilledPathShape} fill={fillColor}/>
                     <path d={backgroundStrokePathShape} stroke={lineColor} strokeWidth="2" strokeMiterlimit="10"/>
                 </g>
                 <g>
                     {/* Badge Decoration */}
-                </g>
-                <g>
-                    {/* Badge Symbol */}
                 </g>
                 {/* Etc */}
             </svg>

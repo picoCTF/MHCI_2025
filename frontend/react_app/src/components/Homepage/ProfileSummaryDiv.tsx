@@ -62,7 +62,7 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
                         </CardBody>
                     </Card>
                 </div>
-                <Link href="/profile">Open Profile</Link>
+                <Link className="text-left" href="/profile">Open Profile</Link>
             </div>
         </div>
     );

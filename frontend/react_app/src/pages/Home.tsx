@@ -26,7 +26,7 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroom
     return (
         <div className="Page">
             <Header/>
-            <div className="flex flex-row justify-around gap-24 py-20">
+            <div className="flex flex-row justify-center gap-24 py-20">
                 {/* API_NEEDED - Get the user's username, challenges completed, number of active days, number of badges earned, 
                     and number of weeeks in their streak */}
                 <div className="flex flex-col w-[286px]">
