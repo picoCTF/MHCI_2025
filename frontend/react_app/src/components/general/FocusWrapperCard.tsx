@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export interface FocusWrapperCardProps {
-    children: ReactNode[];
+    children: ReactNode[] | ReactNode;
     isFocused: boolean;
 }
 
@@ -21,16 +21,6 @@ const FocusWrapperCard: React.FC<FocusWrapperCardProps> = ({ children, isFocused
         <div className={"flex flex-row w-full rounded-large gap-6 p-" + padding + " " + bgColor + " overflow-scroll"}>
             {children}
         </div>
-        // <Card className={"flex flex-col m-0 overflow-clip " + bgColor + " w-" + (width ? "[" + width + "px]" : "full")+ " h-fit p-" + padding}>
-        //     <CardBody className="flex w-full h-full scroll-smooth overflow-visible p-0 m-0">
-        //         <div className={"scroll-m-" + padding}>
-        //             {children}
-        //         </div>
-        //         {/* <div className="w-full h-full overflow-visible">
-                    
-        //         </div> */}
-        //     </CardBody>
-        // </Card>
     );
 }
 

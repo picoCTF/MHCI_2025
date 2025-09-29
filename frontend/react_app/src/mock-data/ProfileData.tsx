@@ -43,7 +43,7 @@ export const mockProfile: ProfileProps = {
                 strokeColor: 2,
                 textColor: 2,
                 icon: "flag",
-                id: "1",
+                id: "2",
                 title: "Badge 2"
             },
             {
@@ -52,7 +52,7 @@ export const mockProfile: ProfileProps = {
                 strokeColor: 3,
                 textColor: 3,
                 icon: "flag",
-                id: "1",
+                id: "3",
                 title: "Badge 3"
             },
             {
@@ -61,7 +61,7 @@ export const mockProfile: ProfileProps = {
                 strokeColor: 1,
                 textColor: 1,
                 icon: "flag",
-                id: "1",
+                id: "4",
                 title: "Badge 4"
             }
         ]

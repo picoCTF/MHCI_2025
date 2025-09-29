@@ -5,7 +5,7 @@ import HintAccordion, { type HintAccordionProps } from "./HintAccordion";
 import FlagSubmissionCard from "./FlagSubmissionCard";
 import Icon from "./Icon";
 
-interface ChallengeCardProps {
+export interface ChallengeCardProps {
     author: string;
     category: "Binary_Exploit" | "Cryptography" | "Forensics" | "General_Skills" | "Reverse_Engineering" | "Web_Exploit";
     description: string;

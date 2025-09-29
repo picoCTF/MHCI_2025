@@ -48,7 +48,7 @@ const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, compl
             <CardBody className="flex flex-row justify-between items-center p-4">
                 <div className="flex flex-col w-full h-full gap-2">
                     <div className="flex flex-row gap-4">
-                        <h4>{name}</h4>
+                        <h3 className="font-sans font-semibold">{name}</h3>
                         <StatusChip isActive={isActive}/>
                     </div>
                     <p className="text-xs text-default-700">{isActive ? timeText : dateText}</p>

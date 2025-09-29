@@ -62,7 +62,9 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
                         </CardBody>
                     </Card>
                 </div>
-                <Link className="text-left" href="/profile">Open Profile</Link>
+                {/* NOTE - Setting the text color to primary here changed it for all of the Links on the home page and the Icons in the profile summary section. 
+                    Why??? This is not a problem as those are supposed to be the primary color, but it's strange */}
+                <Link className="text-left text-primary" href="/profile">Open Profile</Link>
             </div>
         </div>
     );

@@ -8,6 +8,7 @@ import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/Ho
 import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/Homepage/QuickLinksListCard";
 import type { BannerCardProps } from "../components/general/BannerCard";
 import BannerCard from "../components/general/BannerCard";
+import ContinuationDiv from "../components/homepage/ContinuationDiv";
 
 export interface HomepageProps {
     // moduleList: (AssignmentsDueListDivProps | ClassroomListDivProps | LearningPathsListDivProps | QuickLinksListDivProps)[];
@@ -41,6 +42,7 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroom
                     {banners.map((banner) => (<BannerCard key={banner.id} id={banner.id} buttonText={banner.buttonText} eventTime={banner.eventTime} image={banner.image} title={banner.title}/>))}
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
                     <AssignmentsDueListDiv isFocused={true} list={assignmentsList}/>
+                    <ContinuationDiv type="path" isFocused={false} lastItem={learningPathsList[0]}/>
                     {/* API_NEEDED - Get the classrooms managed by the user */}
                     <ClassroomListDiv isFocused={false} list={classroomsList}/>
                     {/* API_NEEDED - Get the user's suggested learning paths */}
