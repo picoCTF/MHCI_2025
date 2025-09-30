@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import LearningPathCard from '../../components/LearningPaths/LearningPathCard.tsx';
+import LearningPathCard from '../../components/learning-paths/LearningPathCard.tsx';
 
 
 const meta = {

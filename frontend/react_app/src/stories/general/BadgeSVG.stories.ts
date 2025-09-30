@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import BadgeSVG from '../../components/General/BadgeSVG';
+import BadgeSVG from '../../components/general/BadgeSVG';
 
 const meta = {
   title: 'General/BadgeSVG',

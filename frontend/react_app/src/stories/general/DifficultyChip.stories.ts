@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import DifficultyChip from '../../components/General/DifficultyChip';
+import DifficultyChip from '../../components/general/DifficultyChip';
 
 // import { fn } from 'storybook/test';
 

@@ -2,11 +2,12 @@ import { Card, CardBody, Tab, Tabs } from "@heroui/react";
 import ActivitySummaryCard from "./Activity/ActivitySummaryCard";
 import Icon from "../general/Icon";
 
-interface ActivityProfileCardProps {
+export interface ActivityProfileCardProps {
     numSolves: number;
     streakLength: number;
 }
 
+// FIX_ME - fill this in with the items in the Activity folder
 const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, streakLength}) => {
 
     let solveText = "Solve";
@@ -20,7 +21,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
     }
 
     return (
-        <Card className="flex w-[825px] h-fit border-small p-10" radius="md" shadow="none">
+        <Card className="flex w-full h-fit bg-content1-base border-small p-10" radius="md" shadow="none">
             <CardBody className="flex flex-col p-0 m-0">
                 <div className="flex flex-row justify-between">
                     <h2>Activity</h2>

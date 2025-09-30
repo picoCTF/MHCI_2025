@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import PageNavbar from '../../components/General/PageNavbar';
+import PageNavbar from '../../components/general/PageNavbar';
 
 // import { fn } from 'storybook/test';
 

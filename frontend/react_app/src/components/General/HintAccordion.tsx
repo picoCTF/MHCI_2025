@@ -4,6 +4,7 @@ export interface HintAccordionProps {
     list: string[];
 }
 
+// A collapsible list of hints for a challenge
 const HintAccordion: React.FC<HintAccordionProps> = ({ list }) =>  {
     return (
         <Accordion>

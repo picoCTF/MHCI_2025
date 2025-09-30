@@ -36,6 +36,7 @@ const LearningPathsHome: React.FC<LearningPathsHomeProps> = ({ paths }) => {
 
                     <div className="flex flex-col w-full h-fit items-start justify-left text-left gap-6">
                         <h3>Continue learning</h3>
+                        {/* TODO: For some reason, changing this div to a FocusWrapperCard messes up the components on the homepage (as of 9/25/25)*/}
                         <div className="flex flex-row w-full max-w-[1200px] rounded-large gap-6 p-8 bg-primary-100 overflow-scroll">
                             {continuingPaths.map((path) => (<LearningPathCard key={path.id} description={path.description}
                                 difficulty={path.difficulty} hasProgress={path.hasProgress} id={path.id}

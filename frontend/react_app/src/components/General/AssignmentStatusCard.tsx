@@ -6,6 +6,7 @@ interface StatusProp {
     isActive: boolean;
 }
 
+//Shows the status of an assignment (Active or Expired)
 const StatusChip: React.FC<StatusProp> = ({ isActive }) => {
     
     let backgroundColor = "danger-50";
@@ -30,22 +31,24 @@ export interface AssignmentStatusCardProps {
     completedChallenges: number;
     totalChallenges: number;
     id: number;
-    isActive: boolean;
+    isActive: StatusProp["isActive"];
     time: TimeStringProps;
     dueDate: DateProps;
 }
 
+//NEED_ICON
 const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, dueDate, totalChallenges, isActive, time }) => {
     
+    //Get the time left for and due date of the assignment 
     let timeText = "Due in " + getTimeString(time["days"], time["hours"], time["minutes"], time["seconds"]);
     let dateText = "Due date: " + getDateString(dueDate["day"], dueDate["month"], dueDate["year"]);
     
     return (
-        <Card className="w-full h-fit bg-default-100 p-0 m-0" radius="sm" shadow="none">
+        <Card className="w-full h-fit bg-content2-base p-0 m-0" radius="sm" shadow="none">
             <CardBody className="flex flex-row justify-between items-center p-4">
                 <div className="flex flex-col w-full h-full gap-2">
                     <div className="flex flex-row gap-4">
-                        <h4>{name}</h4>
+                        <h3 className="font-sans font-semibold">{name}</h3>
                         <StatusChip isActive={isActive}/>
                     </div>
                     <p className="text-xs text-default-700">{isActive ? timeText : dateText}</p>

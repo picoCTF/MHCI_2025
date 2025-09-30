@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import BannerCard from '../../components/General/BannerCard';
+import BannerCard from '../../components/general/BannerCard';
 
 const meta = {
   title: 'General/BannerCard',

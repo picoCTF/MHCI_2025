@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import PendingMemberRequestCard from '../../components/General/PendingMemberRequestCard';
+import PendingMemberRequestCard from '../../components/general/PendingMemberRequestCard';
 
 // import { fn } from 'storybook/test';
 

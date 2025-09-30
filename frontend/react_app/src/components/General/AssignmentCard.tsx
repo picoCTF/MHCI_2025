@@ -1,8 +1,8 @@
-import { Card, CardBody, Button } from "@heroui/react";
-import ProgressWithTextDiv from "./ProgressWithTextDiv";
+import { Button, Card, CardBody } from "@heroui/react";
 import { getTimeString } from "../../Functions";
 import type { TimeStringProps } from "../../Interfaces";
 import Icon from "./Icon";
+import ProgressWithTextDiv from "./ProgressWithTextDiv";
 // import { useNavigate } from "react-router-dom";
 
 export interface AssignmentCardProps {
@@ -14,8 +14,10 @@ export interface AssignmentCardProps {
     time: TimeStringProps;
 }
 
+//This appears on the Homepage if the user has an assignment due
 const AssignmentCard: React.FC<AssignmentCardProps> = ({ name, classroomName, completedChallenges, totalChallenges, time }) => {
 
+    //Check whether the assignment has less than one day left and show the danger color and icon if so
     let isLastDay = false;
     let timeColor = "default-foreground";
 
@@ -26,11 +28,10 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ name, classroomName, co
     }
 
     return (
-        <Card className="flex w-fit min-w-fit h-fit border-small p-6" radius="md" shadow="none">
+        <Card className="flex w-full min-w-fit h-fit border-small bg-default-50 p-6" radius="md" shadow="none" aria-label={name + " assignment card"}>
             <CardBody className="flex flex-col w-fit h-fit gap-6 p-0">
                 <div className={"flex flex-row w-full text-" + timeColor + " gap-1 items-center"}>
                     {isLastDay ? <Icon name={"info"} size={"xs"} color={"danger"}/> : undefined}
-                    {/* {isLastDay ? <span className="font-icon text-icon-xs">info</span> : undefined} */}
                     <p className="font-semibold">{"Due in " + getTimeString(time["days"], time["hours"], time["minutes"], time["seconds"])}</p>
                 </div>
                 <div className="flex flex-col w-full gap-2">

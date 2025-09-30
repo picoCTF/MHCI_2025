@@ -5,7 +5,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
         {
             description: "This is the learning path description",
             difficulty: {
-                Enum: 1
+                difficultyLvl: "Easy"
             },
             hasProgress: true,
             id: 0,
@@ -18,7 +18,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
         {
             description: "This is the learning path description",
             difficulty: {
-                Enum: 1
+                difficultyLvl: "Easy"
             },
             hasProgress: true,
             id: 1,
@@ -31,7 +31,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
         {
             description: "This is the learning path description",
             difficulty: {
-                Enum: 1
+                difficultyLvl: "Easy"
             },
             hasProgress: true,
             id: 2,
@@ -44,7 +44,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
         {
             description: "This is the learning path description",
             difficulty: {
-                Enum: 1
+                difficultyLvl: "Easy"
             },
             hasProgress: true,
             id: 3,
@@ -57,7 +57,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
         {
             description: "This is the learning path description",
             difficulty: {
-                Enum: 1
+                difficultyLvl: "Easy"
             },
             hasProgress: true,
             id: 4,
@@ -70,7 +70,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
         {
             description: "This is the learning path description",
             difficulty: {
-                Enum: 1
+                difficultyLvl: "Medium"
             },
             hasProgress: true,
             id: 5,

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import AssignmentStatusCard from '../../components/General/AssignmentStatusCard';
+import AssignmentStatusCard from '../../components/general/AssignmentStatusCard';
 
 const meta = {
   title: 'General/AssignmentStatusCard',
@@ -32,6 +32,7 @@ export const Default: Story = {
       month: 1,
       year: 0
     },
+    id: 123,
     isActive: true,
     name: "Assignment Name",
     time: {

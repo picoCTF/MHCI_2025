@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import ClassroomCard from '../../components/General/ClassroomCard';
+import ClassroomCard from '../../components/general/ClassroomCard';
 
 // import { fn } from 'storybook/test';
 
@@ -39,7 +39,8 @@ export const Default: Story = {
         day: 1,
         month: 1,
         year: 0
-      }
+      },
+      id: 1
     },
     {
       name: 'Assignment 2',
@@ -56,15 +57,18 @@ export const Default: Story = {
         day: 1,
         month: 1,
         year: 0
-      }
+      },
+      id: 2
     }
   ],
   pendingMemberUsernames: [
     {
-      username: "Username 1"
+      username: "Username 1",
+      id: 1
     },
     {
-      username: "Username 2 "
+      username: "Username 2 ",
+      id: 2
     }
   ]
   }

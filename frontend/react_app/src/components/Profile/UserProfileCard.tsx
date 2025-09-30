@@ -1,7 +1,7 @@
 import { Card, CardBody, type ImageProps, Image, Button } from "@heroui/react";
 import Icon from "../general/Icon";
 
-interface UserProfileCardProps {
+export interface UserProfileCardProps {
     avatar: ImageProps;
     country: string;
     monthJoined: string;
@@ -9,10 +9,11 @@ interface UserProfileCardProps {
     yearJoined: string;
 }
 
+// Show the user's profile information
 const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, monthJoined, username, yearJoined }) => {
 
     return (
-        <Card className="flex w-[336px] h-fit min-h-fit max-h-fit border-small" radius="md" shadow="none">
+        <Card className="flex w-full min-w-fit h-fit min-h-fit max-h-fit bg-content1-base border-small" radius="md" shadow="none">
             <CardBody className="flex flex-col w-full h-fit gap-8 p-6">
                 <div className="w-fill h-[175px] bg-success-50 rounded-small place-center">
                     <Image src={avatar.src}/>

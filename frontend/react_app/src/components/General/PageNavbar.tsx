@@ -1,11 +1,11 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Avatar, Image } from '@heroui/react';
 
-// import { MaterialSymbol } from "react-material-symbols";
-
+// It might be a good idea to just put these components inside this file because they are only used once
 import NotificationModal from './PageNavbarComponents/NotificationModal';
 import ResourcesDropdown from './PageNavbarComponents/ResourcesDropdown';
 import PracticeDropdown from './PageNavbarComponents/PracticeDropdown';
 
+// The header that allows users to navigate from page to page
 function PageNavbar() {
     return (
         <div className="PageNavbar" style={{width: "100%", height: "fit-content"}}>
@@ -41,7 +41,7 @@ function PageNavbar() {
                     <NavbarItem className="hidden lg:flex">
                         <NotificationModal/>
                     </NavbarItem>
-                    <NavbarItem>
+                    <NavbarItem> {/* GRAPHICS_ISSUE - this item is not showing up on the webpage as of 9/23/25 */}
                         <Button as={Link} color="default" href="/profile" variant="flat" radius="full" isIconOnly={true}>
                             <Avatar size='sm'/>
                         </Button>

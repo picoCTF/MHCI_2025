@@ -11,6 +11,7 @@ const ReflectionEntryCard: React.FC<ReflectionEntryCardProps> = ({}) => {
                 <Textarea radius="sm" variant="underlined" placeholder="Type here or click the microphone icon to dictate. Your voice won't be recorded or stored; it's used only for live transcription." type="text"/>
                 <div className="flex flex-row justify-between">
                     <Button className="flex" size="sm" radius="full" color="default">
+                        {/* NEED_ICON */}
                         <p>ICON</p>
                     </Button>
                     <Button className="flex" size="md" radius="sm" color="primary">

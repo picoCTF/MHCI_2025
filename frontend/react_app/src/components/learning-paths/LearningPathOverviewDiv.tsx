@@ -3,7 +3,7 @@ import DifficultyChip, { type DifficultyProp } from "../general/DifficultyChip";
 import Icon from "../general/Icon";
 
 interface LearningPathOverviewDivProps {
-    difficulty: DifficultyProp;
+    difficulty: DifficultyProp["difficultyLvl"];
     name: string;
     numChallenges: number;
     numSolves: number;
@@ -18,7 +18,7 @@ const LearningPathOverviewDiv: React.FC<LearningPathOverviewDivProps> = ({ diffi
                 <div className="flex flex-row gap-3">
                     {/* API_NEEDED - Get the difficulty by averaging the difficulty of its challenges. Get the title of the learning path */}
                     <h2>{name}</h2>
-                    <DifficultyChip Enum={difficulty.Enum}/>
+                    <DifficultyChip difficultyLvl={difficulty}/>
                 </div>
                 <div className="flex flex-row gap-4">
                     <div className="flex row gap-2">

@@ -1,21 +1,30 @@
 import { Link } from "@heroui/react";
 import ClassroomCard, { type ClassroomCardProps } from "../general/ClassroomCard";
+import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
+import FocusWrapperCard from "../general/FocusWrapperCard";
 
 export interface ClassroomListDivProps {
-    list: ClassroomCardProps[];
+    isFocused: FocusWrapperCardProps['isFocused'];
+    list: ClassroomCardProps[]; //Remove this
 }
 
-const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ list }) => {
+// This needs a pagination components when it is being used on desktop
+const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused, list }) => {
+
+    //API gets classrooms
+    // let classrooms = mock data
+    //Put classrooms where list is
+
     return (
-        <div className="flex flex-col w-[811px] min-w-[811px] h-fit items-start gap-4">
+        <div className="flex flex-col w-[811px] min-w-[811px] h-fit items-start gap-4 bg-transparent">
             <div className="flex flex-row w-full min-w-full justify-between">
                 {/* API_NEEDED - Get the classroom name and number of members */}
                 <h3>Manage your classrooms</h3>
                 <Link href="/classroom">Open Classrooms</Link>
             </div>
-            <div className="flex flex-col w-full min-w-full">
+            <FocusWrapperCard isFocused={isFocused}>
                 {list.map((item) => <ClassroomCard key={item.id} id={item.id} name={item.name} numMembers={item.numMembers} recentAssignments={item.recentAssignments} pendingMemberUsernames={item.pendingMemberUsernames}/>)}
-            </div>
+            </FocusWrapperCard>
         </div>
     );
 }

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import ClassroomListDiv from '../../components/Homepage/ClassroomListDiv';
+import ClassroomListDiv from '../../components/homepage/ClassroomListDiv';
 import { mockHomepage } from '../../mock-data/HomeData';
 
 const meta = {

@@ -1,40 +1,54 @@
 import "./Page.css";
 
-import Header from "../components/General/PageNavbar";
-import LearningPathsListDiv, { type LearningPathsListDivProps } from "../components/Homepage/LearningPathsListDiv";
-import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/Homepage/QuickLinksListCard";
-import ClassroomListDiv, { type ClassroomListDivProps } from "../components/Homepage/ClassroomListDiv";
-import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/Homepage/ProfileSummaryDiv";
+import Header from "../components/general/PageNavbar";
 import AssignmentsDueListDiv, { type AssignmentsDueListDivProps } from "../components/Homepage/AssignmentsDueListDiv";
+import ClassroomListDiv, { type ClassroomListDivProps } from "../components/Homepage/ClassroomListDiv";
+import LearningPathsListDiv, { type LearningPathsListDivProps } from "../components/Homepage/LearningPathsListDiv";
+import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/Homepage/ProfileSummaryDiv";
+import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/Homepage/QuickLinksListCard";
+import type { BannerCardProps } from "../components/general/BannerCard";
+import BannerCard from "../components/general/BannerCard";
+import ContinuationDiv from "../components/homepage/ContinuationDiv";
 
 export interface HomepageProps {
-    assignmentsList: AssignmentsDueListDivProps;
-    classroomsList: ClassroomListDivProps;
-    learningPathsList: LearningPathsListDivProps;
+    // moduleList: (AssignmentsDueListDivProps | ClassroomListDivProps | LearningPathsListDivProps | QuickLinksListDivProps)[];
+    assignmentsList: AssignmentsDueListDivProps["list"];
+    banners: BannerCardProps[];
+    classroomsList: ClassroomListDivProps["list"];
+    learningPathsList: LearningPathsListDivProps["list"];
     profileSummary: ProfileSummaryDivProps;
-    quickLinksList: QuickLinksListDivProps;
+    quickLinksList: QuickLinksListDivProps["list"];
 }
 
-const Homepage: React.FC<HomepageProps> = ({ assignmentsList, classroomsList, learningPathsList, profileSummary, quickLinksList }) => {
+const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroomsList, learningPathsList, profileSummary, quickLinksList }) => {
+
+    // Figure out the state of the user and determine which elements to show them based on that state
 
     return (
         <div className="Page">
             <Header/>
-            <div className="flex flex-row justify-around gap-24 py-20">
-                <ProfileSummaryDiv username={profileSummary.username} 
-                    challengesCompleted={profileSummary.challengesCompleted} 
-                    numActiveDays={profileSummary.numActiveDays} 
-                    numBadges={profileSummary.numBadges} 
-                    numStreakWeeks={profileSummary.numStreakWeeks}/>
-                <div className="flex flex-col gap-14">
+            <div className="flex flex-row justify-center gap-24 py-20">
+                {/* API_NEEDED - Get the user's username, challenges completed, number of active days, number of badges earned, 
+                    and number of weeeks in their streak */}
+                <div className="flex flex-col w-[286px]">
+                    <ProfileSummaryDiv username={profileSummary.username} 
+                        challengesCompleted={profileSummary.challengesCompleted} 
+                        numActiveDays={profileSummary.numActiveDays} 
+                        numBadges={profileSummary.numBadges} 
+                        numStreakWeeks={profileSummary.numStreakWeeks}/>
+                </div>
+                <div className="flex flex-col gap-14 w-[811px]">
+                    {/* API_NEEDED - Get any announcements */}
+                    {banners.map((banner) => (<BannerCard key={banner.id} id={banner.id} buttonText={banner.buttonText} eventTime={banner.eventTime} image={banner.image} title={banner.title}/>))}
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
-                    <AssignmentsDueListDiv list={assignmentsList.list}/>
+                    <AssignmentsDueListDiv isFocused={true} list={assignmentsList}/>
+                    <ContinuationDiv type="path" isFocused={false} lastItem={learningPathsList[0]}/>
                     {/* API_NEEDED - Get the classrooms managed by the user */}
-                    <ClassroomListDiv list={classroomsList.list}/>
+                    <ClassroomListDiv isFocused={false} list={classroomsList}/>
                     {/* API_NEEDED - Get the user's suggested learning paths */}
-                    <LearningPathsListDiv list={learningPathsList.list} />
+                    <LearningPathsListDiv isFocused={false} list={learningPathsList} />
                     {/* API_NEEDED - Get the quick links that are relevant to the user */}
-                    <QuickLinksListCard list={quickLinksList.list}/>
+                    <QuickLinksListCard isFocused={false} list={quickLinksList}/>
                 </div>
             </div>
         </div>

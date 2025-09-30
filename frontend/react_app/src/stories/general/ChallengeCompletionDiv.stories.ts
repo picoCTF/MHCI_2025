@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import ChallengeCompletionDiv from '../../components/General/ChallengeCompletionDiv';
+import ChallengeCompletionDiv from '../../components/general/ChallengeCompletionDiv';
 
 // import { fn } from 'storybook/test';
 
