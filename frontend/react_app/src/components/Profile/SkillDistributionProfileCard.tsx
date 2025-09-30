@@ -70,48 +70,56 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
     let webExploitXPos = svgCenter + webExploitArmLength*Math.cos(Math.PI/2);
     let webExploitYPos = svgCenter + webExploitArmLength*-Math.sin(Math.PI/2);
     
-    // Draw the hexagon and place the text
+    // Draw the hexagon in the center and place the text
     return (
-        <Card className="flex w-full h-[400px] bg-content1-base border-small p-10" radius="md" shadow="none">
-            <CardBody className="flex flex-col w-full min-w-fit h-fit p-0 m-0 gap-8">
+        <Card className="flex w-full h-fit bg-content1-base border-small p-10" radius="md" shadow="none">
+            <CardBody className="flex flex-col w-full min-w-fit h-full min-h-fit p-0 m-0 gap-8">
                 <h2>Skill Distribution</h2>
-                <div className="relative w-full h-fit">
-                    <svg className="absolute inset-0" xmlns="http://www.w3.org/2000/svg" width={svgSize} height={svgSize} viewBox={"0 0 " + (svgSize+2) + " " + (svgSize+2)} fill="none">
-                        <polygon className="stroke-default-200" points={svgTopPointX + " " + svgTopPointY + "," + svgTopRightPointX + " " + svgTopRightPointY + "," + svgBottomRightPointX + " " + svgBottomRightPointY + "," + svgBottomPointX + " " + svgBottomPointY + "," + svgBottomLeftPointX + " " + svgBottomLeftPointY + "," + svgTopLeftPointX + " " + svgTopLeftPointY}/>
-                        <path className="stroke-default-200" d={"M" + svgTopPointX + " " + svgTopPointY + " L " + svgBottomPointX + " " + svgBottomPointY}/>
-                        <path className="stroke-default-200" d={"M" + svgTopLeftPointX + " " + svgTopLeftPointY + " L " + svgBottomRightPointX + " " + svgBottomRightPointY}/>
-                        <path className="stroke-default-200" d={"M" + svgBottomLeftPointX + " " + svgBottomLeftPointY + " L " + svgTopRightPointX + " " + svgTopRightPointY}/>
-                        <polygon className="stroke-success-500 fill-success-50/10"  points={webExploitXPos + " " + webExploitYPos + "," + cryptographyXPos + " " + cryptographyYPos + "," + binaryExploitXPos + " " + binaryExploitYPos + "," + forensicsXPos + " " + forensicsYPos + "," + generalSkillsXPos + " " + generalSkillsYPos + "," + reverseEngineeringXPos + " " + reverseEngineeringYPos}/>
-                        <circle className="fill-success-500" cx={webExploitXPos} cy={webExploitYPos} r={6}/>
-                        <circle className="fill-success-500" cx={cryptographyXPos} cy={cryptographyYPos} r={6} fill="green"/>
-                        <circle className="fill-success-500" cx={binaryExploitXPos} cy={binaryExploitYPos} r={6} fill="green"/>
-                        <circle className="fill-success-500" cx={forensicsXPos} cy={forensicsYPos} r={6} fill="green"/>
-                        <circle className="fill-success-500" cx={generalSkillsXPos} cy={generalSkillsYPos} r={6} fill="green"/>
-                        <circle className="fill-success-500" cx={reverseEngineeringXPos} cy={reverseEngineeringYPos} r={6} fill="green"/>
-                    </svg>
-                    <div className="absolute flex flex-row w-fit h-fit gap-1">
-                        <p>Web Exploitation</p>
-                        <Icon name={"language"} size={"lg"} weight={"normal"} color={"primary"}/>
-                    </div>
-                    <div className="absolute flex flex-row w-fit h-fit gap-1">
-                        <p>Cryptography</p>
-                        <Icon name={"key"} size={"lg"} weight={"normal"} color={"primary"}/>
-                    </div>
-                    <div className="absolute flex flex-row w-fit h-fit gap-1">
-                        <p>Forensics</p>
-                        <Icon name={"search"} size={"lg"} weight={"normal"} color={"primary"}/>
-                    </div>
-                    <div className="absolute flex flex-row w-fit h-fit gap-1">
-                        <p>General Skills</p>
-                        <Icon name={"code"} size={"lg"} weight={"normal"} color={"primary"}/>
-                    </div>
-                    <div className="absolute flex flex-row w-fit h-fit gap-1">
-                        <p>Reverse Engineering</p>
-                        <Icon name={"build"} size={"lg"} weight={"normal"} color={"primary"}/>
-                    </div>
-                    <div className="absolute flex flex-row w-fit h-fit gap-1">
-                        <p>Binary Exploitation</p>
-                        <Icon name={"memory"} size={"lg"} weight={"normal"} color={"primary"}/>
+                <div className="flex w-full h-full min-w-fit min-h-fit justify-center items-center">
+                    <div className="relative flex flex-col w-fit h-fit">
+                        <div className="absolute top-0 flex flex-row w-fit h-fit gap-1">
+                            <p>Web Exploitation</p>
+                            <Icon name={"language"} size={"lg"} weight={"normal"} color={"primary"}/>
+                        </div>
+                        <div className="relative flex flex-row w-fit h-fit">
+                            <div className="flex flex-col w-fit h-fit">
+                                <div className="absolute flex flex-row w-fit h-fit gap-1">
+                                    <p>General Skills</p>
+                                    <Icon name={"code"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                </div>
+                                <div className="absolute flex flex-row w-fit h-fit gap-1">
+                                    <p>Reverse Engineering</p>
+                                    <Icon name={"build"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                </div>
+                            </div>
+                            <svg className="absolute inset-0" xmlns="http://www.w3.org/2000/svg" width={svgSize} height={svgSize} viewBox={"0 0 " + (svgSize+2) + " " + (svgSize+2)} fill="none">
+                                <polygon className="stroke-default-200" points={svgTopPointX + " " + svgTopPointY + "," + svgTopRightPointX + " " + svgTopRightPointY + "," + svgBottomRightPointX + " " + svgBottomRightPointY + "," + svgBottomPointX + " " + svgBottomPointY + "," + svgBottomLeftPointX + " " + svgBottomLeftPointY + "," + svgTopLeftPointX + " " + svgTopLeftPointY}/>
+                                <path className="stroke-default-200" d={"M" + svgTopPointX + " " + svgTopPointY + " L " + svgBottomPointX + " " + svgBottomPointY}/>
+                                <path className="stroke-default-200" d={"M" + svgTopLeftPointX + " " + svgTopLeftPointY + " L " + svgBottomRightPointX + " " + svgBottomRightPointY}/>
+                                <path className="stroke-default-200" d={"M" + svgBottomLeftPointX + " " + svgBottomLeftPointY + " L " + svgTopRightPointX + " " + svgTopRightPointY}/>
+                                <polygon className="stroke-success-500 fill-success-50/10"  points={webExploitXPos + " " + webExploitYPos + "," + cryptographyXPos + " " + cryptographyYPos + "," + binaryExploitXPos + " " + binaryExploitYPos + "," + forensicsXPos + " " + forensicsYPos + "," + generalSkillsXPos + " " + generalSkillsYPos + "," + reverseEngineeringXPos + " " + reverseEngineeringYPos}/>
+                                <circle className="fill-success-500" cx={webExploitXPos} cy={webExploitYPos} r={6}/>
+                                <circle className="fill-success-500" cx={cryptographyXPos} cy={cryptographyYPos} r={6} fill="green"/>
+                                <circle className="fill-success-500" cx={binaryExploitXPos} cy={binaryExploitYPos} r={6} fill="green"/>
+                                <circle className="fill-success-500" cx={forensicsXPos} cy={forensicsYPos} r={6} fill="green"/>
+                                <circle className="fill-success-500" cx={generalSkillsXPos} cy={generalSkillsYPos} r={6} fill="green"/>
+                                <circle className="fill-success-500" cx={reverseEngineeringXPos} cy={reverseEngineeringYPos} r={6} fill="green"/>
+                            </svg>
+                            <div className="flex flex-col">
+                                <div className="absolute flex flex-row w-fit h-fit gap-1">
+                                    <p>Cryptography</p>
+                                    <Icon name={"key"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                </div>
+                                <div className="absolute flex flex-row w-fit h-fit gap-1">
+                                    <p>Binary Exploitation</p>
+                                    <Icon name={"memory"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-0 flex flex-row w-fit h-fit gap-1">
+                            <p>Forensics</p>
+                            <Icon name={"search"} size={"lg"} weight={"normal"} color={"primary"}/>
+                        </div>
                     </div>
                 </div>
             </CardBody>

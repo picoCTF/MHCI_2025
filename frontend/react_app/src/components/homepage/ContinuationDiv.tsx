@@ -1,4 +1,3 @@
-import { Link } from "@heroui/react";
 import LearningPathCard, { type LearningPathCardProps } from "../learning-paths/LearningPathCard";
 import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import FocusWrapperCard from "../general/FocusWrapperCard";

@@ -5,11 +5,16 @@ import FocusWrapperCard from "../general/FocusWrapperCard";
 
 export interface ClassroomListDivProps {
     isFocused: FocusWrapperCardProps['isFocused'];
-    list: ClassroomCardProps[];
+    list: ClassroomCardProps[]; //Remove this
 }
 
 // This needs a pagination components when it is being used on desktop
 const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused, list }) => {
+
+    //API gets classrooms
+    // let classrooms = mock data
+    //Put classrooms where list is
+
     return (
         <div className="flex flex-col w-[811px] min-w-[811px] h-fit items-start gap-4 bg-transparent">
             <div className="flex flex-row w-full min-w-full justify-between">
