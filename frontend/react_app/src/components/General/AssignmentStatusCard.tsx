@@ -1,6 +1,5 @@
 import { Card, CardBody, Chip } from "@heroui/react";
-import type { DateProps, TimeStringProps } from "../../Interfaces";
-import { getTimeString, getDateString } from "../../Functions";
+import { getTimeString, getDateString, parseTimeString } from "../../Functions";
 
 interface StatusProp {
     isActive: boolean;
@@ -32,16 +31,24 @@ export interface AssignmentStatusCardProps {
     totalChallenges: number;
     id: number;
     isActive: StatusProp["isActive"];
-    time: TimeStringProps;
-    dueDate: DateProps;
 }
 
 //NEED_ICON
-const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, dueDate, totalChallenges, isActive, time }) => {
+const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, totalChallenges, isActive }) => {
     
+    // API_NEEDED - Get the Get the individual assignment info through the AssignmentResponse endpoint
+
+    // The time string from the AssignmentResponse endpoint
+    const timeString = "2025-10-01T12:34:56.123";
+    
+    /* Parse the time from the YYYY-MM-DDTHH:mm:ss.sssZ or YYYY-MM-DDTHH:mm:ss.sss±HH:mm format
+        The T separates the date and time. The Z and +-HH:mm are for timezone info */
+        
+    let time = parseTimeString(timeString);
+
     //Get the time left for and due date of the assignment 
-    let timeText = "Due in " + getTimeString(time["days"], time["hours"], time["minutes"], time["seconds"]);
-    let dateText = "Due date: " + getDateString(dueDate["day"], dueDate["month"], dueDate["year"]);
+    let timeText = "Due in " + getTimeString(time[2], time[3], time[4], time[5]);
+    let dateText = "Due date: " + getDateString(time[2], time[1], time[0]);
     
     return (
         <Card className="w-full h-fit bg-content2-base p-0 m-0" radius="sm" shadow="none">

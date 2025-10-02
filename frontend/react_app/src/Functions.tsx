@@ -1,3 +1,18 @@
+export function parseTimeString(timeString: string) {
+    /* Parse the time from the YYYY-MM-DDTHH:mm:ss.sssZ or YYYY-MM-DDTHH:mm:ss.sss±HH:mm format
+        The T separates the date and time. The Z and +-HH:mm are for timezone info) */
+
+    let year = parseInt(timeString.substring(0, 4));
+    let month = parseInt(timeString.substring(5, 7));
+    let day = parseInt(timeString.substring(8, 10));
+    let hour = parseInt(timeString.substring(11, 13));
+    let minute = parseInt(timeString.substring(14, 16));
+    let second = parseInt(timeString.substring(17, 19));
+    let millisecond = parseInt(timeString.substring(20, 23));
+
+    return [year, month, day, hour, minute, second, millisecond];
+}
+
 export function getTimeString(numDays: number, numHours: number, numMinutes: number, numSeconds: number) {
     let time = "";
 

@@ -18,7 +18,7 @@ const FocusWrapperCard: React.FC<FocusWrapperCardProps> = ({ children, isFocused
     }
 
     return (
-        <div className={"flex flex-row w-full rounded-large gap-6 p-" + padding + " " + bgColor + " overflow-scroll"}>
+        <div className={"flex w-full rounded-large gap-6 p-" + padding + " " + bgColor + " overflow-scroll"}>
             {children}
         </div>
     );

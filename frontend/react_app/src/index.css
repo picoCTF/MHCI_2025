@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios,arrow_forward_ios,article,award_star,book,build,calendar,cancel,check,check_circle,close,code,extension,flag,home,import_contacts,info,key,language,memory,mode_heat,notifications,person,search,smart_display,star&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios,arrow_forward,arrow_forward_ios,article,award_star,book,build,calendar,cancel,check,check_circle,close,code,extension,flag,home,import_contacts,info,key,language,memory,mode_heat,notifications,person,search,smart_display,star&display=block');
 
 @import "tailwindcss";
 /* Note: You may need to change the path to fit your project structure */
