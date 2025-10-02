@@ -31,8 +31,17 @@ export default {
       		'20': "80px",
       		'24': "96px",
       		'32': "128px"
-    		},
-    		extend: {
+    	},
+    	extend: {
+			spacing: {
+				card: {
+					xs: "16px",
+					sm: "20px",
+					md: "24px",
+					lg: "32px",
+					xl: "40px",
+				}
+			},
       		fontFamily: {
         		'sans': ['Geist'],
         		'mono': ['Geist Mono'],
