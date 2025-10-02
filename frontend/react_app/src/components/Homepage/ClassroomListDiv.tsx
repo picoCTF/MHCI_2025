@@ -1,5 +1,5 @@
 import { Link } from "@heroui/react";
-import ClassroomCard, { type ClassroomCardProps } from "../general/ClassroomCard";
+import ClassroomCard from "../general/ClassroomCard";
 import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import FocusWrapperCard from "../general/FocusWrapperCard";
 
