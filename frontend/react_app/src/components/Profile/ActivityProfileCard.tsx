@@ -21,7 +21,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
     }
 
     return (
-        <Card className="flex w-full h-fit bg-content1-base border-small p-10" radius="md" shadow="none">
+        <Card className="flex w-full h-fit bg-content1-base border-small border-default-300 p-10" radius="md" shadow="none">
             <CardBody className="flex flex-col p-0 m-0">
                 <div className="flex flex-row justify-between">
                     <h2>Activity</h2>

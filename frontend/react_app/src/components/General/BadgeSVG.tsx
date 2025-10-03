@@ -171,7 +171,7 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
             <svg xmlns="http://www.w3.org/2000/svg" width={svgWidth} height={svgHeight} viewBox={"0 0 " + svgWidth + " " + svgHeight} fill="none">
                 <g>
                     {/* Badge Symbol */}
-                    <text x={svgWidth / 2} y={svgHeight / 2}>
+                    <text x={svgWidth / 2} y={svgHeight / 2} className="flex min-w-full min-h-full">
                         <Icon name={icon} size={"md"} color={"default"}/>
                     </text>
                 </g>

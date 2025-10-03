@@ -10,10 +10,12 @@ export interface ChallengeCompletionProfileCardProps {
 }
 
 // Shows the number of challenges the user has completed
-const ChallengeCompletionProfileCard: React.FC<ChallengeCompletionProfileCardProps> = ({ numEasyChallenges, numMediumChallenges, numHardChallenges, totalNumChallenges }) => {
+const ChallengeCompletionProfileCard: React.FC<ChallengeCompletionProfileCardProps> = ({ numEasyChallenges, 
+    numMediumChallenges, numHardChallenges, totalNumChallenges }) => {
 
     return (
-        <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small p-10">
+        <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10" 
+            radius="md" shadow="none">
             <CardHeader className="flex flex-row w-full h-fit items-start justify-between m-0 p-0">
                 <h2>Challenge Completion</h2>
                 <div className="flex flex-col w-fit text-end">
@@ -22,7 +24,8 @@ const ChallengeCompletionProfileCard: React.FC<ChallengeCompletionProfileCardPro
                 </div>
             </CardHeader>
             <CardBody className="flex flex-row w-full h-fit">
-                <ChallengeCompletionDiv numEasyChallenges={numEasyChallenges} numMediumChallenges={numMediumChallenges} numHardChallenges={numHardChallenges} totalNumChallenges={totalNumChallenges} showAdditionalInfo={true}/>
+                <ChallengeCompletionDiv numEasyChallenges={numEasyChallenges} numMediumChallenges={numMediumChallenges} 
+                    numHardChallenges={numHardChallenges} totalNumChallenges={totalNumChallenges} showAdditionalInfo={true}/>
             </CardBody>
         </Card>
     );
