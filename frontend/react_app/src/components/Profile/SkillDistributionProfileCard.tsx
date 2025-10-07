@@ -46,6 +46,8 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
     const svgBottomLeftPointX = svgCenter + armLength*Math.cos(-5*Math.PI/6);
     const svgBottomLeftPointY = svgCenter + armLength*-Math.sin(-5*Math.PI/6);
 
+    const columnPadding = svgTopLeftPointY - 20;
+
     let binaryExploitArmLength = numBinaryExploitationChallenges / totalBinaryExploitChallenges * armLength;
     let binaryExploitXPos = svgCenter + binaryExploitArmLength*Math.cos(-Math.PI/6);
     let binaryExploitYPos = svgCenter + binaryExploitArmLength*-Math.sin(-Math.PI/6);
@@ -70,7 +72,7 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
     let webExploitXPos = svgCenter + webExploitArmLength*Math.cos(Math.PI/2);
     let webExploitYPos = svgCenter + webExploitArmLength*-Math.sin(Math.PI/2);
     
-    // Draw the hexagon in the center and place the text
+    // Draw the hexagon in the center and place the text and progress markers
     return (
         <Card className="flex w-full h-fit bg-content1-base border-small border-default-300 p-10" radius="md" shadow="none">
             <CardBody className="flex flex-col w-full min-w-fit h-full min-h-fit p-0 m-0 gap-8">
@@ -82,7 +84,7 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
                             <Icon name={"language"} size={"lg"} weight={"normal"} color={"primary"}/>
                         </div>
                         <div className="flex flex-row w-fit h-fit min-h-fit max-w-full">
-                            <div className={"flex flex-col w-fit min-w-fit h-[" + (svgBottomPointY - svgTopLeftPointY) + "] justify-between items-end"}>
+                            <div style={{paddingTop: columnPadding, paddingBottom: columnPadding}} className={"flex flex-col w-fit min-w-fit justify-between items-end"}>
                                 <div className="flex flex-row w-fit h-fit gap-1">
                                     <p>General Skills</p>
                                     <Icon name={"code"} size={"lg"} weight={"normal"} color={"primary"}/>
@@ -105,7 +107,7 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
                                 <circle className="fill-success-500" cx={generalSkillsXPos} cy={generalSkillsYPos} r={6} fill="green"/>
                                 <circle className="fill-success-500" cx={reverseEngineeringXPos} cy={reverseEngineeringYPos} r={6} fill="green"/>
                             </svg>
-                            <div className={"flex flex-col w-fit min-w-fit h-fill justify-between items-start py-[" + (svgTopLeftPointY) + "px]"}>
+                            <div style={{paddingTop: columnPadding, paddingBottom: columnPadding}} className={"flex flex-col w-fit min-w-fit h-fill justify-between items-start"}>
                                 <div className="flex flex-row w-fit h-fit gap-1">
                                     <p>Cryptography</p>
                                     <Icon name={"key"} size={"lg"} weight={"normal"} color={"primary"}/>
