@@ -18,19 +18,23 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, mont
                 <div className="w-full h-[175px] bg-success-50 rounded-small place-center">
                     <Image src={avatar.src}/>
                 </div>
-                <div className="flex flex-row justify-between">
-                    <div className="flex flex-col justify-between">
-                        <h1>{username}</h1>
-                        <div className="flex flex-row">
-                            <Icon name={"article"} size={"md"} weight={"bold"} color={"default"}/>
-                            <p>{country}</p>
-                        </div>
-                        <p>{"Joined " + monthJoined + ", " + yearJoined}</p>
+                <div className="flex flex-col gap-1">
+                    <div className="flex flex-row justify-between">
+                        <h3>{username}</h3>
+                        <Button isIconOnly size="sm" radius="full" style={{backgroundColor: "bg-default-500"}}>
+                            <Icon name={"info"} size={"lg"} weight={"bold"} color={"default"} colorValue="50"/>
+                        </Button>
                     </div>
-                    <Button isIconOnly size="sm" radius="full" style={{backgroundColor: "bg-default-500"}}>
-                        <Icon name={"info"} size={"lg"} weight={"bold"} color={"default"} colorValue="50"/>
-                    </Button>
+                    <div className="flex flex-row gap-3">
+                        <Icon name={"location_on"} size={"md"} weight={"bold"} color={"danger"}/>
+                        <p>{country}</p>
+                    </div>
+                    <p>{"Joined " + monthJoined + ", " + yearJoined}</p>
                 </div>
+                <Button variant="flat" color="primary">
+                    <p>Account settings</p>
+                    <Icon name={"settings"} size={"md"} color={"primary"}/>
+                </Button>
             </CardBody>
         </Card>
     );

@@ -6,6 +6,8 @@ import SkillDistributionProfileCard, { type SkillDistributionProfileCardProps } 
 import BadgesProfileCard, { type BadgesProfileCardProps } from "../components/Profile/BadgesProfileCard";
 import ActivityProfileCard, { type ActivityProfileCardProps } from "../components/Profile/ActivityProfileCard";
 import UserProfileCard, { type UserProfileCardProps } from "../components/Profile/UserProfileCard";
+import LearningPathsProfileCard from "../components/profile/LearningPathsProfileCard";
+import LearningPathCard from "../components/learning-paths/LearningPathCard";
 
 export interface ProfileProps {
     activity: ActivityProfileCardProps;
@@ -25,6 +27,7 @@ const Profile: React.FC<ProfileProps> = ({ activity, badges, challengeCompletion
                     {/* API_NEEDED - Get the info for the user's profile card: avatar, country, month joined, username, and year joined */}
                     <UserProfileCard avatar={userInfo.avatar} country={userInfo.country} monthJoined={userInfo.monthJoined} 
                         username={userInfo.username} yearJoined={userInfo.yearJoined}/>
+                    <LearningPathsProfileCard/>
                 </div>
                 <div className="flex flex-col w-fit gap-10">
                     {/* API_NEEDED - Get the number of challenges the user has solved and the length of their current streak */}
