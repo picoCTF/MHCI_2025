@@ -1,4 +1,4 @@
-import { Card, CardBody } from "@heroui/react";
+import { Card, CardBody, Progress } from "@heroui/react";
 
 import DifficultyChip, { type DifficultyProp } from "../general/DifficultyChip";
 import IconCard from "../general/IconCard";
@@ -15,6 +15,7 @@ export interface LearningPathCardProps {
     numCompletedChallenges: number;
     numSolves: number;
     numTotalChallenges: number;
+    variant: "compact" | "standard" | "expanded";
 }
 
 function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, numSolves: number, numTotalChallenges: number) {
@@ -44,28 +45,70 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
     );
 }
 
-const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, link, name, numCompletedChallenges, numSolves, numTotalChallenges }) => {
+const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, link, name, numCompletedChallenges, numSolves, numTotalChallenges, variant }) => {
 
-    return (
-        /* API_NEEDED - Get the link to the learning path and navigate there on press */
-        <Card className="flex w-full min-w-[384px] max-w-[400px] h-[288px] border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
-            <CardBody className="flex flex-col w-full h-full justify-between p-0 m-0">
-                <div className="flex flex-col w-full h-fit gap-6">
-                    <div className="flex flex-row w-full justify-between">
-                        <IconCard background={"primary"} icon={"book"}/>
-                        <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
-                    </div>
-                    <div className="flex flex-col w-full h-fit items-start gap-2">
-                        <h3>{name}</h3>
-                        <p>{description}</p>
-                    </div>
-                </div>
-                <div className="flex flex-col w-full h-fit items-start">
-                    {getBottomContent(hasProgress, numCompletedChallenges, numSolves, numTotalChallenges)}                  
-                </div>
-            </CardBody>
-        </Card>
-    );
+    //Return a variant if that was specified
+    switch (variant) {
+        case "compact": {
+            return (
+                <Card className="flex w-full h-fit border-small border-default-300 p-4 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
+                    <CardBody className="flex flex-col w-full h-fit gap-4 p-0 m-0">
+                        <div className="flex flex-row w-full h-fit justify-between items-center">
+                            <div className="flex flex-row w-fit gap-4 items-center">
+                                <IconCard background={"primary"} icon={"book"}/>
+                                <h3>{name}</h3>
+                            </div>
+                            <p>{numCompletedChallenges + "/" + numTotalChallenges}</p>
+                        </div>
+                        <Progress className="flex w-full self-center" size="md" color={"primary"} aria-label={"Learning Path Progress"} value={numCompletedChallenges/numTotalChallenges*100}/>
+                    </CardBody>
+                </Card>
+            );
+        }
+        case "expanded": {
+            return (
+                <Card className="flex w-full h-fit border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
+                    <CardBody className="flex flex-col w-full h-full justify-between p-0 m-0">
+                        <div className="flex flex-col w-full h-fit gap-6">
+                            <div className="flex flex-row w-full justify-between">
+                                <IconCard background={"primary"} icon={"book"}/>
+                                <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
+                            </div>
+                            <div className="flex flex-col w-full h-fit items-start gap-2">
+                                <h3>{name}</h3>
+                                <p>{description}</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col w-full h-fit items-start">
+                            {getBottomContent(hasProgress, numCompletedChallenges, numSolves, numTotalChallenges)}                  
+                        </div>
+                    </CardBody>
+                </Card>
+            );
+        }
+        default: {
+            return (
+                /* API_NEEDED - Get the link to the learning path and navigate there on press */
+                <Card className="flex w-full min-w-fit max-w-[400px] h-[288px] border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
+                    <CardBody className="flex flex-col w-full h-full justify-between p-0 m-0">
+                        <div className="flex flex-col w-full h-fit gap-6">
+                            <div className="flex flex-row w-full justify-between">
+                                <IconCard background={"primary"} icon={"book"}/>
+                                <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
+                            </div>
+                            <div className="flex flex-col w-full h-fit items-start gap-2">
+                                <h3>{name}</h3>
+                                <p>{description}</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col w-full h-fit items-start">
+                            {getBottomContent(hasProgress, numCompletedChallenges, numSolves, numTotalChallenges)}                  
+                        </div>
+                    </CardBody>
+                </Card>
+            );
+        }
+    }
 }
 
 export default LearningPathCard;

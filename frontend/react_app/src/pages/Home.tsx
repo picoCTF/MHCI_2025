@@ -12,15 +12,13 @@ import ContinuationDiv from "../components/homepage/ContinuationDiv";
 
 export interface HomepageProps {
     // moduleList: (AssignmentsDueListDivProps | ClassroomListDivProps | LearningPathsListDivProps | QuickLinksListDivProps)[];
-    assignmentsList: AssignmentsDueListDivProps["list"];
     banners: BannerCardProps[];
-    classroomsList: ClassroomListDivProps["list"];
     learningPathsList: LearningPathsListDivProps["list"];
     profileSummary: ProfileSummaryDivProps;
     quickLinksList: QuickLinksListDivProps["list"];
 }
 
-const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroomsList, learningPathsList, profileSummary, quickLinksList }) => {
+const Homepage: React.FC<HomepageProps> = ({ banners, learningPathsList, profileSummary, quickLinksList }) => {
 
     // Figure out the state of the user and determine which elements to show them based on that state
 
@@ -41,10 +39,10 @@ const Homepage: React.FC<HomepageProps> = ({ assignmentsList, banners, classroom
                     {/* API_NEEDED - Get any announcements */}
                     {banners.map((banner) => (<BannerCard key={banner.id} id={banner.id} buttonText={banner.buttonText} eventTime={banner.eventTime} image={banner.image} title={banner.title}/>))}
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
-                    <AssignmentsDueListDiv isFocused={true} list={assignmentsList}/>
+                    <AssignmentsDueListDiv isFocused={true}/>
                     <ContinuationDiv type="path" isFocused={false} lastItem={learningPathsList[0]}/>
                     {/* API_NEEDED - Get the classrooms managed by the user */}
-                    <ClassroomListDiv isFocused={false} list={classroomsList}/>
+                    <ClassroomListDiv isFocused={false}/>
                     {/* API_NEEDED - Get the user's suggested learning paths */}
                     <LearningPathsListDiv isFocused={false} list={learningPathsList} />
                     {/* API_NEEDED - Get the quick links that are relevant to the user */}

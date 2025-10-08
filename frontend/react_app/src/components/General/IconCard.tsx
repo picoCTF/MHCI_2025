@@ -12,7 +12,7 @@ export interface IconCardProps {
 const IconCard: React.FC<IconCardProps> = ({ background, icon }) => {
 
     return (
-        <Card radius="md" className={"flex w-[48px] h-[48px] bg-"+ background +"-50"} shadow="none">
+        <Card radius="md" className={"flex w-[48px] min-w-[48px] h-[48px] min-h-[48px] bg-"+ background +"-50"} shadow="none">
             <CardBody className="flex place-items-center">
                 <Icon name={icon} size={"xl"} weight={"normal"} color={background} colorValue="500"/>
             </CardBody>

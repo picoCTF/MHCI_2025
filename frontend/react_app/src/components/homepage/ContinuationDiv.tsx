@@ -26,15 +26,16 @@ const ContinuationDiv: React.FC<ContinuationDivProps> = ( props ) => {
 
     if(props.type === "path") {
         item = 
-            <LearningPathCard description={props.lastItem.description} 
-                difficulty={props.lastItem.difficulty} 
-                hasProgress={props.lastItem.hasProgress} 
-                id={props.lastItem.id} 
-                link={props.lastItem.link} 
-                name={props.lastItem.name} 
-                numCompletedChallenges={props.lastItem.numCompletedChallenges} 
-                numSolves={props.lastItem.numSolves} 
-                numTotalChallenges={props.lastItem.numTotalChallenges}/>  
+            <LearningPathCard description={props.lastItem.description}
+        difficulty={props.lastItem.difficulty}
+        hasProgress={props.lastItem.hasProgress}
+        id={props.lastItem.id}
+        link={props.lastItem.link}
+        name={props.lastItem.name}
+        numCompletedChallenges={props.lastItem.numCompletedChallenges}
+        numSolves={props.lastItem.numSolves}
+        numTotalChallenges={props.lastItem.numTotalChallenges} 
+        variant={"expanded"}/>
     }
     else {
         item = <ChallengeCard author={props.lastItem.author} 

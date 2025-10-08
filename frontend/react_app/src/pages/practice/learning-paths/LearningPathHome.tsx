@@ -39,18 +39,18 @@ const LearningPathsHome: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                         {/* TODO: For some reason, changing this div to a FocusWrapperCard messes up the components on the homepage (as of 9/25/25)*/}
                         <div className="flex flex-row w-full max-w-[1200px] rounded-large gap-6 p-8 bg-primary-100 overflow-scroll">
                             {continuingPaths.map((path) => (<LearningPathCard key={path.id} description={path.description}
-                                difficulty={path.difficulty} hasProgress={path.hasProgress} id={path.id}
-                                link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
-                                numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges}/>))}
+                            difficulty={path.difficulty} hasProgress={path.hasProgress} id={path.id}
+                            link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
+                            numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"expanded"}/>))}
                         </div>
                     </div>
 
                     {/* List of learning paths */}
                     <div className="grid gap-x-6 gap-y-10 grid-cols-3">
                         {paths.map((path) => (<LearningPathCard key={path.id} description={path.description}
-                            difficulty={path.difficulty} hasProgress={false} id={path.id}
-                            link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
-                            numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges}/>))}
+                        difficulty={path.difficulty} hasProgress={false} id={path.id}
+                        link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
+                        numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"standard"}/>))}
                     </div>
                 </div>
             </div>
