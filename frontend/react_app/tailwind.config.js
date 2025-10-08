@@ -64,12 +64,6 @@ export default {
         		'3xl': "1.875rem", // text-3xl
         		'4xl': "2.25rem", // text-4xl
         		'5xl': "2.875rem", // text-5xl
-
-        		'icon-xs': "16px",
-        		'icon-sm': "20px",
-        		'icon-md': "24px",
-        		'icon-lg': "40px",
-        		'icon-xl': "48px"
       		},
 			theme: {
         		extends: {

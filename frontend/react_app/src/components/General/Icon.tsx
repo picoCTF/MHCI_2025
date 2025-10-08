@@ -12,8 +12,34 @@ export interface IconProps {
 // Returns an icon from Google's Material Icon library
 // When adding new icons, import them into the index.css file and then add their name as an option in the interface
 const Icon: React.FC<IconProps> = ({name, size, weight, color, colorValue}) =>  {
+
+    let fontSize = "";
+
+    switch(size) {
+        case "xs": {
+            fontSize = "[16px]";
+            break;
+        }
+        case "sm": {
+            fontSize = "[20px]";
+            break;
+        }
+        case "md": {
+            fontSize = "[24px]";
+            break;
+        }
+        case "lg": {
+            fontSize = "[40px]";
+            break;
+        }
+        default: {
+            fontSize = "[48px]";
+            break;
+        }
+    }
+
     return (
-        <p className={"flex font-icon text-icon-" + size + (weight ? (" font-" + weight) : "" ) + " text-" + color + (colorValue ? ("-" + colorValue) : "")}>{name}</p>
+        <p className={"flex font-icon p-0 m-0 text-" + fontSize + (weight ? (" font-" + weight) : "" ) + " text-" + color + (colorValue ? ("-" + colorValue) : "")}>{name}</p>
     );
 }
 

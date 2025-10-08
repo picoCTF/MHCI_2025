@@ -58,7 +58,7 @@ const ContinuationDiv: React.FC<ContinuationDivProps> = ( props ) => {
                 <div className="flex flex-row w-full min-w-full items-start justify-between">
                     <h3>Continue where you left off</h3>
                 </div>
-                <FocusWrapperCard isFocused={props.isFocused}>
+                <FocusWrapperCard isFocused={props.isFocused} orientation="row">
                     {item}
                 </FocusWrapperCard>
             </div>

@@ -21,7 +21,7 @@ const LearningPathsListDiv: React.FC<LearningPathsListDivProps> = ({ isFocused, 
                     <h3>Try a new learning path</h3>
                     <Link className="flex flex-row" href="/practice/learning-paths">Open All Paths</Link>
                 </div>
-                <FocusWrapperCard isFocused={isFocused}>
+                <FocusWrapperCard isFocused={isFocused} orientation="row">
                     {list.map((item) => (<LearningPathCard key={item.id} description={item.description} difficulty={item.difficulty} hasProgress={item.hasProgress} id={item.id} link={item.link} name={item.name} numCompletedChallenges={item.numCompletedChallenges} numSolves={item.numSolves} numTotalChallenges={item.numTotalChallenges} variant={"standard"}/>))}
                 </FocusWrapperCard>
             </div>

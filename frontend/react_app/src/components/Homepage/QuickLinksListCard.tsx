@@ -13,7 +13,7 @@ const QuickLinksListDiv: React.FC<QuickLinksListDivProps> = ({ isFocused, list }
             <div className="flex flex-row w-full h-fit">
                 <h3>Discover more on picoCTF</h3>
             </div>
-            <FocusWrapperCard isFocused={isFocused}>
+            <FocusWrapperCard isFocused={isFocused} orientation="row">
                 {list.map((item) => (<QuickLinkCard key={item.id} name={item.name} description={item.description} icon={item.icon} id={item.id} link={item.link}/>))}
             </FocusWrapperCard>
         </div>

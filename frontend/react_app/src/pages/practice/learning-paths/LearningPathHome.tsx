@@ -41,7 +41,7 @@ const LearningPathsHome: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                             {continuingPaths.map((path) => (<LearningPathCard key={path.id} description={path.description}
                             difficulty={path.difficulty} hasProgress={path.hasProgress} id={path.id}
                             link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
-                            numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"expanded"}/>))}
+                            numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"standard"}/>))}
                         </div>
                     </div>
 

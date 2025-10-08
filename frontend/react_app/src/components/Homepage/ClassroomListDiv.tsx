@@ -22,7 +22,7 @@ const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused }) => {
                 <h3>Manage your classrooms</h3>
                 <Link href="/classroom">Open Classrooms</Link>
             </div>
-            <FocusWrapperCard isFocused={isFocused}>
+            <FocusWrapperCard isFocused={isFocused} orientation="col">
                 {classrooms.map((item) => <ClassroomCard key={item.id} id={item.id} name={item.name} numMembers={item.numMembers} recentAssignments={item.recentAssignments} pendingMemberUsernames={item.pendingMemberUsernames}/>)}
             </FocusWrapperCard>
         </div>

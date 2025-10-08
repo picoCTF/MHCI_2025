@@ -43,7 +43,7 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
             <div className="flex flex-col items-start">
                 <h3>You have assignments due soon!</h3>
             </div>
-            <FocusWrapperCard isFocused={isFocused}>
+            <FocusWrapperCard isFocused={isFocused} orientation="row">
                 {assignments.map((assignment) => (
                     <AssignmentCard key={assignment.id} name={assignment.name} 
                         classroomName={assignment.classroom.name} 

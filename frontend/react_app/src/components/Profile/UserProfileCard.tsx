@@ -26,7 +26,7 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, mont
                         </Button>
                     </div>
                     <div className="flex flex-row gap-3">
-                        <Icon name={"location_on"} size={"md"} weight={"bold"} color={"danger"}/>
+                        <Icon name={"location_on"} size={"xs"} weight={"bold"} color={"danger"}/>
                         <p>{country}</p>
                     </div>
                     <p>{"Joined " + monthJoined + ", " + yearJoined}</p>

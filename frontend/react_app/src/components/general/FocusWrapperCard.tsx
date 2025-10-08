@@ -3,10 +3,11 @@ import type { ReactNode } from "react";
 export interface FocusWrapperCardProps {
     children: ReactNode[] | ReactNode;
     isFocused: boolean;
+    orientation: "row" | "col";
 }
 
 //If this is in focus, then the children will be highlighted by a blue, padded div
-const FocusWrapperCard: React.FC<FocusWrapperCardProps> = ({ children, isFocused }) => {
+const FocusWrapperCard: React.FC<FocusWrapperCardProps> = ({ children, isFocused, orientation }) => {
 
     let padding = "0";
     let bgColor = "bg-transparent";
@@ -18,7 +19,7 @@ const FocusWrapperCard: React.FC<FocusWrapperCardProps> = ({ children, isFocused
     }
 
     return (
-        <div className={"flex w-full rounded-large gap-6 p-" + padding + " " + bgColor + " overflow-scroll"}>
+        <div className={"flex flex-" + orientation + " w-full rounded-large gap-6 p-" + padding + " " + bgColor + " overflow-scroll"}>
             {children}
         </div>
     );

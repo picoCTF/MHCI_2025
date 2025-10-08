@@ -27,7 +27,7 @@ const HorizontalScrollDiv: React.FC<HorizontalScrollDivProps> = ({ children, isF
                     </ButtonGroup>
                 </div>
             </div>
-            <FocusWrapperCard isFocused={isFocused}>
+            <FocusWrapperCard isFocused={isFocused} orientation={"row"}>
                 {children}
             </FocusWrapperCard>
             <Pagination color="secondary" page={currentPage} total={10} onChange={setCurrentPage} />
