@@ -1,0 +1,49 @@
+{
+    "PagedLearningPathResponse": {
+        "results": [
+            {
+                "id": 0,
+                "name": "Learning Path 1",
+                "active": true,
+                "sections": [
+                    {
+                        "name": "Section 1",
+                        "completion": 4,
+                        "contents": []
+                    }
+                ],
+                "challenges": [
+                    {
+                        "id": 0,
+                        "name": "Challenge 1",
+                        "difficulty": 2,
+                        "solved_by_due_date": false,
+                        "solve_time": null
+                    },
+                    {
+                        "id": 1,
+                        "name": "Challenge 2",
+                        "difficulty": 1,
+                        "solved_by_due_date": false,
+                        "solve_time": null
+                    },
+                    {
+                        "id": 2,
+                        "name": "Challenge 3",
+                        "difficulty": 3,
+                        "solved_by_due_date": false,
+                        "solve_time": null
+                    },
+                    {
+                        "id": 3,
+                        "name": "Challenge 4",
+                        "difficulty": 1,
+                        "solved_by_due_date": false,
+                        "solve_time": null
+                    }
+                ]
+            }
+        ],
+        "count": 3
+    }
+}

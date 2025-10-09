@@ -1,5 +1,5 @@
 import { Card, CardBody, Link } from "@heroui/react";
-import LearningPathCard from "../learning-paths/LearningPathCard";
+import LearningPathCard from "../general/LearningPathCard";
 
 export interface LearningPathsProfileCardProps {}
 

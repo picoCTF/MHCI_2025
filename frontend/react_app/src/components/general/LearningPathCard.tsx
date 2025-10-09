@@ -1,9 +1,9 @@
 import { Button, Card, CardBody, Progress } from "@heroui/react";
 
-import DifficultyChip, { type DifficultyProp } from "../general/DifficultyChip";
-import IconCard from "../general/IconCard";
-import ProgressWithTextDiv from "../general/ProgressWithTextDiv";
-import Icon from "../general/Icon";
+import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
+import IconCard from "./IconCard";
+import ProgressWithTextDiv from "./ProgressWithTextDiv";
+import Icon from "./Icon";
 
 export interface LearningPathCardProps {
     description: string;

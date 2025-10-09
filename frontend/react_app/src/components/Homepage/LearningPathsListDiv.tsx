@@ -1,5 +1,5 @@
 import { Link } from "@heroui/react";
-import LearningPathCard, { type LearningPathCardProps } from "../learning-paths/LearningPathCard";
+import LearningPathCard, { type LearningPathCardProps } from "../general/LearningPathCard";
 import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import FocusWrapperCard from "../general/FocusWrapperCard";
 // import HorizontalScrollDiv from "../general/HorizontalScrollDiv";
