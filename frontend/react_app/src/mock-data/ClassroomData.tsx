@@ -5,21 +5,105 @@ export const mockClassrooms: ClassroomCardProps[] = [
         id: 0,
         name: "Classroom 1",
         numMembers: 24,
-        recentAssignments: [],
-        pendingMemberUsernames: []
+        recentAssignments: [
+                {
+                    name: "Assignment 1",
+                    completedChallenges: 5,
+                    totalChallenges: 7,
+                    isActive: false,
+                    id: 0
+                },
+                {
+                    name: "Assignment 2",
+                    completedChallenges: 7,
+                    totalChallenges: 7,
+                    isActive: true,
+                    id: 1
+                }
+            ],
+        pendingMemberUsernames: [
+                {
+                    username: "Username 1",
+                    id: 0
+                },
+                {
+                    username: "Username 2",
+                    id: 1
+                },
+                {
+                    username: "Username 3",
+                    id: 2
+                }
+            ]
     },
     {
         id: 1,
         name: "Classroom 2",
         numMembers: 10,
-        recentAssignments: [],
-        pendingMemberUsernames: []
+        recentAssignments: [
+                {
+                    name: "Assignment 1",
+                    completedChallenges: 5,
+                    totalChallenges: 7,
+                    isActive: false,
+                    id: 2
+                },
+                {
+                    name: "Assignment 2",
+                    completedChallenges: 7,
+                    totalChallenges: 7,
+                    isActive: true,
+                    id: 3
+                }
+            ],
+        pendingMemberUsernames: [
+                {
+                    username: "Username 4",
+                    id: 4
+                },
+                {
+                    username: "Username 5",
+                    id: 5
+                },
+                {
+                    username: "Username 6",
+                    id: 6
+                }
+            ]
     },
     {
         id: 2,
         name: "Classroom 3",
         numMembers: 30,
-        recentAssignments: [],
-        pendingMemberUsernames: []
+        recentAssignments: [
+                {
+                    name: "Assignment 1",
+                    completedChallenges: 5,
+                    totalChallenges: 7,
+                    isActive: false,
+                    id: 4
+                },
+                {
+                    name: "Assignment 2",
+                    completedChallenges: 7,
+                    totalChallenges: 7,
+                    isActive: true,
+                    id: 5
+                }
+            ],
+        pendingMemberUsernames: [
+                {
+                    username: "Username 7",
+                    id: 7
+                },
+                {
+                    username: "Username 8",
+                    id: 8
+                },
+                {
+                    username: "Username 9",
+                    id: 9
+                }
+            ]
     }
 ]

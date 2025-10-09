@@ -1,0 +1,152 @@
+{
+    "results": [
+        {
+            "id": 0,
+            "classroom": {
+                "id": 0,
+                "name": "Classroom 1"
+            },
+            "name": "Assignment 1",
+            "due_date": "2025-10-03T09:08:04.524Z",
+            "active": true,
+            "created": true,
+            "challenges": [
+                {
+                    "id": 0,
+                    "name": "Challenge 1",
+                    "difficulty": 2,
+                    "points": 456,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 1,
+                    "name": "Challenge 2",
+                    "difficulty": 1,
+                    "points": 123,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 2,
+                    "name": "Challenge 3",
+                    "difficulty": 3,
+                    "points": 789,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 3,
+                    "name": "Challenge 4",
+                    "difficulty": 1,
+                    "points": 123,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "classroom": {
+                "id": 0,
+                "name": "Classroom 1"
+            },
+            "name": "Assignment 2",
+            "due_date": "2025-10-01T00:00:00.000Z",
+            "active": true,
+            "created": true,
+            "challenges": [
+                {
+                    "id": 0,
+                    "name": "Challenge 1",
+                    "difficulty": 1,
+                    "points": 123,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 1,
+                    "name": "Challenge 2",
+                    "difficulty": 1,
+                    "points": 123,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 2,
+                    "name": "Challenge 3",
+                    "difficulty": 3,
+                    "points": 789,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 3,
+                    "name": "Challenge 4",
+                    "difficulty": 2,
+                    "points": 456,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "classroom": {
+                "id": 1,
+                "name": "Classroom 2"
+            },
+            "name": "Assignment 3",
+            "due_date": "2025-10-07T05:06:07.123Z",
+            "active": true,
+            "created": true,
+            "challenges": [
+                {
+                    "id": 0,
+                    "name": "Challenge 1",
+                    "difficulty": 1,
+                    "points": 123,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 1,
+                    "name": "Challenge 2",
+                    "difficulty": 2,
+                    "points": 456,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 2,
+                    "name": "Challenge 3",
+                    "difficulty": 2,
+                    "points": 456,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                },
+                {
+                    "id": 3,
+                    "name": "Challenge 4",
+                    "difficulty": 3,
+                    "points": 789,
+                    "solved_by_due_date": false,
+                    "solve_time": null,
+                    "suspicious_submissions": ["sus1", "sus2"]
+                }
+            ]
+        }
+    ],
+    "count": 3
+}

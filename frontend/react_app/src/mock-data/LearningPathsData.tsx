@@ -13,7 +13,8 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             name: "Learning Path 1",
             numCompletedChallenges: 6,
             numSolves: 780,
-            numTotalChallenges: 10
+            numTotalChallenges: 10,
+            variant: "standard"
         },
         {
             description: "This is the learning path description",
@@ -26,7 +27,8 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             name: "Learning Path 1",
             numCompletedChallenges: 6,
             numSolves: 780,
-            numTotalChallenges: 10
+            numTotalChallenges: 10,
+            variant: "standard"
         },
         {
             description: "This is the learning path description",
@@ -39,7 +41,8 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             name: "Learning Path 1",
             numCompletedChallenges: 6,
             numSolves: 780,
-            numTotalChallenges: 10
+            numTotalChallenges: 10,
+            variant: "standard"
         },
         {
             description: "This is the learning path description",
@@ -52,7 +55,8 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             name: "Learning Path 1",
             numCompletedChallenges: 6,
             numSolves: 780,
-            numTotalChallenges: 10
+            numTotalChallenges: 10,
+            variant: "standard"
         },
         {
             description: "This is the learning path description",
@@ -65,7 +69,8 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             name: "Learning Path 1",
             numCompletedChallenges: 6,
             numSolves: 780,
-            numTotalChallenges: 10
+            numTotalChallenges: 10,
+            variant: "standard"
         },
         {
             description: "This is the learning path description",
@@ -78,7 +83,8 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             name: "Learning Path 2",
             numCompletedChallenges: 0,
             numSolves: 1370,
-            numTotalChallenges: 15
+            numTotalChallenges: 15,
+            variant: "standard"
         }
     ]
 }

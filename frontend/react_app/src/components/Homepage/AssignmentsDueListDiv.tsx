@@ -1,7 +1,8 @@
 import AssignmentCard from "../general/AssignmentCard";
 import FocusWrapperCard, { type FocusWrapperCardProps } from "../general/FocusWrapperCard";
-import data from "../../mock-data/PagedAssignmentResponse.json";
-import type { AssignmentResponse } from "../../Interfaces";
+import data from "../../mock-data/MockPagedAssignmentResponse.json";
+import type { PaginatedAssignmentResponseList } from "../../api_interfaces/2023_generated_interfaces/paginatedAssignmentResponse";
+import type { AssignmentResponse } from "../../api_interfaces/2023_generated_interfaces/assignmentResponse";
 
 export interface AssignmentsDueListDivProps {
     isFocused: FocusWrapperCardProps['isFocused'];
@@ -15,18 +16,17 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
     /* API_NEEDED - Get the list of assignments that are due for the user */
     
     // let parsedData = JSON.parse(mockJSON); //Make the API call here
-    let assignments: AssignmentResponse[] = data.PagedAssignmentResponse.results;
+    let assignments: PaginatedAssignmentResponseList = data;
 
     //Filter assignments down to those that are not completed/active
     let filteredAssignments: AssignmentResponse[] = [];
 
-    assignments.forEach(assignment => {
-        if(assignment.active) {
+    assignments.results?.forEach(assignment => {
+        if(assignment.active)
+        {
             filteredAssignments.push(assignment);
         }
     })
-
-    assignments = filteredAssignments;
 
     function getNumCompletedChallenges(assignment: AssignmentResponse) {
         let numCompletedChallenges = 0;
@@ -44,7 +44,7 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
                 <h3>You have assignments due soon!</h3>
             </div>
             <FocusWrapperCard isFocused={isFocused} orientation="row">
-                {assignments.map((assignment) => (
+                {filteredAssignments.map((assignment) => (
                     <AssignmentCard key={assignment.id} name={assignment.name} 
                         classroomName={assignment.classroom.name} 
                         completedChallenges={getNumCompletedChallenges(assignment)} 

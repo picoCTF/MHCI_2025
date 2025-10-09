@@ -30,7 +30,7 @@ function renderCell(item: LearningPathsTableElement) {
     // API_NEEDED - Navigate to the correct page for the given challenge/learning resource
     return (
         <Button className="flex flex-row w-full min-w-full h-[100%] pl-6 pr-3 gap-3 justify-start items-center" isDisabled={isDisabled} radius="md" color="default" variant="light" href={item.link}>
-            <IconCard background={backgroundColor} icon={icon}/>
+            <IconCard background={backgroundColor} icon={icon} size={"sm"}/>
             <div className="flex flex-col w-full h-fit text-left">
                 <h2>{item.name}</h2>
                 <div className="flex flex-row gap-4 items-center">
