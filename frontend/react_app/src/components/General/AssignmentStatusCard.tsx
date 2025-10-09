@@ -52,7 +52,7 @@ const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, compl
     
     return (
         <Card className="w-full h-fit bg-content2-base p-0 m-0" radius="sm" shadow="none">
-            <CardBody className="flex flex-row justify-between items-center p-4">
+            <CardBody className="flex flex-row h-fit justify-between items-center p-4">
                 <div className="flex flex-col w-full h-full gap-2">
                     <div className="flex flex-row gap-4">
                         <h3 className="font-sans font-semibold">{name}</h3>
