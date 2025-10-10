@@ -1,8 +1,8 @@
 import AssignmentCard from "../general/AssignmentCard";
 import FocusWrapperCard, { type FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import data from "../../mock-data/MockPagedAssignmentResponse.json";
-import type { PaginatedAssignmentResponseList } from "../../api_interfaces/2023_generated_interfaces/paginatedAssignmentResponse";
-import type { AssignmentResponse } from "../../api_interfaces/2023_generated_interfaces/assignmentResponse";
+import type { PaginatedAssignmentResponseList } from "../../api_interfaces/2023_generated_interfaces/assignment/paginatedAssignmentResponse";
+import type { AssignmentResponse } from "../../api_interfaces/2023_generated_interfaces/assignment/assignmentResponse";
 
 export interface AssignmentsDueListDivProps {
     isFocused: FocusWrapperCardProps['isFocused'];
