@@ -2,7 +2,9 @@ import "./Page.css";
 import Header from "../components/General/PageNavbar";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 
-function Classroom() {
+interface ClassroomProps {}
+
+const Classroom: React.FC<ClassroomProps> = ({ }) => {
 
     return (
         <div className="Page">
