@@ -2,7 +2,7 @@ import { Button, Card, CardBody, Image } from "@heroui/react";
 
 export interface BannerCardProps {
     buttonText: string;
-    id: string;
+    id: number;
     title: string;
 
     eventTime?: string;

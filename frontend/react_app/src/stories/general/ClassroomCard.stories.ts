@@ -29,17 +29,6 @@ export const Default: Story = {
       completedChallenges: 0,
       totalChallenges: 10,
       isActive: false,
-      time: {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-      },
-      dueDate: {
-        day: 1,
-        month: 1,
-        year: 0
-      },
       id: 1
     },
     {
@@ -47,17 +36,6 @@ export const Default: Story = {
       completedChallenges: 3,
       totalChallenges: 5,
       isActive: false,
-      time: {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-      },
-      dueDate: {
-        day: 1,
-        month: 1,
-        year: 0
-      },
       id: 2
     }
   ],

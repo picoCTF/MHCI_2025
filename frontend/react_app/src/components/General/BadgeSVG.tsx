@@ -8,7 +8,7 @@ export interface BadgeSVGProps {
     strokeColor: 1 | 2 | 3;
     textColor: 1 | 2 | 3;
     icon: IconProps["name"];
-    id: string;
+    id: number;
     title: string;
 
     width?: number;

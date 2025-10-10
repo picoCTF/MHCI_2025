@@ -25,7 +25,7 @@ export const Default: Story = {
     category: "Binary_Exploit",
     description: "This is the challenge description.",
     difficulty: {
-      Enum: 1
+      difficultyLvl: "Easy"
     },
     flag: "TEST_FLAG",
     hints: {

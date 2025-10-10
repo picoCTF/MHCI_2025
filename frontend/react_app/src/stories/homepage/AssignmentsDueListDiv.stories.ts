@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 // import { fn } from 'storybook/test';
 
 import AssignmentsDueListDiv from '../../components/homepage/AssignmentsDueListDiv';
-import { mockHomepage } from '../../mock-data/HomeData';
 
 const meta = {
   title: 'Homepage/AssignmentsDueListDiv',
@@ -27,7 +26,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    isFocused: mockHomepage.assignmentsList.isFocused,
-    list: mockHomepage.assignmentsList.list
+    isFocused: false
+  },
+};
+
+export const Focused: Story = {
+  args: {
+    isFocused: true
   },
 };

@@ -27,6 +27,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     buttonText: "CTA",
+    id: 123,
     title: "Banner Title"
   },
 };

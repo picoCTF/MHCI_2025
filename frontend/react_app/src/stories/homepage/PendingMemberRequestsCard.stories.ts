@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import PendingMemberRequestsCard from '../../components/homepage/PendingMemberRequestsCard';
-import { mockHomepage } from '../../mock-data/HomeData';
+import { mockClassrooms } from '../../mock-data/ClassroomData';
 
 // import { fn } from 'storybook/test';
 
@@ -22,6 +22,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    pendingRequests: mockHomepage.classroomsList.list[0].pendingMemberUsernames
+    pendingRequests: mockClassrooms[0].pendingMemberUsernames
   }
 };

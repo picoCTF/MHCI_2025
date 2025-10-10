@@ -25,11 +25,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Standard: Story = {
   args: {
     description: "Test",
     difficulty: {
-      Enum: 1
+      difficultyLvl: "Easy"
     },
     hasProgress: false,
     id: 1,
@@ -37,6 +37,41 @@ export const Default: Story = {
     name: "Learning Path Name",
     numCompletedChallenges: 0,
     numSolves: 679,
-    numTotalChallenges: 15
+    numTotalChallenges: 15,
+    variant: "standard"
+  },
+};
+
+export const Compact: Story = {
+  args: {
+    description: "Test",
+    difficulty: {
+      difficultyLvl: "Easy"
+    },
+    hasProgress: false,
+    id: 1,
+    link: "#",
+    name: "Learning Path Name",
+    numCompletedChallenges: 0,
+    numSolves: 679,
+    numTotalChallenges: 15,
+    variant: "compact"
+  },
+};
+
+export const Expanded: Story = {
+  args: {
+    description: "Test",
+    difficulty: {
+      difficultyLvl: "Easy"
+    },
+    hasProgress: false,
+    id: 1,
+    link: "#",
+    name: "Learning Path Name",
+    numCompletedChallenges: 0,
+    numSolves: 679,
+    numTotalChallenges: 15,
+    variant: "expanded"
   },
 };

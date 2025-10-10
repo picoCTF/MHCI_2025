@@ -27,20 +27,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     completedChallenges: 12,
-    dueDate: {
-      day: 1,
-      month: 1,
-      year: 0
-    },
     id: 123,
     isActive: true,
     name: "Assignment Name",
-    time: {
-      days: 1,
-      hours: 3,
-      minutes: 2,
-      seconds: 0
-    },
     totalChallenges: 20
   },
 };

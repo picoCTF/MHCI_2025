@@ -21,18 +21,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Easy: Story = {
   args: {
-    Enum: 1
+    difficultyLvl: "Easy"
   }
 };
 
 export const Medium: Story = {
   args: {
-    Enum: 2
+    difficultyLvl: "Medium"
   }
 };
 
 export const Hard: Story = {
   args: {
-    Enum: 3
+    difficultyLvl: "Hard"
   }
 };

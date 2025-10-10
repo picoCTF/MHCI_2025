@@ -19,9 +19,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Small: Story = {
   args: {
     background: "primary",
-    icon: "mode_heat"
+    icon: "mode_heat",
+    size: "sm"
+  }
+};
+
+export const Large: Story = {
+  args: {
+    background: "primary",
+    icon: "mode_heat",
+    size: "lg"
   }
 };

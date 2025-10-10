@@ -23,6 +23,7 @@ export const Default: Story = {
   args: {
     description: "The description of the card",
     icon: "mode_heat",
+    id: 123,
     link: "#",
     name: "Name"
   }

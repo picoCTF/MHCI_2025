@@ -26,18 +26,8 @@ export const Default: Story = {
         name: 'Assignment 1',
         completedChallenges: 0,
         totalChallenges: 10,
-        isActive: true,
-        time: {
-          days: 5,
-          hours: 3,
-          minutes: 0,
-          seconds: 1
-        },
-        dueDate: {
-          day: 1,
-          month: 8,
-          year: 2025
-        }
+        id: 123,
+        isActive: true
       }
     ]
   }

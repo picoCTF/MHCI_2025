@@ -28,14 +28,9 @@ export const Default: Story = {
   args: {
     classroomName: "Name",
     completedChallenges: 12,
+    due_date: "20260101T11:59:59.999Z",
     id: 1,
     name: "Assignment Name",
-    time: {
-      days: 1,
-      hours: 3,
-      minutes: 2,
-      seconds: 0
-    },
     totalChallenges: 20
   },
 };

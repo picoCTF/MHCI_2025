@@ -27,6 +27,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    list: mockHomepage.learningPathsList.list
+    isFocused: false,
+    list: mockHomepage.learningPathsList
+  },
+};
+
+export const Focused: Story = {
+  args: {
+    isFocused: true,
+    list: mockHomepage.learningPathsList
   },
 };
