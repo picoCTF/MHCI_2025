@@ -47,15 +47,44 @@ export const Default: Story = {
         totalNumChallenges: 20
     },
     badges: {
-        selectedBadges: [{
+        selectedBadges: [
+          {
             shape: 1,
             bgColor: 1,
             strokeColor: 1,
             textColor: 1,
             icon: 'search',
             id: 0,
-            title: 'Test Badge'
-        }]
+            title: 'Badge 1'
+          },
+          {
+            shape: 2,
+            bgColor: 2,
+            strokeColor: 2,
+            textColor: 2,
+            icon: 'search',
+            id: 1,
+            title: 'Badge 2'
+          },
+          {
+            shape: 1,
+            bgColor: 2,
+            strokeColor: 1,
+            textColor: 1,
+            icon: 'search',
+            id: 2,
+            title: 'Badge 3'
+          },
+          {
+            shape: 2,
+            bgColor: 1,
+            strokeColor: 1,
+            textColor: 1,
+            icon: 'search',
+            id: 0,
+            title: 'Badge 4'
+          }
+        ]
     },
     userInfo: {
         avatar: {},

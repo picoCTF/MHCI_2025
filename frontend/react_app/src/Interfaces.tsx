@@ -1,4 +1,4 @@
 export interface SemanticColorProps {
-    color: "primary" | "secondary" | "default" | "success" | "warning" | "danger";
+    color: "primary" | "secondary" | "default" | "success" | "warning" | "danger" | "content1" | "content2" | "content3" | "content4";
     colorValue: "base" | "foreground" | "50" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
 }

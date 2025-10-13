@@ -1,5 +1,5 @@
-import type { Preview } from '@storybook/react-vite'
-import '../src/index.css';
+import type { Preview } from '@storybook/react-vite';
+import "../src/index.css";
 
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 
@@ -28,7 +28,9 @@ const preview: Preview = {
       },
       defaultTheme: 'light',
       attributeName: 'data-mode',
-  })]
+  })],
+
+  tags: ['autodocs']
 };
 
 export default preview;
