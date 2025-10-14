@@ -14,7 +14,7 @@ const ChallengeCompletionProfileCard: React.FC<ChallengeCompletionProfileCardPro
     numMediumChallenges, numHardChallenges, totalNumChallenges }) => {
 
     return (
-        <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10" 
+        <Card className="flex flex-col w-full h-fit min-h-fit max-h-fit gap-3 bg-content1-base border-small border-default-300 p-10" 
             radius="md" shadow="none">
             <CardHeader className="flex flex-row w-full h-fit items-start justify-between m-0 p-0">
                 <h2>Challenge Completion</h2>

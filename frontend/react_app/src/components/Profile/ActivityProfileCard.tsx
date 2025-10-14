@@ -186,33 +186,33 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                         {/* FIX_ME - Need to make the calendar adjust to fill the width and height of ots parent */}
                         <Tab className="flex flex-col w-full h-fit" key={"lifetime"} title="Lifetime">
                             <div className="flex flex-col gap-4 w-full h-fit">
-                                <div className="flex flex-col" style={{width: "600px", height: "150px"}}>
+                                <div className="flex flex-col" style={{width: "700px", height: "150px"}}>
                                     <ResponsiveCalendar 
-                                    from={yearData.from} 
-                                    to={yearData.to} 
-                                    data={yearData.data}
-                                    emptyColor={emptyElementColor}
-                                    colors={[firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
-                                    margin={{ left: 20 }}
-                                    yearSpacing={40}
-                                    monthBorderColor={borderColor}
-                                    dayBorderWidth={2}
-                                    dayBorderColor={borderColor}
-                                    legends={[
-                                        {
-                                            anchor: 'bottom',
-                                            direction: 'row',
-                                            itemCount: 4,
-                                            itemWidth: 42,
-                                            itemHeight: 36,
-                                            itemsSpacing: 14,
-                                            itemDirection: 'right-to-left',
-                                            translateY: 10,
-                                            symbolSize: 20,
-                                            symbolShape: "square" //Could try making this a custom shape with rounded edges
-                                        }
-                                    ]}
-                                />
+                                        from={yearData.from} 
+                                        to={yearData.to} 
+                                        data={yearData.data}
+                                        emptyColor={emptyElementColor}
+                                        colors={[firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
+                                        margin={{ left: 20 }}
+                                        yearSpacing={40}
+                                        monthBorderColor={borderColor}
+                                        dayBorderWidth={2}
+                                        dayBorderColor={borderColor}
+                                        legends={[
+                                            {
+                                                anchor: 'bottom',
+                                                direction: 'row',
+                                                itemCount: 4,
+                                                itemWidth: 42,
+                                                itemHeight: 36,
+                                                itemsSpacing: 14,
+                                                itemDirection: 'right-to-left',
+                                                translateY: 10,
+                                                symbolSize: 20,
+                                                symbolShape: "square" //Could try making this a custom shape with rounded edges
+                                            }
+                                        ]}
+                                    />
                                 </div>
                                 <ActivitySummaryCard summary={"AI summary of lifetime"}/>
                             </div>
