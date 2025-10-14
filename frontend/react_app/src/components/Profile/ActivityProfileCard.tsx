@@ -1,7 +1,7 @@
 import { Card, CardBody, semanticColors, Tab, Tabs } from "@heroui/react";
 import ActivitySummaryCard from "./Activity/ActivitySummaryCard";
 import Icon from "../general/Icon";
-import { ResponsiveCalendar, ResponsiveTimeRange, type CalendarData } from "@nivo/calendar";
+import { ResponsiveCalendar, ResponsiveTimeRange, type CalendarData, } from "@nivo/calendar";
 
 export interface ActivityProfileCardProps {
     numSolves: number;
@@ -45,7 +45,45 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
             },
             {
                 day: "2025-08-01",
-                value: 50
+                value: 10
+            }
+        ]
+    }
+
+    let monthData: CalendarData = {
+        from: "2025-10-01",
+        to: "2025-10-30",
+        data: [
+            {
+                day: "2025-10-13",
+                value: 5
+            },
+            {
+                day: "2025-11-13",
+                value: 3
+            },
+            {
+                day: "2025-08-01",
+                value: 10
+            }
+        ]
+    }
+
+    let weekData: CalendarData = {
+        from: "2025-10-05",
+        to: "2025-10-12",
+        data: [
+            {
+                day: "2025-10-13",
+                value: 5
+            },
+            {
+                day: "2025-11-13",
+                value: 3
+            },
+            {
+                day: "2025-08-01",
+                value: 10
             }
         ]
     }
@@ -72,37 +110,72 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                 <div className="flex flex-col w-full h-fit items-center text-center">
                     <Tabs>
                         <Tab key={"week"} title="Week">
-                            <div className="gap-4">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </p>
+                            <div className="flex flex-col gap-4 w-full h-fit">
+                                <div className="flex flex-col place-center" style={{width: "400px", height: "150px"}}>
+                                    <ResponsiveTimeRange 
+                                        from={weekData.from} 
+                                        to={weekData.to} 
+                                        data={weekData.data}
+                                        emptyColor={emptyElementColor}
+                                        colors={[firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
+                                        margin={{ top: 25, bottom: 20 }}
+                                        dayBorderWidth={2}
+                                        dayBorderColor={borderColor}
+                                        weekdayTicks={[0, 1, 2, 3, 4, 5, 6]}
+                                        weekdayLegendOffset={-40}
+                                        weekdays={["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]}
+                                        dayRadius={5}
+                                        daySpacing={8}
+                                        direction="vertical"
+                                        legends={[
+                                            {
+                                                anchor: 'bottom',
+                                                direction: 'row',
+                                                itemCount: 4,
+                                                itemWidth: 42,
+                                                itemHeight: 36,
+                                                itemsSpacing: 10,
+                                                itemDirection: 'right-to-left',
+                                                translateY: (-30),
+                                                symbolSize: 20,
+                                                symbolShape: "square" //Could try making this a custom shape with rounded edges
+                                            }
+                                        ]}
+                                    />
+                                </div>
                                 <ActivitySummaryCard summary={"AI summary of the week"}/>
                             </div>
                         </Tab>
                         <Tab key={"month"} title="Month">
-                            <div className="gap-4">
-                                <div className="flex flex-col" style={{width: "800px", height: "150px"}}>
+                            <div className="flex flex-col gap-4 w-full h-fit">
+                                <div className="flex flex-col place-center" style={{width: "400px", height: "370px"}}>
                                     <ResponsiveTimeRange 
-                                        from={yearData.from} 
-                                        to={yearData.to} 
-                                        data={yearData.data}
+                                        from={monthData.from} 
+                                        to={monthData.to} 
+                                        data={monthData.data}
                                         emptyColor={emptyElementColor}
                                         colors={[firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
-                                        margin={{ left: 20 }}
+                                        margin={{ top: 25, bottom: 20 }}
                                         dayBorderWidth={2}
                                         dayBorderColor={borderColor}
+                                        weekdayTicks={[0, 1, 2, 3, 4, 5, 6]}
+                                        weekdayLegendOffset={10}
+                                        weekdays={["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]}
+                                        dayRadius={5}
+                                        daySpacing={8}
+                                        direction="vertical"
                                         legends={[
                                             {
-                                                anchor: 'bottom-right',
+                                                anchor: 'bottom',
                                                 direction: 'row',
-                                                translateY: 36,
                                                 itemCount: 4,
                                                 itemWidth: 42,
                                                 itemHeight: 36,
                                                 itemsSpacing: 14,
-                                                itemDirection: 'right-to-left'
+                                                itemDirection: 'right-to-left',
+                                                translateY: (-20),
+                                                symbolSize: 20,
+                                                symbolShape: "square" //Could try making this a custom shape with rounded edges
                                             }
                                         ]}
                                     />
@@ -112,8 +185,8 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                         </Tab>
                         {/* FIX_ME - Need to make the calendar adjust to fill the width and height of ots parent */}
                         <Tab className="flex flex-col w-full h-fit" key={"lifetime"} title="Lifetime">
-                            <div className="flex flex-col gap-4 w-full min-w-fit h-fit">
-                                <div className="flex flex-col" style={{width: "800px", height: "150px"}}>
+                            <div className="flex flex-col gap-4 w-full h-fit">
+                                <div className="flex flex-col" style={{width: "600px", height: "150px"}}>
                                     <ResponsiveCalendar 
                                     from={yearData.from} 
                                     to={yearData.to} 
@@ -127,14 +200,16 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                                     dayBorderColor={borderColor}
                                     legends={[
                                         {
-                                            anchor: 'bottom-right',
+                                            anchor: 'bottom',
                                             direction: 'row',
-                                            translateY: 36,
                                             itemCount: 4,
                                             itemWidth: 42,
                                             itemHeight: 36,
                                             itemsSpacing: 14,
-                                            itemDirection: 'right-to-left'
+                                            itemDirection: 'right-to-left',
+                                            translateY: 10,
+                                            symbolSize: 20,
+                                            symbolShape: "square" //Could try making this a custom shape with rounded edges
                                         }
                                     ]}
                                 />
