@@ -1,4 +1,5 @@
 // import { semanticColors } from "@heroui/react";
+import { semanticColors } from "@heroui/react";
 import { ResponsiveBar } from "@nivo/bar";
 
 export interface ChallengeCompletionDivProps {
@@ -43,26 +44,34 @@ const ChallengeCompletionDiv: React.FC<ChallengeCompletionDivProps> = ({ numEasy
     // }
 
     return (
-        <ResponsiveBar 
-            axisLeft={null}
-            data={[
-                {
-                    "Easy": numEasyChallenges,
-                    "Medium": numMediumChallenges,
-                    "Hard": numHardChallenges
-                }
-            ]}
-            enableGridY={false}
-            legends={[
-                {
-                    dataFrom: "keys",
-                    anchor: "center",
-                    direction: "row",
-                    itemWidth: 0,
-                    itemHeight: 0
-                }
-            ]}
-        />
+        <div className="flex flex col w-[600px] h-[100px]">
+            <ResponsiveBar 
+                axisBottom={null}
+                axisLeft={null}
+                colors={["#41BE64", "#F0A000", "#F20D11"]}
+                colorBy="id"
+                data={[
+                    {
+                        "Easy": numEasyChallenges,
+                        "Medium": numMediumChallenges,
+                        "Hard": numHardChallenges
+                    }
+                ]}
+                enableGridY={false}
+                indexBy={"Easy"}
+                layout="horizontal"
+                legends={[
+                    {
+                        dataFrom: "keys",
+                        anchor: "center",
+                        direction: "row",
+                        itemWidth: 100,
+                        itemHeight: 16
+                    }
+                ]}
+                // margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+            />
+        </div>
         // <div className="flex flex-row w-full min-w-full">
         //     <div className={"flex flex-col justify-start items-start w-[" + (numEasyChallenges / totalNumChallenges * 100) + "%] h-fit"}>
         //         <div className="bg-success-500" color={semanticColors.light.success[500]} style={{width:"100%"}}/>

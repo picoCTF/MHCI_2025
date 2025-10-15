@@ -53,7 +53,7 @@ const Profile: React.FC<ProfileProps> = ({ activity, badges, challengeCompletion
                         numWebExploitChallenges={skillDistribution.numWebExploitChallenges} 
                         totalWebExploitChallenges={skillDistribution.totalWebExploitChallenges}/>
                     {/* API_NEEDED - Get the badges the user has chosen to display on their profile */}
-                    <BadgesProfileCard selectedBadges={badges.selectedBadges}/>
+                    <BadgesProfileCard badges={badges.badges} selectedBadges={badges.selectedBadges}/>
                 </div>
             </div>
         </div>
