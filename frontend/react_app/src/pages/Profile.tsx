@@ -7,7 +7,6 @@ import BadgesProfileCard, { type BadgesProfileCardProps } from "../components/Pr
 import ActivityProfileCard, { type ActivityProfileCardProps } from "../components/Profile/ActivityProfileCard";
 import UserProfileCard, { type UserProfileCardProps } from "../components/Profile/UserProfileCard";
 import LearningPathsProfileCard from "../components/profile/LearningPathsProfileCard";
-import LearningPathCard from "../components/general/LearningPathCard";
 
 export interface ProfileProps {
     activity: ActivityProfileCardProps;
@@ -52,8 +51,7 @@ const Profile: React.FC<ProfileProps> = ({ activity, badges, challengeCompletion
                         totalReverseEngChallenges={skillDistribution.totalReverseEngChallenges} 
                         numWebExploitChallenges={skillDistribution.numWebExploitChallenges} 
                         totalWebExploitChallenges={skillDistribution.totalWebExploitChallenges}/>
-                    {/* API_NEEDED - Get the badges the user has chosen to display on their profile */}
-                    <BadgesProfileCard badges={badges.badges} selectedBadges={badges.selectedBadges}/>
+                    <BadgesProfileCard/>
                 </div>
             </div>
         </div>

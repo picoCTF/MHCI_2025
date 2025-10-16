@@ -1,0 +1,71 @@
+{
+    "count": 5,
+    "results": [
+        {
+            "shape": "pointed",
+            "bgColor": "green",
+            "strokeColor": "green",
+            "textColor": "green",
+            "icon": "search",
+            "id": 0,
+            "isSelected": true,
+            "isUnlocked": true,
+            "title": "Badge 1"
+        },
+        {
+            "shape": "rounded",
+            "bgColor": "yellow",
+            "strokeColor": "yellow",
+            "textColor": "yellow",
+            "icon": "search",
+            "id": 1,
+            "isSelected": true,
+            "isUnlocked": true,
+            "title": "Badge 2"
+        },
+        {
+            "shape": "pointed",
+            "bgColor": "yellow",
+            "strokeColor": "yellow",
+            "textColor": "yellow",
+            "icon": "search",
+            "id": 2,
+            "isSelected": false,
+            "isUnlocked": true,
+            "title": "Badge 3"
+        },
+        {
+            "shape": "rounded",
+            "bgColor": "green",
+            "strokeColor": "green",
+            "textColor": "green",
+            "icon": "search",
+            "id": 3,
+            "isSelected": true,
+            "isUnlocked": false,
+            "title": "Badge 4"
+        },
+        {
+            "shape": "pointed",
+            "bgColor": "purple",
+            "strokeColor": "purple",
+            "textColor": "purple",
+            "icon": "search",
+            "id": 4,
+            "isSelected": true,
+            "isUnlocked": true,
+            "title": "Badge 5"
+        },
+        {
+            "shape": "rounded",
+            "bgColor": "purple",
+            "strokeColor": "purple",
+            "textColor": "purple",
+            "icon": "search",
+            "id": 5,
+            "isSelected": false,
+            "isUnlocked": false,
+            "title": "Badge 6"
+        }
+    ]
+}

@@ -1,22 +1,23 @@
 import { commonColors } from "@heroui/react";
 import type { IconProps } from "./Icon";
+import type { Badge, BadgeColors, BadgeShapes } from "../../api_interfaces/Badge"
 import Icon from "./Icon";
 
-export interface BadgeSVGProps {
-    shape: 1 | 2;
-    bgColor: 1 | 2 | 3;
-    strokeColor: 1 | 2 | 3;
-    textColor: 1 | 2 | 3;
-    icon: IconProps["name"];
-    id: number;
-    title: string;
+// export interface BadgeSVGProps {
+//     shape: BadgeShapes;
+//     bgColor: BadgeColors;
+//     strokeColor: BadgeColors;
+//     textColor: BadgeColors;
+//     icon: IconProps["name"];
+//     id: number;
+//     title: string;
 
-    width?: number;
-    height?: number;
-}
+//     width?: number;
+//     height?: number;
+// }
 
 //The Badge SVGs that can be obtained by the user
-const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textColor, icon, title, width, height }) => {
+const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, icon, title, width, height}) => {
 
     //Get the shape of the badge
     let backgroundFilledPathShape = "";
@@ -37,7 +38,7 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
     
 
     switch (shape){
-        case 1:
+        case "pointed":
         {
             backgroundFilledPathShape = (
                 "M 20 0" + 
@@ -97,17 +98,17 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
     let titleColor = "";
 
     switch (bgColor) {
-        case 1:
+        case "green":
         {
             fillColor = "#A8E1B8";
             break;
         }
-        case 2:
+        case "yellow":
         {
             fillColor = "#F7B750";
             break;
         }
-        case 3:
+        case "purple":
         {
             fillColor = "#C9A9E9";
             break;
@@ -120,17 +121,17 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
     }
 
     switch(strokeColor) {
-        case 1:
+        case "green":
         {
             lineColor = "#27723C";
             break;
         }
-        case 2:
+        case "yellow":
         {
             lineColor = "#A5090B";
             break;
         }
-        case 3:
+        case "purple":
         {
             lineColor = "#481878";
             break;
@@ -143,17 +144,17 @@ const BadgeSVG: React.FC<BadgeSVGProps> = ({ shape, bgColor, strokeColor, textCo
     }
 
     switch(textColor) {
-        case 1:
+        case "green":
         {
             titleColor = "#27723C";
             break;
         }
-        case 2:
+        case "yellow":
         {
             titleColor = "#A5090B";
             break;
         }
-        case 3:
+        case "purple":
         {
             titleColor = "#481878";
             break;

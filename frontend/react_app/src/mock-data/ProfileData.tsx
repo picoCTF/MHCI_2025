@@ -27,44 +27,115 @@ export const mockProfile: ProfileProps = {
         totalNumChallenges: 60
     },
     badges: {
-        selectedBadges: [
+        badges: {
+            results: [
             {
-                shape: 1,
-                bgColor: 1,
-                strokeColor: 1,
-                textColor: 1,
+                shape: "pointed",
+                bgColor: "green",
+                strokeColor: "green",
+                textColor: "green",
                 icon: "flag",
-                id: "1",
-                title: "Badge 1"
+                isUnlocked: true,
+                id: 0,
+                title: "Badge 1",
+                isSelected: false
             },
             {
-                shape: 2,
-                bgColor: 2,
-                strokeColor: 2,
-                textColor: 2,
+                shape: "rounded",
+                bgColor: "yellow",
+                strokeColor: "yellow",
+                textColor: "yellow",
                 icon: "flag",
-                id: "2",
-                title: "Badge 2"
+                isUnlocked: true,
+                id: 1,
+                title: "Badge 2",
+                isSelected: false
             },
             {
-                shape: 1,
-                bgColor: 3,
-                strokeColor: 3,
-                textColor: 3,
+                shape: "pointed",
+                bgColor: "yellow",
+                strokeColor: "yellow",
+                textColor: "yellow",
                 icon: "flag",
-                id: "3",
-                title: "Badge 3"
+                isUnlocked: true,
+                id: 2,
+                title: "Badge 3",
+                isSelected: false
             },
             {
-                shape: 2,
-                bgColor: 1,
-                strokeColor: 1,
-                textColor: 1,
+                shape: "rounded",
+                bgColor: "green",
+                strokeColor: "green",
+                textColor: "green",
                 icon: "flag",
-                id: "4",
-                title: "Badge 4"
+                isUnlocked: true,
+                id: 3,
+                title: "Badge 4",
+                isSelected: false
+            },
+            {
+                shape: "rounded",
+                bgColor: "purple",
+                strokeColor: "purple",
+                textColor: "purple",
+                icon: "flag",
+                isUnlocked: true,
+                id: 4,
+                title: "Badge 5",
+                isSelected: false
             }
-        ]
+        ],
+        count: 5
+        },
+        selectedBadges: {
+            results: [
+            {
+                shape: "pointed",
+                bgColor: "green",
+                strokeColor: "green",
+                textColor: "green",
+                icon: "flag",
+                isUnlocked: true,
+                id: 0,
+                title: "Badge 1",
+                isSelected: false
+            },
+            {
+                shape: "rounded",
+                bgColor: "yellow",
+                strokeColor: "yellow",
+                textColor: "yellow",
+                icon: "flag",
+                id: 1,
+                title: "Badge 2",
+                isSelected: false,
+                isUnlocked: false
+            },
+            {
+                shape: "pointed",
+                bgColor: "purple",
+                strokeColor: "purple",
+                textColor: "purple",
+                icon: "flag",
+                id: 2,
+                title: "Badge 3",
+                isSelected: false,
+                isUnlocked: false
+            },
+            {
+                shape: "rounded",
+                bgColor: "green",
+                strokeColor: "green",
+                textColor: "green",
+                icon: "flag",
+                id: 3,
+                title: "Badge 4",
+                isSelected: false,
+                isUnlocked: false
+            }
+        ],
+        count: 4
+        }
     },
     userInfo: {
         avatar: {},
