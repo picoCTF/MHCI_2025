@@ -53,7 +53,7 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
             return (
                 <Card className="flex w-full h-fit border-small border-default-300 p-4 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
                     <CardBody className="flex flex-col w-full h-fit gap-4 p-0 m-0">
-                        <div className="flex flex-row w-full h-fit justify-between items-center">
+                        <div className="flex flex-row w-full h-fit gap-2 justify-between items-center">
                             <div className="flex flex-row w-fit gap-4 items-center">
                                 <IconCard background={"primary"} icon={"book"} size={"lg"}/>
                                 <h3>{name}</h3>

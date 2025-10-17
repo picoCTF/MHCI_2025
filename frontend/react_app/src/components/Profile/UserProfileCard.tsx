@@ -19,7 +19,7 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, mont
                     <Image src={avatar.src}/>
                 </div>
                 <div className="flex flex-col gap-1">
-                    <div className="flex flex-row justify-between">
+                    <div className="flex flex-row gap-2 justify-between">
                         <h3>{username}</h3>
                         <Button isIconOnly size="sm" radius="full" style={{backgroundColor: "bg-default-500"}}>
                             <Icon name={"info"} size={"lg"} weight={"bold"} color={"default"} colorValue="50"/>
