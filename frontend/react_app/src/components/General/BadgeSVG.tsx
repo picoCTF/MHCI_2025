@@ -168,7 +168,7 @@ const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, ico
 
     //Layer the different parts of the badge image as an SVG
     return (
-        <div className="justify-center">
+        <div className="justify-center p-2">
             <svg xmlns="http://www.w3.org/2000/svg" width={svgWidth} height={svgHeight} viewBox={"0 0 " + svgWidth + " " + svgHeight} fill="none">
                 <g>
                     {/* Badge Symbol */}
@@ -186,7 +186,7 @@ const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, ico
                 </g>
                 {/* Etc */}
             </svg>
-            <h3 style={{color: titleColor, textAlign: "center"}}>{title}</h3>
+            <h3 style={{fontFamily: "Geist Mono", color: titleColor, textAlign: "center"}}>{title}</h3>
         </div>
     );
 }

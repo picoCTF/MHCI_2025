@@ -30,6 +30,12 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
             })
             badge.isSelected = false;
         }
+
+        if(!badge.isSelected) {
+            let temp = badge;
+            temp.isSelected = !temp.isSelected;
+            selectedBadges.results.splice(selectedBadges.results.indexOf(temp), 1);
+        }
     }
 
     return (
@@ -50,13 +56,13 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
                                     If all 4 badges are selected, then you must deselect a badge before choosing a new one 
                                 */}
                                 {badges.results.map((item) => 
-                                    <Card className="flex flex-col w-fit h-fit p-4 border-small border-default-300" style={{backgroundColor: (item.isSelected ? "bg-content2-base" : "bg-content1-base")}} shadow="none" isHoverable isPressable onClick={()=>handleSelection}>
+                                    <Card className="flex flex-col w-fit h-fit p-2 border-small border-default-300" style={{backgroundColor: (item.isSelected ? "bg-content2-base" : "bg-content1-base")}} shadow="none" isHoverable isPressable onClick={()=>handleSelection}>
                                         <BadgeSVG key={item.id} id={item.id} shape={item.shape} bgColor={item.bgColor} strokeColor={item.strokeColor} textColor={item.textColor} icon={item.icon} isSelected={item.isSelected} isUnlocked={item.isUnlocked} title={item.title}/>
                                     </Card>)}
                             </ModalBody>
-                            <ModalFooter className="flex flex-col place-items-center">
-                                <p>More coming soon</p>
-                                <p>Stay tuned for updates</p>
+                            <ModalFooter className="flex flex-col place-items-center pt-10">
+                                <h5 className="font-bold text-base text-default-500">More coming soon</h5>
+                                <p className="text-xs text-default-500">Stay tuned for updates</p>
                             </ModalFooter>
                         </>
                     )}
@@ -83,6 +89,8 @@ const BadgesProfileCard: React.FC<BadgesProfileCardProps> = ({}) => {
             selectedBadges.results.push(badge);
         }
     })
+
+    let [numSelectedBadges, setNumSelectedBadges] = useState(selectedBadges.results.length);
 
     return (
         <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10 gap-6" shadow="none" radius="md">
