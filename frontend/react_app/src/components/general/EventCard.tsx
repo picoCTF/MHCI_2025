@@ -1,5 +1,6 @@
 import { Button, Card, CardBody, CardHeader, Chip } from "@heroui/react";
 import Icon from "./Icon";
+import ParticipantCard from "./ParticipantCard";
 
 interface EventCard {
     variant: "Competition" | "Experimental";
@@ -10,7 +11,7 @@ const EventCard: React.FC<EventCard> = ({ variant }) => {
     switch(variant) {
         case "Experimental": {
             return (
-                <Card className="flex w-full h-fit p-8 gap-8" shadow="none">
+                <Card className="flex w-full h-fit p-8 gap-8 border-small border-default-300" radius="sm" shadow="none">
                     <CardHeader className="flex w-full h-fit p-0 m-0">
                         <div className="flex flex-row w-full h-fit justify-between">
                             <div className="flex flex-col">
@@ -45,7 +46,7 @@ const EventCard: React.FC<EventCard> = ({ variant }) => {
         default: {
             //Competition
             return (
-                <Card className="flex w-full h-fit p-8 gap-8" shadow="none">
+                <Card className="flex w-full h-fit p-8 gap-8 border-small border-default-300" radius="sm" shadow="none">
                     <CardHeader className="flex flex-row w-full h-fit p-0 m-0 gap-6 justify-between">
                         <div className="flex flex-row gap-6">
                             <div className="flex flex-col">
@@ -68,7 +69,7 @@ const EventCard: React.FC<EventCard> = ({ variant }) => {
                         <Button size="md" radius="sm" color="primary">Resume</Button>
                     </CardHeader>
                     <CardBody className="flex w-full h-fit p-0 m-0">
-                        
+                        <ParticipantCard/>
                     </CardBody>
                 </Card>
             );

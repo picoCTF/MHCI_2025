@@ -13,7 +13,10 @@ const ReflectionCTACard: React.FC<ReflectionCTACardProps> = ({}) => {
                     <p>ICON</p>
                     <p>Want to get better? Reflect and compare your strategy!</p>
                 </div>
-                <p>Record a quick explanation of how you solved it to get an AI-summarized comparison with the official one. Sharing your process helps reinforce what you've learned.</p>
+                <p>
+                    Record a quick explanation of how you solved it to get an AI-summarized comparison with the official one. 
+                    Sharing your process helps reinforce what you've learned.
+                </p>
             </div>
             {/* TODO - fix button width + height using the button size??? */}
             <Button className="flex w-fit py-2 px-4" size="md" radius="sm" color="primary">
