@@ -1,5 +1,5 @@
 import type { DifficultyProp } from "../components/general/DifficultyChip";
-import type { LPModuleList } from "./LPModuleList";
+import type { LPModuleList } from "./learningPathModuleList";
 
 export interface LearningPath {
     count: number; // The number of modules in the learning path

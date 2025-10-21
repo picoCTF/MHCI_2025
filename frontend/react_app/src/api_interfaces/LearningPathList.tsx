@@ -1,4 +1,4 @@
-import type { LearningPath } from "./LearningPath";
+import type { LearningPath } from "./learningPath";
 
 export interface LearningPathList {
     count: number; // Number of learning paths in the list

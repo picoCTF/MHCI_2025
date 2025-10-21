@@ -1,4 +1,4 @@
-import type { LPModule } from "./LPModule";
+import type { LPModule } from "./learningPathModule";
 
 export interface LPModuleList {
     count: number;

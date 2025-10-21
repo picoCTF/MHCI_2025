@@ -1,8 +1,8 @@
-import type { TeamResponse } from "./TeamResponse";
+import type { Team } from "./2023_generated_interfaces/team";
 
-export interface EverntRegistrationResponse {
+export interface EventRegistrationResponse {
     id: number;
-    team: TeamResponse;
+    team: Team;
     team_membership_pending: boolean;
     team_leader: boolean;
     score: number;
