@@ -1,4 +1,4 @@
-import type { LearningPathsHomeProps } from "../pages/practice/learning-paths/LearningPathHome";
+import type { LearningPathsHomeProps } from "../pages/practice/learning-paths/Home";
 
 export const mockLearningPathsHome: LearningPathsHomeProps = {
     paths: [

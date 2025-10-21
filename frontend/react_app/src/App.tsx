@@ -17,9 +17,10 @@ import Primer from "./pages/resources/Primer";
 import Community from "./pages/resources/Community";
 import ExternalResources from "./pages/resources/ExternalResources";
 import LearningGuides from "./pages/resources/LearningGuides";
-import LearningPathsHome from './pages/practice/learning-paths/LearningPathHome';
+import LearningHome from './pages/practice/learning-paths/Home';
 import { mockLearningPathsHome } from './mock-data/LearningPathsData';
 import { mockProfile } from './mock-data/ProfileData';
+import PathDetail from './pages/practice/learning-paths/Path';
 
 declare module "@react-types/shared" {
   	interface RouterConfig {
@@ -45,12 +46,14 @@ function App() {
           			<Route path='practice' element={<Outlet/>}>
             			<Route path='games' element={<Games/>}/>
             			<Route path='gym' element={<Gym/>}/>
-            			<Route path='learning-paths' element={<LearningPathsHome paths={mockLearningPathsHome.paths}/>}/>
+            			<Route path='learning-paths' element={<Outlet/>}>
+							<Route index={true} element={<LearningHome paths={mockLearningPathsHome.paths}/>}/>
+							<Route path=':pathID' element={<PathDetail/>}/>
+						</Route>
           			</Route>
           			<Route path='profile' element={<Profile activity={mockProfile.activity} 
             			skillDistribution={mockProfile.skillDistribution} 
             			challengeCompletion={mockProfile.challengeCompletion} 
-            			badges={mockProfile.badges} 
             			userInfo={mockProfile.userInfo}/>}/>
           			<Route path='resources' element={<Outlet/>}>
             			<Route path='community' element={<Community/>}/>

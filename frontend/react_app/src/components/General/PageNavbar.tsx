@@ -41,7 +41,7 @@ function PageNavbar() {
                     <NavbarItem className="hidden lg:flex">
                         <NotificationModal/>
                     </NavbarItem>
-                    <NavbarItem> {/* GRAPHICS_ISSUE - this item is not showing up on the webpage as of 9/23/25 */}
+                    <NavbarItem>
                         <Button as={Link} color="default" href="/profile" variant="flat" radius="full" isIconOnly={true}>
                             <Avatar size='sm'/>
                         </Button>

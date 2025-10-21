@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    difficulty: {Enum: 1},
+    difficulty: "Easy",
     name: "Learning Path Name",
     numChallenges: 15,
     numSolves: 1347,

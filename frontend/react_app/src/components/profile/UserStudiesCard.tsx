@@ -20,23 +20,23 @@ const UserStudiesCard: React.FC<UserStudiesCardProps> = ({  }) => {
                     Researchers facilitating this study may...
                 </p>
                 <Accordion className="p-0 m-0">
-                    <AccordionItem key="1" aria-label="View platform activity data. Click to expand." title="View platform activity data">
-                        Placeholder Text
+                    <AccordionItem key="1" aria-label="View platform activity data" title="View platform activity data">
+                        Researchers may view data related to your platform usage, such as flag submissions, playlist progress, and classroom memberships.
                     </AccordionItem>
-                    <AccordionItem key="2" aria-label="View email address. Click to expand." title="View email addresses">
-                        Placeholder Text
+                    <AccordionItem key="2" aria-label="View email address" title="View email addresses">
+                        Researchers may view your email address. You may be contacted directly regarding surveys or other follow-up questions.
                     </AccordionItem>
-                    <AccordionItem key="3" aria-label="View basic demographic data. Click to expand." title="View basic demographic data">
-                        Placeholder Text
+                    <AccordionItem key="3" aria-label="View basic demographic data" title="View basic demographic data">
+                        Researchers may view basic demographic data, such as your player type and grade.
                     </AccordionItem>
-                    <AccordionItem key="4" aria-label="View locational demographic data. Click to expand." title="View locational demographic data">
-                        Placeholder Text
+                    <AccordionItem key="4" aria-label="View locational demographic data" title="View locational demographic data">
+                        Researchers may view demographic data regarding your geographical location, such as your country, postal code, and school name.
                     </AccordionItem>
-                    <AccordionItem key="5" aria-label="View personal demographic data. Click to expand." title="View personal demographic data">
-                        Placeholder Text
+                    <AccordionItem key="5" aria-label="View personal demographic data" title="View personal demographic data">
+                        Researchers may view your selected gender and race/ethnicity self-identifications.
                     </AccordionItem>
-                    <AccordionItem key="6" aria-label="View webshell logs. Click to expand." title="View webshell logs">
-                        Placeholder Text
+                    <AccordionItem key="6" aria-label="View webshell logs" title="View webshell logs">
+                        Researchers may view logs of your webshell sessions.
                     </AccordionItem>
                 </Accordion>
             </CardBody>

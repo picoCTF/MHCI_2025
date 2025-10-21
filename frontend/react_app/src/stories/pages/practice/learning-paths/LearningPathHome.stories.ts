@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import LearningPathsHome from '../../../../pages/practice/learning-paths/LearningPathHome';
+import LearningPathsHome from '../../../../pages/practice/learning-paths/Home';
 
 const meta = {
   title: 'Pages/Practice/Learning Paths/Home',

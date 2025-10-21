@@ -1,4 +1,5 @@
-import { Card, CardBody } from "@heroui/react";
+import { Card, CardBody, Link } from "@heroui/react";
+import { useNavigate } from "react-router-dom";
 
 import DifficultyChip, { type DifficultyProp } from "../general/DifficultyChip";
 import IconCard from "../general/IconCard";
@@ -18,6 +19,7 @@ export interface LearningPathCardProps {
 }
 
 function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, numSolves: number, numTotalChallenges: number) {
+
     if(hasProgress) {
         return (
             <ProgressWithTextDiv color="primary" ariaLabel={"Amount Completed"} value={numCompletedChallenges/numTotalChallenges*100} endingText={numCompletedChallenges + "/" + numTotalChallenges + " challenges"}/>
@@ -44,15 +46,15 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
     );
 }
 
-const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, link, name, numCompletedChallenges, numSolves, numTotalChallenges }) => {
+const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, id, name, numCompletedChallenges, numSolves, numTotalChallenges }) => {
 
     return (
         /* API_NEEDED - Get the link to the learning path and navigate there on press */
-        <Card className="flex w-full min-w-[384px] max-w-[400px] h-[288px] border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
+        <Card as={Link} className="flex w-full min-w-[384px] max-w-[400px] h-[288px] border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none" href={"/" + id} isPressable isHoverable>
             <CardBody className="flex flex-col w-full h-full justify-between p-0 m-0">
                 <div className="flex flex-col w-full h-fit gap-6">
                     <div className="flex flex-row w-full justify-between">
-                        <IconCard background={"primary"} icon={"book"}/>
+                        <IconCard background={"primary"} icon={"book"} size={"sm"}/>
                         <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
                     </div>
                     <div className="flex flex-col w-full h-fit items-start gap-2">

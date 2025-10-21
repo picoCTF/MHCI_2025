@@ -7,7 +7,7 @@ export interface LearningPathsHomeProps {
     paths: LearningPathCardProps[];
 }
 
-const LearningPathsHome: React.FC<LearningPathsHomeProps> = ({ paths }) => {
+const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
 
     let continuingPaths: LearningPathCardProps[] = [];
 
@@ -58,4 +58,4 @@ const LearningPathsHome: React.FC<LearningPathsHomeProps> = ({ paths }) => {
     );
 }
 
-export default LearningPathsHome;
+export default Home;
