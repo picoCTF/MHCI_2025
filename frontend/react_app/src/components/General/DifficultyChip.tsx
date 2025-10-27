@@ -26,17 +26,6 @@ function getDifficultyTextColor(difficulty: string) {
     }
 }
 
-// function getDifficultyChipName(difficulty: string) {
-//     switch(difficulty){
-//         case 1:
-//             return "Easy";
-//         case 2:
-//             return "Medium";
-//         default:
-//             return "Hard";
-//     }
-// }
-
 // A chip the shows the given difficulty using correct colors 
 const DifficultyChip: React.FC<DifficultyProp> = ({ difficultyLvl }) => {
 

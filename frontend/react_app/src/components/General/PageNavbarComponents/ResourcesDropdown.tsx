@@ -1,7 +1,7 @@
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem, Button } from "@heroui/react";
 
 //A dropdown that shows all of the pages under the Resources category
-function ResourcesDropdown() {
+const ResourcesDropdown: React.FC<{}> = () => {
     return (
         <Dropdown>
             <DropdownTrigger>

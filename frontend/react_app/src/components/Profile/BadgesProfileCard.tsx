@@ -3,9 +3,7 @@ import { type BadgeList } from "../../api_interfaces/badgeList";
 import badgesData from "../../mock-data/profile/Badges.json"
 import BadgeSVG from "../general/BadgeSVG";
 import type { Badge } from "../../api_interfaces/badge";
-import { useState, type Dispatch, type SetStateAction } from "react";
-
-export interface BadgesProfileCardProps {}
+// import { useState } from "react";
 
 interface BadgeModalProps {
     badges: BadgeList;
@@ -72,7 +70,7 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
     );
 }
 
-const BadgesProfileCard: React.FC<BadgesProfileCardProps> = ({}) => {
+const BadgesProfileCard: React.FC<{}> = () => {
 
     // API_NEEDED - Get the badges and the badges the user has selected
     // By default, the first four badges the user unlocks will be selected
@@ -90,7 +88,7 @@ const BadgesProfileCard: React.FC<BadgesProfileCardProps> = ({}) => {
         }
     })
 
-    let [numSelectedBadges, setNumSelectedBadges] = useState(selectedBadges.results.length);
+    // let [numSelectedBadges, setNumSelectedBadges] = useState(selectedBadges.results.length);
 
     return (
         <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10 gap-6" shadow="none" radius="md">

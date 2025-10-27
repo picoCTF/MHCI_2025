@@ -8,15 +8,12 @@ interface ResourceLinkCardProps {
     icon?: string;
 }
 
-//Should make this a script or something that's consistent across all card components that can be pressed
-const onResourceLinkCardPress = ((link: string) => {
-    const navigate = useNavigate();
-    navigate(link);
-})
-
 const ResourceLinkCard: React.FC<ResourceLinkCardProps> = ({ name, link, icon }) => {
+
+    const navigate = useNavigate();
+
     return (
-        <Card className="w-full min-w-full h-fit min-h-fit bg-default-100" radius="sm" shadow="none" isPressable isHoverable onPress={() => onResourceLinkCardPress(link)}>
+        <Card className="w-full min-w-full h-fit min-h-fit bg-default-100" radius="sm" shadow="none" isPressable isHoverable onPress={() => navigate(link)}>
             <CardBody className="flex flex-row justify-between">
                 <div className="flex flex-row min-w-fit min-h-fit gap-3">
                     <p>{icon}</p>

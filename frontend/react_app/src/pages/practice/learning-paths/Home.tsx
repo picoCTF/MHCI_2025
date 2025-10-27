@@ -9,8 +9,12 @@ export interface LearningPathsHomeProps {
 
 const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
 
+    //API_NEEDED - Get the highlighted learning paths
+    //API_NEEDED - Get the available learning paths and their information
+
     let continuingPaths: LearningPathCardProps[] = [];
 
+    // API_NEEDED - Paths should be ordered from most recently looked at to least-recently-looked-at
     paths.forEach(path => {
         if(path.hasProgress) {
             continuingPaths.push(path);
@@ -23,14 +27,12 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
             <div className="flex flex-col w-full py-10 items-center">
                 <div className="flex flex-col w-full max-w-[1200px] gap-16 items-start">
                     <Breadcrumbs>
-                        <BreadcrumbItem href="/practice/learning-paths">Practice</BreadcrumbItem>
+                        <BreadcrumbItem isDisabled>Practice</BreadcrumbItem>
                         <BreadcrumbItem href="/practice/learning-paths">Learning Paths</BreadcrumbItem>
                     </Breadcrumbs>
 
                     <div className="flex flex-col w-full gap-3 text-left">
-                        <h2>
-                            Learning paths
-                        </h2>
+                        <h2>Learning paths</h2>
                         <p>Improve your cybersecurity skills with step-by-step learning</p>
                     </div>
 

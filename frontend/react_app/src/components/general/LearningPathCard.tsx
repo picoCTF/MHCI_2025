@@ -4,6 +4,7 @@ import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
 import IconCard from "./IconCard";
 import ProgressWithTextDiv from "./ProgressWithTextDiv";
 import Icon from "./Icon";
+import { useNavigate } from "react-router-dom";
 
 export interface LearningPathCardProps {
     description: string;
@@ -45,13 +46,15 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
     );
 }
 
-const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, link, name, numCompletedChallenges, numSolves, numTotalChallenges, variant }) => {
+const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, id, name, numCompletedChallenges, numSolves, numTotalChallenges, variant }) => {
 
+    const navigate = useNavigate();
+    
     //Return a variant if that was specified
     switch (variant) {
         case "compact": {
             return (
-                <Card className="flex w-full h-fit border-small border-default-300 p-4 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
+                <Card className="flex w-full h-fit border-small border-default-300 p-4 bg-content1-base" radius="md" shadow="none" isPressable isHoverable onPress={() => navigate("/practice/learning-paths/" + id)}>
                     <CardBody className="flex flex-col w-full h-fit gap-4 p-0 m-0">
                         <div className="flex flex-row w-full h-fit gap-2 justify-between items-center">
                             <div className="flex flex-row w-fit gap-4 items-center">
@@ -100,8 +103,7 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
         }
         default: {
             return (
-                /* API_NEEDED - Get the link to the learning path and navigate there on press */
-                <Card className="flex w-[400px] max-w-[400px] min-w-[400px] h-[288px] border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none" isPressable isHoverable /*onPress={() => onLearningPathCardPress()}*/>
+                <Card className="flex w-[400px] max-w-[400px] min-w-[400px] h-[288px] border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none" isPressable isHoverable onPress={() => navigate("/practice/learning-paths/" + id)}>
                     <CardBody className="flex flex-col w-full h-full justify-between p-0 m-0">
                         <div className="flex flex-col w-full h-fit gap-6">
                             <div className="flex flex-row w-full justify-between">

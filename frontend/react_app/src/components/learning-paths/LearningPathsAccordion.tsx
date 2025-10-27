@@ -27,7 +27,6 @@ function renderCell(item: LearningPathsTableElement) {
         backgroundColor = "success";
     }
 
-    // API_NEEDED - Navigate to the correct page for the given challenge/learning resource
     return (
         <Button className="flex flex-row w-full min-w-full h-[100%] pl-6 pr-3 gap-3 justify-start items-center" isDisabled={isDisabled} radius="md" color="default" variant="light" href={item.link}>
             <IconCard background={backgroundColor} icon={icon} size={"sm"}/>
@@ -102,7 +101,7 @@ interface LearningPathsContentListCardProps {
 
 const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> = ({ name, progress, list }) => {
     return (
-        <Card className="flex w-[430px] min-w-[430px] h-fit min-h-fit border-small m-0 p-0" shadow="none">
+        <Card className="flex w-[430px] min-w-[430px] h-fit min-h-fit border-small border-default-300 m-0 p-0" shadow="none">
             <CardBody className="flex flex-col">
                 <div className="flex flex-col gap-2 py-4 px-6">
                     <h2>{name}</h2>
@@ -110,13 +109,14 @@ const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> 
                 </div>
                 <Divider/>
                 <Accordion className="w-full min-w-full h-fit min-h-fit">
-                    {list.map((accordionItem) => (<AccordionItem key={list.indexOf(accordionItem)} 
-                        aria-label={accordionItem.item["aria-label"]} 
-                        title={accordionItem.item.title} 
-                        startContent={<CircularProgress value={accordionItem.itemProgress.value} maxValue={accordionItem.itemProgress.maxValue} minValue={0}/>}>
-                        
-                        {accordionItem.children.map((table) => (<LearningPathsAccordionTable tableItems={table.tableItems}/>))}
-                    </AccordionItem>))}
+                    {list.map((accordionItem) => (
+                        <AccordionItem key={list.indexOf(accordionItem)} 
+                            aria-label={accordionItem.item["aria-label"]} 
+                            title={accordionItem.item.title} 
+                            startContent={<CircularProgress value={accordionItem.itemProgress.value} maxValue={accordionItem.itemProgress.maxValue} minValue={0}/>}>
+                            
+                            {accordionItem.children.map((table) => (<LearningPathsAccordionTable tableItems={table.tableItems}/>))}
+                        </AccordionItem>))}
                 </Accordion>
             </CardBody>
         </Card>

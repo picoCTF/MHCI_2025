@@ -1,8 +1,6 @@
 import { Avatar, Card } from "@heroui/react";
 
-interface ParticipantCardProps {}
-
-const ParticipantCard: React.FC<ParticipantCardProps> = ({}) => {
+const ParticipantCard: React.FC<{}> = () => {
 
     //API_NEEDED get the ParticipantTeamInfo response using the participant's ID
 

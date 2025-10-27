@@ -1,7 +1,7 @@
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem, Button } from "@heroui/react";
 
 //A dropdown that shows all of the pages under the Practice category
-function PracticeDropdown() {
+const PracticeDropdown: React.FC<{}> = () => {
     return (
         <Dropdown>
             <DropdownTrigger>

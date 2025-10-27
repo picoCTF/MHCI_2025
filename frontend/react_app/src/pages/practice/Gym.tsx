@@ -2,9 +2,7 @@ import "../Page.css";
 import Header from "../../components/General/PageNavbar";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 
-interface GymProps {}
-
-const Gym: React.FC<GymProps> = ({ }) => {
+const Gym: React.FC<{}> = () => {
 
     return (
         <div className="Page">

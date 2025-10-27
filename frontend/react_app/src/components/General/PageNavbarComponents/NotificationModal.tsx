@@ -1,7 +1,6 @@
 import { Button, Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure, Table, TableHeader, TableBody, TableColumn, TableRow, TableCell, getKeyValue } from "@heroui/react";
 
-// This should be changed to a const with an interface so it's consistent with the rest of the codebase
-function NotificationModal() {
+const NotificationModal: React.FC<{}> = () => {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     //API_NEEDED - currently have mock data for notifs

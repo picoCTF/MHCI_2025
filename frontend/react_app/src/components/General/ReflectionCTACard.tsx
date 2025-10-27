@@ -1,10 +1,7 @@
 import { Button } from "@heroui/react";
 import AIFeatureCard from "../learning-paths/AIFeatureCard";
 
-interface ReflectionCTACardProps {
-}
-
-const ReflectionCTACard: React.FC<ReflectionCTACardProps> = ({}) => {
+const ReflectionCTACard: React.FC<{}> = () => {
     return (
         <AIFeatureCard>
             <div className="flex flex-col gap-4">

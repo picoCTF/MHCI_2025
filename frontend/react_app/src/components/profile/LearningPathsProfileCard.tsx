@@ -1,10 +1,8 @@
 import { Card, CardBody, Link } from "@heroui/react";
 import LearningPathCard from "../general/LearningPathCard";
 
-export interface LearningPathsProfileCardProps {}
-
 // Show the user's profile information
-const LearningPathsProfileCard: React.FC<LearningPathsProfileCardProps> = ({ }) => {
+const LearningPathsProfileCard: React.FC<{}> = () => {
 
     {/* API_NEEDED - get the 1/2/3 learning paths the user has most recently started */}
 

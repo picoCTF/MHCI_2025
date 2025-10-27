@@ -1,9 +1,9 @@
 import { Card, CardBody } from "@heroui/react";
-import type { ReactElement } from "react";
+import type { ReactNode } from "react";
 // import { useNavigate } from "react-router-dom";
 
 interface AIFeatureCardProps {
-    children: ReactElement[];
+    children: ReactNode | ReactNode[];
 }
 
 //This is used any time the AI feature comes up inside of a Learning Path

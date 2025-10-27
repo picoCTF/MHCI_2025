@@ -6,7 +6,7 @@ import ResourcesDropdown from './PageNavbarComponents/ResourcesDropdown';
 import PracticeDropdown from './PageNavbarComponents/PracticeDropdown';
 
 // The header that allows users to navigate from page to page
-function PageNavbar() {
+const PageNavbar: React.FC<{}> = () => {
     return (
         <div className="PageNavbar" style={{width: "100%", height: "fit-content"}}>
             <Navbar>

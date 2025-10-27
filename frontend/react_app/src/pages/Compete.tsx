@@ -2,9 +2,7 @@ import "./Page.css";
 import Header from "../components/General/PageNavbar";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 
-interface CompeteProps {}
-
-const Compete: React.FC<CompeteProps> = ({ }) => {
+const Compete: React.FC<{}> = () => {
 
     return (
         <div className="Page">

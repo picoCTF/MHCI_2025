@@ -1,9 +1,7 @@
 import { Accordion, AccordionItem, Button, Card, CardBody, CardFooter, CardHeader, Link } from "@heroui/react";
 
-export interface UserStudiesCardProps {}
-
 // Show the user information for signing up for studies
-const UserStudiesCard: React.FC<UserStudiesCardProps> = ({  }) => {
+const UserStudiesCard: React.FC<{}> = () => {
 
     return (
         <Card className="flex w-full min-w-fit h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 m-0 p-10 gap-8" radius="md" shadow="none">

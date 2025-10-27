@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react-vite';
 import "../src/index.css";
 
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import { Story } from 'storybook/internal/csf';
 
 const preview: Preview = {
   parameters: {
@@ -20,7 +21,9 @@ const preview: Preview = {
     }
   },
 
-  decorators: [withThemeByDataAttribute({
+  decorators: [
+    // withRouter,
+    withThemeByDataAttribute({
       themes: {
           // nameOfTheme: 'dataAttributeForTheme',
           light: '',
@@ -28,9 +31,16 @@ const preview: Preview = {
       },
       defaultTheme: 'light',
       attributeName: 'data-mode',
-  })],
+    }
+  ),
+],
 
   tags: ['autodocs']
 };
+
+// export default {
+//   parameters: {
+//     reactRouter: reactRouterParameters({ ... })
+// } preview;
 
 export default preview;

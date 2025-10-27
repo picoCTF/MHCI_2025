@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import LearningPathsHome from '../../../../pages/practice/learning-paths/Home';
+import Home from '../../../../pages/practice/learning-paths/Home';
 
 const meta = {
   title: 'Pages/Practice/Learning Paths/Home',
-  component: LearningPathsHome,
+  component: Home,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
@@ -12,7 +12,7 @@ const meta = {
   },
   args: {
   },
-} satisfies Meta<typeof LearningPathsHome>;
+} satisfies Meta<typeof Home>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
