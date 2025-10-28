@@ -3,7 +3,7 @@ import { Card, CardBody, CardHeader, CardFooter } from "@heroui/react";
 import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
 import HintAccordion, { type HintAccordionProps } from "./HintAccordion";
 import FlagSubmissionCard from "./FlagSubmissionCard";
-import Icon from "./Icon";
+import { Icon } from "@iconify/react";
 
 export interface ChallengeCardProps {
     author: string;
@@ -32,11 +32,11 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, diff
                 <div className="flex-row">
                     <p>{"Author: " + author}</p>
                     <div className="flex row gap-2">
-                        <Icon name={"person"} size={"xs"} weight={"normal"} color={"default"}/>
+                        <Icon icon={"material-symbols:person-outline"} width={16} height={16} className={"text-default"}/>
                         <p className="text-xs">{"Author: " + author}</p>
                     </div>
                     <div className="flex row gap-2">
-                        <Icon name={"flag"} size={"xs"} weight={"normal"} color={"default"}/>
+                        <Icon icon={"material-symbols:flag-outline"} width={16} height={16} className={"text-default"}/>
                         <div className="flex row gap-1 text-xs">
                             <p>{numSolves + " solves"}</p>
                         </div>

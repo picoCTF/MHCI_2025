@@ -1,6 +1,6 @@
 import { Avatar, Card, CardBody, Link } from "@heroui/react";
 import ChallengeCompletionDiv, { type ChallengeCompletionDivProps } from "../general/ChallengeCompletionDiv";
-import Icon from "../General/Icon";
+import { Icon } from "@iconify/react";
 
 export interface ProfileSummaryDivProps {
     challengesCompleted: ChallengeCompletionDivProps;
@@ -22,8 +22,8 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
                 <div className="flex flex-col h-fit gap-4">
                     <Card className="flex flex-col h-fit border-small border-default-300 gap-4 p-5 bg-content1-base" radius="sm" shadow="none">
                         <CardBody className="flex flex-col h-fit gap-2 p-0 m-0">
-                            <div className="flex flex-row w-full place-start gap-2">
-                                <Icon name={"mode_heat"} size={"md"} color={"primary"}/>
+                            <div className="flex flex-row w-full place-start items-center gap-2">
+                                <Icon icon={"material-symbols:mode-heat-outline"} width={24} height={24} className={"text-primary"}/>
                                 {/* API_NEEDED - Get the number of weeks the user has had the current streak */}
                                 <h2>{numStreakWeeks}</h2>
                             </div>
@@ -38,8 +38,8 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
                     </Card>
                     <Card className="flex h-fit border-small border-default-300 p-5 bg-content1-base" radius="sm" shadow="none">
                         <CardBody className="flex flex-col h-fit gap-2 p-0 m-0">
-                            <div className="flex flex-row w-full place-start gap-2">
-                                <Icon name={"award_star"} size={"md"} color={"primary"}/>
+                            <div className="flex flex-row w-full place-start items-center gap-2">
+                                <Icon icon={"material-symbols:award-star-outline"} width={24} height={24} className={"text-primary"}/>
                                 {/* API_NEEDED - Get the number of badges the user has earned throughout their time on the platform */}
                                 <h2>{numBadges}</h2>
                             </div>
@@ -48,8 +48,8 @@ const ProfileSummaryDiv: React.FC<ProfileSummaryDivProps> = ({ challengesComplet
                     </Card>
                     <Card className="flex h-fit border-small border-default-300 p-5 bg-content1-base" radius="sm" shadow="none">
                         <CardBody className="flex flex-col h-fit gap-2 p-0 m-0">
-                            <div className="flex flex-row w-full h-fit place-start gap-2">
-                                <Icon name={"extension"} size={"md"} color={"primary"}/>
+                            <div className="flex flex-row w-full h-fit place-start items-center gap-2">
+                                <Icon icon={"material-symbols:extension-outline"} width={24} height={24} className="text-primary"/>
                                 {/* API_NEEDED - Get the number of challenges the user has completed throughout their time on the platform */}
                                 <h2>{challengesCompleted.totalNumChallenges}</h2>
                             </div>

@@ -1,7 +1,7 @@
 import { Button, Card, CardBody } from "@heroui/react";
 import { getTimeString, parseTimeString } from "../../Functions";
-import Icon from "./Icon";
 import ProgressWithTextDiv from "./ProgressWithTextDiv";
+import { Icon } from "@iconify/react";
 // import { useNavigate } from "react-router-dom";
 
 export interface AssignmentCardProps {
@@ -48,7 +48,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ name, classroomName, co
         <Card className="flex w-full min-w-fit h-fit border-small bg-default-50 border-default-300 p-card-md" radius="md" shadow="none" aria-label={name + " assignment card"}>
             <CardBody className="flex flex-col w-fit h-fit gap-6 p-0">
                 <div className={"flex flex-row w-full text-" + timeColor + " gap-1 items-center"}>
-                    {isLastDay ? <Icon name={"info"} size={"xs"} color={"danger"}/> : undefined}
+                    {isLastDay ? <Icon icon={"material-symbols:info-outline"} width={16} height={16} className={"text-danger"}/> : undefined}
                     <p className="font-semibold">{"Due in " + getTimeString(timeLeft[2], timeLeft[3], timeLeft[4], timeLeft[5])}</p>
                 </div>
                 <div className="flex flex-col w-full gap-2">

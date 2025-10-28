@@ -3,8 +3,8 @@ import { Button, Card, CardBody, Progress } from "@heroui/react";
 import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
 import IconCard from "./IconCard";
 import ProgressWithTextDiv from "./ProgressWithTextDiv";
-import Icon from "./Icon";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 export interface LearningPathCardProps {
     description: string;
@@ -31,13 +31,13 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
             The number of solves should be based on the number of users that solved all of the challenges*/
         <div className="flex flex-row items-start w-full gap-4">
             <div className="flex flex-row gap-2 text-center">
-                <Icon name={"extension"} size={"xs"} weight={"normal"} color={"default"} colorValue="500"/>
+                <Icon icon={"material-symbols:extension-outline"} width={16} height={16} className={"text-default-500"}/>
                 <div className="flex flex-row gap-1 text-xs text-center">
                     <p className="text-default-500 text-center">{numTotalChallenges + " challenges"}</p>
                 </div>
             </div>
             <div className="flex flex-row gap-2 text-center">
-                <Icon name={"flag"} size={"xs"} weight={"normal"} color={"default"} colorValue="500"/>
+                <Icon icon={"material-symbols:flag-outline"} width={16} height={16} className={"text-default-500"}/>
                 <div className="flex flex-row gap-1 text-xs text-center">
                     <p className="text-default-500 text-center">{numSolves + " solves"}</p>
                 </div>
@@ -58,7 +58,7 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
                     <CardBody className="flex flex-col w-full h-fit gap-4 p-0 m-0">
                         <div className="flex flex-row w-full h-fit gap-2 justify-between items-center">
                             <div className="flex flex-row w-fit gap-4 items-center">
-                                <IconCard background={"primary"} icon={"book"} size={"lg"}/>
+                                <IconCard background={"primary"} icon={"material-symbols:book-outline"} size={"lg"}/>
                                 <h3>{name}</h3>
                             </div>
                             <p className="font-mono text-md text-default-500"><b>{numCompletedChallenges}</b>{"/" + numTotalChallenges}</p>
@@ -73,20 +73,20 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
                 <Card className="flex w-full h-fit border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none">
                     <CardBody className="flex flex-col w-full h-fit gap-6 p-0 m-0">
                         <div className="flex flex-row w-full justify-between">
-                            <IconCard background={"primary"} icon={"book"} size={"lg"}/>
+                            <IconCard background={"primary"} icon={"material-symbols:book-outline"} size={"lg"}/>
                             <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
                         </div>
                         <div className="flex flex-col w-full h-fit items-start gap-2">
                             <h3>{name}</h3>
                             <div className="flex flex-row items-start w-full gap-4">
                                 <div className="flex flex-row gap-2 text-center">
-                                    <Icon name={"extension"} size={"xs"} weight={"normal"} color={"default"} colorValue="500"/>
+                                    <Icon icon={"material-symbols:extension-outline"} width={16} height={16} className="text-default-500"/>
                                     <div className="flex flex-row gap-1 text-xs text-center">
                                         <p className="text-default-500 text-center">{numTotalChallenges + " challenges"}</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-row gap-2 text-center">
-                                    <Icon name={"flag"} size={"xs"} weight={"normal"} color={"default"} colorValue="500"/>
+                                    <Icon icon={"material-symbols:flag-outline"} width={16} height={16} className="text-default-500"/>
                                     <div className="flex flex-row gap-1 text-xs text-center">
                                         <p className="text-default-500 text-center">{numSolves + " solves"}</p>
                                     </div>
@@ -107,7 +107,7 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
                     <CardBody className="flex flex-col w-full h-full justify-between p-0 m-0">
                         <div className="flex flex-col w-full h-fit gap-6">
                             <div className="flex flex-row w-full justify-between">
-                                <IconCard background={"primary"} icon={"book"} size={"lg"}/>
+                                <IconCard background={"primary"} icon={"material-symbols:book-outline"} size={"lg"}/>
                                 <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
                             </div>
                             <div className="flex flex-col w-full h-fit items-start gap-2">

@@ -1,7 +1,6 @@
 import { commonColors } from "@heroui/react";
-import type { IconProps } from "./Icon";
 import type { Badge, BadgeColors, BadgeShapes } from "../../api_interfaces/badge"
-import Icon from "./Icon";
+import { Icon } from "@iconify/react";
 
 // export interface BadgeSVGProps {
 //     shape: BadgeShapes;
@@ -173,7 +172,7 @@ const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, ico
                 <g>
                     {/* Badge Symbol */}
                     <text x={svgWidth / 2} y={svgHeight / 2} className="flex min-w-full min-h-full">
-                        <Icon name={icon} size={"md"} color={"default"}/>
+                        <Icon icon={icon} width={24} height={24} className={"text-default"}/>
                     </text>
                 </g>
                 <g>

@@ -1,4 +1,4 @@
-import type { IconProps } from "../components/general/Icon";
+import type { IconName } from "../components/general/IconTypes";
 
 export type BadgeColors = "green" | "yellow" | "purple";
 export type BadgeShapes = "pointed" | "rounded";
@@ -8,7 +8,7 @@ export interface Badge {
     bgColor: BadgeColors;
     strokeColor: BadgeColors;
     textColor: BadgeColors;
-    icon: IconProps["name"];
+    icon: IconName;
     id: number;
     isSelected: boolean; // Did the user choose to highlight this badge on their profile?
     isUnlocked: boolean; // Has the user unlocked this badge?

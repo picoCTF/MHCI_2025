@@ -1,5 +1,5 @@
 import { Card, CardBody } from "@heroui/react";
-import Icon from "../general/Icon";
+import { Icon } from "@iconify/react";
 
 export interface SkillDistributionProfileCardProps {
     
@@ -79,19 +79,19 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
                 <h2>Skill Distribution</h2>
                 <div className="flex flex-col w-full h-full min-w-fit min-h-fit justify-center items-center overflow-auto">
                     <div className="flex flex-col w-full h-fit">
-                        <div className="flex flex-row w-full min-w-fit h-fit gap-1 justify-center">
+                        <div className="flex flex-row w-full min-w-fit h-fit gap-1 justify-center items-center">
                             <p>Web Exploitation</p>
-                            <Icon name={"language"} size={"lg"} weight={"normal"} color={"primary"}/>
+                            <Icon icon={"material-symbols:language"} width={16} height={16} className={"text-primary"}/>
                         </div>
                         <div className="flex flex-row w-fit h-fit min-h-fit max-w-full">
                             <div style={{paddingTop: columnPadding, paddingBottom: columnPadding}} className={"flex flex-col w-fit min-w-fit justify-between items-end"}>
-                                <div className="flex flex-row w-fit h-fit gap-1">
+                                <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>General Skills</p>
-                                    <Icon name={"code"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                    <Icon icon={"material-symbols:code"} width={16} height={16} className={"text-primary"}/>
                                 </div>
-                                <div className="flex flex-row w-fit h-fit gap-1">
+                                <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>Reverse Engineering</p>
-                                    <Icon name={"build"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                    <Icon icon={"material-symbols:build-outline"} width={16} height={16} className={"text-primary"}/>
                                 </div>
                             </div>
                             <svg className="flex inset-0" xmlns="http://www.w3.org/2000/svg" width={svgSize} height={svgSize} viewBox={"0 0 " + (svgSize+2) + " " + (svgSize+2)} fill="none">
@@ -108,19 +108,19 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
                                 <circle className="fill-success-500" cx={reverseEngineeringXPos} cy={reverseEngineeringYPos} r={6} fill="green"/>
                             </svg>
                             <div style={{paddingTop: columnPadding, paddingBottom: columnPadding}} className={"flex flex-col w-fit min-w-fit h-fill justify-between items-start"}>
-                                <div className="flex flex-row w-fit h-fit gap-1">
+                                <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>Cryptography</p>
-                                    <Icon name={"key"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                    <Icon icon={"material-symbols:key-outline"} width={16} height={16} className={"text-primary"}/>
                                 </div>
-                                <div className="flex flex-row w-fit h-fit gap-1">
+                                <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>Binary Exploitation</p>
-                                    <Icon name={"memory"} size={"lg"} weight={"normal"} color={"primary"}/>
+                                    <Icon icon={"material-symbols:memory-outline"} width={16} height={16} className={"text-primary"}/>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-row w-full min-w-fit h-fit gap-1 justify-center">
+                        <div className="flex flex-row w-full min-w-fit h-fit gap-1 justify-center items-center">
                             <p>Forensics</p>
-                            <Icon name={"search"} size={"lg"} weight={"normal"} color={"primary"}/>
+                            <Icon icon={"material-symbols:search"} width={16} height={16} className={"text-primary"}/>
                         </div>
                     </div>
                 </div>

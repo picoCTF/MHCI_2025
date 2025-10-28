@@ -1,4 +1,5 @@
 import { Button, Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure, Table, TableHeader, TableBody, TableColumn, TableRow, TableCell, getKeyValue } from "@heroui/react";
+import { Icon } from "@iconify/react";
 
 const NotificationModal: React.FC<{}> = () => {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -62,7 +63,7 @@ const NotificationModal: React.FC<{}> = () => {
     return (
         <>
             <Button color="default" variant="flat" radius="full" isIconOnly onPress={onOpen}>
-                <span className="font-icon text-[24px]">notifications</span>
+                <Icon icon={"material-symbols:notifications-outline"} width={24} height={24}/>
             </Button>
             <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
                 <ModalContent>

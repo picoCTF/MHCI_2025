@@ -1,7 +1,7 @@
 import React, { type ReactNode } from "react";
 import {Pagination, Button, ButtonGroup} from "@heroui/react";
 import FocusWrapperCard, { type FocusWrapperCardProps } from "./FocusWrapperCard";
-import Icon from "./Icon";
+import { Icon } from "@iconify/react";
 
 export interface HorizontalScrollDivProps {
     children: ReactNode[];
@@ -19,10 +19,10 @@ const HorizontalScrollDiv: React.FC<HorizontalScrollDivProps> = ({ children, isF
                     <h3>{title}</h3>
                     <ButtonGroup>
                         <Button color="secondary" size="sm" variant="flat" onPress={() => setCurrentPage((prev) => (prev >= 0 ? prev - 1 : children.length -1))}>
-                            <Icon name={"arrow_back_ios"} size={"sm"} color={"default"}/>
+                            <Icon icon={"material-symbols:arrow_back_ios"} width={20} height={20} className={"text-default"}/>
                         </Button>
                         <Button color="secondary" size="sm" variant="flat" onPress={() => setCurrentPage((prev) => (prev < children.length - 1 ? prev + 1 : 0))}>
-                            <Icon name={"arrow_forward_ios"} size={"sm"} color={"default"}/>
+                            <Icon icon={"material-symbols:arrow_forward"} width={20} height={20} className={"text-default"}/>
                         </Button>
                     </ButtonGroup>
                 </div>

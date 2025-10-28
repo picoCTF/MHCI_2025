@@ -1,5 +1,6 @@
 import { Button } from "@heroui/react";
 import AIFeatureCard from "../learning-paths/AIFeatureCard";
+import { Icon } from "@iconify/react";
 
 const ReflectionCTACard: React.FC<{}> = () => {
     return (
@@ -7,7 +8,7 @@ const ReflectionCTACard: React.FC<{}> = () => {
             <div className="flex flex-col gap-4">
                 <div className="flex flex-row gap-3 p-0 m-0">
                     {/* NEED_ICON */}
-                    <p>ICON</p>
+                    <Icon icon={""}/>
                     <p>Want to get better? Reflect and compare your strategy!</p>
                 </div>
                 <p>

@@ -2,13 +2,13 @@ import { Accordion, AccordionItem, Card, CardBody, Divider, CircularProgress, Ta
 import ProgressWithTextDiv, { type ProgressWithTextDivProps } from "../general/ProgressWithTextDiv";
 import IconCard from "../general/IconCard";
 import React from "react";
-import type { IconProps } from "../General/Icon";
 import type { SemanticColorProps } from "../../Interfaces";
-import Icon from "../general/Icon";
 import type { DifficultyProp } from "../general/DifficultyChip";
+import type { IconName } from "../general/IconTypes";
+import { Icon } from "@iconify/react";
 
 function renderCell(item: LearningPathsTableElement) {
-    let icon: IconProps["name"] = "book";
+    let icon: IconName = "material-symbols:book-outline";
 
     let difficulty = item.difficulty.difficultyLvl;
 
@@ -17,13 +17,13 @@ function renderCell(item: LearningPathsTableElement) {
     let isDisabled = false;
 
     if (item.contentType == "Challenge") {
-        icon = "extension";
+        icon = "material-symbols:extension-outline";
         backgroundColor = "primary";
     }
 
     if(item.status == "Complete") {
         isDisabled = true;
-        icon = "check";
+        icon = "material-symbols:check-outline";
         backgroundColor = "success";
     }
 
@@ -34,11 +34,11 @@ function renderCell(item: LearningPathsTableElement) {
                 <h2>{item.name}</h2>
                 <div className="flex flex-row gap-4 items-center">
                     <div className="flex row gap-2">
-                        <Icon name={"star"} size={"sm"} weight={"normal"} color={"default"}/>
+                        <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default"}/>
                         <p className="text-xs">{difficulty}</p>
                     </div>
                     <div className="flex row gap-2">
-                        <Icon name={"flag"} size={"sm"} weight={"normal"} color={"default"}/>
+                        <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default"}/>
                         <div className="flex row gap-1 text-xs">
                             <p>{item.numSolves + " solves"}</p>
                         </div>

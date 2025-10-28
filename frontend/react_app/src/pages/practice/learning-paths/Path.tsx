@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsAccordion";
 import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewDiv";
-import type { ReactNode } from "react";
 
 const Path: React.FC<{}> = () => {
 
@@ -42,6 +41,11 @@ const Path: React.FC<{}> = () => {
                             endingText: "50%"
                         }} 
                         list={[
+                            {
+                                item: {},
+                                itemProgress: {},
+                                children: []
+                            },
                             {
                                 item: {},
                                 itemProgress: {},

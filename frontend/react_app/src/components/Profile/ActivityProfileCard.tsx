@@ -1,7 +1,7 @@
 import { Card, CardBody, semanticColors, Tab, Tabs } from "@heroui/react";
 import ActivitySummaryCard from "./Activity/ActivitySummaryCard";
-import Icon from "../general/Icon";
 import { ResponsiveCalendar, ResponsiveTimeRange, type CalendarData, } from "@nivo/calendar";
+import { Icon } from "@iconify/react";
 
 export interface ActivityProfileCardProps {
     numSolves: number;
@@ -99,7 +99,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                             <p>{solveText}</p>
                         </div>
                         <div className="flex flex-row w-fit h-fit">
-                            <Icon name={"mode_heat"} size={"lg"} weight={"normal"} color={"primary"}/>
+                            <Icon icon={"material-symbols:mode_heat-outline"} width={40} height={40} className={"text-primary"}/>
                             <div>
                                 <h2>{streakLength}</h2>
                                 <p>{streakText}</p>

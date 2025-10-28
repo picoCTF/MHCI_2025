@@ -1,6 +1,6 @@
 import { Divider, Chip } from "@heroui/react";
 import DifficultyChip, { type DifficultyProp } from "../general/DifficultyChip";
-import Icon from "../general/Icon";
+import { Icon } from "@iconify/react";
 
 interface LearningPathOverviewDivProps {
     description?: string;
@@ -24,13 +24,13 @@ const LearningPathOverviewDiv: React.FC<LearningPathOverviewDivProps> = ({ descr
                 {description ? <p>{description}</p> : <div/>}
                 <div className="flex flex-row gap-4">
                     <div className="flex row gap-2">
-                        <Icon name={"extension"} size={"sm"} weight={"normal"} color={"default"}/>
+                        <Icon icon={"material-symbols:extension-outline"} width={20} height={20} className={"text-default"}/>
                         <div className="flex row gap-1 text-xs">
                             <p>{numChallenges + " challenges"}</p>
                         </div>
                     </div>
                     <div className="flex row gap-2">
-                        <Icon name={"flag"} size={"sm"} weight={"normal"} color={"default"}/>
+                        <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default"}/>
                         <div className="flex row gap-1 text-xs">
                             <p>{numSolves + " solves"}</p>
                         </div>

@@ -1,13 +1,13 @@
 import { Card, CardBody } from "@heroui/react";
 import IconCard from "./IconCard";
-import type { IconProps } from "./Icon";
 import { useNavigate } from "react-router-dom";
-import Icon from "./Icon";
+import { Icon } from "@iconify/react";
+import type { IconName } from "./IconTypes";
 
 export interface QuickLinkCardProps {
     name: string;
     description: string;
-    icon: IconProps["name"];
+    icon: IconName;
     id: number;
     link: string;
 }
@@ -23,7 +23,7 @@ const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ name, description, icon, 
                 <div className="flex flex-col gap-1">
                     <div className="flex flex-row gap-1 items-center">
                         <h3>{name}</h3>
-                        <Icon name={"arrow_forward"} size={"md"} color={"default"} colorValue="900"/>
+                        <Icon icon={"material-symbols:arrow-forward"} width={24} height={24} className="text-default-900"/>
                     </div>
                     <p>{description}</p>
                 </div>

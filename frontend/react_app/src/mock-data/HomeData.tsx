@@ -3,7 +3,7 @@ import type { HomepageProps } from "../pages/Home";
 export const mockHomepage: HomepageProps = {
     banners: [{
         buttonText: "Test",
-        id: "123",
+        id: 123,
         title: "This is a test",
         eventTime: "May 20th, 2026"
     }],
@@ -68,35 +68,35 @@ export const mockHomepage: HomepageProps = {
         {
             name: "Community",
             description: "This is the Community description.",
-            icon: "article", // TODO - Replace this with a Discord icon
+            icon: "fa7-brands:discord",
             link: "/resources/community",
             id: 0
         },
         {
             name: "External Resources",
             description: "This is the External Resources description.",
-            icon: "article",
+            icon: "material-symbols:article-outline",
             link: "/resources/external-resources",
             id: 1
         },
         {
             name: "Learning Guides",
             description: "This is the learning guides description",
-            icon: "book",
+            icon: "material-symbols:book-outline",
             link: "/resources/learning-guides",
             id: 2
         },
         {
             name: "Primer",
             description: "This is the primer description",
-            icon: "book",
+            icon: "material-symbols:book-outline",
             link: "/resources/primer",
             id: 3
         },
         {
             name: "Videos",
             description: "This is the Videos description.",
-            icon: "smart_display",
+            icon: "material-symbols:smart-display-outline",
             link: "/resources/videos",
             id: 4
         }

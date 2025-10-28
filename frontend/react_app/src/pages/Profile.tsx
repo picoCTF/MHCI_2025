@@ -8,6 +8,7 @@ import ActivityProfileCard, { type ActivityProfileCardProps } from "../component
 import UserProfileCard, { type UserProfileCardProps } from "../components/Profile/UserProfileCard";
 import LearningPathsProfileCard from "../components/profile/LearningPathsProfileCard";
 import UserStudiesCard from "../components/profile/UserStudiesCard";
+import EventProfileCard from "../components/profile/EventProfileCard";
 
 export interface ProfileProps {
     activity: ActivityProfileCardProps;
@@ -55,6 +56,7 @@ const Profile: React.FC<ProfileProps> = ({ activity, challengeCompletion, skillD
                     </div>
                 </div>
                 <BadgesProfileCard/>
+                <EventProfileCard/>
                 <UserStudiesCard/>
             </div>
         </div>

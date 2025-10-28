@@ -1,5 +1,5 @@
 import { Card, CardBody, type ImageProps, Image, Button } from "@heroui/react";
-import Icon from "../general/Icon";
+import { Icon } from "@iconify/react";
 
 export interface UserProfileCardProps {
     avatar: ImageProps;
@@ -22,18 +22,18 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, mont
                     <div className="flex flex-row gap-2 justify-between">
                         <h3>{username}</h3>
                         <Button isIconOnly size="sm" radius="full" style={{backgroundColor: "bg-default-500"}}>
-                            <Icon name={"info"} size={"lg"} weight={"bold"} color={"default"} colorValue="50"/>
+                            <Icon icon={"material-symbols:info-outline"} width={40} height={40} className={"font-bold text-default-50"}/>
                         </Button>
                     </div>
                     <div className="flex flex-row gap-3">
-                        <Icon name={"location_on"} size={"xs"} weight={"bold"} color={"danger"}/>
+                        <Icon icon={"material-symbols:location-on-outline"} width={16} height={16} className={"font-bold text-danger"}/>
                         <p>{country}</p>
                     </div>
                     <p>{"Joined " + monthJoined + ", " + yearJoined}</p>
                 </div>
                 <Button variant="flat" color="primary">
                     <p>Account settings</p>
-                    <Icon name={"settings"} size={"md"} color={"primary"}/>
+                    <Icon icon={"material-symbols:settings-outline"} width={24} height={24} className="text-primary-500"/>
                 </Button>
             </CardBody>
         </Card>
