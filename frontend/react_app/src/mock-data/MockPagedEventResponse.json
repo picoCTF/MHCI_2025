@@ -1,0 +1,125 @@
+{
+    "results": [
+        {
+            "end_time": "",
+            "has_ended": false,
+            "has_opened": true,
+            "has_public_scoreboards": false,
+            "has_started": true,
+            "id": 0,
+            "is_password_protected": true,
+            "name": "Event 1",
+            "opening_time": "",
+            "registered": false,
+            "sponsor": {
+                "name": "Test Sponsor"
+            },
+            "start_time": "",
+            "submission_context": 0,
+            "tags": [
+                {
+                    "name": "Challenge Release"
+                },
+                {
+                    "name": "Research"
+                }
+            ]
+        },
+        {
+            "end_time": "",
+            "has_ended": false,
+            "has_opened": true,
+            "has_public_scoreboards": true,
+            "has_started": true,
+            "id": 1,
+            "is_password_protected": false,
+            "name": "Event 2",
+            "opening_time": "",
+            "registered": false,
+            "sponsor": null,
+            "start_time": "",
+            "submission_context": 0,
+            "tags": [
+                {
+                    "name": "Competition"
+                }
+            ]
+        },
+        {
+            "end_time": "",
+            "has_ended": false,
+            "has_opened": true,
+            "has_public_scoreboards": false,
+            "has_started": true,
+            "id": 2,
+            "is_password_protected": true,
+            "name": "Event 3",
+            "opening_time": "",
+            "registered": false,
+            "sponsor": {
+                "name": "Test Sponsor"
+            },
+            "start_time": "",
+            "submission_context": 0,
+            "tags": [
+                {
+                    "name": "Challenge Release"
+                },
+                {
+                    "name": "Research"
+                }
+            ]
+        },
+        {
+            "end_time": "",
+            "has_ended": false,
+            "has_opened": true,
+            "has_public_scoreboards": false,
+            "has_started": true,
+            "id": 3,
+            "is_password_protected": true,
+            "name": "Event 4",
+            "opening_time": "",
+            "registered": false,
+            "sponsor": {
+                "name": "Test Sponsor"
+            },
+            "start_time": "",
+            "submission_context": 0,
+            "tags": [
+                {
+                    "name": "Challenge Release"
+                },
+                {
+                    "name": "Research"
+                }
+            ]
+        },
+        {
+            "end_time": "",
+            "has_ended": false,
+            "has_opened": true,
+            "has_public_scoreboards": false,
+            "has_started": true,
+            "id": 4,
+            "is_password_protected": true,
+            "name": "Event 5",
+            "opening_time": "",
+            "registered": false,
+            "sponsor": {
+                "name": "Test Sponsor"
+            },
+            "start_time": "",
+            "submission_context": 0,
+            "tags": [
+                {
+                    "name": "Challenge Release"
+                },
+                {
+                    "name": "Research"
+                }
+            ]
+        }
+    ],
+    "count": 5
+}

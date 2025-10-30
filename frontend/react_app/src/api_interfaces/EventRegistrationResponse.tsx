@@ -1,4 +1,4 @@
-import type { Team } from "./2023_generated_interfaces/team";
+import type { Team } from "./2023_generated_interfaces/team/team";
 
 export interface EventRegistrationResponse {
     id: number;
