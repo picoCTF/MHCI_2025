@@ -1,0 +1,67 @@
+{
+    "id": 0,
+    "event": {
+        "id": 0,
+        "name": "Event 1"
+    },
+    "name": "Team 1",
+    "team_score": 100,
+    "members": [
+        {
+            "is_active": true,
+            "is_private": false,
+            "team_leader": true,
+            "team_score_contribution": 40,
+            "user_id": 123,
+            "username": "Username1"
+        },
+        {
+            "is_active": true,
+            "is_private": true,
+            "team_leader": false,
+            "team_score_contribution": 35,
+            "user_id": 456,
+            "username": "Username2"
+        },
+        {
+            "is_active": false,
+            "is_private": true,
+            "team_leader": false,
+            "team_score_contribution": 25,
+            "user_id": 789,
+            "username": "Username3"
+        },
+        {
+            "is_active": false,
+            "is_private": true,
+            "team_leader": false,
+            "team_score_contribution": 25,
+            "user_id": 102,
+            "username": "Username4"
+        },
+        {
+            "is_active": false,
+            "is_private": true,
+            "team_leader": false,
+            "team_score_contribution": 25,
+            "user_id": 345,
+            "username": "Username5"
+        },
+        {
+            "is_active": false,
+            "is_private": true,
+            "team_leader": false,
+            "team_score_contribution": 25,
+            "user_id": 678,
+            "username": "Username6"
+        },
+        {
+            "is_active": false,
+            "is_private": true,
+            "team_leader": false,
+            "team_score_contribution": 25,
+            "user_id": 901,
+            "username": "Username7"
+        }
+    ]
+}

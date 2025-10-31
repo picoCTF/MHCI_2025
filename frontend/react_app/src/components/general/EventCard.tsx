@@ -1,13 +1,22 @@
 import { Button, Card, CardBody, CardHeader, Chip } from "@heroui/react";
-import ParticipantCard from "./ParticipantCard";
+import TeamMemberCard from "./TeamMemberCard";
 import { Icon } from "@iconify/react";
+import type { Event } from "../../api_interfaces/event";
+import type { EventRegistrationResponse } from "../../api_interfaces/eventRegistrationResponse";
+import type { PublicTeam } from "../../api_interfaces/2023_generated_interfaces/team/publicTeam";
+
+import publicTeamData from "../../mock-data/MockPublicTeamResponse.json"
 
 interface EventCard {
-    id: number;
+    event: Event;
     variant: "Competition" | "Experimental";
 }
 
-const EventCard: React.FC<EventCard> = ({ variant }) => {
+const EventCard: React.FC<EventCard> = ({ event, variant }) => {
+
+    let scoreData; //The participant's score during the event, get this from the ScoreProgression request
+    let registrationData: EventRegistrationResponse; //Info about participant registration
+    let teamData: PublicTeam = publicTeamData; //Data for the team given the participant and event
 
     switch(variant) {
         case "Experimental": {
@@ -16,11 +25,13 @@ const EventCard: React.FC<EventCard> = ({ variant }) => {
                     <CardHeader className="flex w-full h-fit p-0 m-0">
                         <div className="flex flex-row w-full h-fit justify-between">
                             <div className="flex flex-col">
-                                <h3 className="font-semibold font-sans">Event Name</h3>
-                                <p className="text-default-500">Date</p>
+                                <h3 className="font-semibold font-sans">{event.name}</h3>
+                                <p className="text-default-500">{event.end_time}</p>
                             </div>
                             <div className="flex flex-row gap-8">
-                                {/* Put a Chip here if registration is open */}
+                                {event.has_opened && !event.has_ended ? 
+                                    <Chip color="success">Registration Open</Chip> : (null)
+                                }
                                 <Button size="md" radius="sm" color="primary">Resume</Button>
                             </div>
                         </div>
@@ -51,11 +62,11 @@ const EventCard: React.FC<EventCard> = ({ variant }) => {
                     <CardHeader className="flex flex-row w-full h-fit p-0 m-0 gap-6 justify-between">
                         <div className="flex flex-row gap-6">
                             <div className="flex flex-col">
-                                <h3 className="font-semibold font-sans">Event Name</h3>
+                                <h3 className="font-semibold font-sans">{event.name}</h3>
                                 <p className="text-default-500">Date</p>
                             </div>
                             <div className="flex flex-col">
-                                <h3 className="font-semibold font-sans text-secondary-600">#1234</h3> {/* The team's rank in the competition */}
+                                <h3 className="font-semibold font-sans text-secondary-600">{teamData.team_score}</h3> {/* The team's rank in the competition */}
                                 <p className="text-default-500">Final Rank</p>
                             </div>
                             <div className="flex flex-col">
@@ -69,8 +80,17 @@ const EventCard: React.FC<EventCard> = ({ variant }) => {
                         </div>
                         <Button size="md" radius="sm" color="primary">Resume</Button>
                     </CardHeader>
-                    <CardBody className="flex w-full h-fit p-0 m-0">
-                        <ParticipantCard/>
+                    {/* {event.registered ? 
+                        <CardBody className="flex w-full h-fit p-0 m-0">
+                            {teamData.members.map( 
+                                (member) => (<TeamMemberCard isLeader={member.team_leader} username={member.username}/>)
+                            )}
+                        </CardBody> : (null)
+                    } */}
+                    <CardBody className="flex flex-row flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
+                        {teamData.members.map( 
+                            (member) => (<TeamMemberCard isLeader={member.team_leader} username={member.username}/>)
+                        )}
                     </CardBody>
                 </Card>
             );

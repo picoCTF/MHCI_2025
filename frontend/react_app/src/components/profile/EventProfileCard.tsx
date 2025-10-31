@@ -122,8 +122,8 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
                                     )}
                                 </div>
                                 <div className="flex flex-col w-full h-[450px] overflow-scroll gap-6">
-                                    {renderedEvents.map(event =>
-                                        <EventCard id={event.id} key={event.id} variant={"Competition"}/>
+                                    {renderedEvents.map(curEvent =>
+                                        <EventCard event={curEvent} key={curEvent.id} variant={"Competition"}/>
                                     )}
                                 </div>
                                 <div className="flex flex-col place-items-center">
@@ -161,11 +161,11 @@ const EventProfileCard: React.FC<{}> = () => {
                 <h3>Events</h3>
                 <EventModal list={events}/>
             </CardHeader>
-            <CardBody className="flex flex-col w-full h-fit p-0 m-0 gap-6">
+            <CardBody className="flex flex-col flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
                 
                 {/* Put the top 3 most recent events here */}
-                {highlightedEvents.map(event =>
-                    <EventCard id={event.id} key={event.id} variant={"Competition"}/>
+                {highlightedEvents.map(curEvent =>
+                    <EventCard event={curEvent} key={curEvent.id} variant={"Competition"}/>
                 )}
             </CardBody>
         </Card>
