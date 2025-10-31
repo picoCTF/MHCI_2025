@@ -27,10 +27,25 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
             if(unusedTemp.includes(tag)) {
                 const tagIndex = unusedTemp.indexOf(tag);
                 unusedTemp.splice(tagIndex, 1);
+
+                console.log("unusedTemp");
+                unusedTemp.forEach(tag => {
+                    console.log(tag.name);
+                })
             }
 
             setUnusedTags(unusedTemp);
             setCurTags(c => [...c, tag]);
+
+            console.log("curTags");
+            curTags.forEach(tag => {
+                console.log(tag.name);
+            })
+
+            console.log("unusedTags");
+            unusedTags.forEach(tag => {
+                console.log(tag.name);
+            })
 
             list.forEach((event) => {
                 if(event.tags.includes(tag) && !renderedEvents.includes(event)) {
@@ -47,13 +62,24 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
             const curTagIndex = curTemp.indexOf(tag);
             curTemp.splice(curTagIndex, 1);
             if(!unusedTags.includes(tag)) {
-                setUnusedTags(u => [...u, tag]);
+                let unusedTemp = unusedTags.concat([tag]);
+                setUnusedTags(unusedTemp);
             }
             setCurTags(curTemp);
 
-            let tempEvents: Event[] = [];
+            console.log("curTags");
+            curTags.forEach(tag => {
+                console.log(tag.name);
+            })
 
-            renderedEvents.forEach(event => {
+            console.log("unusedTags");
+            unusedTags.forEach(tag => {
+                console.log(tag.name);
+            })
+
+            let tempEvents: Event[] = list;
+
+            list.forEach(event => {
                 event.tags.forEach(eventTag => {
                     if(eventTag !== tag && curTags.includes(eventTag) && !tempEvents.includes(event)) {
                         tempEvents.push(event);
@@ -61,7 +87,7 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
                 })
             })
 
-            setRenderedEvents(renderedEvents => renderedEvents.filter((event) => (!event.tags.includes(tag))));
+            setRenderedEvents(tempEvents);
         }
     }
 
