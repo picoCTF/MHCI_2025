@@ -1,11 +1,15 @@
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem, Button } from "@heroui/react";
+import { Icon } from "@iconify/react";
 
 //A dropdown that shows all of the pages under the Resources category
 const ResourcesDropdown: React.FC<{}> = () => {
     return (
         <Dropdown>
             <DropdownTrigger>
-                <Button variant="light">Resources</Button>
+                <Button variant="light">
+                    Resources
+                    <Icon icon={"material-symbols:keyboard-arrow-down-rounded"}/>
+                </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Resource Page List">
                 <DropdownSection showDivider>
