@@ -89,7 +89,7 @@ const EventCard: React.FC<EventCard> = ({ event, variant }) => {
                     } */}
                     <CardBody className="flex flex-row flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
                         {teamData.members.map( 
-                            (member) => (<TeamMemberCard isLeader={member.team_leader} username={member.username}/>)
+                            (member) => (<TeamMemberCard key={member.user_id} isLeader={member.team_leader} username={member.username}/>)
                         )}
                     </CardBody>
                 </Card>

@@ -99,7 +99,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                             <p>{solveText}</p>
                         </div>
                         <div className="flex flex-row w-fit h-fit">
-                            <Icon icon={"material-symbols:mode_heat-outline"} width={40} height={40} className={"text-primary"}/>
+                            <Icon icon={"material-symbols:mode-heat-outline"} width={40} height={40} className={"text-primary"}/>
                             <div>
                                 <h2>{streakLength}</h2>
                                 <p>{streakText}</p>
