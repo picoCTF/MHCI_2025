@@ -93,17 +93,17 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
             <CardBody className="flex flex-col w-full h-fit p-0 m-0">
                 <div className="flex flex-row justify-between">
                     <h2>Activity</h2>
-                    <div className="flex flex-row w-fit h-fit text-left">
+                    <div className="flex flex-row gap-4 w-fit h-fit text-left">
                         <div>
                             <h2>{numSolves}</h2>
                             <p>{solveText}</p>
                         </div>
-                        <div className="flex flex-row w-fit h-fit">
-                            <Icon icon={"material-symbols:mode-heat-outline"} width={40} height={40} className={"text-primary"}/>
-                            <div>
+                        <div className="flex flex-col w-fit h-fit">
+                            <div className="flex flex-row w-fit h-fit items-center">
                                 <h2>{streakLength}</h2>
-                                <p>{streakText}</p>
+                                <Icon icon={"material-symbols:mode-heat-outline"} width={24} height={24} className={"text-primary"}/>
                             </div>
+                            <p>{streakText}</p>
                         </div>
                     </div>
                 </div>
