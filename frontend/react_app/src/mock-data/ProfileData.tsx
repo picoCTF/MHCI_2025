@@ -1,4 +1,4 @@
-import type { ProfileProps } from "../pages/Profile";
+import type { ProfileProps } from "../pages/profile/Profile";
 
 //All mock data for the profile page
 export const mockProfile: ProfileProps = {

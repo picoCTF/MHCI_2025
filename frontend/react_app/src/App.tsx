@@ -11,7 +11,7 @@ import Compete from "./pages/Compete";
 import Home from "./pages/Home";
 import Games from "./pages/practice/Games";
 import Gym from "./pages/practice/Gym";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile/Profile";
 import Videos from "./pages/resources/Videos";
 import Primer from "./pages/resources/Primer";
 import Community from "./pages/resources/Community";
@@ -21,6 +21,8 @@ import LearningHome from './pages/practice/learning-paths/Home';
 import { mockLearningPathsHome } from './mock-data/LearningPathsData';
 import { mockProfile } from './mock-data/ProfileData';
 import PathDetail from './pages/practice/learning-paths/Path';
+import { useState } from 'react';
+import AccountSettings from './pages/profile/AccountSettings';
 
 declare module "@react-types/shared" {
   	interface RouterConfig {
@@ -31,6 +33,7 @@ declare module "@react-types/shared" {
 function App() {
 
   	const navigate = useNavigate();
+	const [headerState, setHeaderState] = useState("Home");
 
   	return (
     	<HeroUIProvider navigate={navigate} useHref={useHref}>
@@ -51,10 +54,14 @@ function App() {
 							<Route path=':pathID' element={<PathDetail/>}/>
 						</Route>
           			</Route>
-          			<Route path='profile' element={<Profile activity={mockProfile.activity} 
-            			skillDistribution={mockProfile.skillDistribution} 
-            			challengeCompletion={mockProfile.challengeCompletion} 
-            			userInfo={mockProfile.userInfo}/>}/>
+          			<Route path='profile' element={<Outlet/>}>
+						<Route index={true} 
+							element={<Profile activity={mockProfile.activity} 
+            					skillDistribution={mockProfile.skillDistribution} 
+            					challengeCompletion={mockProfile.challengeCompletion} 
+            					userInfo={mockProfile.userInfo}/>}/>
+						<Route path='account-settings' element={<AccountSettings/>}/>
+					</Route>
           			<Route path='resources' element={<Outlet/>}>
             			<Route path='community' element={<Community/>}/>
             			<Route path='external-resources' element={<ExternalResources/>}/>

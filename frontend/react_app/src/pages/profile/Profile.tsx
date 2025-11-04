@@ -1,14 +1,14 @@
-import "./Page.css";
-import Header from "../components/General/PageNavbar";
+import "../Page.css";
+import Header from "../../components/General/PageNavbar";
 // import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
-import ChallengeCompletionProfileCard, { type ChallengeCompletionProfileCardProps } from "../components/Profile/ChallengeCompletionProfileCard";
-import SkillDistributionProfileCard, { type SkillDistributionProfileCardProps } from "../components/Profile/SkillDistributionProfileCard";
-import BadgesProfileCard from "../components/Profile/BadgesProfileCard";
-import ActivityProfileCard, { type ActivityProfileCardProps } from "../components/Profile/ActivityProfileCard";
-import UserProfileCard, { type UserProfileCardProps } from "../components/Profile/UserProfileCard";
-import LearningPathsProfileCard from "../components/profile/LearningPathsProfileCard";
-import UserStudiesCard from "../components/profile/UserStudiesCard";
-import EventProfileCard from "../components/profile/EventProfileCard";
+import ChallengeCompletionProfileCard, { type ChallengeCompletionProfileCardProps } from "../../components/Profile/ChallengeCompletionProfileCard";
+import SkillDistributionProfileCard, { type SkillDistributionProfileCardProps } from "../../components/Profile/SkillDistributionProfileCard";
+import BadgesProfileCard from "../../components/Profile/BadgesProfileCard";
+import ActivityProfileCard, { type ActivityProfileCardProps } from "../../components/Profile/ActivityProfileCard";
+import UserProfileCard, { type UserProfileCardProps } from "../../components/Profile/UserProfileCard";
+import LearningPathsProfileCard from "../../components/profile/LearningPathsProfileCard";
+import UserStudiesCard from "../../components/profile/UserStudiesCard";
+import EventProfileCard from "../../components/profile/EventProfileCard";
 
 export interface ProfileProps {
     activity: ActivityProfileCardProps;

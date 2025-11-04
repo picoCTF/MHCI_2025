@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 // import { MemoryRouter } from "react-router-dom";
-import Profile from '../../pages/Profile';
+import Profile from '../../pages/profile/Profile';
 
 
 // import { fn } from 'storybook/test';

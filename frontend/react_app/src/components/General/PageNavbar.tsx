@@ -6,6 +6,7 @@ import NotificationModal from './PageNavbarComponents/NotificationModal';
 import ResourcesDropdown from './PageNavbarComponents/ResourcesDropdown';
 import PracticeDropdown from './PageNavbarComponents/PracticeDropdown';
 import { useState } from 'react';
+import ProfileDropdown from './PageNavbarComponents/ProfileDropdown';
 
 // The header that allows users to navigate from page to page
 const PageNavbar: React.FC<{}> = () => {
@@ -21,7 +22,7 @@ const PageNavbar: React.FC<{}> = () => {
                     </Button>
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                    <NavbarItem>
+                    <NavbarItem isActive>
                         <Button as={Link} variant="light" href="/">
                             Home
                         </Button>
@@ -29,7 +30,7 @@ const PageNavbar: React.FC<{}> = () => {
                     <NavbarItem>
                         <ResourcesDropdown/>
                     </NavbarItem>
-                    <NavbarItem isActive>
+                    <NavbarItem>
                         <PracticeDropdown/>
                     </NavbarItem>
                     <NavbarItem>
@@ -48,10 +49,14 @@ const PageNavbar: React.FC<{}> = () => {
                         <NotificationModal/>
                     </NavbarItem>
                     <NavbarItem>
+                        <ProfileDropdown/>
+                        {/* <Avatar as={Button} isIconOnly={true} radius={"full"} variant={"flat"} color='default'/> */}
+                    </NavbarItem>
+                    {/* <NavbarItem>
                         <Button as={Link} color="default" href="/profile" variant="flat" radius="full" isIconOnly={true}>
                             <Avatar size='sm'/>
                         </Button>
-                    </NavbarItem>
+                    </NavbarItem> */}
                 </NavbarContent>
             </Navbar>
         </div>
