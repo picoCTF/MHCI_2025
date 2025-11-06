@@ -106,12 +106,15 @@ const PageNavbar: React.FC<{}> = () => {
                         <Dropdown onOpenChange={(isOpen) => handleDropdownChange(isOpen, "Practice")}>
                             <DropdownTrigger>
                                 <Button variant="light">
-                                    <p className={getTextColor(curAddress.match("/\\/practice/") != null)}>Practice</p>
+                                    <p className={getTextColor(curAddress == "/practice" || 
+                                        curAddress == "/practice/gym" ||
+                                        curAddress == "/practice/learning-paths" || 
+                                        curAddress == "/practice/games")}>Practice</p>
                                     <Icon icon={practiceArrowIcon}
-                                        className={getTextColor(curAddress == "/resources/primer" || 
-                                        curAddress == "/resources/videos" ||
-                                        curAddress == "/resources/learning-guides" || 
-                                        curAddress == "/resources/external-resources")}/>
+                                        className={getTextColor(curAddress == "/practice" || 
+                                        curAddress == "/practice/gym" ||
+                                        curAddress == "/practice/learning-paths" || 
+                                        curAddress == "/practice/games")}/>
                                 </Button>
                             </DropdownTrigger>
                             <DropdownMenu aria-label="Practice Page List">
