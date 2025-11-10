@@ -12,7 +12,7 @@ interface LearningPathOverviewDivProps {
     skills: string[];
 }
 
-const LearningPathOverviewDiv: React.FC<LearningPathOverviewDivProps> = ({ description, difficulty, name, numChallenges, numSolves, prereqs, skills }) => {
+const LearningPathOverviewContentDiv: React.FC<LearningPathOverviewDivProps> = ({ description, difficulty, name, numChallenges, numSolves, prereqs, skills }) => {
     return (
         <div className="flex flex-col w-full h-full min-h-fit gap-10">
             <div className="flex flex-col text-start gap-4">
@@ -41,17 +41,17 @@ const LearningPathOverviewDiv: React.FC<LearningPathOverviewDivProps> = ({ descr
             <div className="flex flex-col items-start text-start gap-4">
                 <h2>Prerequisites</h2>
                 <div className="flex flex-row overflow-scroll gap-2">
-                    {prereqs.map((prereqName) => <Chip variant="bordered">{prereqName}</Chip>)}
+                    {prereqs.map((prereqName) => <Chip key={prereqName} variant="bordered">{prereqName}</Chip>)}
                 </div>
             </div>
             <div className="flex flex-col items-start text-start gap-4">
                 <h2>Key skills learned</h2>
                 <div className="flex flex-row overflow-scroll gap-2">
-                    {skills.map((skillName) => <Chip variant="bordered">{skillName}</Chip>)}
+                    {skills.map((skillName) => <Chip key={skillName} variant="bordered">{skillName}</Chip>)}
                 </div>
             </div>
         </div>
     );
 }
 
-export default LearningPathOverviewDiv;
+export default LearningPathOverviewContentDiv;

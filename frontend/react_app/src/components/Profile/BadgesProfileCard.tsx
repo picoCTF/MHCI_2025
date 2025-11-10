@@ -1,8 +1,8 @@
 import { Card, CardHeader, CardBody, Button, Modal, useDisclosure, ModalContent, ModalHeader, ModalBody, ModalFooter, addToast } from "@heroui/react";
-import { type BadgeList } from "../../api_interfaces/badgeList";
+import { type BadgeList } from "../../api_interfaces/badge/badgeList";
 import badgesData from "../../mock-data/profile/Badges.json"
 import BadgeSVG from "../general/BadgeSVG";
-import type { Badge } from "../../api_interfaces/badge";
+import type { Badge } from "../../api_interfaces/badge/badge";
 // import { useState } from "react";
 
 interface BadgeModalProps {

@@ -1,9 +1,9 @@
 import { Button, Card, CardBody, CardHeader, Chip, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Modal, ModalBody, ModalContent, ModalHeader, useDisclosure } from "@heroui/react";
 import EventCard from "../general/EventCard";
-import type { Event } from "../../api_interfaces/event";
+import type { Event } from "../../api_interfaces/event/event";
 import { useState } from "react";
 import data from "../../mock-data/MockPagedEventResponse.json";
-import type { EventTag } from "../../api_interfaces/eventTag";
+import type { EventTag } from "../../api_interfaces/event/eventTag";
 
 interface EventModalProps {
     list: Event[];

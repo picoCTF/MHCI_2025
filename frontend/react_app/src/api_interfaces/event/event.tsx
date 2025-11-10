@@ -4,7 +4,7 @@
  * picoCTF platform API
  * OpenAPI spec version: 1.0.0
  */
-import type { Sponsor } from './2023_generated_interfaces/event/sponsor';
+import type { Sponsor } from '../2023_generated_interfaces/event/sponsor';
 import type { EventTag } from './eventTag';
 
 export interface Event {

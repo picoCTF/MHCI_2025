@@ -1,8 +1,8 @@
 import { Button, Card, CardBody, CardHeader, Chip } from "@heroui/react";
 import TeamMemberCard from "./TeamMemberCard";
 import { Icon } from "@iconify/react";
-import type { Event } from "../../api_interfaces/event";
-import type { EventRegistrationResponse } from "../../api_interfaces/eventRegistrationResponse";
+import type { Event } from "../../api_interfaces/event/event";
+import type { EventRegistrationResponse } from "../../api_interfaces/event/eventRegistrationResponse";
 import type { PublicTeam } from "../../api_interfaces/2023_generated_interfaces/team/publicTeam";
 
 import publicTeamData from "../../mock-data/MockPublicTeamResponse.json"

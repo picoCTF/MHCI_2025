@@ -1,105 +1,73 @@
-import { Accordion, AccordionItem, Card, CardBody, Divider, CircularProgress, Table, TableRow, TableCell, TableBody, TableHeader, TableColumn, Button, type AccordionItemProps, type CircularProgressProps } from "@heroui/react";
+import { Accordion, AccordionItem, Card, CardBody, Divider, CircularProgress, Table, TableRow, TableCell, TableBody, TableHeader, TableColumn, Button } from "@heroui/react";
 import ProgressWithTextDiv, { type ProgressWithTextDivProps } from "../general/ProgressWithTextDiv";
 import IconCard from "../general/IconCard";
 import React from "react";
 import type { SemanticColorProps } from "../../Interfaces";
-import type { DifficultyProp } from "../general/DifficultyChip";
 import type { IconName } from "../general/IconTypes";
 import { Icon } from "@iconify/react";
+import { isChallenge } from "../../api_interfaces/challenge";
+import type { LPModuleList } from "../../api_interfaces/learning_path/learningPathModuleList";
+import type { LPModuleItem } from "../../api_interfaces/learning_path/learningPathModuleItem";
 
-function renderCell(item: LearningPathsTableElement) {
+function renderCell(item: LPModuleItem) {
     let icon: IconName = "material-symbols:book-outline";
 
-    let difficulty = item.difficulty.difficultyLvl;
+    let difficulty = "";
 
     let backgroundColor: SemanticColorProps["color"] = "secondary";
 
     let isDisabled = false;
 
-    if (item.contentType == "Challenge") {
+    if (isChallenge(item.content)) {
         icon = "material-symbols:extension-outline";
         backgroundColor = "primary";
+        difficulty = item.content.difficulty.difficultyLvl
+        if(item.status == "Complete") {
+            isDisabled = true;
+        }
     }
 
     if(item.status == "Complete") {
-        isDisabled = true;
         icon = "material-symbols:check-outline";
         backgroundColor = "success";
     }
 
     return (
-        <Button className="flex flex-row w-full min-w-full h-[100%] pl-6 pr-3 gap-3 justify-start items-center" isDisabled={isDisabled} radius="md" color="default" variant="light" href={item.link}>
-            <IconCard background={backgroundColor} icon={icon} size={"sm"}/>
+        <Button className="flex flex-row w-full min-w-full h-[100%] pl-6 pr-3 py-2 gap-3 justify-start items-center" isDisabled={isDisabled} radius="md" color="default" variant="light">
+            <IconCard background={backgroundColor} icon={icon} radius={"lg"} size={"sm"}/>
             <div className="flex flex-col w-full h-fit text-left">
-                <h2>{item.name}</h2>
-                <div className="flex flex-row gap-4 items-center">
-                    <div className="flex row gap-2">
-                        <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default"}/>
-                        <p className="text-xs">{difficulty}</p>
-                    </div>
-                    <div className="flex row gap-2">
-                        <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default"}/>
-                        <div className="flex row gap-1 text-xs">
-                            <p>{item.numSolves + " solves"}</p>
+                <h3>{item.content.name}</h3>
+                {isChallenge(item.content) ? 
+                    <div className="flex flex-row gap-4 items-center">
+                        <div className="flex row gap-2 items-center">
+                            <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default-500"}/>
+                            <p className="flex font-mono text-default-500">{difficulty}</p>
                         </div>
-                    </div>
-                </div>
+                        <div className="flex row gap-2">
+                            <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default-500"}/>
+                            <p className={"flex font-mono text-default-500"}>{item.content.users_solved + " solves"}</p>
+                        </div>
+                    </div> :
+                    <p className="flex font-mono text-default-500">{"(Optional)"}</p>
+                }
             </div>
         </Button>
     );
 };
 
-interface LearningPathsTableElement {
-    contentType: "Challenge" | "Learning Resource";
-    difficulty: DifficultyProp;
-    link: string; 
+interface LearningPathsContentListCardProps {
     name: string;
-    numSolves: number;
-    status: "Incomplete" | "Complete";
+    progress: ProgressWithTextDivProps;
+    list: LPModuleList;
 }
 
-interface LearningPathsAccordionTableProps {
-    tableItems: LearningPathsTableElement[];
-}
-
-const LearningPathsAccordionTable: React.FC<LearningPathsAccordionTableProps> = ({ tableItems }) => {
+const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> = ({ name, progress, list }) => {
 
     const columns = [{
         key: "items",
         label: "Items"
     }];
 
-    return (
-        <Table hideHeader removeWrapper>
-            <TableHeader columns={columns}>
-                {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
-            </TableHeader>
-            <TableBody items={tableItems}>
-                {
-                    (item) => (
-                        <TableRow key={item.name}>
-                            {() => <TableCell>{renderCell(item)}</TableCell>}
-                        </TableRow>
-                    )
-                }
-            </TableBody>
-        </Table>
-    );
-}
-
-interface LearningPathsAccordionItemProps {
-    item: AccordionItemProps;
-    itemProgress: CircularProgressProps;
-    children: LearningPathsAccordionTableProps[];
-}
-
-interface LearningPathsContentListCardProps {
-    name: string;
-    progress: ProgressWithTextDivProps;
-    list: LearningPathsAccordionItemProps[];
-}
-
-const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> = ({ name, progress, list }) => {
     return (
         <Card className="flex w-[430px] min-w-[430px] h-fit min-h-fit border-small border-default-300 m-0 p-0" shadow="none">
             <CardBody className="flex flex-col">
@@ -109,13 +77,26 @@ const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> 
                 </div>
                 <Divider/>
                 <Accordion className="w-full min-w-full h-fit min-h-fit">
-                    {list.map((accordionItem) => (
-                        <AccordionItem key={list.indexOf(accordionItem)} 
-                            aria-label={accordionItem.item["aria-label"]} 
-                            title={accordionItem.item.title} 
-                            startContent={<CircularProgress value={accordionItem.itemProgress.value} maxValue={accordionItem.itemProgress.maxValue} minValue={0}/>}>
+                    {list.results.map((module) => (
+                        <AccordionItem key={list.results.indexOf(module)} 
+                            aria-label={module.name} 
+                            title={module.name} 
+                            startContent={<CircularProgress value={module.completion} maxValue={module.count} minValue={0} aria-label={module.completion + " completed"}/>}>
                             
-                            {accordionItem.children.map((table) => (<LearningPathsAccordionTable tableItems={table.tableItems}/>))}
+                            <Table hideHeader removeWrapper aria-label={"List of " + module.name + " modules"}>
+                                <TableHeader columns={columns}>
+                                    {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+                                </TableHeader>
+                                <TableBody items={module.items}>
+                                    {
+                                        (item) => (
+                                            <TableRow key={item.id}>
+                                                {() => <TableCell>{renderCell(item)}</TableCell>}
+                                            </TableRow>
+                                        )
+                                    }
+                                </TableBody>
+                            </Table>
                         </AccordionItem>))}
                 </Accordion>
             </CardBody>

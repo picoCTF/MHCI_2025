@@ -4,17 +4,19 @@ import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
 import HintAccordion, { type HintAccordionProps } from "./HintAccordion";
 import FlagSubmissionCard from "./FlagSubmissionCard";
 import { Icon } from "@iconify/react";
+import type { Tag } from "../../api_interfaces/2023_generated_interfaces/tag";
+import type { Category } from "../../api_interfaces/2023_generated_interfaces/category";
 
 export interface ChallengeCardProps {
     author: string;
-    category: "Binary_Exploit" | "Cryptography" | "Forensics" | "General_Skills" | "Reverse_Engineering" | "Web_Exploit";
+    category: Category;
     description: string;
     difficulty: DifficultyProp;
     flag: string;
-    hints: HintAccordionProps;
+    hints: HintAccordionProps["list"];
     name: string;
     numSolves: number;
-    tags: string[];
+    tags: Tag[];
 }
 
 const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, flag, hints, name, numSolves, tags}) => {
@@ -42,7 +44,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, diff
                         </div>
                     </div>
                 </div>
-                <HintAccordion list={hints["list"]}/>
+                <HintAccordion list={hints}/>
             </CardBody>
             <CardFooter>
                 <FlagSubmissionCard flag={flag}/>

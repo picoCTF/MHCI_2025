@@ -3,7 +3,13 @@ import Header from "../../../components/General/PageNavbar";
 import { useParams } from "react-router";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsAccordion";
-import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewDiv";
+import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewContentDiv";
+import pathData from "../../../mock-data/MockLearningPathResponse.json";
+import { useState } from "react";
+import type { LearningPath } from "../../../api_interfaces/learning_path/learningPath";
+import { isChallenge } from "../../../api_interfaces/challenge";
+import LearningPathChallengeContentDiv from "../../../components/learning-paths/LearningPathChallengeContentDiv";
+import LearningPathResourceContentDiv from "../../../components/learning-paths/LearningPathResourceContentDiv";
 
 const Path: React.FC<{}> = () => {
 
@@ -11,6 +17,41 @@ const Path: React.FC<{}> = () => {
     //              Need to pass the challenge and resource info of the learning path to the children as well
     let params = useParams();
     const id = params.pathID;
+
+    let data: LearningPath = pathData as LearningPath;
+
+    let myData = [<LearningPathOverviewDiv 
+        description={data.description}
+        difficulty={data.difficulty.difficultyLvl}
+        name={data.name}
+        numChallenges={data.numChallenges}
+        numSolves={data.numSolves}
+        prereqs={data.prereqs}
+        skills={data.skills}/>]
+
+    data.modules.results.forEach(module => {
+        module.items.forEach(item => {
+            if(isChallenge(item.content)) {
+                //Add the item to the array as a challenge
+                myData.push(<LearningPathChallengeContentDiv 
+                    author={item.content.author} 
+                    category={item.content.category} 
+                    description={item.content.description} 
+                    difficulty={item.content.difficulty} 
+                    flag={item.content.flag} 
+                    hints={item.content.hints} 
+                    name={item.content.name} 
+                    numSolves={item.content.users_solved} 
+                    tags={item.content.tags}/>)
+            }
+            else {
+                myData.push(<LearningPathResourceContentDiv 
+                    resourceList={item.content}/>);
+            }
+        })
+    })
+
+    let [mainContent, setMainContent] = useState(myData[0]);
 
     return (
         <div className="Page">
@@ -23,35 +64,16 @@ const Path: React.FC<{}> = () => {
                 </Breadcrumbs>
 
                 <div className="flex flex-row w-full h-fit gap-16">
-                    <LearningPathOverviewDiv 
-                        description="This is a test description. I'm typing a long string to see how text wrapping looks: aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaa aa aa."   
-                        difficulty={"Easy"} 
-                        name={"My Path"} 
-                        numChallenges={0} 
-                        numSolves={0} 
-                        prereqs={["Prereq 1", "Prereq 2", "Prereq 3", "Prereq 4", "Prereq 5", "Prereq 6"]} 
-                        skills={["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6"]}
-                    />
+                    {mainContent}
                     <LearningPathsContentListCard 
-                        name={"My Path"} 
+                        name={data.name} 
                         progress={{
                             color:"primary", 
-                            ariaLabel:"temp", 
-                            value: 0.5, 
-                            endingText: "50%"
+                            ariaLabel: data.completion + "% complete", 
+                            value: data.completion, 
+                            endingText: data.completion + "%"
                         }} 
-                        list={[
-                            {
-                                item: {},
-                                itemProgress: {},
-                                children: []
-                            },
-                            {
-                                item: {},
-                                itemProgress: {},
-                                children: []
-                            }
-                        ]}
+                        list={data.modules}
                     />
                 </div>
             </div>

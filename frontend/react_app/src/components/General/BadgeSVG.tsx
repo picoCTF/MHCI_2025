@@ -1,5 +1,5 @@
 import { commonColors } from "@heroui/react";
-import type { Badge, BadgeColors, BadgeShapes } from "../../api_interfaces/badge"
+import type { Badge, BadgeColors, BadgeShapes } from "../../api_interfaces/badge/badge"
 import { Icon } from "@iconify/react";
 
 // export interface BadgeSVGProps {

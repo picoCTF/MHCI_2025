@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import LearningPathOverviewDiv from '../../components/learning-paths/LearningPathOverviewDiv.tsx';
+import LearningPathOverviewDiv from '../../components/learning-paths/LearningPathOverviewContentDiv.tsx';
 
 
 const meta = {

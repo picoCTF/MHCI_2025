@@ -1,4 +1,4 @@
-import type { IconName } from "../components/general/IconTypes";
+import type { IconName } from "../../components/general/IconTypes";
 
 export type BadgeColors = "green" | "yellow" | "purple";
 export type BadgeShapes = "pointed" | "rounded";

@@ -6,12 +6,13 @@ import { Icon } from "@iconify/react";
 export interface IconCardProps {
     background: SemanticColorProps["color"];
     icon: IconName;
+    radius?: "md" | "lg";
     size: "sm" | "lg";
 }
 
 // A card containing an icon
 // Generally used in challenge cards or learning path cards to show the category of the challenges
-const IconCard: React.FC<IconCardProps> = ({ background, icon, size }) => {
+const IconCard: React.FC<IconCardProps> = ({ background, icon, radius, size }) => {
 
     let cardSize = "12";
     let iconSize = 20;
@@ -22,7 +23,7 @@ const IconCard: React.FC<IconCardProps> = ({ background, icon, size }) => {
     }
 
     return (
-        <Card radius="md" className={"flex p-0 m-0 w-" + cardSize + " min-w-" + cardSize + " h-" + cardSize + " min-h-" + cardSize + " bg-"+ background +"-50"} shadow="none">
+        <Card radius={radius} className={"flex p-0 m-0 w-" + cardSize + " min-w-" + cardSize + " h-" + cardSize + " min-h-" + cardSize + " bg-"+ background +"-50"} shadow="none">
             <CardBody className="flex place-items-center place-content-center p-0 m-0">
                 {/* <Icon name={icon} size={"lg"} weight={"normal"} color={background} colorValue="500"/> */}
                 <Icon icon={icon} width={iconSize} height={iconSize} className={"text-" + background + "-500"}/>
