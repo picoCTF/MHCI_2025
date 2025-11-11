@@ -1,11 +1,10 @@
 import { Card, CardBody } from "@heroui/react";
 import type { SemanticColorProps } from "../../Interfaces";
-import type { IconName } from "./IconTypes";
 import { Icon } from "@iconify/react";
 
 export interface IconCardProps {
     background: SemanticColorProps["color"];
-    icon: IconName;
+    icon: string;
     radius?: "md" | "lg";
     size: "sm" | "lg";
 }

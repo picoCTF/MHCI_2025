@@ -5,36 +5,60 @@ import React from "react";
 import type { SemanticColorProps } from "../../Interfaces";
 import type { IconName } from "../general/IconTypes";
 import { Icon } from "@iconify/react";
-import { isChallenge } from "../../api_interfaces/challenge";
+import { isChallenge, type Challenge } from "../../api_interfaces/challenge";
 import type { LPModuleList } from "../../api_interfaces/learning_path/learningPathModuleList";
 import type { LPModuleItem } from "../../api_interfaces/learning_path/learningPathModuleItem";
+import LearningPathChallengeContentDiv from "./LearningPathChallengeContentDiv";
 
-function renderCell(item: LPModuleItem) {
+function renderCell(item: LPModuleItem, updateFuntion: Function) {
     let icon: IconName = "material-symbols:book-outline";
 
     let difficulty = "";
+
+    let content = <></>;
 
     let backgroundColor: SemanticColorProps["color"] = "secondary";
 
     let isDisabled = false;
 
-    if (isChallenge(item.content)) {
+    let itemIsChallenge = isChallenge(item.content);
+    let itemIsComplete = (item.status == "Complete");
+
+    if (itemIsChallenge) {
         icon = "material-symbols:extension-outline";
         backgroundColor = "primary";
-        difficulty = item.content.difficulty.difficultyLvl
-        if(item.status == "Complete") {
-            isDisabled = true;
+        difficulty = (item.content as Challenge).difficulty.difficultyLvl;
+        content = <LearningPathChallengeContentDiv 
+            author={(item.content as Challenge).author} 
+            category={(item.content as Challenge).category} 
+            description={(item.content as Challenge).description} 
+            difficulty={(item.content as Challenge).difficulty} 
+            flag={(item.content as Challenge).flag} 
+            hints={(item.content as Challenge).hints} 
+            name={(item.content as Challenge).name} 
+            numSolves={(item.content as Challenge).users_solved} 
+            tags={(item.content as Challenge).tags}/>
+        if(itemIsComplete) {
+            // isDisabled = true;
         }
     }
 
-    if(item.status == "Complete") {
-        icon = "material-symbols:check-outline";
+    if(itemIsComplete) {
+        icon = "material-symbols:check";
         backgroundColor = "success";
     }
 
     return (
-        <Button className="flex flex-row w-full min-w-full h-[100%] pl-6 pr-3 py-2 gap-3 justify-start items-center" isDisabled={isDisabled} radius="md" color="default" variant="light">
-            <IconCard background={backgroundColor} icon={icon} radius={"lg"} size={"sm"}/>
+        <Button className="flex flex-row w-full min-w-full h-[100%] pl-6 pr-3 py-2 gap-3 justify-start items-center" 
+            isDisabled={isDisabled} 
+            radius="md" 
+            color="default" 
+            variant="light"
+            onPress={() => updateFuntion(content)}>
+            <IconCard background={backgroundColor} 
+                icon={icon} 
+                radius={"lg"} 
+                size={"sm"}/>
             <div className="flex flex-col w-full h-fit text-left">
                 <h3>{item.content.name}</h3>
                 {isChallenge(item.content) ? 
@@ -59,9 +83,10 @@ interface LearningPathsContentListCardProps {
     name: string;
     progress: ProgressWithTextDivProps;
     list: LPModuleList;
+    updateFunction: Function;
 }
 
-const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> = ({ name, progress, list }) => {
+const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> = ({ name, progress, list, updateFunction }) => {
 
     const columns = [{
         key: "items",
@@ -91,7 +116,7 @@ const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> 
                                     {
                                         (item) => (
                                             <TableRow key={item.id}>
-                                                {() => <TableCell>{renderCell(item)}</TableCell>}
+                                                {() => <TableCell>{renderCell(item, updateFunction)}</TableCell>}
                                             </TableRow>
                                         )
                                     }

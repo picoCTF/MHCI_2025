@@ -39,7 +39,7 @@ const Path: React.FC<{}> = () => {
                     description={item.content.description} 
                     difficulty={item.content.difficulty} 
                     flag={item.content.flag} 
-                    hints={item.content.hints} 
+                   hints={item.content.hints} 
                     name={item.content.name} 
                     numSolves={item.content.users_solved} 
                     tags={item.content.tags}/>)
@@ -66,6 +66,7 @@ const Path: React.FC<{}> = () => {
                 <div className="flex flex-row w-full h-fit gap-16">
                     {mainContent}
                     <LearningPathsContentListCard 
+                        updateFunction={setMainContent}
                         name={data.name} 
                         progress={{
                             color:"primary", 

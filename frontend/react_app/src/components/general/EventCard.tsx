@@ -14,6 +14,9 @@ interface EventCard {
 
 const EventCard: React.FC<EventCard> = ({ event, variant }) => {
 
+    // Create a middleware interface that gets the data from all three of the needed interfaces 
+    // (put it in a middleware folder under api)
+
     let scoreData; //The participant's score during the event, get this from the ScoreProgression request
     let registrationData: EventRegistrationResponse; //Info about participant registration
     let teamData: PublicTeam = publicTeamData; //Data for the team given the participant and event
