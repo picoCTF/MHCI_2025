@@ -1,5 +1,5 @@
 import { Card, CardBody, semanticColors, Tab, Tabs } from "@heroui/react";
-import ActivitySummaryCard from "./Activity/ActivitySummaryCard";
+import ActivitySummaryCard from "./activity/ActivitySummaryCard";
 import { ResponsiveCalendar, ResponsiveTimeRange, type CalendarData, } from "@nivo/calendar";
 import { Icon } from "@iconify/react";
 
