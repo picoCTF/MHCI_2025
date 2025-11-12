@@ -1,11 +1,11 @@
 import "./Page.css";
 
 import Header from "../components/general/PageNavbar";
-import AssignmentsDueListDiv from "../components/Homepage/AssignmentsDueListDiv";
-import ClassroomListDiv from "../components/Homepage/ClassroomListDiv";
-import LearningPathsListDiv, { type LearningPathsListDivProps } from "../components/Homepage/LearningPathsListDiv";
-import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/Homepage/ProfileSummaryDiv";
-import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/Homepage/QuickLinksListCard";
+import AssignmentsDueListDiv from "../components/homepage/AssignmentsDueListDiv";
+import ClassroomListDiv from "../components/homepage/ClassroomListDiv";
+import LearningPathsListDiv, { type LearningPathsListDivProps } from "../components/homepage/LearningPathsListDiv";
+import ProfileSummaryDiv, { type ProfileSummaryDivProps } from "../components/homepage/ProfileSummaryDiv";
+import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/homepage/QuickLinksListCard";
 import type { BannerCardProps } from "../components/general/BannerCard";
 import BannerCard from "../components/general/BannerCard";
 import ContinuationDiv from "../components/homepage/ContinuationDiv";

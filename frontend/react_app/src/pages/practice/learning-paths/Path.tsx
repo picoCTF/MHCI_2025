@@ -1,5 +1,5 @@
 import "../../Page.css";
-import Header from "../../../components/General/PageNavbar";
+import Header from "../../../components/general/PageNavbar";
 import { useParams } from "react-router";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsAccordion";
