@@ -44,7 +44,7 @@ function renderCell(item: LPModuleItem, updateFuntion: Function) {
     }
 
     if(itemIsComplete) {
-        icon = "material-symbols:check";
+        icon = "material-symbols:check-outline";
         backgroundColor = "success";
     }
 
@@ -60,19 +60,23 @@ function renderCell(item: LPModuleItem, updateFuntion: Function) {
                 radius={"lg"} 
                 size={"sm"}/>
             <div className="flex flex-col w-full h-fit text-left">
-                <h3>{item.content.name}</h3>
+                <h3>{item.name}</h3>
                 {isChallenge(item.content) ? 
-                    <div className="flex flex-row gap-4 items-center">
-                        <div className="flex row gap-2 items-center">
-                            <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default-500"}/>
-                            <p className="flex font-mono text-default-500">{difficulty}</p>
+                    <>
+                        <div className="flex flex-row gap-4 items-center">
+                            <div className="flex row gap-2 items-center">
+                                <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default-500"}/>
+                                <p className="flex font-mono text-default-500">{difficulty}</p>
+                            </div>
+                            <div className="flex row gap-2">
+                                <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default-500"}/>
+                                <p className={"flex font-mono text-default-500"}>{item.content.users_solved + " solves"}</p>
+                            </div>
                         </div>
-                        <div className="flex row gap-2">
-                            <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default-500"}/>
-                            <p className={"flex font-mono text-default-500"}>{item.content.users_solved + " solves"}</p>
-                        </div>
-                    </div> :
-                    <p className="flex font-mono text-default-500">{"(Optional)"}</p>
+                    </> :
+                    <>
+                        <p className="flex font-mono text-default-500">{"(Optional)"}</p>
+                    </>
                 }
             </div>
         </Button>

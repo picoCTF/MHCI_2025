@@ -2,7 +2,7 @@ import "../../Page.css";
 import Header from "../../../components/general/PageNavbar";
 import { useParams } from "react-router";
 import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
-import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsAccordion";
+import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsContentListCard";
 import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewContentDiv";
 import pathData from "../../../mock-data/MockLearningPathResponse.json";
 import { useState, type ReactElement } from "react";
@@ -23,20 +23,22 @@ const Path: React.FC<{}> = () => {
 
     let data: LearningPath = pathData as LearningPath;
 
-    let myData = [<LearningPathOverviewDiv 
+    let isComplete = data.;
+
+    let myContent = [<LearningPathOverviewDiv 
         description={data.description}
         difficulty={data.difficulty.difficultyLvl}
         name={data.name}
         numChallenges={data.numChallenges}
         numSolves={data.numSolves}
         prereqs={data.prereqs}
-        skills={data.skills}/>]
+        skills={data.skills}/>];
 
     data.modules.results.forEach(module => {
         module.items.forEach(item => {
             if(isChallenge(item.content)) {
                 //Add the item to the array as a challenge
-                myData.push(<LearningPathChallengeContentDiv 
+                myContent.push(<LearningPathChallengeContentDiv 
                     author={item.content.author} 
                     category={item.content.category} 
                     description={item.content.description} 
@@ -45,22 +47,22 @@ const Path: React.FC<{}> = () => {
                     hints={item.content.hints} 
                     name={item.content.name} 
                     numSolves={item.content.users_solved} 
-                    tags={item.content.tags}/>)
+                    tags={item.content.tags}/>);
             }
             else if(isResourceGroup(item.content)) {
-                myData.push(<LearningPathResourceContentDiv 
+                myContent.push(<LearningPathResourceContentDiv 
                     resourceList={item.content}/>);
             }
             else if(isGame(item.content)) {
-                myData.push(<LearningPathGameContentDiv game={item.content}/>)
+                myContent.push(<LearningPathGameContentDiv game={item.content}/>);
             }
             else {
-                myData.push(item.content as ReactElement)
+                myContent.push(item.content as ReactElement);
             }
         })
     })
 
-    let [mainContent, setMainContent] = useState(myData[0]);
+    let [mainContent, setMainContent] = useState(myContent[0]);
 
     return (
         <div className="Page">
