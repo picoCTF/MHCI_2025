@@ -5,11 +5,14 @@ import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsAccordion";
 import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewContentDiv";
 import pathData from "../../../mock-data/MockLearningPathResponse.json";
-import { useState } from "react";
+import { useState, type ReactElement } from "react";
 import type { LearningPath } from "../../../api_interfaces/learning_path/learningPath";
 import { isChallenge } from "../../../api_interfaces/challenge";
 import LearningPathChallengeContentDiv from "../../../components/learning-paths/LearningPathChallengeContentDiv";
 import LearningPathResourceContentDiv from "../../../components/learning-paths/LearningPathResourceContentDiv";
+import { isResourceGroup } from "../../../api_interfaces/resource/resourceGroup";
+import LearningPathGameContentDiv from "../../../components/learning-paths/LearningPathGameContentDiv";
+import { isGame } from "../../../api_interfaces/2023_generated_interfaces/game/game";
 
 const Path: React.FC<{}> = () => {
 
@@ -39,14 +42,20 @@ const Path: React.FC<{}> = () => {
                     description={item.content.description} 
                     difficulty={item.content.difficulty} 
                     flag={item.content.flag} 
-                   hints={item.content.hints} 
+                    hints={item.content.hints} 
                     name={item.content.name} 
                     numSolves={item.content.users_solved} 
                     tags={item.content.tags}/>)
             }
-            else {
+            else if(isResourceGroup(item.content)) {
                 myData.push(<LearningPathResourceContentDiv 
                     resourceList={item.content}/>);
+            }
+            else if(isGame(item.content)) {
+                myData.push(<LearningPathGameContentDiv game={item.content}/>)
+            }
+            else {
+                myData.push(item.content as ReactElement)
             }
         })
     })

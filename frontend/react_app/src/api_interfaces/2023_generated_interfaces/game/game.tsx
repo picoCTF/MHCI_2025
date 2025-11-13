@@ -21,3 +21,17 @@ export interface Game {
   /** Configuration values to expose to the game. Note that the contents of this field are publicly accessible. */
   settings?: GameSettings;
 }
+
+export function isGame(obj: any): obj is Game {
+    return (
+        typeof obj === 'object' &&
+        obj !== null &&
+        typeof obj.build_name === "string" &&
+        typeof obj.compression === "object" &&
+        typeof obj.descripiton === "string" &&
+        typeof obj.display_leaderboard === "string" &&
+        typeof obj.id === "number" &&
+        typeof obj.name === "string" &&
+        typeof obj.resources === "object"
+    );
+}
