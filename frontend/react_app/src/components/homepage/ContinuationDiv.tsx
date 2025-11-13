@@ -1,3 +1,4 @@
+import { Skeleton } from "@heroui/react";
 import LearningPathCard, { type LearningPathCardProps } from "../general/LearningPathCard";
 import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import FocusWrapperCard from "../general/FocusWrapperCard";
@@ -55,12 +56,14 @@ const ContinuationDiv: React.FC<ContinuationDivProps> = ( props ) => {
                 {list.map((item) => (<LearningPathCard key={item.id} description={item.description} difficulty={item.difficulty} hasProgress={item.hasProgress} id={item.id} link={item.link} name={item.name} numCompletedChallenges={item.numCompletedChallenges} numSolves={item.numSolves} numTotalChallenges={item.numTotalChallenges}/>))}
             </HorizontalScrollDiv> */}
             <div className="flex flex-col w-full min-w-full items-start gap-4">
-                <div className="flex flex-row w-full min-w-full items-start justify-between">
+                <Skeleton className="flex flex-row w-full min-w-full items-start justify-between">
                     <h3>Continue where you left off</h3>
-                </div>
-                <FocusWrapperCard isFocused={props.isFocused} orientation="row">
-                    {item}
-                </FocusWrapperCard>
+                </Skeleton>
+                <Skeleton>
+                    <FocusWrapperCard isFocused={props.isFocused} orientation="row">
+                        {item}
+                    </FocusWrapperCard>
+                </Skeleton>
             </div>
         </div>
     );

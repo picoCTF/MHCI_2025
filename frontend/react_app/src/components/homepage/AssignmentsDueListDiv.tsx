@@ -1,3 +1,4 @@
+import { Skeleton } from "@heroui/react";
 import AssignmentCard from "../general/AssignmentCard";
 import FocusWrapperCard, { type FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import data from "../../mock-data/MockPagedAssignmentResponse.json";
@@ -39,19 +40,21 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
     }
 
     return (
-        <div className="flex flex-col w-[811px] h-fit gap-6">
-            <div className="flex flex-col items-start">
+        <div className="flex flex-col w-full h-fit gap-6">
+            <Skeleton className="flex flex-col items-start">
                 <h3>You have assignments due soon!</h3>
-            </div>
-            <FocusWrapperCard isFocused={isFocused} orientation="row">
-                {filteredAssignments.map((assignment) => (
-                    <AssignmentCard key={assignment.id} name={assignment.name} 
-                        classroomName={assignment.classroom.name} 
-                        completedChallenges={getNumCompletedChallenges(assignment)} 
-                        due_date={assignment.due_date} id={assignment.id} 
-                        totalChallenges={assignment.challenges.length}/>
-                ))}
-            </FocusWrapperCard>
+            </Skeleton>
+            <Skeleton>
+                <FocusWrapperCard isFocused={isFocused} orientation="row">
+                    {filteredAssignments.map((assignment) => (
+                        <AssignmentCard key={assignment.id} name={assignment.name} 
+                            classroomName={assignment.classroom.name} 
+                            completedChallenges={getNumCompletedChallenges(assignment)} 
+                            due_date={assignment.due_date} id={assignment.id} 
+                            totalChallenges={assignment.challenges.length}/>
+                    ))}
+                </FocusWrapperCard>
+            </Skeleton>
         </div>
     );
 }

@@ -1,3 +1,4 @@
+import { Skeleton } from "@heroui/react";
 import { Link } from "@heroui/react";
 import data from "../../mock-data/MockPagedClassroomResponse.json";
 import ClassroomCard from "../general/ClassroomCard";
@@ -33,14 +34,20 @@ const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused }) => {
     return (
         <div className="flex flex-col w-full min-w-full h-fit items-start gap-4 bg-transparent">
             <div className="flex flex-row w-full min-w-full justify-between">
-                <h3>Manage your classrooms</h3>
-                <Link href="/classroom">Open Classrooms</Link>
+                <Skeleton>
+                    <h3>Manage your classrooms</h3>
+                </Skeleton>
+                <Skeleton>
+                    <Link href="/classroom">Open Classrooms</Link>
+                </Skeleton>
             </div>
-            <FocusWrapperCard isFocused={isFocused} orientation="col">
-                {mockClassrooms.map((classroom) => <ClassroomCard key={classroom.id} id={classroom.id} 
-                    name={classroom.name} numMembers={classroom.numMembers} recentAssignments={classroom.recentAssignments} 
-                    pendingMemberUsernames={classroom.pendingMemberUsernames}/>)}
-            </FocusWrapperCard>
+            <Skeleton>
+                <FocusWrapperCard isFocused={isFocused} orientation="col">
+                    {mockClassrooms.map((classroom) => <ClassroomCard key={classroom.id} id={classroom.id} 
+                        name={classroom.name} numMembers={classroom.numMembers} recentAssignments={classroom.recentAssignments} 
+                        pendingMemberUsernames={classroom.pendingMemberUsernames}/>)}
+                </FocusWrapperCard>
+            </Skeleton>
         </div>
     );
 }

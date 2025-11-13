@@ -1,4 +1,4 @@
-import { Link } from "@heroui/react";
+import { Link, Skeleton } from "@heroui/react";
 import LearningPathCard, { type LearningPathCardProps } from "../general/LearningPathCard";
 import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import FocusWrapperCard from "../general/FocusWrapperCard";
@@ -18,12 +18,18 @@ const LearningPathsListDiv: React.FC<LearningPathsListDivProps> = ({ isFocused, 
             </HorizontalScrollDiv> */}
             <div className="flex flex-col w-full min-w-full items-start gap-4">
                 <div className="flex flex-row w-full min-w-full items-start justify-between">
-                    <h3>Try a new learning path</h3>
-                    <Link className="flex flex-row" href="/practice/learning-paths">Open All Paths</Link>
+                    <Skeleton>
+                        <h3>Try a new learning path</h3>
+                    </Skeleton>
+                    <Skeleton>
+                        <Link className="flex flex-row" href="/practice/learning-paths">Open All Paths</Link>
+                    </Skeleton>
                 </div>
-                <FocusWrapperCard isFocused={isFocused} orientation="row">
-                    {list.map((item) => (<LearningPathCard key={item.id} description={item.description} difficulty={item.difficulty} hasProgress={item.hasProgress} id={item.id} link={item.link} name={item.name} numCompletedChallenges={item.numCompletedChallenges} numSolves={item.numSolves} numTotalChallenges={item.numTotalChallenges} variant={"standard"}/>))}
-                </FocusWrapperCard>
+                <Skeleton>
+                    <FocusWrapperCard isFocused={isFocused} orientation="row">
+                        {list.map((item) => (<LearningPathCard key={item.id} description={item.description} difficulty={item.difficulty} hasProgress={item.hasProgress} id={item.id} link={item.link} name={item.name} numCompletedChallenges={item.numCompletedChallenges} numSolves={item.numSolves} numTotalChallenges={item.numTotalChallenges} variant={"standard"}/>))}
+                    </FocusWrapperCard>
+                </Skeleton>
             </div>
         </div>
     );
