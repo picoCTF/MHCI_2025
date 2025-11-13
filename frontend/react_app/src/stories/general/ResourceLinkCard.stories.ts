@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import ResourceLinkCard from '../../components/General/ResourceLinkCard';
+import ResourceLinkCard from '../../components/general/ResourceLinkCard';
 
 // import { fn } from 'storybook/test';
 
 const meta = {
-  title: 'Learning Paths/ResourceLinkCard',
+  title: 'General/ResourceLinkCard',
   component: ResourceLinkCard,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],

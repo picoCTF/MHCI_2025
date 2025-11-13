@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import ProgressWithTextDiv from '../../components/General/ProgressWithTextDiv';
+import ProgressWithTextDiv from '../../components/general/ProgressWithTextDiv';
 
 // import { fn } from 'storybook/test';
 

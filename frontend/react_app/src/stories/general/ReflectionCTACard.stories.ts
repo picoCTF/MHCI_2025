@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import Icon from '../../components/general/Icon';
+import ReflectionCTACard from '../../components/general/ReflectionCTACard';
 
 // import { fn } from 'storybook/test';
 
 const meta = {
-  title: 'General/Icon',
-  component: Icon,
+  title: 'General/ReflectionCTACard',
+  component: ReflectionCTACard,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
@@ -14,17 +14,11 @@ const meta = {
   },
   args: {
   },
-} satisfies Meta<typeof Icon>;
+} satisfies Meta<typeof ReflectionCTACard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    name: "article",
-    size: "lg",
-    weight: "normal",
-    color: "primary",
-    colorValue: "500"
-  }
+  args: {}
 };

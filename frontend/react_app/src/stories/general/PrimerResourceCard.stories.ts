@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import PrimerResourceCard from '../../components/General/PrimerResourceCard';
+import PrimerResourceCard from '../../components/general/PrimerResourceCard';
 
 // import { fn } from 'storybook/test';
 

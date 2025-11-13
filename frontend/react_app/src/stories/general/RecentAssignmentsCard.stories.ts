@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import RecentAssignmentsCard from '../../components/General/RecentAssignmentsCard';
+import RecentAssignmentsCard from '../../components/general/RecentAssignmentsCard';
 
 // import { fn } from 'storybook/test';
 

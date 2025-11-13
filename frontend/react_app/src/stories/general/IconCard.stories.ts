@@ -30,7 +30,7 @@ export const Small: Story = {
 export const Large: Story = {
   args: {
     background: "primary",
-    icon: "mode_heat",
+    icon: "material-symbols:mode-heat-outline",
     size: "lg"
   }
 };

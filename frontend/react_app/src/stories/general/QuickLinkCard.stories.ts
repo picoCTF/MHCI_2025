@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import QuickLinkCard from '../../components/General/QuickLinkCard';
+import QuickLinkCard from '../../components/general/QuickLinkCard';
 
 // import { fn } from 'storybook/test';
 
