@@ -31,5 +31,5 @@ export interface Event {
   readonly submission_context: number;
   summary?: string;
   /** The tags associated with this challenge. */
-  tags: EventTag[];
+  type: EventTag;
 }
