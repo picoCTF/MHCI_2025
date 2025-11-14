@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, Card, CardBody, Divider, CircularProgress, Table, TableRow, TableCell, TableBody, TableHeader, TableColumn, Button } from "@heroui/react";
+import { Accordion, AccordionItem, Card, CardBody, Divider, CircularProgress, Skeleton, Table, TableRow, TableCell, TableBody, TableHeader, TableColumn, Button } from "@heroui/react";
 import ProgressWithTextDiv, { type ProgressWithTextDivProps } from "../general/ProgressWithTextDiv";
 import IconCard from "../general/IconCard";
 import React from "react";
@@ -64,19 +64,19 @@ function renderCell(item: LPModuleItem, updateFuntion: Function) {
                 {isChallenge(item.content) ? 
                     <>
                         <div className="flex flex-row gap-4 items-center">
-                            <div className="flex row gap-2 items-center">
+                            <Skeleton className="flex row gap-2 items-center">
                                 <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default-500"}/>
                                 <p className="flex font-mono text-default-500">{difficulty}</p>
-                            </div>
-                            <div className="flex row gap-2">
+                            </Skeleton>
+                            <Skeleton className="flex row gap-2">
                                 <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default-500"}/>
                                 <p className={"flex font-mono text-default-500"}>{item.content.users_solved + " solves"}</p>
-                            </div>
+                            </Skeleton>
                         </div>
                     </> :
-                    <>
+                    <Skeleton>
                         <p className="flex font-mono text-default-500">{"(Optional)"}</p>
-                    </>
+                    </Skeleton>
                 }
             </div>
         </Button>

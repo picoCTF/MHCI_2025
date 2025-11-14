@@ -1,3 +1,4 @@
+import { Skeleton } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import type { Category } from "../../api_interfaces/2023_generated_interfaces/category";
 import type { Tag } from "../../api_interfaces/2023_generated_interfaces/tag";
@@ -24,34 +25,42 @@ const LearningPathChallengeContentDiv: React.FC<LearningPathChallengeContentDivP
     return (
         <div className="flex flex-col w-full h-full min-h-fit gap-8">
             <div className="flex flex-col text-start gap-4">
-                <div className="flex flex-row gap-3">
+                <Skeleton className="flex flex-row gap-3">
                     <h2>{name}</h2>
                     <Icon icon={"material-symbols:bookmark-outline-rounded"}/>
-                </div>
-                <div className="flex flex-row gap-2">
+                </Skeleton>
+                <Skeleton className="flex flex-row gap-2">
                     <DifficultyChip difficultyLvl={difficulty.difficultyLvl}/>
                     <Chip>{category.name}</Chip>
                     {tags.map((tag) => (<Chip>{tag.name}</Chip>))}
-                </div>
+                </Skeleton>
                 {description ? <p>{description}</p> : null}
                 <div className="flex flex-row gap-4">
                     <div className="flex flex-row gap-2">
-                        <Icon icon={"material-symbols:extension-outline"} width={20} height={20} className={"text-default-500"}/>
-                        <div className="flex flex-row gap-1">
+                        <Skeleton>
+                            <Icon icon={"material-symbols:extension-outline"} width={20} height={20} className={"text-default-500"}/>
+                        </Skeleton>
+                        <Skeleton className="flex flex-row gap-1">
                             <p className={"flex font-mono font-semibold text-default-500"}>{"Author:"}</p>
                             <p className={"flex font-mono text-default-500"}>{author}</p>
-                        </div>
+                        </Skeleton>
                     </div>
                     <div className="flex flex-row gap-2">
-                        <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default"}/>
-                        <div className="flex row gap-1 text-xs">
+                        <Skeleton>
+                            <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default"}/>
+                        </Skeleton>
+                        <Skeleton className="flex row gap-1 text-xs">
                             <p>{numSolves + " solves"}</p>
-                        </div>
+                        </Skeleton>
                     </div>
                 </div>
-                <HintAccordion list={hints}/>
+                <Skeleton>
+                    <HintAccordion list={hints}/>
+                </Skeleton>
             </div>
-            <FlagSubmissionCard flag={flag}/>
+            <Skeleton>
+                <FlagSubmissionCard flag={flag}/>
+            </Skeleton>
         </div>
     );
 }
