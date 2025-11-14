@@ -1,11 +1,11 @@
 import "../Page.css";
 import Header from "../../components/general/PageNavbar";
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
+import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
 
 const Videos: React.FC<{}> = () => {
 
     return (
-        <div className="Page">
+        <Skeleton className="Page">
             <Header/>
             <Breadcrumbs>
                 <BreadcrumbItem href="/resources">Resources</BreadcrumbItem>
@@ -14,7 +14,7 @@ const Videos: React.FC<{}> = () => {
             <h1 className="text-3xl font-bold">
                 Videos Page Here
             </h1>
-        </div>
+        </Skeleton>
     );
 }
 

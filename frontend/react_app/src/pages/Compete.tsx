@@ -1,11 +1,11 @@
 import "./Page.css";
 import Header from "../components/general/PageNavbar";
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
+import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
 
 const Compete: React.FC<{}> = () => {
 
     return (
-        <div className="Page">
+        <Skeleton className="Page">
             <Header/>
             <Breadcrumbs>
                 <BreadcrumbItem href="/compete">Compete</BreadcrumbItem>
@@ -13,7 +13,7 @@ const Compete: React.FC<{}> = () => {
             <h1 className="text-3xl font-bold">
                 Compete Page Here
             </h1>
-        </div>
+        </Skeleton>
     );
 }
 

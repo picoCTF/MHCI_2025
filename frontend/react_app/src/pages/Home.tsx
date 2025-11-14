@@ -1,5 +1,5 @@
 import "./Page.css";
-
+import { Skeleton } from "@heroui/react";
 import Header from "../components/general/PageNavbar";
 import AssignmentsDueListDiv from "../components/homepage/AssignmentsDueListDiv";
 import ClassroomListDiv from "../components/homepage/ClassroomListDiv";
@@ -23,7 +23,7 @@ const Homepage: React.FC<HomepageProps> = ({ banners, learningPathsList, profile
     // Figure out the state of the user and determine which elements to show them based on that state
 
     return (
-        <div className="Page">
+        <Skeleton className="Page">
             <Header/>
             <div className="flex flex-row justify-center gap-24 py-20">
                 {/* API_NEEDED - Get the user's username, challenges completed, number of active days, number of badges earned, 
@@ -49,7 +49,7 @@ const Homepage: React.FC<HomepageProps> = ({ banners, learningPathsList, profile
                     <QuickLinksListCard isFocused={false} list={quickLinksList}/>
                 </div>
             </div>
-        </div>
+        </Skeleton>
     );
 }
 

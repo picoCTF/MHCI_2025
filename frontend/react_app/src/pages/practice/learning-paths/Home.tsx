@@ -1,3 +1,4 @@
+import { Skeleton } from "@heroui/react";
 import "../../Page.css";
 import Header from "../../../components/general/PageNavbar";
 import LearningPathCard, { type LearningPathCardProps } from "../../../components/general/LearningPathCard";
@@ -22,7 +23,7 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
     });
 
     return (
-        <div className="Page">
+        <Skeleton className="Page">
             <Header/>
             <div className="flex flex-col w-full py-10 items-center">
                 <div className="flex flex-col w-full max-w-[1200px] gap-16 items-start">
@@ -56,7 +57,7 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Skeleton>
     );
 }
 

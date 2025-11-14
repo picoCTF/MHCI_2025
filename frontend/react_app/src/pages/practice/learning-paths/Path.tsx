@@ -1,7 +1,7 @@
 import "../../Page.css";
 import Header from "../../../components/general/PageNavbar";
 import { useParams } from "react-router";
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
+import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
 import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsContentListCard";
 import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewContentDiv";
 import pathData from "../../../mock-data/MockLearningPathResponse.json";
@@ -65,7 +65,7 @@ const Path: React.FC<{}> = () => {
     let [mainContent, setMainContent] = useState(myContent[0]);
 
     return (
-        <div className="Page">
+        <Skeleton className="Page">
             <Header/>
             <div className="flex flex-col w-full px-32 py-10 gap-6 items-left">
                 <Breadcrumbs>
@@ -89,7 +89,7 @@ const Path: React.FC<{}> = () => {
                     />
                 </div>
             </div>
-        </div>
+        </Skeleton>
     );
 }
 

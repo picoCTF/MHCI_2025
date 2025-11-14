@@ -1,3 +1,4 @@
+import { Skeleton } from "@heroui/react";
 import "../Page.css";
 import Header from "../../components/general/PageNavbar";
 // import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
@@ -20,7 +21,7 @@ export interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ activity, challengeCompletion, skillDistribution, userInfo }) => {
 
     return (
-        <div className="Page">
+        <Skeleton className="Page">
             <Header/>
             <div className="flex flex-col w-full gap-10 py-16 px-32">
                 <div className="flex flex-row w-full gap-10">
@@ -59,7 +60,7 @@ const Profile: React.FC<ProfileProps> = ({ activity, challengeCompletion, skillD
                 <EventProfileCard/>
                 <UserStudiesCard/>
             </div>
-        </div>
+        </Skeleton>
     );
 }
 

@@ -1,11 +1,11 @@
 import "../Page.css";
 import Header from "../../components/general/PageNavbar";
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
+import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
 
 const Games: React.FC<{}> = () => {
 
     return (
-        <div className="Page">
+        <Skeleton className="Page">
             <Header/>
             <Breadcrumbs>
                 <BreadcrumbItem href="/practice">Practice</BreadcrumbItem>
@@ -14,7 +14,7 @@ const Games: React.FC<{}> = () => {
             <h1 className="text-3xl font-bold">
                 Games Page Here
             </h1>
-        </div>
+        </Skeleton>
     );
 }
 
