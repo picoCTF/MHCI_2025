@@ -7,8 +7,7 @@ const ReflectionCTACard: React.FC<{}> = () => {
         <AIFeatureCard>
             <div className="flex flex-col gap-4">
                 <div className="flex flex-row gap-3 p-0 m-0">
-                    {/* NEED_ICON */}
-                    <Icon icon={""}/>
+                    <Icon icon={"fluent:sparkle-48-regular"}/>
                     <p>Want to get better? Reflect and compare your strategy!</p>
                 </div>
                 <p>
@@ -17,8 +16,9 @@ const ReflectionCTACard: React.FC<{}> = () => {
                 </p>
             </div>
             {/* TODO - fix button width + height using the button size??? */}
-            <Button className="flex w-fit py-2 px-4" size="md" radius="sm" color="primary">
+            <Button className="flex flex-row gap-2 w-fit py-2 px-4" size="md" radius="sm" color="primary">
                 Compare Approaches
+                <Icon icon={"material-symbols:settings-outline"}/>
             </Button>
         </AIFeatureCard>
     );

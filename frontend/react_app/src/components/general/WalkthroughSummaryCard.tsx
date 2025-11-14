@@ -1,5 +1,6 @@
 import { Card, CardBody } from "@heroui/react";
 import ResourceLinkCard from "./ResourceLinkCard";
+import { Icon } from "@iconify/react";
 
 interface WalkthroughSummaryCardProps extends React.PropsWithChildren {
     summary: string;
@@ -14,7 +15,7 @@ const WalkthroughSummaryCard: React.FC<WalkthroughSummaryCardProps> = ({ summary
             <CardBody className="flex flex-col h-fit min-h-fit p-0 gap-6">
                 <div className="flex flex-row gap-3">
                     {/* NEED_ICON */}
-                    <p>ICON</p>
+                    <Icon icon="material-symbols:border-color-outline"/>
                     <p>Official Walkthrough Summary</p>
                 </div>
                 <p>{summary}</p>

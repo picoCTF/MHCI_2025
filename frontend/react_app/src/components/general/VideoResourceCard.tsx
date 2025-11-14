@@ -1,4 +1,5 @@
 import { Card, CardBody } from "@heroui/react";
+import { Icon } from "@iconify/react";
 
 interface VideoResourceCardProps extends React.PropsWithChildren {
     description: string;
@@ -11,7 +12,7 @@ const VideoResourceCard: React.FC<VideoResourceCardProps> = ({ description, yout
             <CardBody className="flex flex-col h-fit min-h-fit p-0 gap-6">
                 <div className="flex flex-row gap-3">
                     {/* NEED_ICON */}
-                    <p>ICON</p>
+                    <Icon icon={"material-symbols:smart-display-outline"}/>
                     <p>Video Tutorial</p>
                 </div>
                 <p>{description}</p>

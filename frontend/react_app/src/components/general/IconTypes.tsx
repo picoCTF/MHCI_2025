@@ -1,5 +1,5 @@
 export type IconName = "fa7-brands:discord" | "material-symbols:arrow-back-ios" | "material-symbols:arrow-forward" | "material-symbols:arrow-forward-ios" | 
-    "material-symbols:article-outline" | "material-symbols:award-star-outline" | "material-symbols:book-outline" | "material-symbols:build-outline" | 
+    "material-symbols:article-outline" | "material-symbols:award-star-outline" | "material-symbols:book-outline" | "material-symbols:border-color-outline" | "material-symbols:build-outline" | 
     "material-symbols:calendar-outline" | "material-symbols:cancel-outline" | "material-symbols:check" | "material-symbols:check-outline" | "material-symbols:check-circle-outline" | 
     "material-symbols:close-outline" | "material-symbols:code-outline" | "material-symbols:extension-outline" | "material-symbols:flag-outline" | "material-symbols:home-outline" | 
     "material-symbols:import-contact-outline" | "material-symbols:info-outline" | "material-symbols:key-outline" | "material-symbols:language-outline" | 

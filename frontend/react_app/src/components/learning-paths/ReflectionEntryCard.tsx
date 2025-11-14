@@ -1,4 +1,5 @@
 import { Card, CardBody, Button, Skeleton, Textarea } from "@heroui/react";
+import { Icon } from "@iconify/react";
 
 interface ReflectionEntryCardProps {
 }
@@ -14,7 +15,7 @@ const ReflectionEntryCard: React.FC<ReflectionEntryCardProps> = ({}) => {
                 <Skeleton className="flex flex-row justify-between">
                     <Button className="flex" size="sm" radius="full" color="default">
                         {/* NEED_ICON */}
-                        <p>ICON</p>
+                        <Icon icon={"material-symbols:mic-outline"}/>
                     </Button>
                     <Button className="flex" size="md" radius="sm" color="primary">
                         Compare Approaches

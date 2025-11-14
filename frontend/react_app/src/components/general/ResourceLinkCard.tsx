@@ -1,4 +1,5 @@
 import { Card, CardBody } from "@heroui/react";
+import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 
 interface ResourceLinkCardProps {
@@ -19,8 +20,7 @@ const ResourceLinkCard: React.FC<ResourceLinkCardProps> = ({ name, link, icon })
                     <p>{icon}</p>
                     <p>{name}</p>
                 </div>
-                {/* NEED_ICON */}
-                <p>ARROWICON</p>
+                <Icon icon={"material-symbols:arrow-outward"}/>
             </CardBody>
         </Card>
     );
