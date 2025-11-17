@@ -18,10 +18,10 @@ const LearningPathsListDiv: React.FC<LearningPathsListDivProps> = ({ isFocused, 
             </HorizontalScrollDiv> */}
             <div className="flex flex-col w-full min-w-full items-start gap-4">
                 <div className="flex flex-row w-full min-w-full items-start justify-between">
-                    <Skeleton>
+                    <Skeleton className="flex w-fit rounded-full">
                         <h3>Try a new learning path</h3>
                     </Skeleton>
-                    <Skeleton>
+                    <Skeleton className="flex w-fit rounded-full">
                         <Link className="flex flex-row" href="/practice/learning-paths">Open All Paths</Link>
                     </Skeleton>
                 </div>

@@ -1,5 +1,4 @@
 import "./Page.css";
-import { Skeleton } from "@heroui/react";
 import Header from "../components/general/PageNavbar";
 import AssignmentsDueListDiv from "../components/homepage/AssignmentsDueListDiv";
 import ClassroomListDiv from "../components/homepage/ClassroomListDiv";
@@ -9,6 +8,7 @@ import QuickLinksListCard, { type QuickLinksListDivProps } from "../components/h
 import type { BannerCardProps } from "../components/general/BannerCard";
 import BannerCard from "../components/general/BannerCard";
 import ContinuationDiv from "../components/homepage/ContinuationDiv";
+import { Skeleton } from "@heroui/react";
 
 export interface HomepageProps {
     // moduleList: (AssignmentsDueListDivProps | ClassroomListDivProps | LearningPathsListDivProps | QuickLinksListDivProps)[];
@@ -23,7 +23,7 @@ const Homepage: React.FC<HomepageProps> = ({ banners, learningPathsList, profile
     // Figure out the state of the user and determine which elements to show them based on that state
 
     return (
-        <Skeleton className="Page">
+        <div className="Page">
             <Header/>
             <div className="flex flex-row justify-center gap-24 py-20">
                 {/* API_NEEDED - Get the user's username, challenges completed, number of active days, number of badges earned, 
@@ -37,7 +37,10 @@ const Homepage: React.FC<HomepageProps> = ({ banners, learningPathsList, profile
                 </div>
                 <div className="flex flex-col gap-14 w-[811px]">
                     {/* API_NEEDED - Get any announcements */}
-                    {banners.map((banner) => (<BannerCard key={banner.id} id={banner.id} buttonText={banner.buttonText} eventTime={banner.eventTime} image={banner.image} title={banner.title}/>))}
+                    {banners.map((banner) => (
+                        <Skeleton className="flex rounded-lg">
+                            <BannerCard key={banner.id} id={banner.id} buttonText={banner.buttonText} eventTime={banner.eventTime} image={banner.image} title={banner.title}/>
+                        </Skeleton>))}
                     {/* API_NEEDED - Get the user's assignments in the order they are due */}
                     <AssignmentsDueListDiv isFocused={true}/>
                     <ContinuationDiv type="path" isFocused={false} lastItem={learningPathsList[0]}/>
@@ -49,7 +52,7 @@ const Homepage: React.FC<HomepageProps> = ({ banners, learningPathsList, profile
                     <QuickLinksListCard isFocused={false} list={quickLinksList}/>
                 </div>
             </div>
-        </Skeleton>
+        </div>
     );
 }
 

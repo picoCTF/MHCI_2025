@@ -5,7 +5,7 @@ import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
 const Community: React.FC<{}> = () => {
 
     return (
-        <Skeleton className="Page">
+        <div className="Page">
             <Header/>
             <Breadcrumbs>
                 <BreadcrumbItem href="/resources">Resources</BreadcrumbItem>
@@ -14,7 +14,7 @@ const Community: React.FC<{}> = () => {
             <h1 className="text-3xl font-bold">
                 Community Page Here
             </h1>
-        </Skeleton>
+        </div>
     );
 }
 

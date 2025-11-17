@@ -23,7 +23,7 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
     });
 
     return (
-        <Skeleton className="Page">
+        <div className="Page">
             <Header/>
             <div className="flex flex-col w-full py-10 items-center">
                 <div className="flex flex-col w-full max-w-[1200px] gap-16 items-start">
@@ -57,7 +57,7 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                     </div>
                 </div>
             </div>
-        </Skeleton>
+        </div>
     );
 }
 

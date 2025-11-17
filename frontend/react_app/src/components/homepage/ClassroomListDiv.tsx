@@ -34,10 +34,10 @@ const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused }) => {
     return (
         <div className="flex flex-col w-full min-w-full h-fit items-start gap-4 bg-transparent">
             <div className="flex flex-row w-full min-w-full justify-between">
-                <Skeleton>
+                <Skeleton className="flex w-fit rounded-full">
                     <h3>Manage your classrooms</h3>
                 </Skeleton>
-                <Skeleton>
+                <Skeleton className="flex w-fit rounded-full">
                     <Link href="/classroom">Open Classrooms</Link>
                 </Skeleton>
             </div>

@@ -56,7 +56,7 @@ const ContinuationDiv: React.FC<ContinuationDivProps> = ( props ) => {
                 {list.map((item) => (<LearningPathCard key={item.id} description={item.description} difficulty={item.difficulty} hasProgress={item.hasProgress} id={item.id} link={item.link} name={item.name} numCompletedChallenges={item.numCompletedChallenges} numSolves={item.numSolves} numTotalChallenges={item.numTotalChallenges}/>))}
             </HorizontalScrollDiv> */}
             <div className="flex flex-col w-full min-w-full items-start gap-4">
-                <Skeleton className="flex flex-row w-full min-w-full items-start justify-between">
+                <Skeleton className="flex w-fit rounded-full">
                     <h3>Continue where you left off</h3>
                 </Skeleton>
                 <Skeleton isLoaded={false}>

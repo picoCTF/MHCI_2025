@@ -21,7 +21,7 @@ export interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ activity, challengeCompletion, skillDistribution, userInfo }) => {
 
     return (
-        <Skeleton className="Page">
+        <div className="Page">
             <Header/>
             <div className="flex flex-col w-full gap-10 py-16 px-32">
                 <div className="flex flex-row w-full gap-10">
@@ -60,7 +60,7 @@ const Profile: React.FC<ProfileProps> = ({ activity, challengeCompletion, skillD
                 <EventProfileCard/>
                 <UserStudiesCard/>
             </div>
-        </Skeleton>
+        </div>
     );
 }
 

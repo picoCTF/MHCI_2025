@@ -5,7 +5,7 @@ import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
 const Games: React.FC<{}> = () => {
 
     return (
-        <Skeleton className="Page">
+        <div className="Page">
             <Header/>
             <Breadcrumbs>
                 <BreadcrumbItem href="/practice">Practice</BreadcrumbItem>
@@ -14,7 +14,7 @@ const Games: React.FC<{}> = () => {
             <h1 className="text-3xl font-bold">
                 Games Page Here
             </h1>
-        </Skeleton>
+        </div>
     );
 }
 

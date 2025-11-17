@@ -1,4 +1,5 @@
 {
+    "completed": false,
     "completion": 75,
     "description": "This is a test description. I'm typing a long string to see how text wrapping looks: aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaa aa aa.",
     "difficulty": {
@@ -36,6 +37,7 @@
                             ]
                         },
                         "id": 0,
+                        "name": "LP Item 1",
                         "status": "Complete"
                     },
                     {
@@ -64,6 +66,7 @@
                             "users_solved_during_event": 500
                         },
                         "id": 1,
+                        "name": "LP Item 2",
                         "status": "Incomplete"
                     }
                 ],
@@ -75,10 +78,13 @@
                 "items": [
                     {
                         "content": {
+                            "build_name": "test_game_build",
+                            "build_url": "test_build_url",
                             "id": 2,
-                            "name": "Resource Group 2"
+                            "name": "Game 1"
                         },
                         "id": 2,
+                        "name": "LP Item 3",
                         "status": "Complete"
                     }
                 ],
@@ -89,6 +95,7 @@
     },
     "name": "Test Path",
     "numChallenges": 6,
+    "numCompletedTasks": 4,
     "numSolves": 1234,
     "prereqs": ["Prereq 1", "Prereq 2", "Prereq 3", "Prereq 4", "Prereq 5", "Prereq 6"],
     "skills": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6"]

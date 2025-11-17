@@ -23,7 +23,7 @@ const Path: React.FC<{}> = () => {
 
     let data: LearningPath = pathData as LearningPath;
 
-    let isComplete = data.;
+    let isComplete = data.completed;
 
     let myContent = [<LearningPathOverviewDiv 
         description={data.description}
@@ -65,7 +65,7 @@ const Path: React.FC<{}> = () => {
     let [mainContent, setMainContent] = useState(myContent[0]);
 
     return (
-        <Skeleton className="Page">
+        <div className="Page">
             <Header/>
             <div className="flex flex-col w-full px-32 py-10 gap-6 items-left">
                 <Breadcrumbs>
@@ -81,15 +81,15 @@ const Path: React.FC<{}> = () => {
                         name={data.name} 
                         progress={{
                             color:"primary", 
-                            ariaLabel: data.completion + "% complete", 
-                            value: data.completion, 
-                            endingText: data.completion + "%"
+                            ariaLabel: data.numCompletedTasks + "% complete", 
+                            value: (data.numCompletedTasks), 
+                            endingText: data.numCompletedTasks + "%"
                         }} 
                         list={data.modules}
                     />
                 </div>
             </div>
-        </Skeleton>
+        </div>
     );
 }
 
