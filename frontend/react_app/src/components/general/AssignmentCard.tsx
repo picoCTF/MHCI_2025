@@ -1,4 +1,4 @@
-import { Button, Card, CardBody } from "@heroui/react";
+import { Button, Card, Skeleton } from "@heroui/react";
 import { getTimeString, parseTimeString } from "../../Functions";
 import ProgressWithTextDiv from "./ProgressWithTextDiv";
 import { Icon } from "@iconify/react";
@@ -45,22 +45,26 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ name, classroomName, co
     }
 
     return (
-        <Card className="flex w-full min-w-fit h-fit border-small bg-default-50 border-default-300 p-card-md" radius="md" shadow="none" aria-label={name + " assignment card"}>
-            <CardBody className="flex flex-col w-fit h-fit gap-6 p-0">
-                <div className={"flex flex-row w-full text-" + timeColor + " gap-1 items-center"}>
-                    {isLastDay ? <Icon icon={"material-symbols:info-outline"} width={16} height={16} className={"text-danger"}/> : undefined}
-                    <p className="font-semibold">{"Due in " + getTimeString(timeLeft[2], timeLeft[3], timeLeft[4], timeLeft[5])}</p>
-                </div>
-                <div className="flex flex-col w-full gap-2">
+        <Card className="flex flex-col w-full min-w-fit h-fit border-small bg-default-50 border-default-300 p-card-md gap-6" radius="md" shadow="none" aria-label={name + " assignment card"}>
+            <Skeleton className={"flex flex-row w-fit text-" + timeColor + " gap-1 items-center rounded-full"}>
+                {isLastDay ? <Icon icon={"material-symbols:info-outline"} width={16} height={16} className={"text-danger"}/> : undefined}
+                <p className="font-semibold">{"Due in " + getTimeString(timeLeft[2], timeLeft[3], timeLeft[4], timeLeft[5])}</p>
+            </Skeleton>
+            <div className="flex flex-col w-full gap-2">
+                <Skeleton className="flex w-fit rounded-full">
                     <h3>{name}</h3>
+                </Skeleton>
+                <Skeleton className="flex w-fit rounded-full">
                     <p>{"Classroom: " + classroomName}</p>
-                </div>
-                <div className="flex flex-row w-[500px] gap-4 items-center">
-                    <ProgressWithTextDiv color={"primary"} ariaLabel={completedChallenges + " of " + totalChallenges + " challenges completed"} 
-                        value={completedChallenges/totalChallenges * 100} endingText={completedChallenges + "/" + totalChallenges + " challenges"}/>
+                </Skeleton>
+            </div>
+            <div className="flex flex-row w-[500px] gap-4 items-center">
+                <ProgressWithTextDiv color={"primary"} ariaLabel={completedChallenges + " of " + totalChallenges + " challenges completed"} 
+                    value={completedChallenges/totalChallenges * 100} endingText={completedChallenges + "/" + totalChallenges + " challenges"}/>
+                <Skeleton className="flex rounded-md">
                     <Button className="flex w-fit h-fit m-0 px-4 py-2" color="primary" radius="sm">Resume</Button>
-                </div>
-            </CardBody>
+                </Skeleton>
+            </div>
         </Card>
     );
 }

@@ -1,7 +1,7 @@
 import "../../Page.css";
 import Header from "../../../components/general/PageNavbar";
-import { useParams } from "react-router";
-import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
+// import { useParams } from "react-router";
+import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsContentListCard";
 import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewContentDiv";
 import pathData from "../../../mock-data/MockLearningPathResponse.json";
@@ -18,12 +18,12 @@ const Path: React.FC<{}> = () => {
 
     // API_NEEDED - Get the path information using the path's ID
     //              Need to pass the challenge and resource info of the learning path to the children as well
-    let params = useParams();
-    const id = params.pathID;
+    // let params = useParams();
+    // const id = params.pathID;
 
     let data: LearningPath = pathData as LearningPath;
 
-    let isComplete = data.completed;
+    // let isComplete = data.completed;
 
     let myContent = [<LearningPathOverviewDiv 
         description={data.description}

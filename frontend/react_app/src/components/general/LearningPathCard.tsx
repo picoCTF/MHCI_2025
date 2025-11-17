@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, Progress } from "@heroui/react";
+import { Button, Card, CardBody, Progress, Skeleton } from "@heroui/react";
 
 import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
 import IconCard from "./IconCard";
@@ -31,16 +31,20 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
             The number of solves should be based on the number of users that solved all of the challenges*/
         <div className="flex flex-row items-start w-full gap-4">
             <div className="flex flex-row gap-2 text-center">
-                <Icon icon={"material-symbols:extension-outline"} width={16} height={16} className={"text-default-500"}/>
-                <div className="flex flex-row gap-1 text-xs text-center">
+                <Skeleton className="flex w-fit rounded-full">
+                    <Icon icon={"material-symbols:extension-outline"} width={16} height={16} className={"text-default-500"}/>
+                </Skeleton>
+                <Skeleton className="flex flex-row gap-1 text-xs text-center rounded-full">
                     <p className="text-default-500 text-center">{numTotalChallenges + " challenges"}</p>
-                </div>
+                </Skeleton>
             </div>
             <div className="flex flex-row gap-2 text-center">
-                <Icon icon={"material-symbols:flag-outline"} width={16} height={16} className={"text-default-500"}/>
-                <div className="flex flex-row gap-1 text-xs text-center">
+                <Skeleton className="flex w-fit rounded-full">
+                    <Icon icon={"material-symbols:flag-outline"} width={16} height={16} className={"text-default-500"}/>
+                </Skeleton>
+                <Skeleton className="flex flex-row gap-1 text-xs text-center rounded-full">
                     <p className="text-default-500 text-center">{numSolves + " solves"}</p>
-                </div>
+                </Skeleton>
             </div>
         </div>
     );
@@ -54,50 +58,58 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
     switch (variant) {
         case "compact": {
             return (
-                <Card className="flex w-full h-fit border-small border-default-300 p-4 bg-content1-base" radius="md" shadow="none" isPressable isHoverable onPress={() => navigate("/practice/learning-paths/" + id)}>
-                    <CardBody className="flex flex-col w-full h-fit gap-4 p-0 m-0">
-                        <div className="flex flex-row w-full h-fit gap-2 justify-between items-center">
-                            <div className="flex flex-row w-fit gap-4 items-center">
-                                <IconCard background={"primary"} icon={"material-symbols:book-outline"} size={"lg"}/>
+                <Card className="flex flex-col w-full h-fit border-small border-default-300 p-4 gap-4 bg-content1-base" radius="md" shadow="none" isPressable isHoverable onPress={() => navigate("/practice/learning-paths/" + id)}>
+                    <div className="flex flex-row w-full h-fit gap-2 justify-between items-center">
+                        <div className="flex flex-row w-fit gap-4 items-center">
+                            <IconCard background={"primary"} icon={"material-symbols:book-outline"} size={"lg"}/>
+                            <Skeleton className="flex w-fit rounded-full">
                                 <h3>{name}</h3>
-                            </div>
-                            <p className="font-mono text-md text-default-500"><b>{numCompletedChallenges}</b>{"/" + numTotalChallenges}</p>
+                            </Skeleton>
                         </div>
-                        <Progress className="flex w-full self-center" size="md" color={"primary"} aria-label={"Learning Path Progress"} value={numCompletedChallenges/numTotalChallenges*100}/>
-                    </CardBody>
+                        <Skeleton className="flex w-fit rounded-full">
+                            <p className="font-mono text-md text-default-500"><b>{numCompletedChallenges}</b>{"/" + numTotalChallenges}</p>
+                        </Skeleton>
+                    </div>
+                    <Progress className="flex w-full self-center" size="md" color={"primary"} aria-label={"Learning Path Progress"} value={numCompletedChallenges/numTotalChallenges*100}/>
                 </Card>
             );
         }
         case "expanded": {
             return (
-                <Card className="flex w-full h-fit border-small border-default-300 p-6 bg-content1-base" radius="md" shadow="none">
-                    <CardBody className="flex flex-col w-full h-fit gap-6 p-0 m-0">
-                        <div className="flex flex-row w-full justify-between">
-                            <IconCard background={"primary"} icon={"material-symbols:book-outline"} size={"lg"}/>
-                            <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
-                        </div>
-                        <div className="flex flex-col w-full h-fit items-start gap-2">
+                <Card className="flex flex-col w-full h-fit border-small border-default-300 p-6 gap-6 bg-content1-base" radius="md" shadow="none">
+                    <div className="flex flex-row w-full justify-between">
+                        <IconCard background={"primary"} icon={"material-symbols:book-outline"} size={"lg"}/>
+                        <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
+                    </div>
+                    <div className="flex flex-col w-full h-fit items-start gap-2">
+                        <Skeleton className="flex w-fit rounded-full">
                             <h3>{name}</h3>
-                            <div className="flex flex-row items-start w-full gap-4">
-                                <div className="flex flex-row gap-2 text-center">
+                        </Skeleton>
+                        <div className="flex flex-row items-start w-full gap-4">
+                            <div className="flex flex-row gap-2 text-center items-center">
+                                <Skeleton className="flex w-fit h-fit rounded-full">
                                     <Icon icon={"material-symbols:extension-outline"} width={16} height={16} className="text-default-500"/>
-                                    <div className="flex flex-row gap-1 text-xs text-center">
-                                        <p className="text-default-500 text-center">{numTotalChallenges + " challenges"}</p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-row gap-2 text-center">
+                                </Skeleton>
+                                <Skeleton className="flex flex-row gap-1 text-xs text-center rounded-full">
+                                    <p className="text-default-500 text-center">{numTotalChallenges + " challenges"}</p>
+                                </Skeleton>
+                            </div>
+                            <div className="flex flex-row gap-2 text-center items-center">
+                                <Skeleton className="flex w-fit h-fit rounded-full">
                                     <Icon icon={"material-symbols:flag-outline"} width={16} height={16} className="text-default-500"/>
-                                    <div className="flex flex-row gap-1 text-xs text-center">
-                                        <p className="text-default-500 text-center">{numSolves + " solves"}</p>
-                                    </div>
-                                </div>
+                                </Skeleton>
+                                <Skeleton className="flex flex-row gap-1 text-xs text-center rounded-full">
+                                    <p className="text-default-500 text-center">{numSolves + " solves"}</p>
+                                </Skeleton>
                             </div>
                         </div>
-                        <div className="flex flex-row w-full h-fit items-center gap-6">
-                            <ProgressWithTextDiv color="primary" ariaLabel={"Amount Completed"} value={numCompletedChallenges/numTotalChallenges*100} endingText={numCompletedChallenges + "/" + numTotalChallenges + " challenges"}/>
+                    </div>
+                    <div className="flex flex-row w-full h-fit items-center gap-6">
+                        <ProgressWithTextDiv color="primary" ariaLabel={"Amount Completed"} value={numCompletedChallenges/numTotalChallenges*100} endingText={numCompletedChallenges + "/" + numTotalChallenges + " challenges"}/>
+                        <Skeleton className="flex w-fit h-fit rounded-lg">
                             <Button variant="solid" color="primary" size="md" radius="sm">Resume</Button>
-                        </div>
-                    </CardBody>
+                        </Skeleton>
+                    </div>
                 </Card>
             );
         }
@@ -111,8 +123,12 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
                                 <DifficultyChip difficultyLvl={difficulty["difficultyLvl"]}/>
                             </div>
                             <div className="flex flex-col w-full h-fit items-start gap-2">
-                                <h3>{name}</h3>
-                                <p>{description}</p>
+                                <Skeleton className="flex w-fit rounded-full">
+                                    <h3>{name}</h3>
+                                </Skeleton>
+                                <Skeleton className="flex w-fit rounded-full">
+                                    <p>{description}</p>
+                                </Skeleton>
                             </div>
                         </div>
                         <div className="flex flex-col w-full h-fit items-start">

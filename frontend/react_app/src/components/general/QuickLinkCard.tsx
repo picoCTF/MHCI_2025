@@ -1,4 +1,4 @@
-import { Card, CardBody } from "@heroui/react";
+import { Card, CardBody, Skeleton } from "@heroui/react";
 import IconCard from "./IconCard";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
@@ -22,10 +22,16 @@ const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ name, description, icon, 
                 <IconCard background={"secondary"} icon={icon} size={"sm"}/>
                 <div className="flex flex-col gap-1">
                     <div className="flex flex-row gap-1 items-center">
-                        <h3>{name}</h3>
-                        <Icon icon={"material-symbols:arrow-forward"} width={24} height={24} className="text-default-900"/>
+                        <Skeleton className="flex w-fit rounded-full">
+                            <h3>{name}</h3>
+                        </Skeleton>
+                        <Skeleton className="flex w-fit h-fit rounded-full">
+                            <Icon icon={"material-symbols:arrow-forward"} width={24} height={24} className="text-default-900"/>
+                        </Skeleton>
                     </div>
-                    <p>{description}</p>
+                    <Skeleton className="flex w-fit rounded-full">
+                        <p>{description}</p>
+                    </Skeleton>
                 </div>
             </CardBody>
         </Card>

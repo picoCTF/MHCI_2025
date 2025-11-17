@@ -1,4 +1,4 @@
-import { Chip } from "@heroui/react";
+import { Chip, Skeleton } from "@heroui/react";
 
 export interface DifficultyProp {
     difficultyLvl: "Easy" | "Medium" | "Hard";
@@ -30,9 +30,11 @@ function getDifficultyTextColor(difficulty: string) {
 const DifficultyChip: React.FC<DifficultyProp> = ({ difficultyLvl }) => {
 
     return (
-        <Chip className={"flex bg-" + getDifficultyChipColor(difficultyLvl) + " text-" + getDifficultyTextColor(difficultyLvl)} size="sm">
-            <p className="font-medium">{difficultyLvl}</p>
-        </Chip>
+        <Skeleton className="flex w-fit h-fit rounded-full">
+            <Chip className={"flex bg-" + getDifficultyChipColor(difficultyLvl) + " text-" + getDifficultyTextColor(difficultyLvl)} size="sm">
+                <p className="font-medium">{difficultyLvl}</p>
+            </Chip>
+        </Skeleton>
     );
 }
 

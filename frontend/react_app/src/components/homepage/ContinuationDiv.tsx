@@ -59,11 +59,9 @@ const ContinuationDiv: React.FC<ContinuationDivProps> = ( props ) => {
                 <Skeleton className="flex w-fit rounded-full">
                     <h3>Continue where you left off</h3>
                 </Skeleton>
-                <Skeleton isLoaded={false}>
-                    <FocusWrapperCard isFocused={props.isFocused} orientation="row">
-                        {item}
-                    </FocusWrapperCard>
-                </Skeleton>
+                <FocusWrapperCard isFocused={props.isFocused} orientation="row">
+                    {item}
+                </FocusWrapperCard>
             </div>
         </div>
     );

@@ -44,17 +44,15 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
             <Skeleton className="flex w-fit rounded-full">
                 <h3>You have assignments due soon!</h3>
             </Skeleton>
-                <FocusWrapperCard isFocused={isFocused} orientation="row">
-                    {filteredAssignments.map((assignment) => (
-                        <Skeleton className="flex w-fit rounded-md">
-                            <AssignmentCard key={assignment.id} name={assignment.name} 
-                                classroomName={assignment.classroom.name} 
-                                completedChallenges={getNumCompletedChallenges(assignment)} 
-                                due_date={assignment.due_date} id={assignment.id} 
-                                totalChallenges={assignment.challenges.length}/>
-                        </Skeleton>
-                    ))}
-                </FocusWrapperCard>
+            <FocusWrapperCard isFocused={isFocused} orientation="row">
+                {filteredAssignments.map((assignment) => (
+                    <AssignmentCard key={assignment.id} name={assignment.name} 
+                        classroomName={assignment.classroom.name} 
+                        completedChallenges={getNumCompletedChallenges(assignment)} 
+                        due_date={assignment.due_date} id={assignment.id} 
+                        totalChallenges={assignment.challenges.length}/>
+                ))}
+            </FocusWrapperCard>
         </div>
     );
 }

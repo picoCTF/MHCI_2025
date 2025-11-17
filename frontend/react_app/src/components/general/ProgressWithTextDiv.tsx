@@ -1,4 +1,4 @@
-import { Progress } from "@heroui/react";
+import { Progress, Skeleton } from "@heroui/react";
 
 export interface ProgressWithTextDivProps {
     color: "default" | "primary" | "secondary" | "success" | "warning" | "danger";
@@ -12,8 +12,12 @@ const ProgressWithTextDiv: React.FC<ProgressWithTextDivProps> = ({ color, ariaLa
 
     return (
         <div className="flex flex-row w-full h-fit place-center gap-3">
-            <Progress className="flex w-full self-center" size="md" color={color} aria-label={ariaLabel} value={value}/>
-            <p className="font-mono text-inline whitespace-nowrap text-default-500">{endingText}</p>
+            <Skeleton className="flex w-full rounded-full">
+                <Progress className="flex w-full self-center" size="md" color={color} aria-label={ariaLabel} value={value}/>
+            </Skeleton>
+            <Skeleton className="flex w-fit rounded-full">
+                <p className="font-mono text-inline whitespace-nowrap text-default-500">{endingText}</p>
+            </Skeleton>
         </div>
     );
 }

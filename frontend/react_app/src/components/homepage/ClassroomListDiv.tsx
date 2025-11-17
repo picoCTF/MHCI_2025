@@ -41,13 +41,11 @@ const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused }) => {
                     <Link href="/classroom">Open Classrooms</Link>
                 </Skeleton>
             </div>
-            <Skeleton>
-                <FocusWrapperCard isFocused={isFocused} orientation="col">
-                    {mockClassrooms.map((classroom) => <ClassroomCard key={classroom.id} id={classroom.id} 
-                        name={classroom.name} numMembers={classroom.numMembers} recentAssignments={classroom.recentAssignments} 
-                        pendingMemberUsernames={classroom.pendingMemberUsernames}/>)}
-                </FocusWrapperCard>
-            </Skeleton>
+            <FocusWrapperCard isFocused={isFocused} orientation="col">
+                {mockClassrooms.map((classroom) => <ClassroomCard key={classroom.id} id={classroom.id} 
+                    name={classroom.name} numMembers={classroom.numMembers} recentAssignments={classroom.recentAssignments} 
+                    pendingMemberUsernames={classroom.pendingMemberUsernames}/>)}
+            </FocusWrapperCard>
         </div>
     );
 }

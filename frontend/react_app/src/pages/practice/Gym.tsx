@@ -1,6 +1,6 @@
 import "../Page.css";
 import Header from "../../components/general/PageNavbar";
-import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
+import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
 
 const Gym: React.FC<{}> = () => {
 

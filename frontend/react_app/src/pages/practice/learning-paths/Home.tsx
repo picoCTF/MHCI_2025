@@ -1,4 +1,4 @@
-import { Skeleton } from "@heroui/react";
+// import { Skeleton } from "@heroui/react";
 import "../../Page.css";
 import Header from "../../../components/general/PageNavbar";
 import LearningPathCard, { type LearningPathCardProps } from "../../../components/general/LearningPathCard";

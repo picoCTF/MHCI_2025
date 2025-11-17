@@ -1,4 +1,4 @@
-import { Card, CardBody } from "@heroui/react";
+import { Card, CardBody, Skeleton } from "@heroui/react";
 import type { SemanticColorProps } from "../../Interfaces";
 import { Icon } from "@iconify/react";
 
@@ -22,12 +22,13 @@ const IconCard: React.FC<IconCardProps> = ({ background, icon, radius, size }) =
     }
 
     return (
-        <Card radius={radius} className={"flex p-0 m-0 w-" + cardSize + " min-w-" + cardSize + " h-" + cardSize + " min-h-" + cardSize + " bg-"+ background +"-50"} shadow="none">
-            <CardBody className="flex place-items-center place-content-center p-0 m-0">
-                {/* <Icon name={icon} size={"lg"} weight={"normal"} color={background} colorValue="500"/> */}
-                <Icon icon={icon} width={iconSize} height={iconSize} className={"text-" + background + "-500"}/>
-            </CardBody>
-        </Card>
+        <Skeleton className={"flex w-fit h-fit rounded-xl"}>
+            <Card radius={radius} className={"flex p-0 m-0 w-" + cardSize + " min-w-" + cardSize + " h-" + cardSize + " min-h-" + cardSize + " bg-"+ background +"-50"} shadow="none">
+                <CardBody className="flex place-items-center place-content-center p-0 m-0">
+                    <Icon icon={icon} width={iconSize} height={iconSize} className={"text-" + background + "-500"}/>
+                </CardBody>
+            </Card>
+        </Skeleton>
     );
 }
 

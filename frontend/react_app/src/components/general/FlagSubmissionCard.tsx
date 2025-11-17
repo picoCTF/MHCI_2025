@@ -5,7 +5,7 @@ interface FlagSubmissionCardProps {
 }
 
 // API_NEEDED - check if the string the user inputs matches the flag
-const FlagSubmissionCard: React.FC<FlagSubmissionCardProps> = ({ flag }) => {
+const FlagSubmissionCard: React.FC<FlagSubmissionCardProps> = ({ /*flag*/ }) => {
 
     return (
         <Card className="flex flex-row w-full">
