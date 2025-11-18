@@ -23,7 +23,10 @@
                 {
                     "name": "Research"
                 }
-            ]
+            ],
+            "type": {
+                "name": "Challenge Release"
+            }
         },
         {
             "end_time": "",
@@ -43,7 +46,10 @@
                 {
                     "name": "Competition"
                 }
-            ]
+            ],
+            "type": {
+                "name": "Competition"
+            }
         },
         {
             "end_time": "",
@@ -68,7 +74,10 @@
                 {
                     "name": "Research"
                 }
-            ]
+            ],
+            "type": {
+                "name": "Challenge Release"
+            }
         },
         {
             "end_time": "",
@@ -93,7 +102,10 @@
                 {
                     "name": "Research"
                 }
-            ]
+            ],
+            "type": {
+                "name": "Challenge Release"
+            }
         },
         {
             "end_time": "",
@@ -118,7 +130,10 @@
                 {
                     "name": "Research"
                 }
-            ]
+            ],
+            "type": {
+                "name": "Challenge Release"
+            }
         }
     ],
     "count": 5

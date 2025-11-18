@@ -6,6 +6,7 @@
  */
 import type { Sponsor } from '../2023_generated_interfaces/event/sponsor';
 import type { EventTag } from './eventTag';
+import type { EventType } from './eventType';
 
 export interface Event {
   description?: string;
@@ -31,5 +32,6 @@ export interface Event {
   readonly submission_context: number;
   summary?: string;
   /** The tags associated with this challenge. */
-  type: EventTag;
+  tags: EventTag[];
+  type: EventType;
 }

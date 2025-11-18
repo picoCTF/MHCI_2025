@@ -1,3 +1,3 @@
 export interface EventTag {
-    name: "Challenge Release" | "Competition" | "Research";
+    name: "Challenge Release" | "Competition" | "Research" | string;
 }

@@ -1,11 +1,28 @@
 {
-    "scoreData": {
-
-    },
+    "scoreData": 50,
     "registrationData": {
-
+        "id": 123,
+        "team": {},
+        "team_membership_pending": false,
+        "team_leader": false,
+        "score": 20,
+        "is_disqualified": false,
+        "disqualification_reason": null
     },
     "teamData": {
-        
+        "event": {},
+        "id": 456,
+        "members": [
+            {
+                "is_active": true,
+                "is_private": false,
+                "team_leader": true,
+                "team_score_contribution": 200,
+                "user_id": 789,
+                "username": "ImTheLeader"
+            }
+        ],
+        "name": "Team 1",
+        "team_score": 300
     }
 }
