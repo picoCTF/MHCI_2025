@@ -41,7 +41,7 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
             <Button variant="bordered" color="primary" onPress={onOpen}>See more...</Button>
             <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="5xl">
                 <ModalContent>
-                    {(onClose) => (
+                    {() => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
                                 <h3>Your Milestones</h3>

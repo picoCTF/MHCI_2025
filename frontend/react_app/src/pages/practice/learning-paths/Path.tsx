@@ -1,7 +1,7 @@
 import "../../Page.css";
 import Header from "../../../components/general/PageNavbar";
 // import { useParams } from "react-router";
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
+import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
 import LearningPathsContentListCard from "../../../components/learning-paths/LearningPathsContentListCard";
 import LearningPathOverviewDiv from "../../../components/learning-paths/LearningPathOverviewContentDiv";
 import pathData from "../../../mock-data/MockLearningPathResponse.json";
@@ -68,11 +68,13 @@ const Path: React.FC<{}> = () => {
         <div className="Page">
             <Header/>
             <div className="flex flex-col w-full px-32 py-10 gap-6 items-left">
-                <Breadcrumbs>
-                    <BreadcrumbItem isDisabled>Practice</BreadcrumbItem>
-                    <BreadcrumbItem href="/practice/learning-paths">Learning Paths</BreadcrumbItem>
-                    <BreadcrumbItem href="/practice/learning-paths/page">Learning Path Page</BreadcrumbItem>
-                </Breadcrumbs>
+                <Skeleton className="flex w-fit rounded-full">
+                    <Breadcrumbs>
+                        <BreadcrumbItem isDisabled>Practice</BreadcrumbItem>
+                        <BreadcrumbItem href="/practice/learning-paths">Learning Paths</BreadcrumbItem>
+                        <BreadcrumbItem href="/practice/learning-paths/page">Learning Path Page</BreadcrumbItem>
+                    </Breadcrumbs>
+                </Skeleton>
 
                 <div className="flex flex-row w-full h-fit gap-16">
                     {mainContent}

@@ -1,7 +1,7 @@
 {
     "completed": false,
     "completion": 75,
-    "description": "This is a test description. I'm typing a long string to see how text wrapping looks: aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaa aa aa.",
+    "description": "This is a test description. I'm typing a long string to see how text wrapping looks: aaaaaa aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaa aa aa.",
     "difficulty": {
         "difficultyLvl": "Easy"
     },
