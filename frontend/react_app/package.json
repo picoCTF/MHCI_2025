@@ -21,6 +21,7 @@
     "geist": "~1.4.2",
     "react": "~19.1.1",
     "react-dom": "~19.1.1",
+    "react-loading-skeleton": "^3.5.0",
     "react-router-dom": "~7.6.3",
     "tailwindcss": "^4.1.13"
   },
