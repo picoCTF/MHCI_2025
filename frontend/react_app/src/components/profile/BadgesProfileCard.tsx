@@ -87,28 +87,16 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
     );
 }
 
-const dummyBadge : Badge = {
-        shape: 'pointed',
-        bgColor: 'green',
-        strokeColor: 'green',
-        textColor: 'green',
-        icon: 'material-symbols:award-star-outline',
-        id: -1,
-        isSelected: false,
-        isUnlocked: false,
-        title: 'dummy',
-};
-
 const BadgesProfileCard: React.FC<{}> = () => {
 
-    const badgesData = useMockData(badgesMockData);
+    const { data: badgesData, isLoading: badgesDataLoading } = useMockData(badgesMockData);
 
     // API_NEEDED - Get the badges and the badges the user has selected
     // By default, the first four badges the user unlocks will be selected
     let badges: BadgeList;
     let selectedBadges: BadgeList;
     let numUnlockedBadges = 0;
-    if (badgesData) {
+    if (badgesData && !badgesDataLoading) {
         badges = badgesData as BadgeList;
         selectedBadges = {count: 0, results: []};
         badges.results?.forEach(badge => {
@@ -120,28 +108,35 @@ const BadgesProfileCard: React.FC<{}> = () => {
                 selectedBadges.results.push(badge);
             }
         })
-    } else {
-        badges = {count: -1, results: [dummyBadge, dummyBadge, dummyBadge, dummyBadge]};
-        selectedBadges = {count: -1, results: [dummyBadge, dummyBadge, dummyBadge, dummyBadge]};
-    }
-
-    // let [numSelectedBadges, setNumSelectedBadges] = useState(selectedBadges.results.length);
-
-    return (
-        <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10 gap-6" shadow="none" radius="md">
-            <CardHeader className="flex flex-row w-full h-fit items-start justify-between m-0 p-0">
-                <h3>Badges</h3>
-                <BadgeModal badges={badges} selectedBadges={selectedBadges} numUnlockedBadges={numUnlockedBadges}/>
-            </CardHeader>
-            <CardBody className="flex flex-row w-full h-fit m-0 p-0 justify-between">
-                {selectedBadges.results.map((item) =>
-                    <Skeleton isLoaded={badges.count >= 0}>
+        return (
+            <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10 gap-6" shadow="none" radius="md">
+                <CardHeader className="flex flex-row w-full h-fit items-start justify-between m-0 p-0">
+                    <h3>Badges</h3>
+                    <BadgeModal badges={badges} selectedBadges={selectedBadges} numUnlockedBadges={numUnlockedBadges}/>
+                </CardHeader>
+                <CardBody className="flex flex-row w-full h-fit m-0 p-0 justify-between">
+                    {selectedBadges.results.map((item) =>
                         <BadgeSVG key={item.id} id={item.id} shape={item.shape} bgColor={item.bgColor} strokeColor={item.strokeColor} textColor={item.textColor} icon={item.icon} isSelected={item.isSelected} isUnlocked={item.isUnlocked} title={item.title}/>
-                    </Skeleton>
-                )}
-            </CardBody>
-        </Card>
-    );
+                    )}
+                </CardBody>
+            </Card>
+        )
+    } else {
+        return (
+            <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10 gap-6" shadow="none" radius="md">
+                <CardHeader className="flex flex-row w-full h-fit items-start justify-between m-0 p-0">
+                    <h3>Badges</h3>
+                    <Skeleton><Button variant="bordered" color="primary">See more...</Button></Skeleton>
+                </CardHeader>
+                <CardBody className="flex flex-row w-full h-fit m-0 p-0 justify-between">
+                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
+                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
+                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
+                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
+                </CardBody>
+            </Card>
+        )
+    }
 }
 
 export default BadgesProfileCard;
