@@ -14,7 +14,7 @@ import {
 } from "@heroui/react";
 import { type BadgeList } from "../../api_interfaces/badge/badgeList";
 import badgesMockData from "../../mock-data/profile/Badges.json"
-import BadgeSVG from "../general/BadgeSVG";
+import BadgeSVG, { BadgeSVGSkeleton } from "../general/BadgeSVG";
 import type { Badge } from "../../api_interfaces/badge/badge";
 import {useMockData} from "../../mock-data/utils.ts";
 // import { useState } from "react";
@@ -126,13 +126,12 @@ const BadgesProfileCard: React.FC<{}> = () => {
             <Card className="flex w-full h-fit min-h-fit max-h-fit bg-content1-base border-small border-default-300 p-10 gap-6" shadow="none" radius="md">
                 <CardHeader className="flex flex-row w-full h-fit items-start justify-between m-0 p-0">
                     <h3>Badges</h3>
-                    <Skeleton><Button variant="bordered" color="primary">See more...</Button></Skeleton>
+                    <Skeleton className="w-fit h-fit rounded-xl"><Button variant="bordered" color="primary">See more...</Button></Skeleton>
                 </CardHeader>
                 <CardBody className="flex flex-row w-full h-fit m-0 p-0 justify-between">
-                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
-                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
-                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
-                    <Skeleton><div style={{ width: '170px', height: '180px'}}/></Skeleton>
+                    {Array.from({length: 4},(_,index) => 
+                        <BadgeSVGSkeleton key={index}/>
+                    )}
                 </CardBody>
             </Card>
         )

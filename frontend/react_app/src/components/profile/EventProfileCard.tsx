@@ -1,9 +1,10 @@
-import { Button, Card, CardBody, CardHeader, Chip, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Modal, ModalBody, ModalContent, ModalHeader, useDisclosure } from "@heroui/react";
-import EventCard from "../general/EventCard";
+import { Button, Card, CardBody, CardHeader, Chip, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Modal, ModalBody, ModalContent, ModalHeader, Skeleton, useDisclosure } from "@heroui/react";
+import EventCard, { EventCardSkeleton } from "../general/EventCard";
 import type { Event } from "../../api_interfaces/event/event";
 import { useState } from "react";
-import data from "../../mock-data/MockPagedEventResponse.json";
+import eventData from "../../mock-data/MockPagedEventResponse.json";
 import type { EventTag } from "../../api_interfaces/event/eventTag";
+import { useMockData } from "../../mock-data/utils";
 
 interface EventModalProps {
     list: Event[];
@@ -142,34 +143,57 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
 // Show the user's profile information
 const EventProfileCard: React.FC<{}> = () => {
 
+    const { data: eventsData, isLoading: eventsDataLoading } = useMockData(eventData);
+
     {/* API_NEEDED - get the events that are relevant to the person in chronological order, with most recent on top*/}
-    let events: Event[] = data.results as Event[];
-    let highlightedEvents: Event[] = [];
+    let events: Event[];
+    let highlightedEvents: Event[];
 
-    for(let i = 0; i < 3; i++) {
-        if(events[i]) {
-            highlightedEvents.push(events[i]);
+    if (eventsData && !eventsDataLoading) {
+
+        events = eventsData.results as Event[];
+        highlightedEvents = [];
+
+        for(let i = 0; i < 3; i++) {
+            if(events[i]) {
+                highlightedEvents.push(events[i]);
+            }
+            else {
+                break;
+            }
         }
-        else {
-            break;
-        }
+
+        return (
+            <Card className="flex w-full min-w-fit h-fit bg-content1-base border-small border-default-300 p-10 gap-6" radius="md" shadow="none">
+                <CardHeader className="flex flex-row w-full h-fit justify-between p-0 m-0">
+                    <h3>Events</h3>
+                    <EventModal list={events}/>
+                </CardHeader>
+                <CardBody className="flex flex-col flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
+                    
+                    {/* Put the top 3 most recent events here */}
+                    {highlightedEvents.map(curEvent =>
+                        <EventCard event={curEvent} key={curEvent.id}/>
+                    )}
+                </CardBody>
+            </Card>
+        );
     }
-
-    return (
-        <Card className="flex w-full min-w-fit h-fit bg-content1-base border-small border-default-300 p-10 gap-6" radius="md" shadow="none">
-            <CardHeader className="flex flex-row w-full h-fit justify-between p-0 m-0">
-                <h3>Events</h3>
-                <EventModal list={events}/>
-            </CardHeader>
-            <CardBody className="flex flex-col flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
-                
-                {/* Put the top 3 most recent events here */}
-                {highlightedEvents.map(curEvent =>
-                    <EventCard event={curEvent} key={curEvent.id}/>
-                )}
-            </CardBody>
-        </Card>
-    );
+    else {
+        return (
+            <Card className="flex w-full min-w-fit h-fit bg-content1-base border-small border-default-300 p-10 gap-6" radius="md" shadow="none">
+                <CardHeader className="flex flex-row w-full h-fit justify-between p-0 m-0">
+                    <h3>Events</h3>
+                    <Skeleton className="w-fit h-fit rounded-xl"><Button variant="bordered" color="primary">See more...</Button></Skeleton>
+                </CardHeader>
+                <CardBody className="flex flex-col flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
+                    {Array.from({length: 3},(_,index) => 
+                        <EventCardSkeleton key={index}/>
+                    )}
+                </CardBody>
+            </Card>
+        );
+    }
 }
 
 export default EventProfileCard;

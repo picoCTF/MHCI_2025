@@ -1,5 +1,5 @@
-import { commonColors } from "@heroui/react";
-import type { Badge, BadgeColors, BadgeShapes } from "../../api_interfaces/badge/badge"
+import { commonColors, Skeleton } from "@heroui/react";
+import type { Badge } from "../../api_interfaces/badge/badge"
 import { Icon } from "@iconify/react";
 
 // export interface BadgeSVGProps {
@@ -186,6 +186,15 @@ const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, ico
                 {/* Etc */}
             </svg>
             <h3 style={{fontFamily: "Geist Mono", color: titleColor, textAlign: "center"}}>{title}</h3>
+        </div>
+    );
+}
+
+export const BadgeSVGSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <div className="flex flex-col h-fit justify-center p-2 gap-1">
+            <Skeleton className="w-[170px] h-[176px] rounded-xl"/>
+            <Skeleton className="rounded-full"><h3>Badge Name</h3></Skeleton>
         </div>
     );
 }

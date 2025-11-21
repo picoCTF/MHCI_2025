@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardHeader, Chip } from "@heroui/react";
+import { Button, Card, CardBody, CardHeader, Chip, Skeleton } from "@heroui/react";
 import TeamMemberCard from "./TeamMemberCard";
 import { Icon } from "@iconify/react";
 import type { Event } from "../../api_interfaces/event/event";
@@ -64,7 +64,7 @@ const EventCard: React.FC<EventCard> = ({ event }) => {
                             </div>
                             <div className="flex flex-row gap-8">
                                 {event.has_opened && !event.has_ended ? 
-                                    <Chip color="success">Registration Open</Chip> : (null)
+                                    <Chip color="success" className="">Registration Open</Chip> : (null)
                                 }
                                 <Button size="md" radius="sm" color="primary">Resume</Button>
                             </div>
@@ -114,13 +114,6 @@ const EventCard: React.FC<EventCard> = ({ event }) => {
                         </div>
                         <Button size="md" radius="sm" color="primary">Resume</Button>
                     </CardHeader>
-                    {/* {event.registered ? 
-                        <CardBody className="flex w-full h-fit p-0 m-0">
-                            {teamData.members.map( 
-                                (member) => (<TeamMemberCard isLeader={member.team_leader} username={member.username}/>)
-                            )}
-                        </CardBody> : (null)
-                    } */}
                     <CardBody className="flex flex-row flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
                         {info.teamData.members.map( 
                             (member) => (<TeamMemberCard key={member.user_id} isLeader={member.team_leader} username={member.username}/>)
@@ -130,6 +123,42 @@ const EventCard: React.FC<EventCard> = ({ event }) => {
             );
         }
     }
+}
+
+export const EventCardSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <Card className="flex w-full h-fit min-h-fit p-8 gap-8 border-small border-default-300" radius="sm" shadow="none">
+            <CardHeader className="flex w-full h-fit p-0 m-0">
+                <div className="flex flex-row w-full h-fit justify-between">
+                    <div className="flex flex-col">
+                        <Skeleton className="w-fit h-fit rounded-full">
+                            <h3 className="font-semibold font-sans">Event Name</h3>
+                        </Skeleton>
+                    </div>
+                    <div className="flex flex-row gap-8">
+                        <Skeleton className="rounded-full">
+                            <Chip color="success">Registration Open</Chip>
+                        </Skeleton>
+                        <Skeleton className="rounded-xl">
+                            <Button size="md" radius="sm" color="primary">Resume</Button>
+                        </Skeleton>
+                    </div>
+                </div>
+            </CardHeader>
+            <CardBody className="flex w-full h-fit p-0 m-0">
+                <div className="flex flex-row gap-8">
+                    {Array.from({length: 3},(_, index) => (
+                        <div className="flex flex-row gap-3 items-center" key={index}>
+                            <Skeleton className="rounded-full">
+                                <Icon icon={"material-symbols:article-outline"} width={16} height={16} className={"text-warning-600"}/>
+                            </Skeleton>
+                            <Skeleton className="rounded-full w-[120px] h-[24px]"/>
+                        </div>
+                    ))}
+                </div>
+            </CardBody>
+        </Card>
+    );
 }
 
 export default EventCard;

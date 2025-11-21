@@ -1,6 +1,6 @@
 import { Button, Card, Skeleton } from "@heroui/react";
 import { getTimeString, parseTimeString } from "../../Functions";
-import ProgressWithTextDiv from "./ProgressWithTextDiv";
+import ProgressWithTextDiv, { ProgressWithTextDivSkeleton } from "./ProgressWithTextDiv";
 import { Icon } from "@iconify/react";
 // import { useNavigate } from "react-router-dom";
 
@@ -46,21 +46,42 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({ name, classroomName, co
 
     return (
         <Card className="flex flex-col w-full min-w-fit h-fit border-small bg-default-50 border-default-300 p-card-md gap-6" radius="md" shadow="none" aria-label={name + " assignment card"}>
-            <Skeleton className={"flex flex-row w-fit text-" + timeColor + " gap-1 items-center rounded-full"}>
+            <div className={"flex flex-row w-fit text-" + timeColor + " gap-1 items-center rounded-full"}>
                 {isLastDay ? <Icon icon={"material-symbols:info-outline"} width={16} height={16} className={"text-danger"}/> : undefined}
                 <p className="font-semibold">{"Due in " + getTimeString(timeLeft[2], timeLeft[3], timeLeft[4], timeLeft[5])}</p>
-            </Skeleton>
+            </div>
             <div className="flex flex-col w-full gap-2">
-                <Skeleton className="flex w-fit rounded-full">
-                    <h3>{name}</h3>
-                </Skeleton>
-                <Skeleton className="flex w-fit rounded-full">
-                    <p>{"Classroom: " + classroomName}</p>
-                </Skeleton>
+                <h3>{name}</h3>
+                <p>{"Classroom: " + classroomName}</p>
             </div>
             <div className="flex flex-row w-[500px] gap-4 items-center">
                 <ProgressWithTextDiv color={"primary"} ariaLabel={completedChallenges + " of " + totalChallenges + " challenges completed"} 
                     value={completedChallenges/totalChallenges * 100} endingText={completedChallenges + "/" + totalChallenges + " challenges"}/>
+                <Button className="flex w-fit h-fit m-0 px-4 py-2" color="primary" radius="sm">Resume</Button>
+            </div>
+        </Card>
+    );
+}
+
+export const AssignmentCardSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <Card className="flex flex-col w-full min-w-fit h-fit border-small bg-default-50 border-default-300 p-card-md gap-6" radius="md" shadow="none" aria-label={"Assignment Card Skeleton"}>
+            <div className={"flex flex-row w-fit text-default gap-1 items-center rounded-full"}>
+                <Skeleton className="w-[16px] h-[16px] rounded-full"/>
+                <Skeleton className="w-fit rounded-full">
+                    <p className="font-semibold">{"Due in X days and X hours."}</p>
+                </Skeleton>
+            </div>
+            <div className="flex flex-col w-full gap-2">
+                <Skeleton className="w-fit rounded-full">
+                    <h3>Test Class Name</h3>
+                </Skeleton>
+                <Skeleton className="w-fit rounded-full">
+                    <p>{"Classroom: Name Here"}</p>
+                </Skeleton>
+            </div>
+            <div className="flex flex-row w-[500px] gap-4 items-center">
+                <ProgressWithTextDivSkeleton/>
                 <Skeleton className="flex rounded-md">
                     <Button className="flex w-fit h-fit m-0 px-4 py-2" color="primary" radius="sm">Resume</Button>
                 </Skeleton>
