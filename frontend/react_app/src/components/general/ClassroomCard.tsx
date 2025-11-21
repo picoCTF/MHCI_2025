@@ -1,6 +1,6 @@
-import { Card, CardBody, Skeleton } from "@heroui/react";
-import RecentAssignmentsCard from "./RecentAssignmentsCard";
-import PendingMemberRequestsCard from "../Homepage/PendingMemberRequestsCard";
+import { Card, Skeleton } from "@heroui/react";
+import RecentAssignmentsCard, { RecentAssignmentsCardSkeleton } from "./RecentAssignmentsCard";
+import PendingMemberRequestsCard, { PendingMemberRequestsCardSkeleton } from "../Homepage/PendingMemberRequestsCard";
 import { type AssignmentStatusCardProps } from "./AssignmentStatusCard";
 import type { PendingMemberRequestCardProps } from "./PendingMemberRequestCard";
 
@@ -26,6 +26,23 @@ const ClassroomCard: React.FC<ClassroomCardProps> = ({ name, numMembers, recentA
             </div>
             <PendingMemberRequestsCard pendingRequests={pendingMemberUsernames}/>
             <RecentAssignmentsCard list={recentAssignments}/>
+        </Card>
+    );
+}
+
+export const ClassroomCardSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <Card className="flex w-full h-fit min-h-fit border-small border-default-300 p-6 bg-content1-base gap-4" radius="md" shadow="none">
+            <div className="flex flex-col items-start gap-3">
+                <Skeleton className="flex w-fit rounded-full">
+                    <h3>Name</h3>
+                </Skeleton>
+                <Skeleton className="flex w-fit rounded-full">
+                    <p>{"XX Members"}</p>
+                </Skeleton>
+            </div>
+            <PendingMemberRequestsCardSkeleton/>
+            <RecentAssignmentsCardSkeleton/>
         </Card>
     );
 }

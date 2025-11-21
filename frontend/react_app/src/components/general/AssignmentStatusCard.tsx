@@ -27,6 +27,16 @@ const StatusChip: React.FC<StatusProp> = ({ isActive }) => {
     );
 }
 
+const StatusChipSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <Skeleton className="flex w-fit rounded-full">
+            <Chip className={"bg-default"}>
+                <p className={"font-medium text-default"}>My Text</p>
+            </Chip>
+        </Skeleton>
+    );
+}
+
 export interface AssignmentStatusCardProps {
     name: string;
     completedChallenges: number;
@@ -68,6 +78,32 @@ const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, compl
             <div className="flex flex-col items-end gap-1">
                 <Skeleton className="flex w-fit rounded-full">
                     <h4 className="w-min text-right">{completedChallenges + "/" + totalChallenges}</h4>
+                </Skeleton>
+                <Skeleton className="flex w-fit rounded-full">
+                    <p className="w-min text-xs text-default-700 text-right">submitted</p>
+                </Skeleton>
+            </div>
+        </Card>
+    );
+}
+
+export const AssignmentStatusCardSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <Card className="flex flex-row w-full h-fit bg-content2-base items-center p-4 justify-between" radius="sm" shadow="none">
+            <div className="flex flex-col w-full h-full gap-2">
+                <div className="flex flex-row gap-4">
+                    <Skeleton className="flex w-fit rounded-full">
+                        <h3 className="font-sans font-semibold">Name</h3>
+                    </Skeleton>
+                    <StatusChipSkeleton/>
+                </div>
+                <Skeleton className="flex w-fit rounded-full">
+                    <p className="text-xs text-default-700">Mock Date</p>
+                </Skeleton>
+            </div>
+            <div className="flex flex-col items-end gap-1">
+                <Skeleton className="flex w-fit rounded-full">
+                    <h4 className="w-min text-right">0/10</h4>
                 </Skeleton>
                 <Skeleton className="flex w-fit rounded-full">
                     <p className="w-min text-xs text-default-700 text-right">submitted</p>
