@@ -9,7 +9,9 @@ Please note that this repository contains future designs and ideas, so they will
 ## TODO
 
 - Finish the learning path flow.
-    - Add in the 
+    - Add in the next and prev buttons on the bottom left of the learning path detail page for navigating between modules.
+    - Add in a placeholder that allows us to test the challenge and learning path completion.
+    - Add in the challenge completion and learning path completion pages/modals.
 - Add the D3 library for graphs and update the Activity, Challenge Completion, and Skill Distribution widgets on the profile page.
 - Add Skeletons across the website for each page and subcomponent. Refer to the BadgesProfileDiv on the profile page and the assignment and classroom areas in the homepage.
     - Add in mock JSON files for all components as needed (look for the API_NEEDED comments)
