@@ -19,11 +19,9 @@ const StatusChip: React.FC<StatusProp> = ({ isActive }) => {
     }
     
     return (
-        <Skeleton className="flex w-fit rounded-full">
-            <Chip className={"bg-" + backgroundColor}>
-                <p className={"font-medium text-" + textColor}>{text}</p>
-            </Chip>
-        </Skeleton>
+        <Chip className={"bg-" + backgroundColor}>
+            <p className={"font-medium text-" + textColor}>{text}</p>
+        </Chip>
     );
 }
 
@@ -66,22 +64,14 @@ const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, compl
         <Card className="flex flex-row w-full h-fit bg-content2-base items-center p-4 justify-between" radius="sm" shadow="none">
             <div className="flex flex-col w-full h-full gap-2">
                 <div className="flex flex-row gap-4">
-                    <Skeleton className="flex w-fit rounded-full">
-                        <h3 className="font-sans font-semibold">{name}</h3>
-                    </Skeleton>
+                    <h3 className="font-sans font-semibold">{name}</h3>
                     <StatusChip isActive={isActive}/>
                 </div>
-                <Skeleton className="flex w-fit rounded-full">
-                    <p className="text-xs text-default-700">{isActive ? timeText : dateText}</p>
-                </Skeleton>
+                <p className="text-xs text-default-700">{isActive ? timeText : dateText}</p>
             </div>
             <div className="flex flex-col items-end gap-1">
-                <Skeleton className="flex w-fit rounded-full">
-                    <h4 className="w-min text-right">{completedChallenges + "/" + totalChallenges}</h4>
-                </Skeleton>
-                <Skeleton className="flex w-fit rounded-full">
-                    <p className="w-min text-xs text-default-700 text-right">submitted</p>
-                </Skeleton>
+                <h4 className="w-min text-right">{completedChallenges + "/" + totalChallenges}</h4>
+                <p className="w-min text-xs text-default-700 text-right">submitted</p>
             </div>
         </Card>
     );
