@@ -30,9 +30,17 @@ function getDifficultyTextColor(difficulty: string) {
 const DifficultyChip: React.FC<DifficultyProp> = ({ difficultyLvl }) => {
 
     return (
+        <Chip className={"flex bg-" + getDifficultyChipColor(difficultyLvl) + " text-" + getDifficultyTextColor(difficultyLvl)} size="sm">
+            <p className="font-medium">{difficultyLvl}</p>
+        </Chip>
+    );
+}
+
+export const DifficultyChipSkeleton: React.FC<{}> = ({}) => {
+    return (
         <Skeleton className="flex w-fit h-fit rounded-full">
-            <Chip className={"flex bg-" + getDifficultyChipColor(difficultyLvl) + " text-" + getDifficultyTextColor(difficultyLvl)} size="sm">
-                <p className="font-medium">{difficultyLvl}</p>
+            <Chip className={"flex bg-default text-default"} size="sm">
+                <p className="font-medium">Medium</p>
             </Chip>
         </Skeleton>
     );

@@ -8,4 +8,5 @@ export interface LPModuleItem {
     id: number;
     name: string;
     status: "Complete" | "Incomplete";
+    //Refer to playlist interface for type enum and rendering info
 }

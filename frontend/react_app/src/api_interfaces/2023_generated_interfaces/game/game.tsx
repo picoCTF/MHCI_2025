@@ -27,11 +27,18 @@ export function isGame(obj: any): obj is Game {
         typeof obj === 'object' &&
         obj !== null &&
         typeof obj.build_name === "string" &&
-        typeof obj.compression === "object" &&
-        typeof obj.descripiton === "string" &&
-        typeof obj.display_leaderboard === "string" &&
+        typeof obj.build_url === "string" &&
+        (typeof obj.compression === "object" || 
+        typeof obj.compression === "undefined") &&
+        (typeof obj.descripiton === "string" ||
+        typeof obj.descripiton === "undefined") &&
+        (typeof obj.display_leaderboard === "string" ||
+        typeof obj.display_leaderboard === "undefined") &&
         typeof obj.id === "number" &&
+        (typeof obj.launch_image === "string" ||
+        typeof obj.launch_image === "undefined") &&
         typeof obj.name === "string" &&
-        typeof obj.resources === "object"
+        (typeof obj.settings === "object" ||
+        typeof obj.settings === "undefined")
     );
 }

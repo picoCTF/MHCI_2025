@@ -25,7 +25,7 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
     return (
         <div className="Page">
             <Header/>
-            <div className="flex flex-col w-full py-10 items-center">
+            <main className="flex flex-col w-full py-10 items-center">
                 <div className="flex flex-col w-full max-w-[1200px] gap-16 items-start">
                     <Skeleton className="flex w-fit rounded-full">
                         <Breadcrumbs>
@@ -56,7 +56,6 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                         </div>
                     </div>
 
-
                     {/* List of learning paths */}
                     <div className="grid gap-x-6 gap-y-10 grid-cols-3">
                         {paths.map((path) => (
@@ -67,7 +66,7 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     );
 }

@@ -7,8 +7,8 @@ export interface HintAccordionProps {
 // A collapsible list of hints for a challenge
 const HintAccordion: React.FC<HintAccordionProps> = ({ list }) =>  {
     return (
-        <Accordion>
-            {list.map((item) => (<AccordionItem key={list.indexOf(item)} aria-label={"Hint " + list.indexOf(item)} title={"Hint " + list.indexOf(item)}>{item}</AccordionItem>))}
+        <Accordion variant="bordered" className="w-full bg-content1-base p-0 m-0">
+            {list.map((item) => (<AccordionItem key={list.indexOf(item)} className="w-full px-4 m-0 justify-between" aria-label={"Hint " + list.indexOf(item)} title={"Hint " + list.indexOf(item)}>{item}</AccordionItem>))}
         </Accordion>
     );
 }
