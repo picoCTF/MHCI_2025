@@ -34,7 +34,6 @@ const LearningPathResourceContentDiv: React.FC<LearningPathResourceContentDivPro
     return (
         <div className="flex flex-col w-full h-full min-h-fit gap-8">
             <div className="flex flex-col text-start gap-4">
-                <Skeleton>
                     <h2>{"REPLACE ME"}</h2>
                     <p>{"REPLACE ME"}</p>
                     {/* {resourceList.resources.map((resource) => (
@@ -42,7 +41,6 @@ const LearningPathResourceContentDiv: React.FC<LearningPathResourceContentDivPro
                             <VideoResourceCard description={resource.description} youtubeID={resource.link}/> : 
                             <PrimerResourceCard/>
                     ))} */}
-                </Skeleton>
             </div>
         </div>
     );

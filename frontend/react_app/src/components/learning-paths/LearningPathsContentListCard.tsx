@@ -60,18 +60,16 @@ function renderCell(item: LPModuleItem, updateFuntion: Function) {
             <div className="flex flex-col w-full h-fit text-left">
                 <h3>{item.name}</h3>
                 {isChallenge(item.content) ? 
-                    <>
-                        <div className="flex flex-row gap-4 items-center">
-                            <div className="flex row gap-2 items-center">
-                                <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default-500"}/>
+                    <div className="flex flex-row gap-4 items-center">
+                        <div className="flex row gap-2 items-center">
+                            <Icon icon={"material-symbols:star-outline"} width={20} height={20} className={"text-default-500"}/>
                                 <p className="flex font-mono text-default-500">{difficulty}</p>
                             </div>
                             <div className="flex row gap-2">
                                 <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default-500"}/>
                                 <p className={"flex font-mono text-default-500"}>{item.content.users_solved + " solves"}</p>
                             </div>
-                        </div>
-                    </> :
+                        </div> :
                     <p className="flex font-mono text-default-500">{"(Optional)"}</p>
                 }
             </div>
@@ -94,37 +92,36 @@ const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> 
     }];
 
     return (
-        <Card className="flex w-[430px] min-w-[430px] h-fit min-h-fit border-small border-default-300 m-0 p-0" shadow="none">
-            <CardBody className="flex flex-col">
-                <div className="flex flex-col gap-2 py-4 px-6">
-                    <h2>{name}</h2>
-                    <ProgressWithTextDiv color={"primary"} ariaLabel={"Learning Path Progress"} value={progress.value} endingText={progress.endingText}/>
-                </div>
-                <Divider/>
-                <Accordion className="w-full min-w-full h-fit min-h-fit">
-                    {list.results.map((module) => (
-                        <AccordionItem key={list.results.indexOf(module)} 
-                            aria-label={module.name} 
-                            title={module.name} 
-                            startContent={<CircularProgress value={module.completion || 0} maxValue={module.count || 1} minValue={0} aria-label={module.completion + " completed"}/>}>
-                            
-                            <Table hideHeader removeWrapper aria-label={"List of " + module.name + " modules"}>
-                                <TableHeader columns={columns}>
-                                    {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
-                                </TableHeader>
-                                <TableBody items={module.items}>
-                                    {
-                                        (item) => (
-                                            <TableRow key={item.id}>
-                                                {() => <TableCell>{renderCell(item, updateFunction)}</TableCell>}
-                                            </TableRow>
-                                        )
-                                    }
-                                </TableBody>
-                            </Table>
-                        </AccordionItem>))}
-                </Accordion>
-            </CardBody>
+        <Card className="flex flex-col w-[430px] min-w-[430px] h-fit min-h-fit border-small border-default-300 m-0 p-0" shadow="none">
+            <div className="flex flex-col gap-2 py-4 px-6">
+                <h2>{name}</h2>
+                <ProgressWithTextDiv color={"primary"} ariaLabel={"Learning Path Progress"} value={progress.value} endingText={progress.endingText}/>
+            </div>
+            <Divider/>
+            <Accordion className="w-full min-w-full h-fit min-h-fit p-0 m-0">
+                {list.results.map((module) => (
+                    <AccordionItem key={list.results.indexOf(module)} 
+                        aria-label={module.name} 
+                        className="px-4"
+                        title={module.name} 
+                        startContent={<CircularProgress value={module.completion || 0} maxValue={module.count || 1} minValue={0} aria-label={module.completion + " completed"}/>}>
+                        
+                        <Table hideHeader removeWrapper aria-label={"List of " + module.name + " modules"}>
+                            <TableHeader columns={columns}>
+                                {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+                            </TableHeader>
+                            <TableBody items={module.items}>
+                                {
+                                    (item) => (
+                                        <TableRow key={item.id}>
+                                            {() => <TableCell>{renderCell(item, updateFunction)}</TableCell>}
+                                        </TableRow>
+                                    )
+                                }
+                            </TableBody>
+                        </Table>
+                    </AccordionItem>))}
+            </Accordion>
         </Card>
     );
 }

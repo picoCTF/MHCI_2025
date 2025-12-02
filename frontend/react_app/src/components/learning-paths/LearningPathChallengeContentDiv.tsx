@@ -5,7 +5,7 @@ import type { DifficultyProp } from "../general/DifficultyChip";
 import DifficultyChip from "../general/DifficultyChip";
 import type { HintAccordionProps } from "../general/HintAccordion";
 import FlagSubmissionCard from "../general/FlagSubmissionCard";
-import { Button, Card, Chip, Tooltip } from "@heroui/react";
+import { Button, Chip, Tooltip } from "@heroui/react";
 import HintAccordion from "../general/HintAccordion";
 import { useState } from "react";
 
@@ -53,7 +53,7 @@ const LearningPathChallengeContentDiv: React.FC<LearningPathChallengeContentDivP
                 <div className="flex flex-row w-full gap-2 items-center">
                     <DifficultyChip difficultyLvl={difficulty.difficultyLvl}/>
                     <Chip>{category.name}</Chip>
-                    {tags.map((tag) => (<Chip>{tag.name}</Chip>))}
+                    {tags.map((tag) => (<Chip key={tag.id}>{tag.name}</Chip>))}
                 </div>
                 {description ? <p>{description}</p> : null}
                 <div className="flex flex-row gap-4">
