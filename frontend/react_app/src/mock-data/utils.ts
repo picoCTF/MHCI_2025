@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useCallback, useEffect, useState} from "react";
 
 function randomDelay<T>(
     value: T,
@@ -10,19 +10,34 @@ function randomDelay<T>(
 }
 
 export function useMockData<T>(data: T) {
+    const [refetchCount, setRefetchCount] = useState(0);
     const [state, setState] = useState<{ data: T | null; isLoading: boolean }>({
         data: null,
         isLoading: true
     });
+
     useEffect(() => {
         let active = true;
-        setState({data: null, isLoading: true}); // reset on new data
+        setState({data: null, isLoading: true});
         randomDelay(data).then(result => {
-            if (active) setState({data: result, isLoading: false});
+            if (active) {
+                // Clone to create new reference
+                const clonedData = Array.isArray(result)
+                    ? [...result]
+                    : typeof result === 'object' && result !== null
+                        ? { ...result }
+                        : result;
+                setState({data: clonedData as T, isLoading: false});
+            }
         });
         return () => {
             active = false;
         };
-    }, [data]);
-    return state;
+    }, [data, refetchCount]);
+
+    const refetch = useCallback(() => {
+        setRefetchCount(prev => prev + 1);
+    }, []);
+
+    return { ...state, refetch };
 }
