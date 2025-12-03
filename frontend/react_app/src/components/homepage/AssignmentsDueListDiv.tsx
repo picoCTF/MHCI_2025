@@ -1,4 +1,4 @@
-import { Skeleton } from "@heroui/react";
+import {Button, Skeleton} from "@heroui/react";
 import AssignmentCard, { AssignmentCardSkeleton } from "../general/AssignmentCard";
 import FocusWrapperCard, { type FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import assignmentsMockData from "../../mock-data/MockPagedAssignmentResponse.json";
@@ -25,10 +25,10 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
         return numCompletedChallenges;
     }
 
-    const { data: assignmentsData, isLoading: assignmentsDataLoading } = useMockData(assignmentsMockData);
+    const { data: assignmentsData, isLoading: assignmentsDataLoading, refetch: refetchAssignments } = useMockData(assignmentsMockData);
 
     /* API_NEEDED - Get the list of assignments that are due for the user */
-    
+
     // let parsedData = JSON.parse(mockJSON); //Make the API call here
     let assignments: PaginatedAssignmentResponseList;
 
@@ -36,7 +36,7 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
     let filteredAssignments: AssignmentResponse[];
 
     if(assignmentsData && !assignmentsDataLoading) {
-        
+
         assignments = assignmentsData;
         filteredAssignments = [];
 
@@ -49,13 +49,13 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
 
         return (
             <div className="flex flex-col w-full h-fit gap-6">
-                <h3>You have assignments due soon!</h3>
+                <h3>You have assignments due soon! <Button onPress={refetchAssignments}>Demo refetch assignments</Button></h3>
                 <FocusWrapperCard isFocused={isFocused} orientation="row">
                     {filteredAssignments.map((assignment) => (
-                        <AssignmentCard key={assignment.id} name={assignment.name} 
-                            classroomName={assignment.classroom.name} 
-                            completedChallenges={getNumCompletedChallenges(assignment)} 
-                            due_date={assignment.due_date} id={assignment.id} 
+                        <AssignmentCard key={assignment.id} name={assignment.name}
+                            classroomName={assignment.classroom.name}
+                            completedChallenges={getNumCompletedChallenges(assignment)}
+                            due_date={assignment.due_date} id={assignment.id}
                             totalChallenges={assignment.challenges.length}/>
                     ))}
                 </FocusWrapperCard>
