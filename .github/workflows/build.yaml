@@ -1,0 +1,37 @@
+name: Build test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Cache npm cache (not node_modules because npm ci)
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('frontend/react_app/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Install deps
+        working-directory: frontend/react_app
+        run: npm ci
+
+      - name: Build app
+        working-directory: frontend/react_app
+        run: npm run build
