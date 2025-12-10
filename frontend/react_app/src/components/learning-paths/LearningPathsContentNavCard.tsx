@@ -6,10 +6,14 @@ import type { IconName } from "../general/IconTypes";
 import { Icon } from "@iconify/react";
 import { isChallenge, type Challenge } from "../../api_interfaces/challenge";
 import type { LPModuleList } from "../../api_interfaces/learning_path/learningPathModuleList";
-import type { LPModuleItem } from "../../api_interfaces/learning_path/learningPathModuleItem";
+import type { LPTask } from "../../api_interfaces/learning_path/learningPathTask";
 import LearningPathChallengeContentDiv from "./LearningPathChallengeContentDiv";
+import { useMockData } from "../../mock-data/utils/utils";
 
-function renderCell(item: LPModuleItem, updateFuntion: Function) {
+import moduleMockData from "../../mock-data/learning_paths/MockPagedLearningPathModuleResponse.json";
+import type { PagedLPModule } from "../../api_interfaces/learning_path/pagedLearningPathModule";
+
+function renderCell(item: LPTask, updateFuntion: Function) {
     let icon: IconName = "material-symbols:book-outline";
 
     let difficulty = "";
@@ -80,53 +84,59 @@ function renderCell(item: LPModuleItem, updateFuntion: Function) {
 interface LearningPathsContentListCardProps {
     name: string;
     progress: ProgressWithTextDivProps;
-    list: LPModuleList;
+    moduleIDs: LPModuleList;
     updateFunction: Function;
 }
 
-const LearningPathsContentListCard: React.FC<LearningPathsContentListCardProps> = ({ name, progress, list, updateFunction }) => {
+const LearningPathsContentNavCard: React.FC<LearningPathsContentListCardProps> = ({ name, progress, moduleIDs, updateFunction }) => {
 
-    const columns = [{
-        key: "items",
-        label: "Items"
-    }];
+    //API_NEEDED - Get each module given a list of module IDs
+    const { data: pagedModuleData, isLoading: pagedModuleDataLoading, refetch: refetchModules } = useMockData<PagedLPModule>(moduleMockData);
 
-    return (
-        <Card className="flex flex-col w-[430px] min-w-[430px] h-fit min-h-fit border-small border-default-300 m-0 p-0" shadow="none">
-            <div className="flex flex-col gap-2 py-4 px-6">
-                <h2>{name}</h2>
-                <ProgressWithTextDiv color={"primary"} ariaLabel={"Learning Path Progress"} value={progress.value} endingText={progress.endingText}/>
-            </div>
-            <Divider/>
-            <Accordion className="w-full min-w-full h-fit min-h-fit p-0 m-0">
-                {list.results.map((module) => (
-                    <AccordionItem key={list.results.indexOf(module)} 
-                        aria-label={module.name} 
-                        className="px-4"
-                        title={module.name} 
-                        startContent={<CircularProgress value={module.completion || 0} maxValue={module.count || 1} minValue={0} aria-label={module.completion + " completed"}/>}>
-                        
-                        <Table hideHeader removeWrapper aria-label={"List of " + module.name + " modules"}>
-                            <TableHeader columns={columns}>
-                                {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
-                            </TableHeader>
-                            <TableBody items={module.items}>
-                                {
-                                    (item) => (
-                                        <TableRow key={item.id}>
-                                            {() => <TableCell>{renderCell(item, updateFunction)}</TableCell>}
-                                        </TableRow>
-                                    )
-                                }
-                            </TableBody>
-                        </Table>
-                    </AccordionItem>))}
-            </Accordion>
-        </Card>
-    );
+    if(pagedModuleData && !pagedModuleDataLoading) {
+        const columns = [{
+            key: "items",
+            label: "Items"
+        }];
+
+        return (
+            <Card className="flex flex-col w-[430px] min-w-[430px] h-fit min-h-fit border-small border-default-300 m-0 p-0" shadow="none">
+                <div className="flex flex-col gap-2 py-4 px-6">
+                    <h2>{name}</h2>
+                    <ProgressWithTextDiv color={"primary"} ariaLabel={"Learning Path Progress"} value={progress.value} endingText={progress.endingText}/>
+                </div>
+                <Divider/>
+                <Accordion className="w-full min-w-full h-fit min-h-fit p-0 m-0">
+                    {pagedModuleData.results.map((module) => (
+                        <AccordionItem key={module.id} 
+                            aria-label={module.name} 
+                            className="px-4"
+                            title={module.name} 
+                            startContent={<CircularProgress value={module.completion || 0} maxValue={module.count || 1} minValue={0} aria-label={module.completion + " completed"}/>}>
+                            
+                            <Table hideHeader removeWrapper aria-label={"List of tasks in " + module.name}>
+                                <TableHeader columns={columns}>
+                                    {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+                                </TableHeader>
+                                <TableBody items={module.items}>
+                                    {
+                                        (item) => (
+                                            <TableRow key={item.id}>
+                                                {() => <TableCell>{renderCell(item, updateFunction)}</TableCell>}
+                                            </TableRow>
+                                        )
+                                    }
+                                </TableBody>
+                            </Table>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+            </Card>
+        );
+    }
 }
 
-export const LearningPathsContentListCardSkeleton: React.FC<{}> = () => {
+export const LearningPathsContentNavCardSkeleton: React.FC<{}> = () => {
     return (
         <Card className="flex w-[430px] min-w-[430px] h-fit min-h-fit border-small border-default-300 m-0 p-0" shadow="none">
             <CardBody className="flex flex-col">
@@ -195,4 +205,4 @@ export const LearningPathsContentListCardSkeleton: React.FC<{}> = () => {
     );
 }
 
-export default LearningPathsContentListCard;
+export default LearningPathsContentNavCard;

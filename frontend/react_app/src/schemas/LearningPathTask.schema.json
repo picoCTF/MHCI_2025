@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Learning Path Task",
+    "description": "An object that contains a challenge, resource group, or other task that can be found inside of a Learning Path Module",
+    "properties": {
+        "contentID": {
+            "type": "number",
+            "title": "Content ID",
+            "description": "The id of the ResourceGroup/Challenge/other content"
+        },
+        "contentType": {
+            "enum": ["C", "G", "H", "M", "R"],
+            "title": "Content Type",
+            "description": "The type of the content (Challenge/Game/HTML/Markdown/ResourceGroup)"
+        },
+        "id": {
+            "type": "number",
+            "title": "ID",
+            "description": "The ID of this Learning Path Task object. Not to be confused with contentID."
+        },
+        "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The name of this item."
+        },
+        "status": {
+            "enum": ["Complete", "Incomplete"],
+            "title": "Status",
+            "description": "The status of this item (Complete or Incomplete)"
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { Chip, Skeleton } from "@heroui/react";
 
+//FIX_ME - change the difficulty prop so that it does not accept all strings. Need this to work with JSON.
 export interface DifficultyProp {
     difficultyLvl: "Easy" | "Medium" | "Hard";
 }

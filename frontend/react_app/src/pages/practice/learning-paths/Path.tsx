@@ -1,20 +1,23 @@
 import "../../Page.css";
 import Header from "../../../components/general/PageNavbar";
 // import { useParams } from "react-router";
-import { BreadcrumbItem, Breadcrumbs, Skeleton } from "@heroui/react";
-import LearningPathsContentListCard, { LearningPathsContentListCardSkeleton } from "../../../components/learning-paths/LearningPathsContentListCard";
+import { BreadcrumbItem, Breadcrumbs, Button, Skeleton } from "@heroui/react";
+import LearningPathsContentNavCard, { LearningPathsContentNavCardSkeleton } from "../../../components/learning-paths/LearningPathsContentNavCard";
 import LearningPathOverviewDiv, { LearningPathContentOverviewDivSkeleton } from "../../../components/learning-paths/LearningPathOverviewContentDiv";
-import pathMockData from "../../../mock-data/MockLearningPathResponse.json";
 import { useState, type ReactNode } from "react";
-import { isChallenge, type Challenge } from "../../../api_interfaces/challenge";
-import LearningPathChallengeContentDiv from "../../../components/learning-paths/LearningPathChallengeContentDiv";
 import LearningPathResourceContentDiv from "../../../components/learning-paths/LearningPathResourceContentDiv";
-import { isResourceGroup } from "../../../api_interfaces/resource/resourceGroup";
 import LearningPathGameContentDiv from "../../../components/learning-paths/LearningPathGameContentDiv";
-import { isGame } from "../../../api_interfaces/2023_generated_interfaces/game/game";
-import { useMockData } from "../../../mock-data/utils";
+import { useMockData } from "../../../mock-data/utils/utils";
 import type { DifficultyProp } from "../../../components/general/DifficultyChip";
 import type { LPModuleList } from "../../../api_interfaces/learning_path/learningPathModuleList";
+import { Icon } from "@iconify/react";
+import { ModuleTypeEnum } from "../../../api_interfaces/learning_path/moduleTypeEnum";
+import ChallengeDiv from "../../../components/general/ChallengeDiv";
+import type { LearningPath } from "../../../api_interfaces/learning_path/learningPath";
+
+import pathMockData from "../../../mock-data/learning_paths/MockLearningPathResponse.json";
+import moduleListMockData from "../../../mock-data/learning_paths/MockLearningPathModuleListResponse.json";
+import LearningPathContent from "../../../components/learning-paths/LearningPathContent";
 
 const Path: React.FC<{}> = () => {
 
@@ -25,56 +28,42 @@ const Path: React.FC<{}> = () => {
 
     //let data: LearningPath = pathData as LearningPath;
 
-    function refreshPath() {
-        //Update everything in the path to reflect the completed items
-        
+    let [mainContent, setMainContent] = useState<[number, Function] | null>(null);
+    let [contentIndex, setContentIndex] = useState(0);
+    let [prevButtonIsDisabled, setPrevButtonIsDisabled] = useState(true);
+    let [nextButtonIsDisabled, setNextButtonIsDisabled] = useState(false);
+
+    function updateContentIndex(x: number, totalModuleItems: number): void {
+        if(x >= totalModuleItems-1) {
+            setContentIndex(totalModuleItems-1);
+            setNextButtonIsDisabled(true);
+        }
+        else if(x <= 0) {
+            setContentIndex(0);
+            setPrevButtonIsDisabled(true);
+        }
+        else {
+            setContentIndex(x);
+            setPrevButtonIsDisabled(false);
+            setNextButtonIsDisabled(false);
+        }
     }
 
-    let [mainContent, setMainContent] = useState<ReactNode>(null);
+    //API_NEEDED - Get the data for the learning path
+    //API_NEEDED - Get the list of module IDs based on the learning path's ID
+    const { data: pathData, isLoading: pathDataLoading, refetch: refetchPath } = useMockData<LearningPath>(pathMockData);
+    const { data: moduleIDData, isLoading: moduleIDDataLoading, refetch: refetchModuleIDs } = useMockData<LPModuleList>(moduleListMockData);
 
-    //API_NEEDED - get refreshData function from API
-    const { data: pathData, isLoading: pathDataLoading } = useMockData(pathMockData);
+    if(pathData && !pathDataLoading && moduleIDData && !moduleIDDataLoading) {
 
-    if(pathData && !pathDataLoading) {
-        let myContent = [<LearningPathOverviewDiv 
-            description={pathData.description}
-            difficulty={pathData.difficulty.difficultyLvl as DifficultyProp["difficultyLvl"]}
-            name={pathData.name}
-            numChallenges={pathData.numChallenges}
-            numSolves={pathData.numSolves}
-            prereqs={pathData.prereqs}
-            skills={pathData.skills}/>];
+        let contentList: number[] = [];
 
-        pathData.modules.results.forEach(module => {
-            module.items.forEach(item => {
-                if(isChallenge(item.content)) {
-                    //Add the item to the array as a challenge
-                    myContent.push(<LearningPathChallengeContentDiv 
-                        author={(item.content as Challenge).author} 
-                        category={(item.content as Challenge).category} 
-                        description={(item.content as Challenge).description} 
-                        difficulty={(item.content as Challenge).difficulty} 
-                        flag={(item.content as Challenge).flag} 
-                        hints={(item.content as Challenge).hints} 
-                        name={(item.content as Challenge).name} 
-                        numSolves={(item.content as Challenge).users_solved} 
-                        tags={(item.content as Challenge).tags}/>);
-                }
-                else if(isResourceGroup(item.content)) {
-                    myContent.push(<LearningPathResourceContentDiv 
-                        resourceGroupID={item.id}/>);
-                }
-                else if(isGame(item.content)) {
-                    myContent.push(<LearningPathGameContentDiv game={item.content}/>);
-                }
-                else {
-                    myContent.push(<>{item.content}</>); //Fix the type issue here
-                }
-            })
+        moduleIDData.results.forEach(moduleID => {
+            contentList.push(moduleID);
         })
 
         if(mainContent == null) {
-            setMainContent(myContent[0]);
+            setMainContent(null);
         }
 
         return (
@@ -88,8 +77,24 @@ const Path: React.FC<{}> = () => {
                     </Breadcrumbs>
 
                     <div className="flex flex-row w-full h-fit gap-16">
-                        {mainContent}
-                        <LearningPathsContentListCard 
+                        <main className="flex flex-col w-full gap-20">
+                            <LearningPathContent path={pathData} contentInfo={mainContent}/>
+                            <div className="flex flex-row w-full justify-between">
+                                <Button variant="flat" className="bg-primary-50 gap-2" isDisabled={prevButtonIsDisabled} onPress={() => (
+                                    updateContentIndex(contentIndex-1, contentList.length)
+                                    )}>
+                                    <Icon icon={"material-symbols:arrow-back"} className="text-primary-500"/>
+                                    <p className="text-primary-500">Prev</p>
+                                </Button>
+                                <Button variant="flat" className="bg-primary-50 gap-2" isDisabled={nextButtonIsDisabled} onPress={() => (
+                                    updateContentIndex(contentIndex+1, contentList.length)
+                                    )}>
+                                    <p className="text-primary-500">Next</p>
+                                    <Icon icon={"material-symbols:arrow-forward"} className="text-primary-500"/>
+                                </Button>
+                            </div>
+                        </main>
+                        <LearningPathsContentNavCard 
                             updateFunction={setMainContent}
                             name={pathData.name} 
                             progress={{
@@ -98,7 +103,7 @@ const Path: React.FC<{}> = () => {
                                 value: (pathData.numCompletedTasks), 
                                 endingText: pathData.numCompletedTasks + "%"
                             }} 
-                            list={pathData.modules as LPModuleList}
+                            moduleIDs={moduleIDData as LPModuleList}
                         />
                     </div>
                 </div>
@@ -120,7 +125,7 @@ const Path: React.FC<{}> = () => {
 
                     <div className="flex flex-row w-full h-fit gap-16">
                         <LearningPathContentOverviewDivSkeleton/>
-                        <LearningPathsContentListCardSkeleton/>
+                        <LearningPathsContentNavCardSkeleton/>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Learning Path Task List",
+    "description": "A list of the tasks found inside a learning path module.",
+    "type": "object",
+    "properties": {
+        "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "The number of items in the results array."
+        },
+        "results": {
+            "type": "array",
+            "title": "Results",
+            "description": "An array filled with LearningPathTasks.",
+            "items": {
+                "$ref": "./LearningPathTask.schema.json"
+            }
+        }
+    }
+}

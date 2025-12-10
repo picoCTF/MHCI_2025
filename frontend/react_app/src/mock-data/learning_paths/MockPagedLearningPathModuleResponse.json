@@ -1,0 +1,18 @@
+{
+    "$schema": "../../schemas/PagedLearningPathModule.schema.json",
+    "results": [
+        {
+            "completion": 50,
+            "count": 2,
+            "id": 0,
+            "name": "Test Module 1"
+        },
+        {
+            "completion": 100,
+            "count": 2,
+            "id": 1,
+            "name": "Test Module 2"
+        }
+    ],
+    "count": 2
+}

@@ -1,0 +1,20 @@
+{
+    "$schema": "../../schemas/PagedLearningPathTask.schema.json",
+    "results": [
+        {
+            "contentID": 0,
+            "contentType": "R",
+            "id": 0,
+            "name": "LP Item 1",
+            "status": "Complete"
+        },
+        {
+            "contentID": 0,
+            "contentType": "C",
+            "id": 1,
+            "name": "LP Item 2",
+            "status": "Incomplete"
+        }
+    ],
+    "count": 2
+}

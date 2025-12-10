@@ -1,0 +1,9 @@
+{
+    "build_name": "Build Name",
+    "build_url": "Build URL",
+    "description": "This is a description of the game!",
+    "display_leaderboard": false,
+    "id": 0,
+    "launch_image": null,
+    "name": "Test Game"
+}

@@ -4,7 +4,7 @@ import type { Event } from "../../api_interfaces/event/event";
 import { useState } from "react";
 import eventData from "../../mock-data/MockPagedEventResponse.json";
 import type { EventTag } from "../../api_interfaces/event/eventTag";
-import { useMockData } from "../../mock-data/utils";
+import { useMockData } from "../../mock-data/utils/utils";
 
 interface EventModalProps {
     list: Event[];
