@@ -26,11 +26,11 @@
             "title": "ID",
             "description": "The ID of the learning path module."
         },
-        "items": {
+        "taskIDs": {
             "type": "array",
-            "description": "Array of the ids for the items inside the module",
+            "description": "Array of the ids for the tasks associated with the module",
             "items": {
-                "title": "Learning Path Module Item ID",
+                "title": "Learning Path Task ID",
                 "type": "number",
                 "description": "The ID of an item inside of a Learning Path Module."
             }

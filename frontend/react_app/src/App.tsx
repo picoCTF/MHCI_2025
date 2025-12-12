@@ -21,7 +21,7 @@ import LearningHome from './pages/practice/learning-paths/Home';
 import { mockLearningPathsHome } from './mock-data/LearningPathsData';
 import { mockProfile } from './mock-data/ProfileData';
 import PathDetail from './pages/practice/learning-paths/Path';
-import { useState } from 'react';
+// import { useState } from 'react';
 import AccountSettings from './pages/profile/AccountSettings';
 
 declare module "@react-types/shared" {
@@ -33,7 +33,7 @@ declare module "@react-types/shared" {
 function App() {
 
   	const navigate = useNavigate();
-	const [headerState, setHeaderState] = useState("Home");
+	// const [headerState, setHeaderState] = useState("Home");
 
   	return (
     	<HeroUIProvider navigate={navigate} useHref={useHref}>

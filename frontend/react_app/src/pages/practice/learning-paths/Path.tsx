@@ -3,16 +3,11 @@ import Header from "../../../components/general/PageNavbar";
 // import { useParams } from "react-router";
 import { BreadcrumbItem, Breadcrumbs, Button, Skeleton } from "@heroui/react";
 import LearningPathsContentNavCard, { LearningPathsContentNavCardSkeleton } from "../../../components/learning-paths/LearningPathsContentNavCard";
-import LearningPathOverviewDiv, { LearningPathContentOverviewDivSkeleton } from "../../../components/learning-paths/LearningPathOverviewContentDiv";
-import { useState, type ReactNode } from "react";
-import LearningPathResourceContentDiv from "../../../components/learning-paths/LearningPathResourceContentDiv";
-import LearningPathGameContentDiv from "../../../components/learning-paths/LearningPathGameContentDiv";
+import { LearningPathContentOverviewDivSkeleton } from "../../../components/learning-paths/LearningPathOverviewContentDiv";
+import { useState } from "react";
 import { useMockData } from "../../../mock-data/utils/utils";
-import type { DifficultyProp } from "../../../components/general/DifficultyChip";
 import type { LPModuleList } from "../../../api_interfaces/learning_path/learningPathModuleList";
 import { Icon } from "@iconify/react";
-import { ModuleTypeEnum } from "../../../api_interfaces/learning_path/moduleTypeEnum";
-import ChallengeDiv from "../../../components/general/ChallengeDiv";
 import type { LearningPath } from "../../../api_interfaces/learning_path/learningPath";
 
 import pathMockData from "../../../mock-data/learning_paths/MockLearningPathResponse.json";
@@ -51,8 +46,8 @@ const Path: React.FC<{}> = () => {
 
     //API_NEEDED - Get the data for the learning path
     //API_NEEDED - Get the list of module IDs based on the learning path's ID
-    const { data: pathData, isLoading: pathDataLoading, refetch: refetchPath } = useMockData<LearningPath>(pathMockData);
-    const { data: moduleIDData, isLoading: moduleIDDataLoading, refetch: refetchModuleIDs } = useMockData<LPModuleList>(moduleListMockData);
+    const { data: pathData, isLoading: pathDataLoading } = useMockData<LearningPath>(pathMockData);
+    const { data: moduleIDData, isLoading: moduleIDDataLoading } = useMockData<LPModuleList>(moduleListMockData);
 
     if(pathData && !pathDataLoading && moduleIDData && !moduleIDDataLoading) {
 
@@ -61,10 +56,6 @@ const Path: React.FC<{}> = () => {
         moduleIDData.results.forEach(moduleID => {
             contentList.push(moduleID);
         })
-
-        if(mainContent == null) {
-            setMainContent(null);
-        }
 
         return (
             <div className="Page">

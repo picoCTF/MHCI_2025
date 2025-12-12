@@ -25,7 +25,7 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
         return numCompletedChallenges;
     }
 
-    const { data: assignmentsData, isLoading: assignmentsDataLoading, refetch: refetchAssignments } = useMockData(assignmentsMockData);
+    const { data: assignmentsData, isLoading: assignmentsDataLoading/*, refetch: refetchAssignments*/ } = useMockData(assignmentsMockData);
 
     /* API_NEEDED - Get the list of assignments that are due for the user */
 

@@ -1,8 +1,3 @@
-import { Skeleton } from "@heroui/react";
-import type { ResourceGroup } from "../../api_interfaces/resource/resourceGroup";
-import PrimerResourceCard from "../general/PrimerResourceCard";
-import VideoResourceCard from "../general/VideoResourceCard";
-
 interface LearningPathResourceContentDivProps {
     resourceGroupID: number;
 }
@@ -13,7 +8,7 @@ interface LearningPathResourceContentDivProps {
 
 //Put useMockData here for the resource group array
 
-const LearningPathResourceContentDiv: React.FC<LearningPathResourceContentDivProps> = ({ resourceGroupID }) => {
+const LearningPathResourceContentDiv: React.FC<LearningPathResourceContentDivProps> = ({/* resourceGroupID */}) => {
 
     //Use mockData on the id of the resourceGroup to get a list of resource IDs
     

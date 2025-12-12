@@ -5,13 +5,15 @@
             "completion": 50,
             "count": 2,
             "id": 0,
-            "name": "Test Module 1"
+            "name": "Test Module 1",
+            "taskIDs": [0, 1, 2]
         },
         {
             "completion": 100,
             "count": 2,
             "id": 1,
-            "name": "Test Module 2"
+            "name": "Test Module 2",
+            "taskIDs": [3, 4, 5]
         }
     ],
     "count": 2

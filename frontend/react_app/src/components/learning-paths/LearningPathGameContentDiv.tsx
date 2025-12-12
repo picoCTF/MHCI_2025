@@ -7,10 +7,10 @@ interface LearningPathResourceContentDivProps {
     gameID: number;
 }
 
-const LearningPathGameContentDiv: React.FC<LearningPathResourceContentDivProps> = ({ gameID }) => {
+const LearningPathGameContentDiv: React.FC<LearningPathResourceContentDivProps> = ({/* gameID */}) => {
 
     //API_NEEDED - get refreshData function from API, pass the gameID to the API to get the game data
-    const { data: gameData, isLoading: gameDataLoading, refetch: refetchGame } = useMockData<Game>(gameMockData);
+    const { data: gameData, isLoading: gameDataLoading/*, refetch: refetchGame */} = useMockData<Game>(gameMockData);
 
     if(gameData && !gameDataLoading) {
         return (

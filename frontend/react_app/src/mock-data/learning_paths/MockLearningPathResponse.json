@@ -7,6 +7,7 @@
         "difficultyLvl": "Easy"
     },
     "id": 123,
+    "moduleIDs": [123, 456, 789],
     "name": "Test Path",
     "numChallenges": 6,
     "numCompletedTasks": 4,

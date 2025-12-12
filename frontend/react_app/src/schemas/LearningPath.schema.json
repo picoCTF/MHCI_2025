@@ -22,6 +22,14 @@
             "title": "ID",
             "description": "The ID of the learning path."
         },
+        "moduleIDs": {
+            "type": "array",
+            "title": "Module IDs",
+            "description": "A list of the module IDs associated with this challenge.",
+            "items": {
+                "type": "number"
+            }
+        },
         "name": {
             "type": "string",
             "title": "Name",

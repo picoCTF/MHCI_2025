@@ -5,5 +5,5 @@ export interface LPModule {
     name: string; // The name of the module
     completion: number; // The percentage of completion for the module, from 0 to 100
     id: number;
-    //items: LPModuleItem[]; // Array of the elements inside the module
+    taskIDs: number[]; // Array of the elements inside the module
 }
