@@ -1,0 +1,39 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Learning Path Module",
+    "description": "An object that contains the challenges, resource groups, and other elements for one part of a learning path",
+    "properties": {
+        "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "Number of Learning Path Module Items inside the module"
+        },
+        "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The name of the module"
+        },
+        "completion": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "title": "Completion",
+            "description": "The percentage of completion for the module, from 0 to 100"
+        },
+        "id": {
+            "type": "number",
+            "title": "ID",
+            "description": "The ID of the learning path module."
+        },
+        "taskIDs": {
+            "type": "array",
+            "description": "Array of the ids for the tasks associated with the module",
+            "items": {
+                "title": "Learning Path Task ID",
+                "type": "number",
+                "description": "The ID of an item inside of a Learning Path Module."
+            }
+        }
+    }
+}

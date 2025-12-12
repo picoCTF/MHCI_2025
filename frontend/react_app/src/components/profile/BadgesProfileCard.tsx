@@ -16,7 +16,7 @@ import { type BadgeList } from "../../api_interfaces/badge/badgeList";
 import badgesMockData from "../../mock-data/profile/Badges.json"
 import BadgeSVG, { BadgeSVGSkeleton } from "../general/BadgeSVG";
 import type { Badge } from "../../api_interfaces/badge/badge";
-import {useMockData} from "../../mock-data/utils.ts";
+import {useMockData} from "../../mock-data/utils/utils.ts";
 // import { useState } from "react";
 
 interface BadgeModalProps {

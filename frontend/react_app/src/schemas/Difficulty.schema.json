@@ -1,0 +1,11 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Difficulty",
+    "type": "object",
+    "description": "The overall difficulty of a challenge or learning path.",
+    "properties": {
+        "difficultyLvl": {
+            "enum": ["Easy", "Medium", "Hard"]
+        }
+    }
+}

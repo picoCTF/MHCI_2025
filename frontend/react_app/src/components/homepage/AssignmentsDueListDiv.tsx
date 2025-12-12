@@ -1,10 +1,10 @@
-import {Button, Skeleton} from "@heroui/react";
+import {/*Button, */Skeleton} from "@heroui/react";
 import AssignmentCard, { AssignmentCardSkeleton } from "../general/AssignmentCard";
 import FocusWrapperCard, { type FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import assignmentsMockData from "../../mock-data/MockPagedAssignmentResponse.json";
 import type { PaginatedAssignmentResponseList } from "../../api_interfaces/2023_generated_interfaces/assignment/paginatedAssignmentResponse";
 import type { AssignmentResponse } from "../../api_interfaces/2023_generated_interfaces/assignment/assignmentResponse";
-import { useMockData } from "../../mock-data/utils";
+import { useMockData } from "../../mock-data/utils/utils";
 
 export interface AssignmentsDueListDivProps {
     isFocused: FocusWrapperCardProps['isFocused'];
@@ -25,7 +25,7 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
         return numCompletedChallenges;
     }
 
-    const { data: assignmentsData, isLoading: assignmentsDataLoading, refetch: refetchAssignments } = useMockData(assignmentsMockData);
+    const { data: assignmentsData, isLoading: assignmentsDataLoading/*, refetch: refetchAssignments*/ } = useMockData(assignmentsMockData);
 
     /* API_NEEDED - Get the list of assignments that are due for the user */
 
@@ -49,7 +49,7 @@ const AssignmentsDueListDiv: React.FC<AssignmentsDueListDivProps> = ({ isFocused
 
         return (
             <div className="flex flex-col w-full h-fit gap-6">
-                <h3>You have assignments due soon! <Button onPress={refetchAssignments}>Demo refetch assignments</Button></h3>
+                <h3>You have assignments due soon! {/*<Button onPress={refetchAssignments}>Demo refetch assignments</Button>*/}</h3>
                 <FocusWrapperCard isFocused={isFocused} orientation="row">
                     {filteredAssignments.map((assignment) => (
                         <AssignmentCard key={assignment.id} name={assignment.name}
