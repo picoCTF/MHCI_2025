@@ -2,9 +2,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/

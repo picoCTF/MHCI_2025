@@ -19,7 +19,7 @@ export interface ChallengeCardProps {
     tags: Tag[];
 }
 
-const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, flag, hints, name, numSolves, tags}) => {
+const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, flag, hints, name, numSolves/*, tags*/}) => {
     
     return (
         <Card className="w-[400px] h-[288px]">

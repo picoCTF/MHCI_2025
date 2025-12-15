@@ -26,12 +26,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    bgColor: 1,
-    icon: "mode_heat",
+    bgColor: "green",
+    icon: "material-symbols:mode-heat-outline",
     id: 123,
-    shape: 1,
-    strokeColor: 1,
-    textColor: 1,
+    isSelected: true,
+    isUnlocked: false,
+    shape: "pointed",
+    strokeColor: "green",
+    textColor: "green",
     title: "Badge Title"
   },
 };
