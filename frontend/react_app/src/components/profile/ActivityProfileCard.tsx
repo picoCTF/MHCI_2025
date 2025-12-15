@@ -1,5 +1,5 @@
 import { Card, CardBody, semanticColors, Tab, Tabs } from "@heroui/react";
-import ActivitySummaryCard from "./activity/ActivitySummaryCard";
+// import ActivitySummaryCard from "./activity/ActivitySummaryCard";
 import { ResponsiveCalendar, ResponsiveTimeRange, type CalendarData, } from "@nivo/calendar";
 import { Icon } from "@iconify/react";
 
@@ -143,7 +143,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                                         ]}
                                     />
                                 </div>
-                                <ActivitySummaryCard summary={"AI summary of the week"}/>
+                                {/* <ActivitySummaryCard summary={"AI summary of the week"}/> */}
                             </div>
                         </Tab>
                         <Tab key={"month"} title="Month">
@@ -180,7 +180,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                                         ]}
                                     />
                                 </div>
-                                <ActivitySummaryCard summary={"AI summary of the month"}/>
+                                {/* <ActivitySummaryCard summary={"AI summary of the month"}/> */}
                             </div>
                         </Tab>
                         {/* FIX_ME - Need to make the calendar adjust to fill the width and height of ots parent */}
@@ -214,7 +214,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                                         ]}
                                     />
                                 </div>
-                                <ActivitySummaryCard summary={"AI summary of lifetime"}/>
+                                {/* <ActivitySummaryCard summary={"AI summary of lifetime"}/> */}
                             </div>
                         </Tab>
                     </Tabs>
