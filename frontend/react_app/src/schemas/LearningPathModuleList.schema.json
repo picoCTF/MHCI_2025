@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Learning Path Module List",
+    "description": "A list of the modules found inside a learning path.",
+    "type": "object",
+    "properties": {
+        "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "The number of items in the results array."
+        },
+        "results": {
+            "type": "array",
+            "title": "Results",
+            "description": "An array filled with LearningPathModule IDs.",
+            "items": {
+                "type": "number",
+                "title": "Learning Path Module ID",
+                "description": "The ID of a Learning Path Module."
+            }
+        }
+    }
+}

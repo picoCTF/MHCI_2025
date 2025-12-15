@@ -8,7 +8,7 @@ import FocusWrapperCard from "../general/FocusWrapperCard";
 import { mockClassrooms } from "../../mock-data/ClassroomData";
 import type { PaginatedClassroomList } from "../../api_interfaces/2023_generated_interfaces/classroom/paginatedClassroomList";
 import type { Classroom } from "../../api_interfaces/2023_generated_interfaces/classroom/classroom";
-import { useMockData } from "../../mock-data/utils";
+import { useMockData } from "../../mock-data/utils/utils";
 
 export interface ClassroomListDivProps {
     isFocused: FocusWrapperCardProps['isFocused'];

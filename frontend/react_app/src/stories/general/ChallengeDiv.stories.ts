@@ -22,17 +22,33 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     author: "Luke",
-    category: "Binary_Exploit",
+    category: {
+      id: 0,
+      name: 'Binary_Exploit'
+    },
     description: "This is the challenge description.",
     difficulty: {
       difficultyLvl: "Easy"
     },
     flag: "TEST_FLAG",
-    hints: {
-      list: ["Here is hint 1.", "Here is hint 2.", "Here is hint 3.", "Here is hint 4."]
-    },
+    hints: ["Here is hint 1.", "Here is hint 2.", "Here is hint 3.", "Here is hint 4."],
     name: "Challenge Name",
     numSolves: 1468,
-    tags: ["Binary Exploit", "Webshell", "abc12345", "abc12345", "abc12345"]
+    tags: [{
+      name: "Binary Exploit",
+      id: 0
+    }, {
+      name: "Webshell",
+      id: 1
+    }, {
+      name: "abc12345",
+      id: 2
+    }, {
+      name: "abc12345",
+      id: 3
+    }, {
+      name: "abc12345",
+      id: 4
+    }]
   },
 };

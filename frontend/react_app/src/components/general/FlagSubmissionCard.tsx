@@ -1,4 +1,4 @@
-import { Button, Card, Input } from "@heroui/react";
+import { Button, Card, Input, Skeleton } from "@heroui/react";
 import { useState } from "react";
 
 interface FlagSubmissionCardProps {
@@ -24,6 +24,19 @@ const FlagSubmissionCard: React.FC<FlagSubmissionCardProps> = ({ /*flag*/ }) => 
         <Card className="flex flex-row w-full items-center p-5 gap-4 bg-primary-100" shadow="none" radius="md">
             <Input label="Flag" placeholder="picoCTF{FLAG}" inputMode="text" onChange={(event) => updateInput(event.target.value)}/>
             <Button color="primary" onPress={() => updateCompletion()}>Submit flag</Button>
+        </Card>
+    );
+}
+
+export const FlagSubmissionCardSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <Card className="flex flex-row w-full items-center p-5 gap-4 bg-primary-100" shadow="none" radius="md">
+            <Skeleton className="rounded-md">
+                <Input label="Flag" placeholder="picoCTF{FLAG}" inputMode="text"/>
+            </Skeleton>
+            <Skeleton className="rounded-md">
+                <Button color="primary">Submit flag</Button>
+            </Skeleton>
         </Card>
     );
 }

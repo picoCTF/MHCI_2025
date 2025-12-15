@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     description: "The description of the card",
-    icon: "mode_heat",
+    icon: "material-symbols:mode-heat-outline",
     id: 123,
     link: "#",
     name: "Name"

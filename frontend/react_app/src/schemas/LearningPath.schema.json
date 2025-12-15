@@ -1,0 +1,70 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Learning Path",
+    "description": "A path consisting of related challenges, resources, and other information.",
+    "type": "object",
+    "properties": {
+        "completed": {
+            "type": "boolean",
+            "title": "Completed",
+            "description": "Whether the user has completed the path."
+        },
+        "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "A description of the learning path."
+        },
+        "difficulty": {
+            "$ref": "./Difficulty.schema.json"
+        },
+        "id": {
+            "type": "number",
+            "title": "ID",
+            "description": "The ID of the learning path."
+        },
+        "moduleIDs": {
+            "type": "array",
+            "title": "Module IDs",
+            "description": "A list of the module IDs associated with this challenge.",
+            "items": {
+                "type": "number"
+            }
+        },
+        "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The name of the learning path."
+        },
+        "numTasks": {
+            "type": "number",
+            "title": "Number of Tasks",
+            "description": "The number of mandatory tasks in the learning path."
+        },
+        "numCompletedTasks": {
+            "type": "number",
+            "title": "Number of Completed Tasks",
+            "description": "The number of mandatory tasks the user has completed."
+        },
+        "numSolves": {
+            "type": "number",
+            "title": "Number of Solves",
+            "description": "The number of people who have completed the path."
+        },
+        "prereqs": {
+            "type": "array",
+            "title": "Prerequisites",
+            "description": "The skills/technologies you should know before starting the path.",
+            "items": {
+                "$ref": "./Skill.schema.json"
+            }
+        },
+        "skills": {
+            "type": "array",
+            "title": "Skills",
+            "description": "The skills/technologies you learn by completing the path.",
+            "items": {
+                "$ref": "./Skill.schema.json"
+            }
+        }
+    }
+}

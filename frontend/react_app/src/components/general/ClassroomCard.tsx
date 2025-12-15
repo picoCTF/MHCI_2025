@@ -1,6 +1,6 @@
 import { Card, Skeleton } from "@heroui/react";
 import RecentAssignmentsCard, { RecentAssignmentsCardSkeleton } from "./RecentAssignmentsCard";
-import PendingMemberRequestsCard, { PendingMemberRequestsCardSkeleton } from "../Homepage/PendingMemberRequestsCard";
+import PendingMemberRequestsCard, { PendingMemberRequestsCardSkeleton } from "../homepage/PendingMemberRequestsCard";
 import { type AssignmentStatusCardProps } from "./AssignmentStatusCard";
 import type { PendingMemberRequestCardProps } from "./PendingMemberRequestCard";
 

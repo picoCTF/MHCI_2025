@@ -1,0 +1,7 @@
+{
+    "$schema": "../../schemas/LearningPathModule.schema.json",
+    "completion": 1,
+    "count": 2,
+    "id": 0,
+    "name": "Test Module 1"
+}

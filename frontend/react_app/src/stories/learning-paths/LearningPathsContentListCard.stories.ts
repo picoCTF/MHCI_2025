@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-// import { fn } from 'storybook/test';
+import { fn } from 'storybook/test';
 
-import LearningPathsContentListCard from '../../components/learning-paths/LearningPathsContentListCard';
+import LearningPathsContentListCard from '../../components/learning-paths/LearningPathsContentNavCard';
 
 const meta = {
   title: 'Learning Paths/LearningPathsContentListCard',
@@ -33,19 +33,10 @@ export const Default: Story = {
       value: 0,
       endingText: '0/10'
     },
-    list: [{
-      item: {},
-      itemProgress: {},
-      children: [{
-        tableItems: [{
-          contentType: 'Challenge',
-          difficulty: {Enum: 1},
-          link: '#',
-          name: 'Challenge Name',
-          numSolves: 1234,
-          status: 'Incomplete'
-        }]
-      }]
-    }]
+    moduleIDs: {
+      count: 2,
+      results: [0, 1]
+    },
+    updateFunction: fn
   },
 };

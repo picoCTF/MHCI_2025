@@ -21,12 +21,52 @@ type Story = StoryObj<typeof meta>;
 
 export const Experimental: Story = {
   args: {
-    variant: "Experimental"
+    event: {
+      end_time: '',
+      has_ended: false,
+      has_opened: false,
+      has_public_scoreboards: false,
+      has_started: false,
+      id: 0,
+      is_password_protected: false,
+      name: '',
+      opening_time: '',
+      registered: false,
+      sponsor: {
+        name: ''
+      },
+      start_time: '',
+      submission_context: 0,
+      tags: [],
+      type: {
+        name: 'Research'
+      }
+    }
   }
 };
 
 export const Competition: Story = {
   args: {
-    variant: "Competition"
+    event: {
+      end_time: '',
+      has_ended: false,
+      has_opened: false,
+      has_public_scoreboards: false,
+      has_started: false,
+      id: 0,
+      is_password_protected: false,
+      name: '',
+      opening_time: '',
+      registered: false,
+      sponsor: {
+        name: ''
+      },
+      start_time: '',
+      submission_context: 0,
+      tags: [],
+      type: {
+        name: 'Challenge Release'
+      }
+    }
   }
 };

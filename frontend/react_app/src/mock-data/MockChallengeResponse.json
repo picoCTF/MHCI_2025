@@ -1,0 +1,52 @@
+{
+    "active_assignments": [],
+    "author": "Author Here",
+    "bookmarked": false,
+    "category": {
+        "id": 0,
+        "name": "Binary Exploitation"
+    },
+    "description": "This is a challenge description.",
+    "difficulty": {
+        "difficultyLvl": "Easy"
+    },
+    "errata": "",
+    "event": {
+        "id": 0,
+        "name": "Test Serializer"
+    },
+    "event_points": 100,
+    "flag": "flag",
+    "gym_points": 100,
+    "hints": ["This is the first hint.", "This is the second hint.", "This is the third hint."],
+    "id": 1,
+    "include_in_gym": true,
+    "name": "Challenge 1",
+    "rating_percentage": 40,
+    "solved_by_team": false,
+    "solved_by_user": true,
+    "sponsor": {
+        "id": 0,
+        "name": "Test Sponsor"
+    },
+    "tags": [
+        {
+            "id": 0,
+            "name": "Tag 1"
+        }, 
+        {
+            "id": 1,
+            "name": "Tag 2"
+        }, 
+        {
+            "id": 2,
+            "name": "Tag 3"
+        }
+    
+    ],
+    "under_maintenance": false,
+    "users_attempted": 1750,
+    "users_attempted_during_event": 600,
+    "users_solved": 1200,
+    "users_solved_during_event": 500
+}
