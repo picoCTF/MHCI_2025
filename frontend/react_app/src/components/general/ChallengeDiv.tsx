@@ -7,6 +7,8 @@ import { useState } from "react";
 import { useMockData } from "../../mock-data/utils/utils";
 import challengeMockData from "../../mock-data/MockChallengeResponse.json"
 import type { Challenge } from "../../api_interfaces/challenge";
+import WalkthroughSummaryCard from "./WalkthroughSummaryCard";
+import ReflectionCTACard from "./ReflectionCTACard";
 
 export interface ChallengeDivProps {
     challengeID: number;
@@ -23,7 +25,7 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ /*challengeID*/ }) => {
     }
 
     //API_NEEDED - get whether the challenge has been completed or not and use that to set the useState
-    // let [isCompleted, setIsCompleted] = useState(false);
+    let [isComplete, setIsComplete] = useState(false);
 
     // function updateCompletion(): void {
     //     setIsCompleted(true);
@@ -34,81 +36,105 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ /*challengeID*/ }) => {
     const { data: challengeData, isLoading: challengeDataLoading/*, refetch: refetchChallenge*/ } = useMockData<Challenge>(challengeMockData);
 
     if(challengeData && !challengeDataLoading) {
-        return (
-            <div className="flex flex-col w-full h-full min-h-fit gap-8">
-                <div className="flex flex-col text-start gap-4">
-                    <div className="flex flex-row gap-3 w-full items-center">
-                        <h2>{challengeData.name}</h2>
-                        <Tooltip className="py-1 px-3" size="md" radius="sm" content={isBookmarked ? "Remove bookmark" : "Bookmark challenge"} placement="bottom" showArrow={true}>
-                            <Button variant="light" isIconOnly radius="full" className="w-10 h-10" onPress={() => updateBookmark()}>
-                                <Icon icon={isBookmarked ? "material-symbols:bookmark-rounded" : "material-symbols:bookmark-outline-rounded"} width={20} height={20}/>
-                            </Button>
-                        </Tooltip>
-                    </div>
-                    <div className="flex flex-row w-full gap-2 items-center">
-                        <DifficultyChip difficultyLvl={(challengeData.difficulty as DifficultyProp).difficultyLvl}/>
-                        <Chip>{challengeData.category.name}</Chip>
-                        {challengeData.tags.map((tag) => (<Chip key={tag.id}>{tag.name}</Chip>))}
-                    </div>
-                    {challengeData.description ? <p>{challengeData.description}</p> : null}
-                    <div className="flex flex-row gap-4">
-                        <div className="flex flex-row gap-2">
-                            <Icon icon={"material-symbols:person-outline"} width={20} height={20} className={"text-default-500"}/>
-                            <p className={"flex font-mono font-semibold text-default-500"}>{"Author:"}</p>
-                            <p className={"flex font-mono text-default-500"}>{challengeData.author}</p>
+
+        if (!isComplete) {
+            return (
+                <div className="flex flex-col w-full h-full min-h-fit gap-8">
+                    <div className="flex flex-col text-start gap-4">
+                        <div className="flex flex-row gap-3 w-full items-center">
+                            <h2>{challengeData.name}</h2>
+                            <Tooltip className="py-1 px-3" size="md" radius="sm" content={isBookmarked ? "Remove bookmark" : "Bookmark challenge"} placement="bottom" showArrow={true}>
+                                <Button variant="light" isIconOnly radius="full" className="w-10 h-10" onPress={() => updateBookmark()}>
+                                    <Icon icon={isBookmarked ? "material-symbols:bookmark-rounded" : "material-symbols:bookmark-outline-rounded"} width={20} height={20}/>
+                                </Button>
+                            </Tooltip>
                         </div>
-                        <div className="flex flex-row gap-2">
-                            <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default-500"}/>
-                            <p className={"flex font-mono text-default-500"}>{challengeData.users_solved + " solves"}</p>
+                        <div className="flex flex-row w-full gap-2 items-center">
+                            <DifficultyChip difficultyLvl={(challengeData.difficulty as DifficultyProp).difficultyLvl}/>
+                            <Chip>{challengeData.category.name}</Chip>
+                            {challengeData.tags.map((tag) => (<Chip key={tag.id}>{tag.name}</Chip>))}
                         </div>
+                        {challengeData.description ? <p>{challengeData.description}</p> : null}
+                        <div className="flex flex-row gap-4">
+                            <div className="flex flex-row gap-2">
+                                <Icon icon={"material-symbols:person-outline"} width={20} height={20} className={"text-default-500"}/>
+                                <p className={"flex font-mono font-semibold text-default-500"}>{"Author:"}</p>
+                                <p className={"flex font-mono text-default-500"}>{challengeData.author}</p>
+                            </div>
+                            <div className="flex flex-row gap-2">
+                                <Icon icon={"material-symbols:flag-outline"} width={20} height={20} className={"text-default-500"}/>
+                                <p className={"flex font-mono text-default-500"}>{challengeData.users_solved + " solves"}</p>
+                            </div>
+                        </div>
+                        <HintAccordion list={challengeData.hints}/>
                     </div>
-                    <HintAccordion list={challengeData.hints}/>
+                    <FlagSubmissionCard flag={challengeData.flag} setCompletion={setIsComplete}/>
                 </div>
-                <FlagSubmissionCard flag={challengeData.flag}/>
-            </div>
-        );
+            );   
+        }
+        else {
+            //FIX_ME - Update the API import to get the WalkthroughSummaryCard link and summary
+            return ( 
+                <div className="flex flex-col w-full h-full min-h-fit gap-10">
+                    <div className="flex flex-col gap-4 items-center">
+                        <div className="flex w-20 h-20 items-center justify-center rounded-full bg-success-500">
+                            <Icon icon={"material-symbols:check-rounded"} className="w-16 h-16 text-content1-base"/>
+                        </div>
+                        <h3>Challenge solved!</h3>
+                    </div>
+                    <div className="flex flex-col gap-5 items-center">
+                        <WalkthroughSummaryCard summary={"This is the summary of the walkthrough."} link={""}/>
+                        <ReflectionCTACard/>
+                    </div>
+                </div>
+            );
+        }
     }
     else {
-        return (
-            <div className="flex flex-col w-full h-full min-h-fit gap-8">
-                <div className="flex flex-col text-start gap-4">
-                    <div className="flex flex-row gap-3 w-full items-center">
-                        <Skeleton>
-                            <h2>Name Here</h2>
-                        </Skeleton>
-                        <Skeleton className="w-10 h-10 rounded-full"/>
-                    </div>
-                    <div className="flex flex-row w-full gap-2 items-center">
-                        {Array.from({length: 4}, (_, index) => (
-                            <DifficultyChipSkeleton key={index}/>
-                        ))}
-                    </div>
-                    {Array.from({length: 3}, (_, index) => (
-                        <Skeleton className="rounded-full" key={index}>
-                            <p>This is my mock description. Just typing here to add more length to the skeleton.</p>
-                        </Skeleton>
-                    ))}
-                    <div className="flex flex-row gap-4">
-                        <div className="flex flex-row gap-2">
-                            <Skeleton className="rounded-full w-5 h-5"/>
-                            <Skeleton className="rounded-full">
-                                <p className={"flex font-mono font-semibold text-default-500"}>{"Author:"}</p>
-                                <p className={"flex font-mono text-default-500"}>Name Here</p>
-                            </Skeleton>
-                        </div>
-                        <div className="flex flex-row gap-2">
-                            <Skeleton className="rounded-full w-5 h-5"/>
-                            <Skeleton className="rounded-full">
-                                <p className={"flex font-mono text-default-500"}>{"XXXX solves"}</p>
-                            </Skeleton>
-                        </div>
-                    </div>
-                    <HintAccordionSkeleton/>
-                </div>
-                <FlagSubmissionCardSkeleton/>
-            </div>
-        );
+        return <ChallengeDivSkeleton/>
     }
+}
+
+export const ChallengeDivSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <div className="flex flex-col w-full h-full min-h-fit gap-8">
+            <div className="flex flex-col text-start gap-4">
+                <div className="flex flex-row gap-3 w-full items-center">
+                    <Skeleton className="flex rounded-full">
+                        <h2>Name Here</h2>
+                    </Skeleton>
+                    <Skeleton className="w-10 h-10 rounded-full"/>
+                </div>
+                <div className="flex flex-row w-full gap-2 items-center">
+                    {Array.from({length: 4}, (_, index) => (
+                        <DifficultyChipSkeleton key={index}/>
+                    ))}
+                </div>
+                {Array.from({length: 3}, (_, index) => (
+                    <Skeleton className="rounded-full" key={index}>
+                        <p>This is my mock description. Just typing here to add more length to the skeleton.</p>
+                    </Skeleton>
+                ))}
+                <div className="flex flex-row gap-4">
+                    <div className="flex flex-row gap-2">
+                        <Skeleton className="rounded-full w-5 h-5"/>
+                        <Skeleton className="rounded-full">
+                            <p className={"flex font-mono font-semibold text-default-500"}>{"Author:"}</p>
+                            <p className={"flex font-mono text-default-500"}>Name Here</p>
+                        </Skeleton>
+                    </div>
+                    <div className="flex flex-row gap-2">
+                        <Skeleton className="rounded-full w-5 h-5"/>
+                        <Skeleton className="rounded-full">
+                            <p className={"flex font-mono text-default-500"}>{"XXXX solves"}</p>
+                        </Skeleton>
+                    </div>
+                </div>
+                <HintAccordionSkeleton/>
+            </div>
+            <FlagSubmissionCardSkeleton/>
+        </div>
+    );
 }
 
 export default ChallengeDiv;

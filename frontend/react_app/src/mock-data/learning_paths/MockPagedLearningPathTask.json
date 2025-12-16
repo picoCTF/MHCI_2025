@@ -5,14 +5,21 @@
             "contentID": 0,
             "contentType": "R",
             "id": 0,
-            "name": "LP Item 1",
+            "name": "Task 1",
             "status": "Complete"
         },
         {
-            "contentID": 0,
+            "contentID": 1,
             "contentType": "C",
             "id": 1,
-            "name": "LP Item 2",
+            "name": "Task 2",
+            "status": "Incomplete"
+        },
+        {
+            "contentID": 2,
+            "contentType": "G",
+            "id": 2,
+            "name": "Task 3",
             "status": "Incomplete"
         }
     ],

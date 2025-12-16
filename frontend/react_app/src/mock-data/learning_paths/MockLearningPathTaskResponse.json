@@ -1,8 +1,8 @@
 {
     "$schema": "../../schemas/LearningPathTask.schema.json",
     "contentID": 0,
-    "contentType": "R",
+    "contentType": "C",
     "id": 0,
     "name": "LP Item 1",
-    "status": "Complete"
+    "status": "Incomplete"
 }

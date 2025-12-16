@@ -3,21 +3,18 @@ import { useState } from "react";
 
 interface FlagSubmissionCardProps {
     flag: string;
+    setCompletion: Function;
 }
 
 // API_NEEDED - check if the string the user inputs matches the flag
-const FlagSubmissionCard: React.FC<FlagSubmissionCardProps> = ({ /*flag*/ }) => {
+const FlagSubmissionCard: React.FC<FlagSubmissionCardProps> = ({ flag, setCompletion }) => {
 
     let [input, updateInput] = useState("");
 
-    //API_NEEDED - get the flag for a given challenge
-    const flag = "flag";
-
     //API_NEEDED - on button press, if the input matches the flag, then update the completion status of the challenge
     function updateCompletion(): void {
-        if(input == flag) {
-            //Update the challenge completion to be true
-        }
+        setCompletion(input == flag);
+        console.log("DELETE_ME - The flag is " + flag)
     }
 
     return (
