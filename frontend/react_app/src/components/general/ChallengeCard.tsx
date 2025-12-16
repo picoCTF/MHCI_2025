@@ -2,7 +2,7 @@ import { Card, CardBody, CardHeader, CardFooter } from "@heroui/react";
 // import { useNavigate } from "react-router-dom";
 import DifficultyChip, { type DifficultyProp } from "./DifficultyChip";
 import HintAccordion, { type HintAccordionProps } from "./HintAccordion";
-import FlagSubmissionCard from "./FlagSubmissionCard";
+// import FlagSubmissionCard from "./FlagSubmissionCard";
 import { Icon } from "@iconify/react";
 import type { Tag } from "../../api_interfaces/2023_generated_interfaces/tag";
 import type { Category } from "../../api_interfaces/2023_generated_interfaces/category";
@@ -19,7 +19,7 @@ export interface ChallengeCardProps {
     tags: Tag[];
 }
 
-const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, flag, hints, name, numSolves/*, tags*/}) => {
+const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, difficulty, /*flag, */hints, name, numSolves/*, tags*/}) => {
     
     return (
         <Card className="w-[400px] h-[288px]">
