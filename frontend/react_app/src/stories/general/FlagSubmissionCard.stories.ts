@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import FlagSubmissionCard from '../../components/general/FlagSubmissionCard';
 
-// import { fn } from 'storybook/test';
+import { fn } from 'storybook/test';
 
 const meta = {
   title: 'General/FlagSubmissionCard',
@@ -21,6 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    flag: "TEST_FLAG"
+    flag: "TEST_FLAG",
+    setCompletion: fn
   }
 };
