@@ -47,7 +47,8 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, diff
                 <HintAccordion list={hints}/>
             </CardBody>
             <CardFooter>
-                <FlagSubmissionCard flag={flag}/>
+                {/* FIX_ME - Either update this componenet to use ChallengeDiv or remove it */}
+                {/* <FlagSubmissionCard flag={flag} setCompletion={false}/> */}
             </CardFooter>
         </Card>
     );
