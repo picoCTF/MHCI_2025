@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "AI Approach Comparison",
+    "description": "The AI comparison between the user's solution and the official walkthrough.",
+    "properties": {
+        "aiResponse": {
+            "type": "string",
+            "title": "AI Response",
+            "description": "The response from the AI."
+        }
+    }
+}

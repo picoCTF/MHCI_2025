@@ -9,6 +9,8 @@ import challengeMockData from "../../mock-data/MockChallengeResponse.json"
 import type { Challenge } from "../../api_interfaces/challenge";
 import WalkthroughSummaryCard from "./WalkthroughSummaryCard";
 import ReflectionCTACard from "./ReflectionCTACard";
+import ReflectionEntryCard from "./ReflectionEntryCard";
+import ApproachComparisonCard from "./ApproachComparisonCard";
 
 export interface ChallengeDivProps {
     challengeID: number;
@@ -27,10 +29,7 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ /*challengeID*/ }) => {
     //API_NEEDED - get whether the challenge has been completed or not and use that to set the useState
     let [isComplete, setIsComplete] = useState(false);
 
-    // function updateCompletion(): void {
-    //     setIsCompleted(true);
-    //     //API_NEEDED - update the challenge info for the user so that it is marked as completed
-    // }
+    let [postChallengeScreen, setPostChallengeScreen] = useState<1|2|3>(1);
 
     //API_NEEDED - get refreshData function from API, pass the challengeID to the API to get the challenge data
     const { data: challengeData, isLoading: challengeDataLoading/*, refetch: refetchChallenge*/ } = useMockData<Challenge>(challengeMockData);
@@ -73,21 +72,34 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ /*challengeID*/ }) => {
             );   
         }
         else {
-            //FIX_ME - Update the API import to get the WalkthroughSummaryCard link and summary
-            return ( 
-                <div className="flex flex-col w-full h-full min-h-fit gap-10">
-                    <div className="flex flex-col gap-4 items-center">
-                        <div className="flex w-20 h-20 items-center justify-center rounded-full bg-success-500">
-                            <Icon icon={"material-symbols:check-rounded"} className="w-16 h-16 text-content1-base"/>
+            switch(postChallengeScreen) {
+                case 2: {
+                    return ( 
+                        <ReflectionEntryCard/>
+                    );
+                }
+                case 3: {
+                    return ( 
+                        <ApproachComparisonCard/>
+                    );
+                }
+                default: {
+                    return ( 
+                        <div className="flex flex-col w-full h-full min-h-fit gap-10">
+                            <div className="flex flex-col gap-4 items-center">
+                                <div className="flex w-20 h-20 items-center justify-center rounded-full bg-success-500">
+                                    <Icon icon={"material-symbols:check-rounded"} className="w-16 h-16 text-content1-base"/>
+                                </div>
+                                <h3>Challenge solved!</h3>
+                            </div>
+                            <div className="flex flex-col gap-5 items-center">
+                                <WalkthroughSummaryCard challengeID={challengeData.id}/>
+                                <ReflectionCTACard challengeID={challengeData.id} displayUpdateFunction={setPostChallengeScreen} />
+                            </div>
                         </div>
-                        <h3>Challenge solved!</h3>
-                    </div>
-                    <div className="flex flex-col gap-5 items-center">
-                        <WalkthroughSummaryCard summary={"This is the summary of the walkthrough."} link={""}/>
-                        <ReflectionCTACard/>
-                    </div>
-                </div>
-            );
+                    );
+                }
+            }
         }
     }
     else {

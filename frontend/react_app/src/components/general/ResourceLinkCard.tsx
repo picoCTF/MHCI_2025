@@ -1,4 +1,4 @@
-import { Card, CardBody } from "@heroui/react";
+import { Card, CardBody, Skeleton } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 
@@ -23,6 +23,22 @@ const ResourceLinkCard: React.FC<ResourceLinkCardProps> = ({ name, link, icon })
                 <Icon icon={"material-symbols:arrow-outward"}/>
             </CardBody>
         </Card>
+    );
+}
+
+export const ResourceLinkCardSkeleton: React.FC<{}> = ({}) => {
+    return (
+        <Skeleton className="rounded-sm">
+            <Card className="w-full min-w-full h-fit min-h-fit bg-default-100" radius="sm" shadow="none">
+                <CardBody className="flex flex-row justify-between">
+                    <div className="flex flex-row min-w-fit min-h-fit gap-3">
+                        <Icon icon={"material-symbols:heat-mode-outline"}/>
+                        <p>Name Here</p>
+                    </div>
+                    <Icon icon={"material-symbols:arrow-outward"}/>
+                </CardBody>
+            </Card>
+        </Skeleton>
     );
 }
 

@@ -1,8 +1,13 @@
 import { Button } from "@heroui/react";
-import AIFeatureCard from "../learning-paths/AIFeatureCard";
+import AIFeatureCard from "./AIFeatureCard";
 import { Icon } from "@iconify/react";
 
-const ReflectionCTACard: React.FC<{}> = () => {
+interface ReflectionCTACardProps {
+    challengeID: number;
+    displayUpdateFunction: Function;
+}
+
+const ReflectionCTACard: React.FC<ReflectionCTACardProps> = ({ /*challengeID, */displayUpdateFunction }) => {
     return (
         <AIFeatureCard>
             <div className="flex flex-col gap-4">
@@ -16,7 +21,7 @@ const ReflectionCTACard: React.FC<{}> = () => {
                 </p>
             </div>
             {/* TODO - fix button width + height using the button size??? */}
-            <Button className="flex flex-row gap-2 w-fit py-2 px-4" size="md" radius="sm" color="primary">
+            <Button className="flex flex-row gap-2 w-fit py-2 px-4" size="md" radius="sm" color="primary" onPress={() => displayUpdateFunction(2)}>
                 Compare Approaches
                 <Icon icon={"material-symbols:settings-outline"}/>
             </Button>

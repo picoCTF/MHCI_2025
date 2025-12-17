@@ -1,0 +1,4 @@
+{
+    "$schema": "../../schemas/ApproachComparison.schema.json",
+    "aiResponse": "This is a mocked AI response. Please replace this with a real AI response from the API."
+}

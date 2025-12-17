@@ -1,0 +1,5 @@
+{
+    "$schema": "../../schemas/Walkthrough.schema.json",
+    "summary": "This is a mock summary. Replace this with data from an API endpoint that uses the same data structure as the Walkthrough schema.",
+    "link": "#"
+}

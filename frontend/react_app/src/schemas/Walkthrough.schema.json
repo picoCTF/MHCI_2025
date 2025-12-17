@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Walkthrough",
+    "description": "A walkthrough for a particular challenge.",
+    "properties": {
+        "summary": {
+            "type": "string",
+            "title": "Summary",
+            "description": "A summary of how to solve a challenge."
+        },
+        "link": {
+            "type": "string",
+            "title": "Link",
+            "description": "A link to an official video or text version of the walkthrough."
+        }
+    }
+}
