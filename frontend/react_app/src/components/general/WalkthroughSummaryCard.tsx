@@ -16,9 +16,9 @@ const WalkthroughSummaryCard: React.FC<{ challengeID: number }> = ({ /*challenge
     if(walkthroughData && !walkthroughDataLoading) {
         return (
             <Card className="flex flex-col w-[706px] min-w-[706px] h-fit min-h-fit p-6 m-0 gap-6 border-small border-default-300" radius="md" shadow="none">
-                <div className="flex flex-row gap-3">
-                    <Icon icon="material-symbols:border-color-outline"/>
-                    <p>Official Walkthrough Summary</p>
+                <div className="flex flex-row gap-3 items-center">
+                    <Icon icon="material-symbols:border-color-outline" className="flex w-4 h-4 text-primary-500"/>
+                    <h4 className="font-semibold">Official Walkthrough Summary</h4>
                 </div>
                 <p>{walkthroughData.summary}</p>
                 <ResourceLinkCard name={"Video Walkthrough"} link={walkthroughData.link} icon={"material-symbols:smart-display-outline"}/>
@@ -34,7 +34,13 @@ const WalkthroughSummaryCard: React.FC<{ challengeID: number }> = ({ /*challenge
                         <p>Official Walkthrough Summary</p>
                     </Skeleton>
                 </div>
-                {Array.from({length: 3}, (_, index) => (<Skeleton key={index} className="flex w-full rounded-full"/>))}
+                <div className="flex flex-col w-full h-fit gap-2">
+                    {Array.from({length: 3}, (_, index) => (
+                        <Skeleton key={index} className="flex w-full rounded-full">
+                            <p>Content Here</p>
+                        </Skeleton>
+                    ))}
+                </div>
                 <ResourceLinkCardSkeleton/>
             </Card>
         );

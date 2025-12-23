@@ -50,8 +50,8 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ /*challengeID*/ }) => {
                         </div>
                         <div className="flex flex-row w-full gap-2 items-center">
                             <DifficultyChip difficultyLvl={(challengeData.difficulty as DifficultyProp).difficultyLvl}/>
-                            <Chip>{challengeData.category.name}</Chip>
-                            {challengeData.tags.map((tag) => (<Chip key={tag.id}>{tag.name}</Chip>))}
+                            <Chip variant="bordered">{challengeData.category.name}</Chip>
+                            {challengeData.tags.map((tag) => (<Chip key={tag.id} variant="bordered">{tag.name}</Chip>))}
                         </div>
                         {challengeData.description ? <p>{challengeData.description}</p> : null}
                         <div className="flex flex-row gap-4">
@@ -74,13 +74,34 @@ const ChallengeDiv: React.FC<ChallengeDivProps> = ({ /*challengeID*/ }) => {
         else {
             switch(postChallengeScreen) {
                 case 2: {
-                    return ( 
-                        <ReflectionEntryCard/>
+                    return (
+                        <div className="flex flex-col w-full items-center gap-10">
+                            <div className="flex flex-col gap-4 items-center">
+                                <Icon icon={"material-symbols:edit-square-outline"} width={80} height={80} className="flex text-primary-500"/>
+                                <h3>Jot down your approach</h3>
+                            </div>
+                            <div className="flex flex-col gap-5 items-center">
+                                <p>
+                                    You may want to include details like what your first step was and what clues or patterns you noticed. 
+                                    If you did face any challenges, explain how you figured it out.
+                                </p>
+                                <div className="flex flex-col w-full h-fit gap-3">
+                                    <ReflectionEntryCard displayUpdateFunction={setPostChallengeScreen}/>
+                                    <p className="text-default-500">Your voice won't be recorded or stored; it's used only for live transcription.</p>
+                                </div>
+                            </div>
+                        </div>
                     );
                 }
                 case 3: {
-                    return ( 
-                        <ApproachComparisonCard/>
+                    return (
+                        <div className="flex flex-col w-full items-center gap-10">
+                            <div className="flex flex-col gap-4 items-center">
+                                <Icon icon={"material-symbols:lightbulb-outline"} width={80} height={80} className="flex text-primary-500"/>
+                                <h3>Compare with the official walkthrough and refine your approach!</h3>
+                            </div>
+                            <ApproachComparisonCard/>
+                        </div>
                     );
                 }
                 default: {

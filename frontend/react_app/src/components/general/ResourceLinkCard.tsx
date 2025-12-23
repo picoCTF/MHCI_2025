@@ -28,7 +28,7 @@ const ResourceLinkCard: React.FC<ResourceLinkCardProps> = ({ name, link, icon })
 
 export const ResourceLinkCardSkeleton: React.FC<{}> = ({}) => {
     return (
-        <Skeleton className="rounded-sm">
+        <Skeleton className="rounded-md">
             <Card className="w-full min-w-full h-fit min-h-fit bg-default-100" radius="sm" shadow="none">
                 <CardBody className="flex flex-row justify-between">
                     <div className="flex flex-row min-w-fit min-h-fit gap-3">

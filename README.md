@@ -8,10 +8,12 @@ Please note that this repository contains future designs and ideas, so they will
 
 ## TODO
 
+### FRONTEND
+
 - Finish the learning path flow.
-    - Add in the next and prev buttons on the bottom left of the learning path detail page for navigating between modules.
-    - Add in a placeholder flag that allows us to test the challenge and learning path completion.
-    - Add in the challenge completion and learning path completion pages/modals.
+    - Add in the next and prev buttons on the bottom left of the learning path detail page for navigating between modules. (In Progress)
+    - ~~Add in a placeholder flag that allows us to test the challenge and learning path completion.~~
+    - Add in the ~~challenge completion~~ and learning path completion pages/modals. (In Progress)
 - Fix the BadgeSVG component—it does not show the symbols that should appear inside of the badge at the moment.
 - Fix the sorting in the EventCard modal—it does not show and hide events in the modal according to the selected tags.
 - Add the D3 library for graphs and update the Activity, Challenge Completion, and Skill Distribution widgets on the profile page.
@@ -22,6 +24,32 @@ Please note that this repository contains future designs and ideas, so they will
     - Refer to the Tailwind screens in the Figma design system file to see what to use for screen size breakpoints.
     - Allow light/dark mode in device settings to change whether the website uses light/dark mode colors, or have a toggle available under device settings.
 - Update any HTML to use semantic tags rather than simple divs.
-- Add aria-labels and other accessibility features to make the website more compatible with screen readers.
+- Add aria-labels and other accessibility features to make the website more compatible with screen readers and keyboard navigation.
 - Update the Storybook components to reflect any changes and new components.
 - Link each Storybook component to its page in the Figma design system file. Some components may not have Figma counterparts.
+
+### API INTERFACES
+
+#### Prioritization
+
+In terms of priority, interfaces relevant to the learning paths should take priority, with the homepage coming second and the profile being last.
+We should focus on the interfaces that enable new interactions first and then circle back for ones that provide more information to the user.
+
+#### Interfaces
+
+Each bullet point is the name of an interface, a description of the interface, and a list of the interface properties and their descriptions.
+
+- LearningPath - This is used in LearningPathCard, and its ID is passed to the learning-paths/Path page
+    - completed: boolean - Whether the user has completed the path
+    - description: string - A description of the learning path
+    - difficulty: DifficultyProp - The overall difficulty of the learning path
+    - id: number
+    - name: string - The name of the learning path
+    - numTasks: number - The number of tasks in the learning path
+    - numCompletedTasks: number - The number of mandatory tasks the user has completed
+    - numSolves: number - The number of people who have completed the path
+    - prereqs: string[] - The skills/technologies the user should know before starting the path
+    - skills: string[] - The skills/technologies you learn by completing the path
+- LPChallengeInfo - Used to get the number of solves and whether the user has completed a given challenge. This is specifically used in the LearningPathContentNavCard
+- LearningPathList - A count and array of LearningPaths. This is used on the learning-paths/Home page.
+- 

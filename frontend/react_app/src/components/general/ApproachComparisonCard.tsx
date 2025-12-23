@@ -12,8 +12,8 @@ const ApproachComparisonCard: React.FC<{}> = ({}) => {
     if(approachComparisonData && !approachComparisonDataLoading) {
         return (
             <AIFeatureCard>
-                <div className="flex flex-row gap-3">
-                    <Icon icon={"material-symbols:award_star-outline"} width={20} height={20} className={"text-primary"}/>
+                <div className="flex flex-row gap-3 items-center">
+                    <Icon icon={"fluent:sparkle-48-regular"} className="flex w-5 h-5 text-primary-500"/>
                     <h4>AI Approach Comparison</h4>
                 </div>
                 {/* API_NEEDED - Get the AI comparison between the user's strategy and the official walkthrough */}
@@ -24,7 +24,7 @@ const ApproachComparisonCard: React.FC<{}> = ({}) => {
     else {
         return (
             <AIFeatureCard>
-                <div className="flex flex-row gap-3">
+                <div className="flex flex-row gap-3 items-center">
                     <Skeleton className="flex w-5 h-5 rounded-full"/>
                     <Skeleton className="rounded-full">
                         <h4>AI Approach Comparison</h4>

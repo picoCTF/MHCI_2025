@@ -28,10 +28,10 @@ const FlagSubmissionCard: React.FC<FlagSubmissionCardProps> = ({ flag, setComple
 export const FlagSubmissionCardSkeleton: React.FC<{}> = ({}) => {
     return (
         <Card className="flex flex-row w-full items-center p-5 gap-4 bg-primary-100" shadow="none" radius="md">
-            <Skeleton className="rounded-md">
+            <Skeleton className=" flex w-full rounded-lg">
                 <Input label="Flag" placeholder="picoCTF{FLAG}" inputMode="text"/>
             </Skeleton>
-            <Skeleton className="rounded-md">
+            <Skeleton className="flex rounded-lg">
                 <Button color="primary">Submit flag</Button>
             </Skeleton>
         </Card>

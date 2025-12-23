@@ -11,9 +11,9 @@ const ReflectionCTACard: React.FC<ReflectionCTACardProps> = ({ /*challengeID, */
     return (
         <AIFeatureCard>
             <div className="flex flex-col gap-4">
-                <div className="flex flex-row gap-3 p-0 m-0">
-                    <Icon icon={"fluent:sparkle-48-regular"}/>
-                    <p>Want to get better? Reflect and compare your strategy!</p>
+                <div className="flex flex-row gap-3 p-0 m-0 items-center">
+                    <Icon icon={"fluent:sparkle-48-regular"} className="flex w-4 h-4 text-primary-500"/>
+                    <h4 className="font-semibold">Want to get better? Reflect and compare your strategy!</h4>
                 </div>
                 <p>
                     Record a quick explanation of how you solved it to get an AI-summarized comparison with the official one. 
