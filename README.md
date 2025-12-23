@@ -37,19 +37,13 @@ We should focus on the interfaces that enable new interactions first and then ci
 
 #### Interfaces
 
-Each bullet point is the name of an interface, a description of the interface, and a list of the interface properties and their descriptions.
+Each bullet point is the name of an interface and a description of where it is used
 
 - LearningPath - This is used in LearningPathCard, and its ID is passed to the learning-paths/Path page
-    - completed: boolean - Whether the user has completed the path
-    - description: string - A description of the learning path
-    - difficulty: DifficultyProp - The overall difficulty of the learning path
-    - id: number
-    - name: string - The name of the learning path
-    - numTasks: number - The number of tasks in the learning path
-    - numCompletedTasks: number - The number of mandatory tasks the user has completed
-    - numSolves: number - The number of people who have completed the path
-    - prereqs: string[] - The skills/technologies the user should know before starting the path
-    - skills: string[] - The skills/technologies you learn by completing the path
 - LPChallengeInfo - Used to get the number of solves and whether the user has completed a given challenge. This is specifically used in the LearningPathContentNavCard
 - LearningPathList - A count and array of LearningPaths. This is used on the learning-paths/Home page.
-- 
+- LPModule - A list of task IDs and the name of the module, its completion (from 0% to 100%), and other info about it. This is used in the LearningPathContentNavCard
+- LPModuleList - A count and array of LPModule IDs. This is used in the LearningPathContentNavCard
+- LPTask - A task's ID, name, and status, along with the type and id of its content (ex: if the content type is "C", then the contentID is for a challenge)
+- PagedLPModule - A count and list of LPModules. This is used in LearningPathContentNavCard
+- PagedLPTask - A count and list of LPTasks. This is used in LearningPathContentNavCard
