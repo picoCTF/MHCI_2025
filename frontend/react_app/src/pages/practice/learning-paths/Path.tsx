@@ -13,6 +13,7 @@ import type { LearningPath } from "../../../api_interfaces/learning_path/learnin
 import pathMockData from "../../../mock-data/learning_paths/MockLearningPathResponse.json";
 import moduleListMockData from "../../../mock-data/learning_paths/MockLearningPathModuleListResponse.json";
 import LearningPathContent from "../../../components/learning-paths/LearningPathContent";
+import LearningPathCard from "../../../components/general/LearningPathCard";
 
 const Path: React.FC<{}> = () => {
 
@@ -51,55 +52,75 @@ const Path: React.FC<{}> = () => {
 
     if(pathData && !pathDataLoading && moduleIDData && !moduleIDDataLoading) {
 
-        let contentList: number[] = [];
+        if(pathData.completed) {
+            return (
+                <div className="Page">
+                    <Header/>
+                    <div className="flex flex-col w-full px-32 py-10 gap-6 items-left">
+                        <Breadcrumbs>
+                            <BreadcrumbItem isDisabled>Practice</BreadcrumbItem>
+                            <BreadcrumbItem href="/practice/learning-paths">Learning Paths</BreadcrumbItem>
+                            <BreadcrumbItem href="/practice/learning-paths/page">Learning Path Page</BreadcrumbItem>
+                        </Breadcrumbs>
 
-        moduleIDData.results.forEach(moduleID => {
-            contentList.push(moduleID);
-        })
-
-        return (
-            <div className="Page">
-                <Header/>
-                <div className="flex flex-col w-full px-32 py-10 gap-6 items-left">
-                    <Breadcrumbs>
-                        <BreadcrumbItem isDisabled>Practice</BreadcrumbItem>
-                        <BreadcrumbItem href="/practice/learning-paths">Learning Paths</BreadcrumbItem>
-                        <BreadcrumbItem href="/practice/learning-paths/page">Learning Path Page</BreadcrumbItem>
-                    </Breadcrumbs>
-
-                    <div className="flex flex-row w-full h-fit gap-16">
-                        <main className="flex flex-col w-full gap-20">
-                            <LearningPathContent path={pathData} contentInfo={mainContent}/>
-                            <div className="flex flex-row w-full justify-between">
-                                <Button variant="flat" className="bg-primary-50 gap-2" isDisabled={prevButtonIsDisabled} onPress={() => (
-                                    updateContentIndex(contentIndex-1, contentList.length)
-                                    )}>
-                                    <Icon icon={"material-symbols:arrow-back"} className="text-primary-500"/>
-                                    <p className="text-primary-500">Prev</p>
-                                </Button>
-                                <Button variant="flat" className="bg-primary-50 gap-2" isDisabled={nextButtonIsDisabled} onPress={() => (
-                                    updateContentIndex(contentIndex+1, contentList.length)
-                                    )}>
-                                    <p className="text-primary-500">Next</p>
-                                    <Icon icon={"material-symbols:arrow-forward"} className="text-primary-500"/>
-                                </Button>
-                            </div>
+                        <main className="flex flex-row w-full h-fit gap-16">
+                            <LearningPathCard description={pathData.description} difficulty={pathData.difficulty} hasProgress={true} id={pathData.id} link={"#"} name={pathData.name} numCompletedChallenges={pathData.numCompletedTasks} numSolves={pathData.numSolves} numTotalChallenges={pathData.numTasks} variant={"expanded"}/>
                         </main>
-                        <LearningPathsContentNavCard 
-                            updateFunction={setMainContent}
-                            name={pathData.name} 
-                            progress={{
-                                color:"primary", 
-                                ariaLabel: pathData.numCompletedTasks + "% complete", 
-                                value: (pathData.numCompletedTasks), 
-                                endingText: pathData.numCompletedTasks + "%"
-                            }} 
-                            moduleIDs={moduleIDData as LPModuleList}
-                        />
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
+        else {
+            let contentList: number[] = [];
+
+            moduleIDData.results.forEach(moduleID => {
+                contentList.push(moduleID);
+            })
+
+            return (
+                <div className="Page">
+                    <Header/>
+                    <div className="flex flex-col w-full px-32 py-10 gap-6 items-left">
+                        <Breadcrumbs>
+                            <BreadcrumbItem isDisabled>Practice</BreadcrumbItem>
+                            <BreadcrumbItem href="/practice/learning-paths">Learning Paths</BreadcrumbItem>
+                            <BreadcrumbItem href="/practice/learning-paths/page">Learning Path Page</BreadcrumbItem>
+                        </Breadcrumbs>
+
+                        <div className="flex flex-row w-full h-fit gap-16">
+                            <main className="flex flex-col w-full gap-20">
+                                <LearningPathContent path={pathData} contentInfo={mainContent}/>
+                                <div className="flex flex-row w-full justify-between">
+                                    <Button variant="flat" className="bg-primary-50 gap-2" isDisabled={prevButtonIsDisabled} onPress={() => (
+                                        updateContentIndex(contentIndex-1, contentList.length)
+                                        )}>
+                                        <Icon icon={"material-symbols:arrow-back"} className="text-primary-500"/>
+                                        <p className="text-primary-500">Prev</p>
+                                    </Button>
+                                    <Button variant="flat" className="bg-primary-50 gap-2" isDisabled={nextButtonIsDisabled} onPress={() => (
+                                        updateContentIndex(contentIndex+1, contentList.length)
+                                        )}>
+                                        <p className="text-primary-500">Next</p>
+                                        <Icon icon={"material-symbols:arrow-forward"} className="text-primary-500"/>
+                                    </Button>
+                                </div>
+                            </main>
+                            <LearningPathsContentNavCard 
+                                updateFunction={setMainContent}
+                                name={pathData.name} 
+                                progress={{
+                                    color:"primary", 
+                                    ariaLabel: pathData.numCompletedTasks + "% complete", 
+                                    value: (pathData.numCompletedTasks), 
+                                    endingText: pathData.numCompletedTasks + "%"
+                                }} 
+                                moduleIDs={moduleIDData as LPModuleList}
+                            />
+                        </div>
+                    </div>
+                </div>
+            );
+        }
     }
     else {
         return (

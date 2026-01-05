@@ -9,7 +9,7 @@
     "id": 123,
     "moduleIDs": [123, 456, 789],
     "name": "Test Path",
-    "numChallenges": 6,
+    "numTasks": 6,
     "numCompletedTasks": 4,
     "numSolves": 1234,
     "prereqs": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6"],
