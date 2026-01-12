@@ -81,7 +81,7 @@ export const LearningPathsContentNavCardSkeleton: React.FC<{}> = () => {
                                                         <div className="flex flex-row w-full min-w-full h-[100%] pl-6 pr-3 py-2 gap-3 justify-start items-center radius-md"  
                                                             color="default">
                                                             <Skeleton className={"flex min-w-12 min-h-12 rounded-full"}/>
-                                                            <div className="flex flex-col w-full h-fit text-left">
+                                                            <div className="flex flex-col w-full h-fit text-left gap-2">
                                                                 <Skeleton className="flex w-fit rounded-full">
                                                                     <h3>Item Name</h3>
                                                                 </Skeleton>

@@ -27,7 +27,7 @@ export const HintAccordionSkeleton: React.FC<{}> = ({}) => {
                     <Skeleton className="rounded-full"><p>This is a hint. Here is some info.</p></Skeleton>
                 </AccordionItem>))}
             </Accordion>
-            <Skeleton className="flex w-fit gap-2">
+            <Skeleton className="flex w-fit h-fit gap-2 rounded-full">
                 <p className={"flex font-mono font-semibold text-default-500"}>Note:</p>
                 <p className={"flex font-mono text-default-500"}>There are no penalties for viewing hints.</p>
             </Skeleton>

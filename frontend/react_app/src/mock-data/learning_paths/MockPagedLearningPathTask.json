@@ -21,6 +21,20 @@
             "id": 2,
             "name": "Task 3",
             "status": "Incomplete"
+        },
+        {
+            "contentID": 3,
+            "contentType": "R",
+            "id": 3,
+            "name": "Task 4",
+            "status": "Incomplete"
+        },
+        {
+            "contentID": 4,
+            "contentType": "H",
+            "id": 4,
+            "name": "Task 5",
+            "status": "Incomplete"
         }
     ],
     "count": 2

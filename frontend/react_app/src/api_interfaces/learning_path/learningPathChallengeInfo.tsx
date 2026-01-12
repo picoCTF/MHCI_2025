@@ -1,6 +1,6 @@
 import type { DifficultyProp } from "../../components/general/DifficultyChip";
 
 export interface LPChallengeInfo {
-    difficulty: DifficultyProp["difficultyLvl"];
+    difficulty: DifficultyProp;
     users_solved: number;
 }

@@ -10,7 +10,7 @@ const ReflectionEntryCard: React.FC<{displayUpdateFunction: Function}> = ({ disp
     return (
         <Card className="flex w-full h-fit m-0 p-6 border-small border-default-300" shadow="none">
             <CardBody className="flex flex-col p-0 m-0 gap-6">
-                    <Textarea radius="sm" variant="underlined" placeholder="Type here or click the microphone icon to dictate." type="text"/>
+                <Textarea radius="sm" variant="underlined" placeholder="Type here or click the microphone icon to dictate." type="text"/>
                 <div className="flex flex-row justify-between">
                     {/* FIX_ME - Get access to the microphone from the user's device */}
                     <Button className="flex" size="sm" radius="full" color="default" variant={dictationToggle ? "solid" : "flat"} isIconOnly onPress={() => setDictationToggle(!dictationToggle)}>

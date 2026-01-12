@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "The number of learning paths in the array."
+        },
+        "results": {
+            "type": "array",
+            "title": "Results",
+            "description": "A list of learning paths.",
+            "items": {
+                "$ref": "./LearningPath.schema.json"
+            }
+        }
+    }
+}

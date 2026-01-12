@@ -52,7 +52,7 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                             {continuingPaths.map((path) => (<LearningPathCard key={path.id} description={path.description}
                             difficulty={path.difficulty} hasProgress={path.hasProgress} id={path.id}
                             link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
-                            numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"standard"}/>))}
+                            numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"standard"} completed={false}/>))}
                         </div>
                     </div>
 
@@ -60,9 +60,9 @@ const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
                     <div className="grid gap-x-6 gap-y-10 grid-cols-3">
                         {paths.map((path) => (
                             <LearningPathCard key={path.id} description={path.description}
-                                difficulty={path.difficulty} hasProgress={false} id={path.id}
-                                link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
-                                numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"standard"}/>
+                            difficulty={path.difficulty} hasProgress={false} id={path.id}
+                            link={path.link} name={path.name} numCompletedChallenges={path.numCompletedChallenges}
+                            numSolves={path.numSolves} numTotalChallenges={path.numTotalChallenges} variant={"standard"} completed={false}/>
                         ))}
                     </div>
                 </div>

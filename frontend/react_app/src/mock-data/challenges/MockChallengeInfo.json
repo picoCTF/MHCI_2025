@@ -1,0 +1,7 @@
+{
+    "$schema": "../../schemas/ChallengeInfo.schema.json",
+    "difficulty": {
+        "difficultyLvl": "Medium"
+    },
+    "users_solved": 1234
+}

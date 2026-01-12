@@ -1,6 +1,6 @@
 {
     "$schema": "../../schemas/LearningPath.schema.json",
-    "completed": false,
+    "completed": true,
     "completion": 75,
     "description": "This is a test description. I'm typing a long string to see how text wrapping looks: aaaaaa aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaa aa aa.",
     "difficulty": {

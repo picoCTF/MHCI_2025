@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 export interface LearningPathCardProps {
+    completed: boolean;
     description: string;
     difficulty: DifficultyProp;
     hasProgress: boolean;
@@ -42,7 +43,7 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
     );
 }
 
-const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, difficulty, hasProgress, id, name, numCompletedChallenges, numSolves, numTotalChallenges, variant }) => {
+const LearningPathCard: React.FC<LearningPathCardProps> = ({ completed, description, difficulty, hasProgress, id, name, numCompletedChallenges, numSolves, numTotalChallenges, variant }) => {
 
     if(id !== null) {
         
@@ -88,7 +89,7 @@ const LearningPathCard: React.FC<LearningPathCardProps> = ({ description, diffic
                     </div>
                     <div className="flex flex-row w-full h-fit items-center gap-6">
                         <ProgressWithTextDiv color="primary" ariaLabel={"Amount Completed"} value={numCompletedChallenges/numTotalChallenges*100} endingText={numCompletedChallenges + "/" + numTotalChallenges + " challenges"}/>
-                        <Button variant="solid" color="primary" size="md" radius="sm">Resume</Button>
+                        {hasProgress && !completed ? <Button variant="solid" color="primary" size="md" radius="sm">Resume</Button> : null}
                     </div>
                 </Card>
             );
