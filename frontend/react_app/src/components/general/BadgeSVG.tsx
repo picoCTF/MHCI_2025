@@ -171,9 +171,10 @@ const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, ico
             <svg xmlns="http://www.w3.org/2000/svg" width={svgWidth} height={svgHeight} viewBox={"0 0 " + svgWidth + " " + svgHeight} fill="none">
                 <g>
                     {/* Badge Symbol */}
-                    <text x={svgWidth / 2} y={svgHeight / 2} className="flex min-w-full min-h-full">
+                    {/* <Icon icon={icon} width={24} height={24} className={"text-default"}/> */}
+                    {/* <text x={svgWidth / 2} y={svgHeight / 2} className="flex min-w-full min-h-full">
                         <Icon icon={icon} width={24} height={24} className={"text-default"}/>
-                    </text>
+                    </text> */}
                 </g>
                 <g>
                     {/* Badge Background */}
@@ -183,6 +184,8 @@ const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, ico
                 <g>
                     {/* Badge Decoration */}
                 </g>
+                <circle cx={svgWidth/2} cy={svgWidth/2} r={30} fill={lineColor}/>
+                <Icon icon={icon} x={svgWidth/2-20} y={svgHeight/2-25} width={40} height={40} className={"text-default-50"}/>
                 {/* Etc */}
             </svg>
             <h3 style={{fontFamily: "Geist Mono", color: titleColor, textAlign: "center"}}>{title}</h3>
