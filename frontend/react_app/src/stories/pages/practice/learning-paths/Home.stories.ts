@@ -20,6 +20,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         paths: [{
+            completed: false,
             description: 'This is the description',
             difficulty: {
                 difficultyLvl: "Easy"
@@ -34,6 +35,7 @@ export const Default: Story = {
             variant: 'standard'
         },
         {
+            completed: false,
             description: 'This is the description',
             difficulty: {
                 difficultyLvl: "Medium"
@@ -48,6 +50,7 @@ export const Default: Story = {
             variant: 'standard'
         },
         {
+            completed: false,
             description: 'This is the description',
             difficulty: {
                 difficultyLvl: "Hard"

@@ -21,7 +21,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    link: "#",
-    summary: "This is the walkthrough summary"
+    challengeID: 0
   }
 };

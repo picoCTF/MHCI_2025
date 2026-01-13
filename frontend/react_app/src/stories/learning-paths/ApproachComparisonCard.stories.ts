@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // import { fn } from 'storybook/test';
 
-import ApproachComparisonCard from '../../components/learning-paths/ApproachComparisonCard.tsx';
+import ApproachComparisonCard from '../../components/general/ApproachComparisonCard.tsx';
 
 
 const meta = {
-  title: 'Learning Paths/ApproachComparisonCard',
+  title: 'General/ApproachComparisonCard',
   component: ApproachComparisonCard,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],

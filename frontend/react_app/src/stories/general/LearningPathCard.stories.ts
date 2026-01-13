@@ -27,6 +27,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Standard: Story = {
   args: {
+    completed: false,
     description: "Test",
     difficulty: {
       difficultyLvl: "Easy"
@@ -44,6 +45,7 @@ export const Standard: Story = {
 
 export const Compact: Story = {
   args: {
+    completed: false,
     description: "Test",
     difficulty: {
       difficultyLvl: "Easy"
@@ -61,6 +63,7 @@ export const Compact: Story = {
 
 export const Expanded: Story = {
   args: {
+    completed: false,
     description: "Test",
     difficulty: {
       difficultyLvl: "Easy"

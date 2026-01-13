@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import ReflectionEntryCard from '../../components/general/ReflectionEntryCard';
 
-// import { fn } from 'storybook/test';
+import { fn } from 'storybook/test';
 
 const meta = {
   title: 'Learning Paths/ReflectionEntryCard',
@@ -20,5 +20,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {}
+  args: {
+    displayUpdateFunction: fn
+  }
 };
