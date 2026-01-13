@@ -46,8 +46,8 @@ const ContinuationDiv: React.FC<ContinuationDivProps> = ( props ) => {
         name={props.lastItem.name}
         numCompletedChallenges={props.lastItem.numCompletedChallenges}
         numSolves={props.lastItem.numSolves}
-        numTotalChallenges={props.lastItem.numTotalChallenges} 
-        variant={"expanded"}/>
+        numTotalChallenges={props.lastItem.numTotalChallenges}
+        variant={"expanded"} completed={props.lastItem.completed}/>
     }
     else {
         item = <ChallengeCard author={props.lastItem.author} 

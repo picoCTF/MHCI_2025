@@ -3,6 +3,7 @@ import type { LearningPathsHomeProps } from "../pages/practice/learning-paths/Ho
 export const mockLearningPathsHome: LearningPathsHomeProps = {
     paths: [
         {
+            completed: false,
             description: "This is the learning path description",
             difficulty: {
                 difficultyLvl: "Easy"
@@ -17,6 +18,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             variant: "standard"
         },
         {
+            completed: false,
             description: "This is the learning path description",
             difficulty: {
                 difficultyLvl: "Easy"
@@ -31,6 +33,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             variant: "standard"
         },
         {
+            completed: false,
             description: "This is the learning path description",
             difficulty: {
                 difficultyLvl: "Easy"
@@ -45,6 +48,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             variant: "standard"
         },
         {
+            completed: false,
             description: "This is the learning path description",
             difficulty: {
                 difficultyLvl: "Easy"
@@ -59,6 +63,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             variant: "standard"
         },
         {
+            completed: false,
             description: "This is the learning path description",
             difficulty: {
                 difficultyLvl: "Easy"
@@ -73,6 +78,7 @@ export const mockLearningPathsHome: LearningPathsHomeProps = {
             variant: "standard"
         },
         {
+            completed: false,
             description: "This is the learning path description",
             difficulty: {
                 difficultyLvl: "Medium"

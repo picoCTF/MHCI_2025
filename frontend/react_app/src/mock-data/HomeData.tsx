@@ -9,6 +9,7 @@ export const mockHomepage: HomepageProps = {
     }],
     learningPathsList: [
         {
+            completed: false,
             description: "This is the description of the learning path.",
             difficulty: {
                 difficultyLvl: "Easy"
@@ -23,6 +24,7 @@ export const mockHomepage: HomepageProps = {
             variant: "standard"
         },
         {
+            completed: false,
             description: "This is the description of the learning path.",
             difficulty: {
                 difficultyLvl: "Easy"
@@ -37,6 +39,7 @@ export const mockHomepage: HomepageProps = {
             variant: "compact"
         },
         {
+            completed: false,
             description: "This is the description of the learning path.",
             difficulty: {
                 difficultyLvl: "Easy"
