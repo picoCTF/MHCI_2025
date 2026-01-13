@@ -22,15 +22,15 @@ const Profile: React.FC<ProfileProps> = ({ activity, challengeCompletion, skillD
     return (
         <div className="Page">
             <Header/>
-            <div className="flex flex-col w-full gap-10 py-16 px-32">
-                <div className="flex flex-row w-full gap-10">
-                    <div className="flex flex-col w-[50%] gap-10">
+            <div className="flex flex-col w-full gap-10 py-16 px-32 justify-center">
+                <div className="flex flex-row w-full gap-10 justify-center">
+                    <div className="flex flex-col w-[600px] gap-10">
                         {/* API_NEEDED - Get the info for the user's profile card: avatar, country, month joined, username, and year joined */}
                         <UserProfileCard avatar={userInfo.avatar} country={userInfo.country} monthJoined={userInfo.monthJoined} 
                             username={userInfo.username} yearJoined={userInfo.yearJoined}/>
                         <LearningPathsProfileCard/>
                     </div>
-                    <div className="flex flex-col w-fit gap-10">
+                    <div className="flex flex-col w-full gap-10">
                         {/* API_NEEDED - Get the number of challenges the user has solved and the length of their current streak */}
                         <ActivityProfileCard numSolves={activity.numSolves} streakLength={activity.streakLength}/>
                         {/* API_NEEDED - Get the number of easy, medium, and hard challenges the user has completed and 

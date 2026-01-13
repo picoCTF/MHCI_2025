@@ -78,20 +78,20 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
             <CardBody className="flex flex-col w-full min-w-fit h-full min-h-fit p-0 m-0 gap-8">
                 <h2>Skill Distribution</h2>
                 <div className="flex flex-col w-full h-full min-w-fit min-h-fit justify-center items-center overflow-auto">
-                    <div className="flex flex-col w-full h-fit">
+                    <div className="flex flex-col w-full h-fit justify-center">
                         <div className="flex flex-row w-full min-w-fit h-fit gap-1 justify-center items-center">
                             <p>Web Exploitation</p>
-                            <Icon icon={"material-symbols:language"} width={16} height={16} className={"text-primary"}/>
+                            <Icon icon={"material-symbols:language"} width={16} height={16} className={"text-primary-500"}/>
                         </div>
-                        <div className="flex flex-row w-fit h-fit min-h-fit max-w-full">
+                        <div className="flex flex-row w-full h-fit min-h-fit max-w-full justify-center">
                             <div style={{paddingTop: columnPadding, paddingBottom: columnPadding}} className={"flex flex-col w-fit min-w-fit justify-between items-end"}>
                                 <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>General Skills</p>
-                                    <Icon icon={"material-symbols:code"} width={16} height={16} className={"text-primary"}/>
+                                    <Icon icon={"material-symbols:code"} width={16} height={16} className={"text-primary-500"}/>
                                 </div>
                                 <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>Reverse Engineering</p>
-                                    <Icon icon={"material-symbols:build-outline"} width={16} height={16} className={"text-primary"}/>
+                                    <Icon icon={"material-symbols:build-outline"} width={16} height={16} className={"text-primary-500"}/>
                                 </div>
                             </div>
                             <svg className="flex inset-0" xmlns="http://www.w3.org/2000/svg" width={svgSize} height={svgSize} viewBox={"0 0 " + (svgSize+2) + " " + (svgSize+2)} fill="none">
@@ -110,17 +110,17 @@ const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> 
                             <div style={{paddingTop: columnPadding, paddingBottom: columnPadding}} className={"flex flex-col w-fit min-w-fit h-fill justify-between items-start"}>
                                 <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>Cryptography</p>
-                                    <Icon icon={"material-symbols:key-outline"} width={16} height={16} className={"text-primary"}/>
+                                    <Icon icon={"material-symbols:key-outline"} width={16} height={16} className={"text-primary-500"}/>
                                 </div>
                                 <div className="flex flex-row w-fit h-fit gap-1 items-center">
                                     <p>Binary Exploitation</p>
-                                    <Icon icon={"material-symbols:memory-outline"} width={16} height={16} className={"text-primary"}/>
+                                    <Icon icon={"material-symbols:memory-outline"} width={16} height={16} className={"text-primary-500"}/>
                                 </div>
                             </div>
                         </div>
                         <div className="flex flex-row w-full min-w-fit h-fit gap-1 justify-center items-center">
                             <p>Forensics</p>
-                            <Icon icon={"material-symbols:search"} width={16} height={16} className={"text-primary"}/>
+                            <Icon icon={"material-symbols:search"} width={16} height={16} className={"text-primary-500"}/>
                         </div>
                     </div>
                 </div>

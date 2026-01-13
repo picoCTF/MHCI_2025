@@ -52,7 +52,7 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
 
     return (
         <>
-            <Button variant="bordered" color="primary" onPress={onOpen}>See more...</Button>
+            <Button variant="bordered" className="border-primary-500 text-primary-500" onPress={onOpen}>See more...</Button>
             <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="5xl">
                 <ModalContent>
                     {() => (

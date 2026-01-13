@@ -44,11 +44,7 @@ function getBottomContent(hasProgress: boolean, numCompletedChallenges: number, 
 }
 
 const LearningPathCard: React.FC<LearningPathCardProps> = ({ completed, description, difficulty, hasProgress, id, name, numCompletedChallenges, numSolves, numTotalChallenges, variant }) => {
-
-    if(id !== null) {
-        
-    }
-
+    
     const navigate = useNavigate();
     
     //Return a variant if that was specified

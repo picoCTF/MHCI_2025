@@ -39,8 +39,8 @@ const UserStudiesCard: React.FC<{}> = () => {
                 </Accordion>
             </CardBody>
             <CardFooter className="flex gap-8 p-0 m-0">
-                <Button color="primary" size="lg" radius="sm">Provide Consent</Button>
-                <Link className="flex px-6 h-full" href="/practice/learning-paths">Full Terms</Link>
+                <Button className="bg-primary-500 text-default-50" size="lg" radius="sm">Provide Consent</Button>
+                <Link className="flex px-6 h-full text-primary-500" href="/practice/learning-paths">Full Terms</Link>
             </CardFooter>
         </Card>
     );

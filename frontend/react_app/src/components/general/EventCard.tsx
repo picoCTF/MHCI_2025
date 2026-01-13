@@ -28,9 +28,13 @@ const EventCard: React.FC<EventCard> = ({ event }) => {
                             </div>
                             <div className="flex flex-row gap-8">
                                 {event.has_opened && !event.has_ended ? 
-                                    <Chip color="success">Registration Open</Chip> : (null)
+                                    <Chip className="flex w-fit h-fit h-fit bg-success-50 text-success-700 p-1">Registration Open</Chip> : (null)
                                 }
-                                <Button size="md" radius="sm" color="primary">Resume</Button>
+                                {event.has_opened && !event.has_ended && event.registered ?
+                                    <Button size="md" radius="sm" className="bg-primary-500 text-default-50">Resume</Button> :
+                                    event.has_opened && !event.has_ended ?
+                                    <Button size="md" radius="sm" className="bg-primary-500 text-default-50">Register</Button> : (null)
+                                }
                             </div>
                         </div>
                     </CardHeader>
@@ -64,9 +68,9 @@ const EventCard: React.FC<EventCard> = ({ event }) => {
                             </div>
                             <div className="flex flex-row gap-8">
                                 {event.has_opened && !event.has_ended ? 
-                                    <Chip color="success" className="">Registration Open</Chip> : (null)
+                                    <Chip className="flex w-fit h-fit bg-success-50 text-success-700 p-1">Registration Open</Chip> : (null)
                                 }
-                                <Button size="md" radius="sm" color="primary">Resume</Button>
+                                <Button size="md" radius="sm" className="bg-primary-500 text-default-50">Resume</Button>
                             </div>
                         </div>
                     </CardHeader>
@@ -108,11 +112,11 @@ const EventCard: React.FC<EventCard> = ({ event }) => {
                                 <p className="text-default-500">Individual Score</p>
                             </div>
                             <div className="flex flex-col">
-                                <h3 className="font-semibold font-sans">NumChallenges/totalChallenges</h3>
+                                <h3 className="font-semibold font-sans">{info.completedChallenges + "/" + info.totalChallenges}</h3>
                                 <p className="text-default-500">Challenges</p>
                             </div>
                         </div>
-                        <Button size="md" radius="sm" color="primary">Resume</Button>
+                        <Button size="md" radius="sm" className="bg-primary-500 text-default-50">Resume</Button>
                     </CardHeader>
                     <CardBody className="flex flex-row flex-wrap w-full max-w-full h-fit p-0 m-0 gap-6">
                         {info.teamData.members.map( 

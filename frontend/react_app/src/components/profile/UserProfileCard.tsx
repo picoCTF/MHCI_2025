@@ -31,7 +31,7 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({ avatar, country, mont
                     </div>
                     <p>{"Joined " + monthJoined + ", " + yearJoined}</p>
                 </div>
-                <Button variant="flat" color="primary">
+                <Button variant="flat" className="bg-primary-50">
                     <p>Account settings</p>
                     <Icon icon={"material-symbols:settings-outline"} width={24} height={24} className="text-primary-500"/>
                 </Button>

@@ -14,7 +14,7 @@ Please note that this repository contains future designs and ideas, so they will
     - Add in the next and prev buttons on the bottom left of the learning path detail page for navigating between modules. (In Progress)
     - ~~Add in a placeholder flag that allows us to test the challenge and learning path completion.~~
     - ~~Add in the challenge completion and learning path completion pages/modals.~~
-- Fix the BadgeSVG component—it does not show the symbols that should appear inside of the badge at the moment.
+- Fix the BadgeSVG component—it does not show the symbols that should appear inside of the badge at the moment. (In Progress - need feedback on inner text convention)
 - Fix the sorting in the EventCard modal—it does not show and hide events in the modal according to the selected tags.
 - Add the D3 library for graphs and update the Activity, Challenge Completion, and Skill Distribution widgets on the profile page.
 - Add Skeletons across the website for each page and subcomponent. Refer to the BadgesProfileDiv on the profile page and the assignment and classroom areas in the homepage.
