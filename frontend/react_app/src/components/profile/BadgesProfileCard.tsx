@@ -68,7 +68,7 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
                                     If all 4 badges are selected, then you must deselect a badge before choosing a new one
                                 */}
                                 {badges.results.map((item) =>
-                                    <Skeleton isLoaded={badges.count >= 0}>
+                                    <Skeleton key={item.id} isLoaded={badges.count >= 0}>
                                         <Card className="flex flex-col w-fit h-fit p-2 border-small border-default-300" style={{backgroundColor: (item.isSelected ? "bg-content2-base" : "bg-content1-base")}} shadow="none" isHoverable isPressable onClick={()=>handleSelection}>
                                             <BadgeSVG key={item.id} id={item.id} shape={item.shape} bgColor={item.bgColor} strokeColor={item.strokeColor} textColor={item.textColor} icon={item.icon} isSelected={item.isSelected} isUnlocked={item.isUnlocked} title={item.title}/>
                                         </Card>

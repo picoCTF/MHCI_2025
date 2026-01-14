@@ -13,16 +13,22 @@ interface EventModalProps {
 const EventModal: React.FC<EventModalProps> = ({ list }) => {
 
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
+    //Create a list of all of the unused tags
     let [unusedTags, setUnusedTags] = useState<EventTag[]>([
         {name: "Challenge Release"}, 
         {name: "Competition"}, 
         {name: "Research"}
     ]);
+    //Create a list for the tags being used by the filter
     let [curTags, setCurTags] = useState<EventTag[]>([]);
-    let [renderedEvents, setRenderedEvents] = useState<Event[]>(list);
+    //The events currently being rendered
+    // let [renderedEvents, setRenderedEvents] = useState<Event[]>(list);
 
     function addTagFilter(tag: EventTag): void {
+        //Only add the tag if it is not already in the current tag list
         if(!curTags.includes(tag)) {
+            //Remove the tag from the unused tags list
             let unusedTemp = unusedTags;
 
             if(unusedTemp.includes(tag)) {
@@ -36,6 +42,8 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
             }
 
             setUnusedTags(unusedTemp);
+            
+            //Add the tag to the end of the current tags list
             setCurTags(c => [...c, tag]);
 
             console.log("curTags");
@@ -48,20 +56,20 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
                 console.log(tag.name);
             })
 
-            list.forEach((event) => {
-                if(event.tags.includes(tag) && !renderedEvents.includes(event)) {
-                    setRenderedEvents(renderedEvents => [...renderedEvents, event]);
-                }
-            })
+            // list.forEach((event) => {
+            //     if(event.tags.includes(tag) && !renderedEvents.includes(event)) {
+            //         setRenderedEvents(renderedEvents => [...renderedEvents, event]);
+            //     }
+            // })
         }
     }
 
     function removeTagFilter(tag: EventTag): void {
+        //Only remove the tag if it is in the current tag list
         if(curTags.includes(tag)) {
             let curTemp = curTags;
 
-            const curTagIndex = curTemp.indexOf(tag);
-            curTemp.splice(curTagIndex, 1);
+            curTemp.splice(curTemp.indexOf(tag), 1);
             if(!unusedTags.includes(tag)) {
                 let unusedTemp = unusedTags.concat([tag]);
                 setUnusedTags(unusedTemp);
@@ -78,18 +86,27 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
                 console.log(tag.name);
             })
 
-            let tempEvents: Event[] = list;
+            // let tempEvents: Event[] = list;
 
-            list.forEach(event => {
-                event.tags.forEach(eventTag => {
-                    if(eventTag !== tag && curTags.includes(eventTag) && !tempEvents.includes(event)) {
-                        tempEvents.push(event);
-                    }
-                })
-            })
+            // list.forEach(event => {
+            //     event.tags.forEach(eventTag => {
+            //         if(eventTag !== tag && curTags.includes(eventTag) && !tempEvents.includes(event)) {
+            //             tempEvents.push(event);
+            //         }
+            //     })
+            // })
 
-            setRenderedEvents(tempEvents);
+            // setRenderedEvents(tempEvents);
         }
+    }
+
+    function checkEventTags(event: Event): boolean {
+        event.tags.forEach(tag => {
+            if(curTags.includes(tag)) {
+                return true;
+            }
+        });
+        return false;
     }
 
     return (
@@ -123,9 +140,15 @@ const EventModal: React.FC<EventModalProps> = ({ list }) => {
                                     )}
                                 </div>
                                 <div className="flex flex-col w-full h-[450px] overflow-scroll gap-6">
-                                    {renderedEvents.map(curEvent =>
+                                    {/* {renderedEvents.map(curEvent =>
                                         <EventCard event={curEvent} key={curEvent.id}/>
-                                    )}
+                                    )} */}
+                                    {
+                                        list.map(event =>
+                                            curTags.length == 0 || checkEventTags(event) ? 
+                                            <EventCard event={event} key={event.id}/> : null
+                                        )
+                                    }
                                 </div>
                                 <div className="flex flex-col place-items-center">
                                     <h5 className="font-bold text-base text-default-500">More coming soon</h5>
