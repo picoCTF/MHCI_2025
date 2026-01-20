@@ -6,6 +6,22 @@ Melissa Gibney wrote the majority of the code for this project, while the rest o
 
 Please note that this repository contains future designs and ideas, so they will not be released immediately.
 
+## Notes
+
+As this is my last week working on this project, I wanted to add in notes that would be helpful for any future developers. Here are a list of things to keep in mind as you use this codebase. Best of luck with integrating the new UI!!! - Melissa
+
+### Comments
+
+- API_NEEDED - These comments indicate that there should be an API endpoint for data in that location. API endpoints are also needed wherever the useMockData function is called.
+
+- FIX_ME - These comments indicate a known issue and. Each issue is detailed above in the Frontend section.
+
+### Libraries
+
+- Nivo - The Nivo library should not be used and will be replaced with the D3 library. Nivo's charts are not as flexible as D3, so I am working on transitioning the Activity, Skill Distribution, and Challenge Completion charts to use D3.
+
+- Storybook - When upgrading Storybook, you should always use the Storybook upgrade command (npx storybook@latest upgrade) rather than allowing Dependabot to update Storybook. We ran into an issue with Dependabot breaking Storybook due to its automatic updates.
+
 ## TODO
 
 ### FRONTEND
@@ -14,9 +30,9 @@ Please note that this repository contains future designs and ideas, so they will
     - Add in the next and prev buttons on the bottom left of the learning path detail page for navigating between modules. (In Progress)
     - ~~Add in a placeholder flag that allows us to test the challenge and learning path completion.~~
     - ~~Add in the challenge completion and learning path completion pages/modals.~~
-- Fix the BadgeSVG component—it needs inner text and decoration options
-- Fix the sorting in the EventCard modal—it does not show and hide events in the modal according to the selected tags.
-- Add the D3 library for graphs and update the Activity, Challenge Completion, and Skill Distribution widgets on the profile page.
+- Fix the BadgeSVG component—it needs inner text and decoration options (In Progress)
+- Fix the sorting in the EventCard modal—it does not show and hide events in the modal according to the selected tags. (In Progress)
+- Add the D3 library for graphs and update the Activity, Challenge Completion, and Skill Distribution widgets on the profile page. (In Progress)
 - Add Skeletons across the website for each page and subcomponent. Refer to the BadgesProfileDiv on the profile page and the assignment and classroom areas in the homepage.
     - Add in mock JSON files for all components as needed (look for the API_NEEDED comments)
     - Add in a Skeleton version for each component that appears on a page.

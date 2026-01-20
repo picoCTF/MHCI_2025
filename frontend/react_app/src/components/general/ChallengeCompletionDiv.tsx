@@ -1,5 +1,6 @@
 // import { semanticColors } from "@heroui/react";
 import { ResponsiveBar } from "@nivo/bar";
+import * as d3 from "d3";
 
 export interface ChallengeCompletionDivProps {
     numEasyChallenges: number;

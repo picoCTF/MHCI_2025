@@ -1,7 +1,8 @@
 import { Card, CardBody, semanticColors, Tab, Tabs } from "@heroui/react";
 // import ActivitySummaryCard from "./activity/ActivitySummaryCard";
-import { ResponsiveCalendar, ResponsiveTimeRange, type CalendarData, } from "@nivo/calendar";
+// import { ResponsiveCalendar, ResponsiveTimeRange, type CalendarData, } from "@nivo/calendar";
 import { Icon } from "@iconify/react";
+import Heatmap from "../charts/Heatmap";
 
 export interface ActivityProfileCardProps {
     numSolves: number;
@@ -31,63 +32,6 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
         streakText = "Days";
     }
 
-    let yearData: CalendarData = {
-        from: "2025-01-02",
-        to: "2026-01-01",
-        data: [
-            {
-                day: "2025-10-13",
-                value: 5
-            },
-            {
-                day: "2025-11-13",
-                value: 3
-            },
-            {
-                day: "2025-08-01",
-                value: 10
-            }
-        ]
-    }
-
-    let monthData: CalendarData = {
-        from: "2025-10-01",
-        to: "2025-10-30",
-        data: [
-            {
-                day: "2025-10-13",
-                value: 5
-            },
-            {
-                day: "2025-11-13",
-                value: 3
-            },
-            {
-                day: "2025-08-01",
-                value: 10
-            }
-        ]
-    }
-
-    let weekData: CalendarData = {
-        from: "2025-10-05",
-        to: "2025-10-12",
-        data: [
-            {
-                day: "2025-10-13",
-                value: 5
-            },
-            {
-                day: "2025-11-13",
-                value: 3
-            },
-            {
-                day: "2025-08-01",
-                value: 10
-            }
-        ]
-    }
-
     return (
         <Card className="flex w-full max-w-full h-fit bg-content1-base border-small border-default-300 p-10" radius="md" shadow="none">
             <CardBody className="flex flex-col w-full h-fit p-0 m-0">
@@ -110,110 +54,103 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
                 <div className="flex flex-col w-full h-fit items-center text-center">
                     <Tabs>
                         <Tab key={"week"} title="Week">
-                            <div className="flex flex-col gap-4 w-full h-fit">
-                                <div className="flex flex-col place-center" style={{width: "400px", height: "150px"}}>
-                                    <ResponsiveTimeRange 
-                                        from={weekData.from} 
-                                        to={weekData.to} 
-                                        data={weekData.data}
-                                        emptyColor={emptyElementColor}
-                                        colors={[firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
-                                        margin={{ top: 25, bottom: 20 }}
-                                        dayBorderWidth={2}
-                                        dayBorderColor={borderColor}
-                                        weekdayTicks={[0, 1, 2, 3, 4, 5, 6]}
-                                        weekdayLegendOffset={-40}
-                                        weekdays={["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]}
-                                        dayRadius={5}
-                                        daySpacing={8}
-                                        direction="vertical"
-                                        legends={[
+                            <div className="flex flex-col gap-4 w-full h-fit place-center">
+                                <Heatmap 
+                                    cellStrokeColor={borderColor}
+                                    cellBGColors={[emptyElementColor, firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
+                                    data={
+                                        [
                                             {
-                                                anchor: 'bottom',
-                                                direction: 'row',
-                                                itemCount: 4,
-                                                itemWidth: 42,
-                                                itemHeight: 36,
-                                                itemsSpacing: 10,
-                                                itemDirection: 'right-to-left',
-                                                translateY: (-30),
-                                                symbolSize: 20,
-                                                symbolShape: "square" //Could try making this a custom shape with rounded edges
+                                                label1: "a",
+                                                label2: "a",
+                                                value: 0
+                                            }, 
+                                            {
+                                                label1: "b",
+                                                label2: "b",
+                                                value: 1
+                                            }, 
+                                            {
+                                                label1: "a",
+                                                label2: "b",
+                                                value: 2
+                                            },
+                                            {
+                                                label1: "b",
+                                                label2: "a",
+                                                value: 3
+                                            },
+                                            {
+                                                label1: "a",
+                                                label2: "c",
+                                                value: 4
+                                            },
+                                            {
+                                                label1: "b",
+                                                label2: "c",
+                                                value: 5
+                                            },
+                                            {
+                                                label1: "c",
+                                                label2: "b",
+                                                value: 6
                                             }
-                                        ]}
-                                    />
-                                </div>
+                                        ]
+                                    } 
+                                    tooltipContent={<p>Testing the Tooltip</p>} 
+                                    inputWidth={400} 
+                                    inputHeight={150}/>
                                 {/* <ActivitySummaryCard summary={"AI summary of the week"}/> */}
-                            </div>
-                        </Tab>
-                        <Tab key={"month"} title="Month">
-                            <div className="flex flex-col gap-4 w-full h-fit">
-                                <div className="flex flex-col place-center" style={{width: "400px", height: "370px"}}>
-                                    <ResponsiveTimeRange 
-                                        from={monthData.from} 
-                                        to={monthData.to} 
-                                        data={monthData.data}
-                                        emptyColor={emptyElementColor}
-                                        colors={[firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
-                                        margin={{ top: 25, bottom: 20 }}
-                                        dayBorderWidth={2}
-                                        dayBorderColor={borderColor}
-                                        weekdayTicks={[0, 1, 2, 3, 4, 5, 6]}
-                                        weekdayLegendOffset={10}
-                                        weekdays={["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]}
-                                        dayRadius={5}
-                                        daySpacing={8}
-                                        direction="vertical"
-                                        legends={[
-                                            {
-                                                anchor: 'bottom',
-                                                direction: 'row',
-                                                itemCount: 4,
-                                                itemWidth: 42,
-                                                itemHeight: 36,
-                                                itemsSpacing: 14,
-                                                itemDirection: 'right-to-left',
-                                                translateY: (-20),
-                                                symbolSize: 20,
-                                                symbolShape: "square" //Could try making this a custom shape with rounded edges
-                                            }
-                                        ]}
-                                    />
-                                </div>
-                                {/* <ActivitySummaryCard summary={"AI summary of the month"}/> */}
                             </div>
                         </Tab>
                         {/* FIX_ME - Need to make the calendar adjust to fill the width and height of ots parent */}
                         <Tab className="flex flex-col w-full h-fit" key={"lifetime"} title="Lifetime">
-                            <div className="flex flex-col gap-4 w-full h-fit">
-                                <div className="flex flex-col" style={{width: "700px", height: "150px"}}>
-                                    <ResponsiveCalendar 
-                                        from={yearData.from} 
-                                        to={yearData.to} 
-                                        data={yearData.data}
-                                        emptyColor={emptyElementColor}
-                                        colors={[firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]}
-                                        margin={{ left: 20 }}
-                                        yearSpacing={40}
-                                        monthBorderColor={borderColor}
-                                        dayBorderWidth={2}
-                                        dayBorderColor={borderColor}
-                                        legends={[
+                            <div className="flex flex-col gap-4 w-full h-fit place-items-center">
+                                <Heatmap
+                                    cellStrokeColor={borderColor}
+                                    cellBGColors={[emptyElementColor, firstElementColor, secondElementColor, thirdElementColor, fourthElementColor]} 
+                                    data={
+                                        [
                                             {
-                                                anchor: 'bottom',
-                                                direction: 'row',
-                                                itemCount: 4,
-                                                itemWidth: 42,
-                                                itemHeight: 36,
-                                                itemsSpacing: 14,
-                                                itemDirection: 'right-to-left',
-                                                translateY: 10,
-                                                symbolSize: 20,
-                                                symbolShape: "square" //Could try making this a custom shape with rounded edges
+                                                label1: "a",
+                                                label2: "a",
+                                                value: 0
+                                            }, 
+                                            {
+                                                label1: "b",
+                                                label2: "b",
+                                                value: 1
+                                            }, 
+                                            {
+                                                label1: "a",
+                                                label2: "b",
+                                                value: 2
+                                            },
+                                            {
+                                                label1: "b",
+                                                label2: "a",
+                                                value: 3
+                                            },
+                                            {
+                                                label1: "a",
+                                                label2: "c",
+                                                value: 4
+                                            },
+                                            {
+                                                label1: "b",
+                                                label2: "c",
+                                                value: 5
+                                            },
+                                            {
+                                                label1: "c",
+                                                label2: "b",
+                                                value: 6
                                             }
-                                        ]}
-                                    />
-                                </div>
+                                        ]
+                                    } 
+                                    tooltipContent={<p>Testing the Tooltip</p>} 
+                                    inputWidth={700} 
+                                    inputHeight={150}/>
                                 {/* <ActivitySummaryCard summary={"AI summary of lifetime"}/> */}
                             </div>
                         </Tab>
