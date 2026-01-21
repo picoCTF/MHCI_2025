@@ -9,6 +9,7 @@ interface ResourceLinkCardProps {
     icon?: string;
 }
 
+// This links to some other resource within the website when the user clicks it
 const ResourceLinkCard: React.FC<ResourceLinkCardProps> = ({ name, link, icon }) => {
 
     const navigate = useNavigate();

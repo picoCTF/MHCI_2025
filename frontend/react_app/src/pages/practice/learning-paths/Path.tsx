@@ -53,6 +53,7 @@ const Path: React.FC<{}> = () => {
         }
     }
 
+    //FIX_ME - Potentially combine the two interfaces/API calls below
     //API_NEEDED - Get the data for the learning path
     //API_NEEDED - Get the list of module IDs based on the learning path's ID
     const { data: pathData, isLoading: pathDataLoading } = useMockData<LearningPath>(pathMockData);

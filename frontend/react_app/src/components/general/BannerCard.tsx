@@ -22,7 +22,7 @@ const BannerCard: React.FC<BannerCardProps> = ({ buttonText, title, eventTime, i
                         <p>{eventTime}</p>
                     </div>
                 </div>
-                {/* FIX_BUTTON */}
+                {/* FIX_ME - The button should use bg-primary-500 and link to the relevant page */}
                 <Button className="flex" color="primary" variant="solid">{buttonText}</Button>
             </CardBody>
         </Card>

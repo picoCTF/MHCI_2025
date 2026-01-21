@@ -9,6 +9,8 @@ export interface HorizontalScrollDivProps {
     title: string;
 }
 
+// FIX_ME - Refer to the Figma file for the homepage to see how we should use the arrows
+// Nest the relevant components in this div
 const HorizontalScrollDiv: React.FC<HorizontalScrollDivProps> = ({ children, isFocused, title }) => {
     const [currentPage, setCurrentPage] = React.useState(0);
 

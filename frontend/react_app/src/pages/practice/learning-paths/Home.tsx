@@ -10,9 +10,6 @@ export interface LearningPathsHomeProps {
 
 const Home: React.FC<LearningPathsHomeProps> = ({ paths }) => {
 
-    //API_NEEDED - Get the highlighted learning paths
-    //API_NEEDED - Get the available learning paths and their information
-
     let continuingPaths: LearningPathCardProps[] = [];
 
     // API_NEEDED - Paths should be ordered from most recently looked at to least-recently-looked-at

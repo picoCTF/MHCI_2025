@@ -2,19 +2,6 @@ import { commonColors, Skeleton } from "@heroui/react";
 import type { Badge } from "../../api_interfaces/badge/badge"
 import { Icon } from "@iconify/react";
 
-// export interface BadgeSVGProps {
-//     shape: BadgeShapes;
-//     bgColor: BadgeColors;
-//     strokeColor: BadgeColors;
-//     textColor: BadgeColors;
-//     icon: IconProps["name"];
-//     id: number;
-//     title: string;
-
-//     width?: number;
-//     height?: number;
-// }
-
 //The Badge SVGs that can be obtained by the user
 const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, icon, title, width, height}) => {
 
@@ -165,17 +152,14 @@ const BadgeSVG: React.FC<Badge> = ({ shape, bgColor, strokeColor, textColor, ico
         }
     }
 
-    //Layer the different parts of the badge image as an SVG
+    // Layer the different parts of the badge image as an SVG
+
+    // FIX_ME - Add the text and decoration elements to the SVG
+    // If the text on the badge includes a number, then the number should be on the left side and be double the size of the rest of the text
+    // Refer to the Figma file to see examples of the text and decoration positioning
     return (
         <div className="justify-center p-2">
             <svg xmlns="http://www.w3.org/2000/svg" width={svgWidth} height={svgHeight} viewBox={"0 0 " + svgWidth + " " + svgHeight} fill="none">
-                <g>
-                    {/* Badge Symbol */}
-                    {/* <Icon icon={icon} width={24} height={24} className={"text-default"}/> */}
-                    {/* <text x={svgWidth / 2} y={svgHeight / 2} className="flex min-w-full min-h-full">
-                        <Icon icon={icon} width={24} height={24} className={"text-default"}/>
-                    </text> */}
-                </g>
                 <g>
                     {/* Badge Background */}
                     <path d={backgroundFilledPathShape} fill={fillColor}/>

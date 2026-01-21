@@ -10,6 +10,7 @@ interface EventCard {
     event: Event;
 }
 
+// FIX_ME - The EventCard may need to be adjusted to work with the tagging/sorting system in the Event modal in the profile page
 const EventCard: React.FC<EventCard> = ({ event }) => {
 
     // Create a middleware interface that gets the data from all three of the needed interfaces 

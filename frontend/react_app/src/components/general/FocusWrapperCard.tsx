@@ -6,14 +6,14 @@ export interface FocusWrapperCardProps {
     orientation: "row" | "col";
 }
 
-//If this is in focus, then the children will be highlighted by a blue, padded div
+// If this is in focus, then the children will be highlighted by a blue, padded div
 const FocusWrapperCard: React.FC<FocusWrapperCardProps> = ({ children, isFocused, orientation }) => {
 
     let padding = "0";
     let corners = "";
     let bgColor = "bg-transparent";
 
-    //Only have padding and blue background if the children are in focus
+    // Only have padding and blue background if the children are in focus
     if(isFocused) {
         padding = "8";
         corners = "rounded-large "

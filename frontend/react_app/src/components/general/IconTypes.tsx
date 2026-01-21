@@ -1,3 +1,4 @@
+// This is occaisionally used to check that an Icon's icon property has a relevant name
 export type IconName = "fa7-brands:discord" | "material-symbols:arrow-back-ios" | "material-symbols:arrow-forward" | "material-symbols:arrow-forward-ios" | 
     "material-symbols:article-outline" | "material-symbols:award-star-outline" | "material-symbols:book-outline" | "material-symbols:border-color-outline" | "material-symbols:build-outline" | 
     "material-symbols:calendar-outline" | "material-symbols:cancel-outline" | "material-symbols:check" | "material-symbols:check-outline" | "material-symbols:check-circle-outline" | 

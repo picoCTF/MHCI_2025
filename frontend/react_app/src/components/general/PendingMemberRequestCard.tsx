@@ -6,6 +6,7 @@ export interface PendingMemberRequestCardProps {
     username: string;
 }
 
+// For now, this is only used on the hompage. Maybe move it to the homepage folder?
 const PendingMemberRequestCard: React.FC<PendingMemberRequestCardProps> = ({ username }) => {
     return (
         <Card className="flex flex-row w-full h-fit justify-between items-center p-4 bg-content2-base" radius="sm" shadow="none">

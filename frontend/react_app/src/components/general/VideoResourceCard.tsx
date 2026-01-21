@@ -6,6 +6,7 @@ interface VideoResourceCardProps extends React.PropsWithChildren {
     youtubeID: string;
 }
 
+// This links to a YouTube video about a subject
 const VideoResourceCard: React.FC<VideoResourceCardProps> = ({ description, youtubeID }) => {
     return (
         <Card className="w-[706px] min-w-[706px] h-fit min-h-fit border-small m-0 p-6" radius="md" shadow="none">

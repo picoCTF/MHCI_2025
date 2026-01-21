@@ -23,6 +23,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, diff
     
     return (
         <Card className="w-[400px] h-[288px]">
+            {/* FIX_ME - Either update this componenet to use ChallengeDiv or remove it */}
             <CardHeader className="flex flex-col w-full h-fit justify-left">
                 <h2>{name}</h2>
                 <div className="flex flex-row">
@@ -47,7 +48,6 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ author, description, diff
                 <HintAccordion list={hints}/>
             </CardBody>
             <CardFooter>
-                {/* FIX_ME - Either update this componenet to use ChallengeDiv or remove it */}
                 {/* <FlagSubmissionCard flag={flag} setCompletion={false}/> */}
             </CardFooter>
         </Card>

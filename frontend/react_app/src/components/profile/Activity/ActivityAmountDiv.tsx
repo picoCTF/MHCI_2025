@@ -5,6 +5,7 @@ interface ActivityAmountDivProps {
     highestRecordedDailyActivity?: number;
 }
 
+// FIX_ME - This component can probably be deleted as the activity heatmaps should be handled using the heatmap component.
 const ActivityAmountDiv: React.FC<ActivityAmountDivProps> = ({ todaysActivity, highestRecordedDailyActivity, size }) => {
 
     let sizePx = "10px";

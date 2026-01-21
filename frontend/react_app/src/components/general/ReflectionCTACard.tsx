@@ -15,6 +15,7 @@ const ReflectionCTACard: React.FC<ReflectionCTACardProps> = ({ /*challengeID, */
     let [reflectionState, setReflectionState] = useState<1 | 2 | 3>(1);
     const [dictationToggle, setDictationToggle] = useState(false);
 
+    // API_NEEDED - Get the data fron the API using the challengeID
     const { data: approachComparisonData, isLoading: approachComparisonDataLoading/*, refetch: refetchChallenge*/ } = useMockData<{aiResponse: string}>(approachComparisonMockData);
 
     switch(reflectionState) {

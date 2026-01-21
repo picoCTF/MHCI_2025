@@ -5,9 +5,10 @@ export interface TeamMemberCardProps {
     username: string;
 }
 
+// This is used within the EventCards to show the user's team members if they are registered
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ isLeader, username }) => {
 
-    //API_NEEDED get the ParticipantTeamInfo response using the participant's ID
+    //API_NEEDED - Get the ParticipantTeamInfo response using the participant's ID
     let roleName = "Member";
     if(isLeader) {
         roleName = "Leader";

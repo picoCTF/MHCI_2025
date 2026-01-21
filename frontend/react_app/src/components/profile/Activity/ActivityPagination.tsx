@@ -2,7 +2,7 @@ import { Pagination, PaginationItem } from "@heroui/react";
 
 interface ActivityPaginationProps {}
 
-// FIX_ME
+// FIX_ME - Use this to swap between a period of time (weeks or years)
 const ActivityPagination: React.FC<ActivityPaginationProps> = ({ }) => {
 
     return (

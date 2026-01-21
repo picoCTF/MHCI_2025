@@ -1,5 +1,5 @@
 import { Accordion, AccordionItem, Skeleton } from "@heroui/react";
-// import { MaterialSymbol } from "react-material-symbols";
+
 export interface HintAccordionProps {
     list: string[];
 }

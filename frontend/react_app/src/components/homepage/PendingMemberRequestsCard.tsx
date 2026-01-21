@@ -5,6 +5,7 @@ interface PendingMemberRequestsCardProps {
     pendingRequests: PendingMemberRequestCardProps[];
 }
 
+// This lists all of the pending member requests for a given classroom
 const PendingMemberRequestsCard: React.FC<PendingMemberRequestsCardProps> = ({ pendingRequests }) => {
     return (
         <Card className="w-full h-fit border-small border-default-300 p-6 gap-3" radius="md" shadow="none">

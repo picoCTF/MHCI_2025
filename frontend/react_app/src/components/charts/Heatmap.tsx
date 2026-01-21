@@ -1,8 +1,6 @@
 import * as d3 from "d3";
-// import { useEffect, useRef } from "react";
-// import type { HeatmapResponse } from "../../../api_interfaces/heatmap/heatmapResponse";
 import { ChartAxis, type HeatmapProps } from "./ChartUtils";
-import { axisBottom, axisLeft, scaleBand, /*scaleLinear, */type Axis, type AxisDomain, type ScaleBand, /*type ScaleLinear, */type ScaleSequential } from "d3";
+import { axisBottom, axisLeft, scaleBand, type Axis, type AxisDomain, type ScaleBand, type ScaleSequential } from "d3";
 import { Tooltip } from "@heroui/react";
 
 const Heatmap: React.FC<HeatmapProps> = ({ cellStrokeColor, cellBGColors, data, inputWidth, inputHeight, title, tooltipContent, subtitle }) => {
@@ -16,10 +14,12 @@ const Heatmap: React.FC<HeatmapProps> = ({ cellStrokeColor, cellBGColors, data, 
         .interpolator(d3.interpolateRgb(cellBGColors[0], cellBGColors[cellBGColors.length-1]))
         .domain([0, 5])
 
+    // Build x-axis scale
     const scaleX = scaleBand()
         .domain(data.map(({ label1 }) => label1))
         .range([0, width]);
     
+    // Build y-axis scale
     const scaleY = scaleBand()
         .domain(data.map(({ label2 }) => label2))
         .range([height, 0])
@@ -54,7 +54,7 @@ interface DataSquareProps {
     color: ScaleSequential<string, never>;
 }
 
-//FIX_ME - Make these squares rather than a bar chart
+// FIX_ME - Make these resizable and space them evenly on the chart
 const DataCell: React.FC<DataSquareProps> = ({borderColor, data, scaleX, scaleY, color}) => {
     return (
         <>

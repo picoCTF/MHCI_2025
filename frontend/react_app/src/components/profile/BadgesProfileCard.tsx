@@ -33,7 +33,7 @@ const BadgeModal: React.FC<BadgeModalProps> = ({badges, selectedBadges, numUnloc
         badge.isSelected = !badge.isSelected;
 
         if(badge.isSelected && selectedBadges.results.length >= 4) {
-            //Pop up a toast that says why it can't select the badge
+            // FIX_ME - Pop up a toast that says why it can't select the badge
             addToast({
                 title: "Unable to Select Badge",
                 description: "You cannot select " + badge.title + " because 4 other badges are selected.",

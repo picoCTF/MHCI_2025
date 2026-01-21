@@ -12,6 +12,7 @@ export interface QuickLinkCardProps {
     link: string;
 }
 
+// Use this to link to a particular page on the website or an external resource
 const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ name, description, icon, link }) => {
 
     const navigate = useNavigate();

@@ -7,7 +7,7 @@ export interface QuickLinksListDivProps {
     list: QuickLinkCardProps[];
 }
 
-// This needs a pagination components when it is being used on desktop
+// FIX_ME - This needs a pagination component when it is being used on desktop
 const QuickLinksListDiv: React.FC<QuickLinksListDivProps> = ({ isFocused, list }) => {
     return (
         <div className="flex flex-col w-full h-fit bg-transparent gap-4 items-start">

@@ -7,10 +7,12 @@ const HorizontalBarChart: React.FC<BarChartProps> = ({data, title, subtitle, inp
     const width = inputWidth - margin.left - margin.right;
     const height = inputHeight - margin.top - margin.bottom;
 
+    // Build x-axis scale
     const scaleX = scaleLinear()
         .domain([0, Math.max(...data.map(({ value }) => value))])
         .range([0, width]);
 
+    // Build y-axis scale
     const scaleY = scaleBand()
         .domain(data.map(({ label }) => label))
         .range([height, 0])
@@ -40,6 +42,7 @@ interface BarsProps {
   scaleY: ScaleBand<string>;
 }
 
+// FIX_ME - Have a way to set the colors of the bars
 const Bars: React.FC<BarsProps> = ({ data, height, scaleX, scaleY }) => {
     return (
         <>

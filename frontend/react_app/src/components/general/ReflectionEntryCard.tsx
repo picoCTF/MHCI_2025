@@ -2,7 +2,6 @@ import { Card, CardBody, Button, /*Skeleton, */Textarea } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
-// TODO - Update this after Hedy moves the component into the design systen
 const ReflectionEntryCard: React.FC<{displayUpdateFunction: Function}> = ({ displayUpdateFunction }) => {
 
     const [dictationToggle, setDictationToggle] = useState(false);

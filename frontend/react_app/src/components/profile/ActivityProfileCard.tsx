@@ -32,6 +32,7 @@ const ActivityProfileCard: React.FC<ActivityProfileCardProps> = ({numSolves, str
         streakText = "Days";
     }
 
+    // FIX_ME - Add in the pagination to change which time period the heatmap is referring to
     return (
         <Card className="flex w-full max-w-full h-fit bg-content1-base border-small border-default-300 p-10" radius="md" shadow="none">
             <CardBody className="flex flex-col w-full h-fit p-0 m-0">

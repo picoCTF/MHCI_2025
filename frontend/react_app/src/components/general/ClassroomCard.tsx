@@ -13,6 +13,7 @@ export interface ClassroomCardProps {
 }
 
 // This card shows a classroom along with its assignments, members, and member requests
+// FIX_ME - Pass in the classroom ID and useMockData or make a request to the API to get the data needed
 const ClassroomCard: React.FC<ClassroomCardProps> = ({ name, numMembers, recentAssignments, pendingMemberUsernames }) => {
     return (
         <Card className="flex w-full h-fit min-h-fit border-small border-default-300 p-6 bg-content1-base gap-4" radius="md" shadow="none">

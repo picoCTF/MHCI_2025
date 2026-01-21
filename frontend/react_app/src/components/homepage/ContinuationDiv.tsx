@@ -4,7 +4,6 @@ import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import FocusWrapperCard from "../general/FocusWrapperCard";
 import type { ChallengeCardProps } from "../general/ChallengeCard";
 import ChallengeCard from "../general/ChallengeCard";
-// import { useMockData } from "../../mock-data/utils/utils";
 
 interface PathProps {
     type: "path";
@@ -20,19 +19,8 @@ interface ChallengeProps {
 
 type ContinuationDivProps = PathProps | ChallengeProps;
 
-// This needs a pagination component when it is being used on desktop
+// FIX_ME - This needs a pagination component in place of the scrolling when it is being used on desktop
 const ContinuationDiv: React.FC<ContinuationDivProps> = ( props ) => {
-
-    // const { data: continuationData, isLoading: continuationDataLoading } = useMockData<ContinuationDivProps>(continuationMockData);
-
-    // if(continuationData && !continuationDataLoading) {
-    //     if() {
-
-    //     }
-    // }
-    // else {
-
-    // }
 
     let item = <></>;
 

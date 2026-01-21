@@ -16,18 +16,18 @@ export interface ChallengeDivProps {
 
 const ChallengeDiv: React.FC<ChallengeDivProps> = ({ /*challengeID*/ }) => {
     
-    //API_NEEDED - get whether the challenge has been bookmarked or not and use that to set the useState
+    // API_NEEDED - get whether the challenge has been bookmarked or not and use that to set the useState
     let [isBookmarked, setIsBookmarked] = useState(false);
 
     function updateBookmark(): void {
         setIsBookmarked(!isBookmarked);
-        //API_NEEDED - add this challenge to the user's bookmarked challenges
+        // API_NEEDED - add this challenge to the user's bookmarked challenges
     }
 
-    //API_NEEDED - get whether the challenge has been completed or not and use that to set the useState
+    // API_NEEDED - get whether the challenge has been completed or not and use that to set the useState
     let [isComplete, setIsComplete] = useState(false);
 
-    //API_NEEDED - get refreshData function from API, pass the challengeID to the API to get the challenge data
+    // API_NEEDED - get refreshData function from API, pass the challengeID to the API to get the challenge data
     const { data: challengeData, isLoading: challengeDataLoading/*, refetch: refetchChallenge*/ } = useMockData<Challenge>(challengeMockData);
 
     if(challengeData && !challengeDataLoading) {

@@ -10,6 +10,7 @@ interface EventModalProps {
     list: Event[];
 }
 
+// FIX_ME - The event cards in the modal are not being sorted correctly using their tags
 const EventModal: React.FC<EventModalProps> = ({ list }) => {
 
     const {isOpen, onOpen, onOpenChange} = useDisclosure();

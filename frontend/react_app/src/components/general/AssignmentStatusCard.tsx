@@ -43,10 +43,9 @@ export interface AssignmentStatusCardProps {
     isActive: StatusProp["isActive"];
 }
 
-//NEED_ICON
 const AssignmentStatusCard: React.FC<AssignmentStatusCardProps> = ({ name, completedChallenges, totalChallenges, isActive }) => {
     
-    // API_NEEDED - Get the Get the individual assignment info through the AssignmentResponse endpoint
+    // API_NEEDED - Get the individual assignment info through the AssignmentResponse endpoint
 
     // The time string from the AssignmentResponse endpoint
     const timeString = "2025-10-01T12:34:56.123";

@@ -23,6 +23,7 @@ export interface SkillDistributionProfileCardProps {
 }
 
 // A hexagonal visualization of the user's progress
+// FIX_ME? - We should probably refactor this to use the D3 library
 const SkillDistributionProfileCard: React.FC<SkillDistributionProfileCardProps> = ({ numBinaryExploitationChallenges, 
     numCryptographyChallenges, numForensicsChallenges, numGeneralSkillsChallenges, numReverseEngChallenges, numWebExploitChallenges,
     totalBinaryExploitChallenges, totalCryptographyChallenges, totalForensicsChallenges, totalGeneralSkillsChallenges,

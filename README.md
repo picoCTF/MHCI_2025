@@ -14,7 +14,7 @@ As this is my last week working on this project, I wanted to add in notes that w
 
 - API_NEEDED - These comments indicate that there should be an API endpoint for data in that location. API endpoints are also needed wherever the useMockData function is called.
 
-- FIX_ME - These comments indicate a known issue and. Each issue is detailed above in the Frontend section.
+- FIX_ME - These comments indicate a known issue and. Each issue is detailed below in the Frontend section.
 
 ### Libraries
 
@@ -33,6 +33,7 @@ As this is my last week working on this project, I wanted to add in notes that w
 - Fix the BadgeSVG component—it needs inner text and decoration options (In Progress)
 - Fix the sorting in the EventCard modal—it does not show and hide events in the modal according to the selected tags. (In Progress)
 - Add the D3 library for graphs and update the Activity, Challenge Completion, and Skill Distribution widgets on the profile page. (In Progress)
+    - The heatmap component is the best example for how to use D3 with React. I referred to this while making my implemetation: https://d3-graph-gallery.com/graph/heatmap_style.html
 - Add Skeletons across the website for each page and subcomponent. Refer to the BadgesProfileDiv on the profile page and the assignment and classroom areas in the homepage.
     - Add in mock JSON files for all components as needed (look for the API_NEEDED comments)
     - Add in a Skeleton version for each component that appears on a page.

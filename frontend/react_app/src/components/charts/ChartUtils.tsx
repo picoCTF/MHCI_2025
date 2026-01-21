@@ -1,17 +1,7 @@
-import { select, type Axis, type AxisDomain, type ScaleBand, type ScaleLinear } from "d3";
+import { select, type Axis, type AxisDomain } from "d3";
 import { useEffect, useRef, type ReactNode } from "react";
 
-interface BarData {
-    label: string;
-    value: number;
-}
-
-interface HeatmapData {
-    label1: string;
-    label2: string;
-    value: number;
-}
-
+// Props needed for all charts
 interface ChartProps {
     title?: string;
     subtitle?: string;
@@ -19,39 +9,27 @@ interface ChartProps {
     inputHeight: number;
 }
 
+// Data for the bar chart
+// FIX_ME - Allow the bar chart to take in custom colors and strokes so that it can match the ChallengeCompletionDiv showin in the Figma
 export interface BarChartProps extends ChartProps {
-    data: BarData[];
+    data: {label: string, value: number}[];
 }
 
+// Info specific to the heatmap
 export interface HeatmapProps extends ChartProps {
     cellBGColors: string[];
     cellStrokeColor: string;
-    data: HeatmapData[];
+    data: {label1: string, label2: string, value: number}[];
     tooltipContent: ReactNode;
 }
 
-// export interface AxisBottomProps {
-//     scale: ScaleBand<string>;
-//     transform: string;
-// }
-
-export interface LabelAxis {
-    scale: ScaleBand<string>;
-    transform: string;
-    alignment: "top" | "bottom" | "left" | "right";
-}
-
-export interface ValueAxis {
-    scale: ScaleLinear<number, number, never>;
-    transform: string;
-    alignment: "top" | "bottom" | "left" | "right";
-}
-
+// Takes in axisBottom/axisTop/axisRight/axisLeft in the axis
 export interface ChartAxisProps {
-    axis: Axis<AxisDomain>; // (selection: Selection<SVGGElement, unknown, null, undefined>) => void;
+    axis: Axis<AxisDomain>;
     transform?: string;
 }
 
+// Creates an axis component for the chart.
 export const ChartAxis: React.FC<ChartAxisProps> = ({axis, transform }) => {
     const ref = useRef<SVGGElement>(null);
 
@@ -63,31 +41,3 @@ export const ChartAxis: React.FC<ChartAxisProps> = ({axis, transform }) => {
 
     return <g ref={ref} transform={transform}/>;
 }
-
-// export const AxisBottom: React.FC<AxisBottomProps> = ({ scale, transform }) => {
-//     const ref = useRef<SVGGElement>(null);
-
-//     useEffect(() => {
-//         if (ref.current) {
-//             select(ref.current).call(axisBottom(scale));
-//         }
-//     }, [scale]);
-
-//     return <g ref={ref} transform={transform} />;
-// }
-
-// export interface AxisLeftProps {
-//     scale: ScaleLinear<number, number, never>;
-// }
-
-// export const AxisLeft: React.FC<AxisLeftProps> = ({ scale }) => {
-//     const ref = useRef<SVGGElement>(null);
-
-//     useEffect(() => {
-//         if (ref.current) {
-//             select(ref.current).call(axisLeft(scale));
-//         }
-//     }, [scale]);
-
-//     return <g ref={ref} />;
-// }

@@ -14,7 +14,7 @@ export interface ClassroomListDivProps {
     isFocused: FocusWrapperCardProps['isFocused'];
 }
 
-// This needs a pagination components when it is being used on desktop
+// This needs a pagination component when it is being used on desktop (see HorizontalScrollDiv)
 const ClassroomListDiv: React.FC<ClassroomListDivProps> = ({ isFocused }) => {
 
     const { data: classroomsData, isLoading: classroomsDataLoading } = useMockData(classroomsMockData);

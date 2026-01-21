@@ -2,14 +2,13 @@ import { Link, Skeleton } from "@heroui/react";
 import LearningPathCard, { type LearningPathCardProps } from "../general/LearningPathCard";
 import type { FocusWrapperCardProps } from "../general/FocusWrapperCard";
 import FocusWrapperCard from "../general/FocusWrapperCard";
-// import HorizontalScrollDiv from "../general/HorizontalScrollDiv";
 
 export interface LearningPathsListDivProps {
     isFocused: FocusWrapperCardProps["isFocused"];
     list: LearningPathCardProps[];
 }
 
-// This needs a pagination component when it is being used on desktop
+// FIX_ME - This needs a pagination component in place of the scrolling when it is being used on desktop
 const LearningPathsListDiv: React.FC<LearningPathsListDivProps> = ({ isFocused, list }) => {
     return (
         <div className="flex w-full h-fit">

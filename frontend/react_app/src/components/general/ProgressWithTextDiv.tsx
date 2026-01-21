@@ -7,7 +7,7 @@ export interface ProgressWithTextDivProps {
     endingText: string;
 }
 
-// TODO - make sure progress and text are aligned
+// FIX_ME - make sure progress and text are aligned
 const ProgressWithTextDiv: React.FC<ProgressWithTextDivProps> = ({ color, ariaLabel, value, endingText }) => {
 
     return (

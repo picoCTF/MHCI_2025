@@ -5,6 +5,7 @@ interface RecentAssignmentsCardProps {
     list: AssignmentStatusCardProps[];
 }
 
+// Right now, this is only used on the homepage. Maybe move it to the homepage folder?
 const RecentAssignmentsCard: React.FC<RecentAssignmentsCardProps> = ({ list }) => {
     return (
         <Card className="flex w-full h-fit border-small border-default-300 p-6 gap-3" shadow="none">
